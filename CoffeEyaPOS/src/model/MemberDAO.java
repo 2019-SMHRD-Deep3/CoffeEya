@@ -32,7 +32,7 @@ public class MemberDAO {
 			psmt.setString(7, m.getEmail());
 			psmt.setString(8, m.getPhone());
 			psmt.setString(9, m.getAddress());
-			
+
 			rows = psmt.executeUpdate();
 			if (rows == 0) {
 				System.out.println("SQL문을 확인하세요");
@@ -56,4 +56,101 @@ public class MemberDAO {
 		return rows;
 	}
 
+	public Member selectOne(Member m) {
+		Member loginUser = null;
+
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			conn = DriverManager.getConnection(url, user, password);
+			String sql = "SELECT * FROM MEMBER WHERE USER_ID = ? AND USER_PW =? ";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, m.getId());
+			psmt.setString(2, m.getPw());
+			rs = psmt.executeQuery();
+
+			if (rs.next()) {
+				// 해당 ID와 PW를 가진 사람이 존재
+				String id = rs.getString("ID");
+				String pw = rs.getString("PW");
+				String name = rs.getString("NAME");
+				String birthday = rs.getString("BIRTHDAY");
+				String sex = rs.getString("SEX");
+				String job = rs.getString("JOB");
+				String email = rs.getString("EMAIL");
+				String phone = rs.getString("PHONE");
+				String address = rs.getString("ADDRESS");
+
+				loginUser = new Member(id, pw, name, birthday, sex, job, email, phone, address);
+			}
+
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (psmt != null) {
+					psmt.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+		}
+		return loginUser;
+	}
+
+	public ArrayList<Member> selectAll(String login_id) {
+		ArrayList<Member> list = new ArrayList<>();
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			conn = DriverManager.getConnection(url, user, password);
+			String sql = "SELECT * FROM MEMBER WHERE USER_ID != ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, login_id);
+			rs = psmt.executeQuery();
+
+			while (rs.next()) {
+				// 해당 ID와 PW를 가진 사람이 존재
+				String id = rs.getString("ID");
+				String pw = rs.getString("PW");
+				String name = rs.getString("NAME");
+				String birthday = rs.getString("BIRTHDAY");
+				String sex = rs.getString("SEX");
+				String job = rs.getString("JOB");
+				String email = rs.getString("EMAIL");
+				String phone = rs.getString("PHONE");
+				String address = rs.getString("ADDRESS");
+
+				list.add(new Member(id, pw, name, birthday, sex, job, email, phone, address));
+			}
+
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (psmt != null) {
+					psmt.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+		}
+		return list;
+	}
 }

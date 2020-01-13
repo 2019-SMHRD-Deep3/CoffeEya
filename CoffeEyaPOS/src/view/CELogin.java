@@ -13,6 +13,7 @@ import java.awt.event.MouseEvent;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -117,7 +118,14 @@ public class CELogin {
 				String infoPw = pw.getText();
 
 				Member m = new Member(infoId, infoPw);
-
+				Member loginUser = service.memberLogin(m);
+				if (loginUser == null) {
+					JOptionPane.showMessageDialog(frame, "로그인 실패");
+				} else {
+					JOptionPane.showMessageDialog(frame, "로그인 성공");
+					CEMain main = new CEMain(loginUser);
+					frame.dispose();
+				}
 			}
 		});
 		logoinBtn.setFont(new Font("굴림", Font.BOLD, 20));
