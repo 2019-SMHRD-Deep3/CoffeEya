@@ -4,14 +4,26 @@ public class Member {
 
 	private String id;
 	private String pw;
-	private int birthday;
-	private int hot_ice;
+	private String name;
+	private String birthday;
+	private String sex;
+	private String job;
+	private String email;
+	private String phone;
+	private String address;
 
-	public Member(String id, String pw, int birthday, int hot_ice) {
+
+	public Member(String id, String pw, String name, String birthday, String sex, String job, String email, String phone,
+			String address) {
 		this.id = id;
 		this.pw = pw;
+		this.name = name;
 		this.birthday = birthday;
-		this.hot_ice = hot_ice;
+		this.sex = sex;
+		this.job = job;
+		this.email = email;
+		this.phone = phone;
+		this.address = address;
 	}
 
 	public String getId() {
@@ -22,12 +34,32 @@ public class Member {
 		return pw;
 	}
 
-	public int getBirthday() {
+	public String getName() {
+		return name;
+	}
+
+	public String getBirthday() {
 		return birthday;
 	}
 
-	public int getHot_ice() {
-		return hot_ice;
+	public String getSex() {
+		return sex;
+	}
+
+	public String getJob() {
+		return job;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public String getAddress() {
+		return address;
 	}
 
 	public void setId(String id) {
@@ -38,12 +70,32 @@ public class Member {
 		this.pw = pw;
 	}
 
-	public void setBirthday(int birthday) {
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setBirthday(String birthday) {
 		this.birthday = birthday;
 	}
 
-	public void setHot_ice(int hot_ice) {
-		this.hot_ice = hot_ice;
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+
+	public void setJob(String job) {
+		this.job = job;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 }
