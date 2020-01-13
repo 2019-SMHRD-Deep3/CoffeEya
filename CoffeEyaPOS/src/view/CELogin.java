@@ -114,8 +114,8 @@ public class CELogin {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				// ·Î±×ÀÎ
-				String infoId = id.getText();
-				String infoPw = pw.getText();
+				String infoId = userID.getText();
+				String infoPw = userPW.getText();
 
 				Member m = new Member(infoId, infoPw);
 				Member loginUser = service.memberLogin(m);
