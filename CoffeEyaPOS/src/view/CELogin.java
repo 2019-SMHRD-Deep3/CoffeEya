@@ -7,15 +7,22 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import java.awt.CardLayout;
 import javax.swing.SwingConstants;
+
+import controllerDummy.MemberManagementService;
+import model.Member;
+
 import java.awt.GridLayout;
 import javax.swing.JTextField;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class CELogin {
-
+	private controllerDummy.MemberManagementService service = new controllerDummy.MemberManagementService();
 	private JFrame frame;
 	private JTextField userID;
 	private JTextField userPW;
@@ -81,27 +88,41 @@ public class CELogin {
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(new CardLayout(0, 0));
 		
-		JLabel join = new JLabel("\uD68C\uC6D0\uAC00\uC785");
-		join.setFont(new Font("±º∏≤", Font.BOLD, 20));
-		join.setHorizontalAlignment(SwingConstants.CENTER);
-		panel_1.add(join, "name_2341890695008900");
+		JButton joinBtn = new JButton("\uD68C\uC6D0\uAC00\uC785");
+		joinBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+			}
+		});
+		joinBtn.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				//join≈¨∏ØΩ√ ¿Ãµø
+				CEJoin join = new CEJoin();
+			}
+		});
+		joinBtn.setFont(new Font("±º∏≤", Font.BOLD, 20));
+		panel_1.add(joinBtn, "name_2352430932658600");
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBounds(263, 231, 178, 62);
 		frame.getContentPane().add(panel_2);
 		panel_2.setLayout(new CardLayout(0, 0));
 		
-		JLabel login = new JLabel("\uB85C\uADF8\uC778");
-		login.setFont(new Font("±º∏≤", Font.BOLD, 20));
-		login.addMouseListener(new MouseAdapter() {
+		JButton logoinBtn = new JButton("\uB85C\uADF8\uC778");
+		logoinBtn.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				String infoID = id.getText();
-				String infoPW = pw.getText();
+			public void mouseClicked(MouseEvent e) {
+				//∑Œ±◊¿Œ 
+				String infoId = id.getText();
+				String infoPw = pw.getText();
+				
+				Member m = new Member(infoId, infoPw);
+				
 			}
 		});
-		login.setHorizontalAlignment(SwingConstants.CENTER);
-		panel_2.add(login, "name_2341932295032900");
+		logoinBtn.setFont(new Font("±º∏≤", Font.BOLD, 20));
+		panel_2.add(logoinBtn, "name_2352508316499700");
 		
 		JPanel panel_3 = new JPanel();
 		panel_3.setBounds(140, 341, 224, 48);

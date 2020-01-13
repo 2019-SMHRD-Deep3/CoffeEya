@@ -13,6 +13,10 @@ public class Member {
 		this.birthday = birthday;
 		this.hot_ice = hot_ice;
 	}
+	public Member(String id, String pw) {
+		this.id = id;
+		this.pw = pw;
+	}
 
 	public String getId() {
 		return id;

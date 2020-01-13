@@ -7,6 +7,9 @@ import javax.swing.SpringLayout;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+
+import controllerDummy.MemberManagementService;
+
 import java.awt.Font;
 import java.awt.GridLayout;
 import javax.swing.JTextField;
@@ -19,7 +22,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class CEJoin {
-
+	controllerDummy.MemberManagementService service= new controllerDummy.MemberManagementService();
+	
 	private JFrame frame;
 	private JTextField id;
 	private JTextField password;
@@ -34,27 +38,13 @@ public class CEJoin {
 	private JRadioButton manager;
 	private JRadioButton employee;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					CEJoin window = new CEJoin();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the application.
 	 */
 	public CEJoin() {
 		initialize();
+		frame.setVisible(true);
 	}
 
 	/**
