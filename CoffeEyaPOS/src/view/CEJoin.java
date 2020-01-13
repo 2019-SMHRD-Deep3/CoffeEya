@@ -1,6 +1,5 @@
 package view;
 
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -25,7 +24,7 @@ import model.Member;
 public class CEJoin {
 
 	MemberManagementService service = new MemberManagementService();
-
+	
 	private JFrame frame;
 	private JTextField id;
 	private JTextField pw;
@@ -39,22 +38,6 @@ public class CEJoin {
 	private JRadioButton male;
 	private JRadioButton manager;
 	private JRadioButton employee;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					CEJoin window = new CEJoin();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the application.
@@ -274,7 +257,7 @@ public class CEJoin {
 		JButton btnNewButton_1 = new JButton("\uCDE8\uC18C");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+
 			}
 		});
 		btnNewButton_1.addMouseListener(new MouseAdapter() {
