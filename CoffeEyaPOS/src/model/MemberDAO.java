@@ -62,7 +62,7 @@ public class MemberDAO {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn = DriverManager.getConnection(url, user, password);
-			String sql = "SELECT * FROM MEMBER WHERE USER_ID = ? AND USER_PW =? ";
+			String sql = "SELECT * FROM MEMBER WHERE ID = ? AND PW =? ";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, m.getId());
 			psmt.setString(2, m.getPw());
@@ -111,7 +111,7 @@ public class MemberDAO {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn = DriverManager.getConnection(url, user, password);
-			String sql = "SELECT * FROM MEMBER WHERE USER_ID != ?";
+			String sql = "SELECT * FROM MEMBER WHERE ID != ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, login_id);
 			rs = psmt.executeQuery();

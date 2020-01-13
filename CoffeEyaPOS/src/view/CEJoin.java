@@ -52,6 +52,7 @@ public class CEJoin {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setResizable(false);
 		frame.setBounds(100, 100, 550, 750);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // 화면 종료시 회원가입 GUI만 꺼지게 설정
 		SpringLayout springLayout = new SpringLayout();
