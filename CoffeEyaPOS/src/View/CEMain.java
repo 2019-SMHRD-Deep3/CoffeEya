@@ -67,7 +67,7 @@ public class CEMain {
 		button.setBounds(634, 206, 225, 83);
 		frame.getContentPane().add(button);
 		
-		JButton button_1 = new JButton("\uB9E4\uCD9C \uC815\uC0B0");
+		JButton button_1 = new JButton("\uB9C8\uAC10 \uC815\uC0B0");
 		button_1.setFont(new Font("±¼¸²", Font.PLAIN, 38));
 		button_1.setBounds(634, 299, 225, 83);
 		frame.getContentPane().add(button_1);
