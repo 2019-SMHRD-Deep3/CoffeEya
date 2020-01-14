@@ -23,17 +23,19 @@ import model.Member;
 public class CEJoin {
 	
 	MemberManagementService service = new MemberManagementService();
-
+	
 	private JFrame frame;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
+	private Member loginUser;
 
 	/**
 	 * Create the application.
 	 */
-	public CEJoin() {
+	public CEJoin(Member loginUser) {
+		this.loginUser = loginUser;
 		initialize();
 		frame.setVisible(true);
 	}

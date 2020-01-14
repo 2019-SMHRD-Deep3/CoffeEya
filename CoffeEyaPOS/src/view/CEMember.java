@@ -3,24 +3,24 @@ package view;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 import model.Member;
-import javax.swing.JPanel;
+
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class CEMain {
+public class CEMember {
 
 	private JFrame frame;
 	private Member loginUser;
 
-
 	/**
 	 * Create the application.
 	 */
-	public CEMain(Member loginUser) {
+	public CEMember(Member loginUser) {
 		this.loginUser = loginUser;
 		initialize();
 		frame.setVisible(true);
@@ -38,31 +38,28 @@ public class CEMain {
 		JPanel panel = new JPanel();
 		panel.setBounds(40, 40, 1100, 680);
 		frame.getContentPane().add(panel);
-		panel.setLayout(new GridLayout(0, 2, 100, 100));
+		panel.setLayout(new GridLayout(1, 0, 0, 0));
 		
-		JButton btnNewButton = new JButton("\uC601\uC5C5 \uB4F1\uB85D");
-		panel.add(btnNewButton);
-		
-		JButton btnNewButton_1 = new JButton("\uB9C8\uAC10 \uC815\uC0B0");
-		panel.add(btnNewButton_1);
-		
-		JButton btnNewButton_2 = new JButton("\uB9E4\uCD9C \uC870\uD68C");
-		panel.add(btnNewButton_2);
-		
-		JButton btnNewButton_3 = new JButton("\uC0AC\uC6A9\uC790");
-		btnNewButton_3.addMouseListener(new MouseAdapter() {
+		JButton btnNewButton = new JButton("\uC0AC\uC6A9\uC790 \uC815\uBCF4 \uB4F1\uB85D");
+		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent e) {
-				CEMember member = new CEMember(loginUser);
+			public void mouseClicked(MouseEvent arg0) {
+				CEJoin join = new CEJoin(loginUser);
 				frame.dispose();
 			}
 		});
+		panel.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("\uC0AC\uC6A9\uC790 \uC815\uBCF4 \uC218\uC815");
+		panel.add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("\uC0AC\uC6A9\uC790 \uC815\uBCF4 \uC0AD\uC81C");
+		panel.add(btnNewButton_2);
+		
+		JButton btnNewButton_3 = new JButton("\uCD9C\uD1F4\uADFC\uAD00\uB9AC");
 		panel.add(btnNewButton_3);
 		
-		JButton btnNewButton_4 = new JButton("\uC124\uC815");
+		JButton btnNewButton_4 = new JButton("\uC0AC\uC6A9\uC790 \uBCC0\uACBD");
 		panel.add(btnNewButton_4);
-		
-		JButton btnNewButton_5 = new JButton("\uC885\uB8CC");
-		panel.add(btnNewButton_5);
 	}
 }

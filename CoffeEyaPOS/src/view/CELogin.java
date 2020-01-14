@@ -20,6 +20,8 @@ import javax.swing.JButton;
 import java.awt.GridLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class CELogin {
 	private MemberManagementService service = new MemberManagementService();
@@ -94,6 +96,10 @@ public class CELogin {
 		panel_1.setLayout(new GridLayout(1, 0, 20, 0));
 		
 		btnNewButton = new JButton("\uB85C\uADF8\uC778");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
