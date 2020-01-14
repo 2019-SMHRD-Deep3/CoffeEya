@@ -1,15 +1,16 @@
 package view;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-
-import model.Member;
-import javax.swing.JPanel;
 import java.awt.GridLayout;
-import javax.swing.JButton;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+import model.Member;
 
 public class CEMain {
 
@@ -41,6 +42,17 @@ public class CEMain {
 		panel.setLayout(new GridLayout(0, 2, 100, 100));
 		
 		JButton btnNewButton = new JButton("\uC601\uC5C5 \uB4F1\uB85D");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				CESale sale = new CESale(loginUser);
+				frame.dispose();
+			}
+		});
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		panel.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("\uB9C8\uAC10 \uC815\uC0B0");

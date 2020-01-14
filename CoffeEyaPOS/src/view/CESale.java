@@ -34,23 +34,18 @@ public class CESale {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					CESale window = new CESale();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+		
 	}
 
 	/**
 	 * Create the application.
+	 * @param loginUser 
+	 * @wbp.parser.entryPoint
 	 */
-	public CESale() {
+	public CESale(Member loginUser) {
+		this.loginUser = loginUser;
 		initialize();
+		frame.setVisible(true);
 	}
 
 	/**
@@ -125,18 +120,16 @@ public class CESale {
 		// 주문스크롤
 		JScrollPane scrollPane = new JScrollPane();
 		panel_6.add(scrollPane, "name_1462951108600");
+		
 		// 컬럼이름 복사, 데이터 복사
-				String[] columnNames = { "USER_ID", "USER_NAME", "USER_AGE" };
+				String[] columnNames = { "상품명", "수량", "가격"};
 				ArrayList<Member> list = service.memberLookup(loginUser.getMEM_ID());
 
 				Object[][] data = new Object[list.size()][3];
 
 				for (int i = 0; i < list.size(); i++) {
-					// 각사람들의 정보를 꺼내온다.
 					Member m = list.get(i);
-					// 한번에 초기화하는방법, 1차원배열 > 데이터나열
 					data[i] = new Object[] { m.getMEM_ID(), m.getMEM_NAME()};
-
 				}
 				table = new JTable(data, columnNames);
 				scrollPane.setViewportView(table);
