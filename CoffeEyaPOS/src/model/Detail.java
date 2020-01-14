@@ -2,33 +2,33 @@ package model;
 
 public class Detail {
 
-	private int de_num;
-	private int or_num;
-	private int pro_num;
-	private int de_amount;
+	private int DE_NUM;
+	private int OR_NUM;
+	private int PRO_NUM;
+	private int DE_AMOUNT;
+	public int getDE_NUM() {
+		return DE_NUM;
+	}
+	public void setDE_NUM(int DE_NUM) {
+		this.DE_NUM = DE_NUM;
+	}
+	public int getOR_NUM() {
+		return OR_NUM;
+	}
+	public void setOR_NUM(int OR_NUM) {
+		this.OR_NUM = OR_NUM;
+	}
+	public int getPRO_NUM() {
+		return PRO_NUM;
+	}
+	public void setPRO_NUM(int PRO_NUM) {
+		this.PRO_NUM = PRO_NUM;
+	}
+	public int getDE_AMOUNT() {
+		return DE_AMOUNT;
+	}
+	public void setDE_AMOUNT(int DE_AMOUNT) {
+		this.DE_AMOUNT = DE_AMOUNT;
+	}
 	
-	public int getDe_num() {
-		return de_num;
-	}
-	public void setDe_num(int de_num) {
-		this.de_num = de_num;
-	}
-	public int getOr_num() {
-		return or_num;
-	}
-	public void setOr_num(int or_num) {
-		this.or_num = or_num;
-	}
-	public int getPro_num() {
-		return pro_num;
-	}
-	public void setPro_num(int pro_num) {
-		this.pro_num = pro_num;
-	}
-	public int getDe_amount() {
-		return de_amount;
-	}
-	public void setDe_amount(int de_amount) {
-		this.de_amount = de_amount;
-	}
 }
