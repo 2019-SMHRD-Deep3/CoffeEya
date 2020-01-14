@@ -85,5 +85,22 @@ public class CEAnalysis {
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(12, 10, 1136, 290);
 		panel_1.add(scrollPane);
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 }
