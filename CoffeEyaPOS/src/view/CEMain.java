@@ -1,11 +1,13 @@
 package view;
 
+import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -16,6 +18,7 @@ public class CEMain {
 
 	private JFrame frame;
 	private Member loginUser;
+	private JPanel panel;
 
 
 	/**
@@ -36,7 +39,19 @@ public class CEMain {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JPanel panel = new JPanel();
+		String imgPath = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//mainCoffee.jpg";
+		ImageIcon icon = new ImageIcon(imgPath);
+		
+		panel = new JPanel(){
+			@Override
+			protected void paintComponent(Graphics g) {
+				g.drawImage(icon.getImage(), 0, 0, panel.getWidth(), panel.getHeight(), null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
+		
+		
 		panel.setBounds(40, 40, 1100, 680);
 		frame.getContentPane().add(panel);
 		panel.setLayout(new GridLayout(0, 2, 100, 100));
