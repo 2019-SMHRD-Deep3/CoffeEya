@@ -129,7 +129,7 @@ public class CESale {
 
 				for (int i = 0; i < list.size(); i++) {
 					Member m = list.get(i);
-					data[i] = new Object[] { m.getMEM_ID(), m.getMEM_NAME()};
+					data[i] = new Object[] { m.getMEM_ID(), m.getMEM_NAME(),m.getMEM_PERM()};
 				}
 				table = new JTable(data, columnNames);
 				scrollPane.setViewportView(table);
