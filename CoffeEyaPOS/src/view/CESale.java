@@ -127,7 +127,7 @@ public class CESale {
 		panel_6.add(scrollPane, "name_1462951108600");
 		// 컬럼이름 복사, 데이터 복사
 				String[] columnNames = { "USER_ID", "USER_NAME", "USER_AGE" };
-				ArrayList<Member> list = service.memberLookup(loginUser.getId());
+				ArrayList<Member> list = service.memberLookup(loginUser.getMEM_ID());
 
 				Object[][] data = new Object[list.size()][3];
 
@@ -135,7 +135,7 @@ public class CESale {
 					// 각사람들의 정보를 꺼내온다.
 					Member m = list.get(i);
 					// 한번에 초기화하는방법, 1차원배열 > 데이터나열
-					data[i] = new Object[] { m.getId(), m.getName()};
+					data[i] = new Object[] { m.getMEM_ID(), m.getMEM_NAME()};
 
 				}
 				table = new JTable(data, columnNames);
