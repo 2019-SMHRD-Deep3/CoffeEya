@@ -21,17 +21,12 @@ public class MemberDAO {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn = DriverManager.getConnection(url, user, password);
-			String sql = "INSERT INTO MEMBER VALUES (?,?,?,?,?,?,?,?,?)";
+			String sql = "INSERT INTO MEMBER VALUES (?,?,?,?)";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, m.getId());
-			psmt.setString(2, m.getPw());
-			psmt.setString(3, m.getName());
-			psmt.setString(4, m.getBirthday());
-			psmt.setString(5, m.getSex());
-			psmt.setString(6, m.getJob());
-			psmt.setString(7, m.getEmail());
-			psmt.setString(8, m.getPhone());
-			psmt.setString(9, m.getAddress());
+			psmt.setString(1, m.getMEM_ID());
+			psmt.setString(2, m.getMEM_PW());
+			psmt.setString(3, m.getMEM_NAME());
+			psmt.setString(4, m.getMEM_PERM());
 
 			rows = psmt.executeUpdate();
 			if (rows == 0) {
@@ -62,25 +57,20 @@ public class MemberDAO {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn = DriverManager.getConnection(url, user, password);
-			String sql = "SELECT * FROM MEMBER WHERE ID = ? AND PW =? ";
+			String sql = "SELECT * FROM MEMBER WHERE MEM_ID = ? AND MEM_PW =? ";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, m.getId());
-			psmt.setString(2, m.getPw());
+			psmt.setString(1, m.getMEM_ID());
+			psmt.setString(2, m.getMEM_PW());
 			rs = psmt.executeQuery();
 
 			if (rs.next()) {
 				// 해당 ID와 PW를 가진 사람이 존재
-				String id = rs.getString("ID");
-				String pw = rs.getString("PW");
-				String name = rs.getString("NAME");
-				String birthday = rs.getString("BIRTHDAY");
-				String sex = rs.getString("SEX");
-				String job = rs.getString("JOB");
-				String email = rs.getString("EMAIL");
-				String phone = rs.getString("PHONE");
-				String address = rs.getString("ADDRESS");
+				String MEM_ID = rs.getString("MEM_ID");
+				String MEM_PW = rs.getString("MEM_PW");
+				String MEM_NAME = rs.getString("MEM_NAME");
+				String MEM_PERM = rs.getString("MEM_PERM");
 
-				loginUser = new Member(id, pw, name, birthday, sex, job, email, phone, address);
+				loginUser = new Member(MEM_ID, MEM_PW, MEM_NAME, MEM_PERM);
 			}
 
 		} catch (ClassNotFoundException e) {
@@ -106,29 +96,24 @@ public class MemberDAO {
 		return loginUser;
 	}
 
-	public ArrayList<Member> selectAll(String login_id) {
+	public ArrayList<Member> selectAll(String loginId) {
 		ArrayList<Member> list = new ArrayList<>();
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn = DriverManager.getConnection(url, user, password);
-			String sql = "SELECT * FROM MEMBER WHERE ID != ?";
+			String sql = "SELECT * FROM MEMBER WHERE MEM_ID != ?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, login_id);
+			psmt.setString(1, loginId);
 			rs = psmt.executeQuery();
 
 			while (rs.next()) {
 				// 해당 ID와 PW를 가진 사람이 존재
-				String id = rs.getString("ID");
-				String pw = rs.getString("PW");
-				String name = rs.getString("NAME");
-				String birthday = rs.getString("BIRTHDAY");
-				String sex = rs.getString("SEX");
-				String job = rs.getString("JOB");
-				String email = rs.getString("EMAIL");
-				String phone = rs.getString("PHONE");
-				String address = rs.getString("ADDRESS");
+				String MEM_ID = rs.getString("MEM_ID");
+				String MEM_PW = rs.getString("MEM_PW");
+				String MEM_NAME = rs.getString("MEM_NAME");
+				String MEM_PERM = rs.getString("");
 
-				list.add(new Member(id, pw, name, birthday, sex, job, email, phone, address));
+				list.add(new Member(MEM_ID, MEM_PW, MEM_NAME, MEM_PERM));
 			}
 
 		} catch (ClassNotFoundException e) {

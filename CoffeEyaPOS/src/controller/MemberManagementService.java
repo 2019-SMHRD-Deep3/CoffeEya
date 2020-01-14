@@ -23,7 +23,7 @@ public class MemberManagementService {
 		return loginUser;
 	}
 
-	public ArrayList<Member> memberLookup(String id) {
-		return dao.selectAll(id);
+	public ArrayList<Member> memberLookup(String loginId) {
+		return dao.selectAll(loginId);
 	}
 }

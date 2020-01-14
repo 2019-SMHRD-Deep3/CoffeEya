@@ -1,33 +1,35 @@
 package view;
 
-import java.awt.CardLayout;
-import java.awt.Color;
 import java.awt.EventQueue;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+
+import java.awt.BorderLayout;
+import javax.swing.SpringLayout;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import controller.MemberManagementService;
 import model.Member;
+import view.CEMain;
+
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.GridLayout;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class CELogin {
 	private MemberManagementService service = new MemberManagementService();
+
 	private JFrame frame;
-	private JTextField userID;
-	private JTextField userPW;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JPanel panel_1;
+	private JButton btnNewButton;
+	private JButton btnNewButton_1;
 
 	/**
 	 * Launch the application.
@@ -57,71 +59,46 @@ public class CELogin {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setResizable(false);
-		frame.getContentPane().setBackground(Color.WHITE);
-		frame.setBounds(100, 100, 885, 457);
+		frame.setBounds(100, 100, 1200, 800);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-
+		
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(255, 222, 173));
-		panel.setBounds(0, 146, 314, 112);
+		panel.setBounds(300, 250, 600, 300);
 		frame.getContentPane().add(panel);
-		panel.setLayout(new GridLayout(2, 2, 5, 5));
-
-		JLabel id = new JLabel("ID");
-		id.setBackground(new Color(0, 0, 205));
-		id.setFont(new Font("±¼¸²", Font.BOLD, 25));
-		id.setHorizontalAlignment(SwingConstants.CENTER);
-		panel.add(id);
-
-		userID = new JTextField();
-		panel.add(userID);
-		userID.setColumns(10);
-
-		JLabel pw = new JLabel("PW");
-		pw.setFont(new Font("±¼¸²", Font.BOLD, 25));
-		pw.setHorizontalAlignment(SwingConstants.CENTER);
-		panel.add(pw);
-
-		userPW = new JTextField();
-		panel.add(userPW);
-		userPW.setColumns(10);
-
-		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(12, 310, 154, 42);
-		frame.getContentPane().add(panel_1);
-		panel_1.setLayout(new CardLayout(0, 0));
-
-		JButton joinBtn = new JButton("\uD68C\uC6D0\uAC00\uC785");
-		joinBtn.setIcon(new ImageIcon("C:\\Users\\SM018\\Desktop\\\uADF8\uB9BC1.png"));
-		joinBtn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-
-			}
-		});
-		joinBtn.addMouseListener(new MouseAdapter() {
+		panel.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("\uC544\uC774\uB514");
+		lblNewLabel.setBounds(10, 10, 190, 90);
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		panel.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("\uBE44\uBC00\uBC88\uD638");
+		lblNewLabel_1.setBounds(10, 110, 190, 90);
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		panel.add(lblNewLabel_1);
+		
+		textField = new JTextField();
+		textField.setBounds(210, 10, 380, 90);
+		panel.add(textField);
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(210, 110, 380, 90);
+		panel.add(textField_1);
+		textField_1.setColumns(10);
+		
+		panel_1 = new JPanel();
+		panel_1.setBounds(210, 220, 380, 60);
+		panel.add(panel_1);
+		panel_1.setLayout(new GridLayout(1, 0, 20, 0));
+		
+		btnNewButton = new JButton("\uB85C\uADF8\uC778");
+		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				// joinÅ¬¸¯½Ã ÀÌµ¿
-				CEJoin join = new CEJoin();
-			}
-		});
-		joinBtn.setFont(new Font("±¼¸²", Font.BOLD, 20));
-		panel_1.add(joinBtn, "name_2352430932658600");
-
-		JPanel panel_2 = new JPanel();
-		panel_2.setBounds(178, 310, 148, 42);
-		frame.getContentPane().add(panel_2);
-		panel_2.setLayout(new CardLayout(0, 0));
-
-		JButton logoinBtn = new JButton("\uB85C\uADF8\uC778");
-		logoinBtn.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				// ·Î±×ÀÎ
-				String infoId = userID.getText();
-				String infoPw = userPW.getText();
+				String infoId = textField.getText();
+				String infoPw = textField_1.getText();
 
 				Member m = new Member(infoId, infoPw);
 				Member loginUser = service.memberLogin(m);
@@ -134,14 +111,15 @@ public class CELogin {
 				}
 			}
 		});
-		logoinBtn.setFont(new Font("±¼¸²", Font.BOLD, 20));
-		panel_2.add(logoinBtn, "name_2352508316499700");
-
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\SM018\\Desktop\\coffeEyaLogin.png"));
-		lblNewLabel.setBounds(0, 0, 879, 428);
-		frame.getContentPane().add(lblNewLabel);
-
-		ImageIcon icon = new ImageIcon("D:\\Ä¿ÇÇ·Î±×ÀÎ.PNG");
+		panel_1.add(btnNewButton);
+		
+		btnNewButton_1 = new JButton("\uC885\uB8CC");
+		btnNewButton_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				frame.dispose();
+			}
+		});
+		panel_1.add(btnNewButton_1);
 	}
 }
