@@ -4,7 +4,7 @@ public class Detail {
 
 	private int de_num;
 	private int or_num;
-	private int  pro_num;
+	private int pro_num;
 	private int de_amount;
 	
 	public int getDe_num() {
