@@ -28,7 +28,7 @@ public class CEJoin {
 	private JFrame frame;
 	private JTextField id;
 	private JTextField pw;
-	private JTextField pw1;
+	private JTextField pw1; // 비밀번호 확인
 	private JTextField name;
 	private JTextField birth;
 	private JTextField email;

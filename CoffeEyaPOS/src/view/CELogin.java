@@ -4,12 +4,14 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -56,17 +58,19 @@ public class CELogin {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setResizable(false);
-		frame.getContentPane().setBackground(new Color(176, 224, 230));
-		frame.setBounds(100, 100, 503, 457);
+		frame.getContentPane().setBackground(Color.WHITE);
+		frame.setBounds(100, 100, 885, 457);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
 		JPanel panel = new JPanel();
-		panel.setBounds(49, 28, 392, 158);
+		panel.setBackground(new Color(255, 222, 173));
+		panel.setBounds(0, 146, 314, 112);
 		frame.getContentPane().add(panel);
 		panel.setLayout(new GridLayout(2, 2, 5, 5));
 
 		JLabel id = new JLabel("ID");
+		id.setBackground(new Color(0, 0, 205));
 		id.setFont(new Font("±¼¸²", Font.BOLD, 25));
 		id.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(id);
@@ -85,11 +89,12 @@ public class CELogin {
 		userPW.setColumns(10);
 
 		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(49, 231, 178, 62);
+		panel_1.setBounds(12, 310, 154, 42);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(new CardLayout(0, 0));
 
 		JButton joinBtn = new JButton("\uD68C\uC6D0\uAC00\uC785");
+		joinBtn.setIcon(new ImageIcon("C:\\Users\\SM018\\Desktop\\\uADF8\uB9BC1.png"));
 		joinBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
@@ -106,7 +111,7 @@ public class CELogin {
 		panel_1.add(joinBtn, "name_2352430932658600");
 
 		JPanel panel_2 = new JPanel();
-		panel_2.setBounds(263, 231, 178, 62);
+		panel_2.setBounds(178, 310, 148, 42);
 		frame.getContentPane().add(panel_2);
 		panel_2.setLayout(new CardLayout(0, 0));
 
@@ -132,14 +137,11 @@ public class CELogin {
 		logoinBtn.setFont(new Font("±¼¸²", Font.BOLD, 20));
 		panel_2.add(logoinBtn, "name_2352508316499700");
 
-		JPanel panel_3 = new JPanel();
-		panel_3.setBounds(140, 341, 224, 48);
-		frame.getContentPane().add(panel_3);
-		panel_3.setLayout(new CardLayout(0, 0));
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\SM018\\Desktop\\coffeEyaLogin.png"));
+		lblNewLabel.setBounds(0, 0, 879, 428);
+		frame.getContentPane().add(lblNewLabel);
 
-		JLabel logo = new JLabel("CofeEya");
-		logo.setFont(new Font("±¼¸²", Font.BOLD | Font.ITALIC, 26));
-		logo.setHorizontalAlignment(SwingConstants.CENTER);
-		panel_3.add(logo, "name_2342710046826700");
+		ImageIcon icon = new ImageIcon("D:\\Ä¿ÇÇ·Î±×ÀÎ.PNG");
 	}
 }
