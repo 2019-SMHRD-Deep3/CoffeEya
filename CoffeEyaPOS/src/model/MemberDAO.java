@@ -111,7 +111,7 @@ public class MemberDAO {
 				String MEM_ID = rs.getString("MEM_ID");
 				String MEM_PW = rs.getString("MEM_PW");
 				String MEM_NAME = rs.getString("MEM_NAME");
-				String MEM_PERM = rs.getString("");
+				String MEM_PERM = rs.getString("MEM_PERM");
 
 				list.add(new Member(MEM_ID, MEM_PW, MEM_NAME, MEM_PERM));
 			}
