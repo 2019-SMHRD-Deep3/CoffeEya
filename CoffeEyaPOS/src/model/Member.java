@@ -2,105 +2,54 @@ package model;
 
 public class Member {
 
-	private String id;
-	private String pw;
-	private String name;
-	private String birthday;
-	private String sex;
-	private String job;
-	private String email;
-	private String phone;
-	private String address;
+	private String MEM_ID;
+	private String MEM_PW;
+	private String MEM_NAME;
+	private String MEM_PERM;
+	
 
-
-	public Member(String id, String pw, String name, String birthday, String sex, String job, String email, String phone,
-			String address) {
-		this.id = id;
-		this.pw = pw;
-		this.name = name;
-		this.birthday = birthday;
-		this.sex = sex;
-		this.job = job;
-		this.email = email;
-		this.phone = phone;
-		this.address = address;
+	public Member(String MEM_ID, String MEM_PW, String MEM_NAME, String MEM_PERM) {
+		this.MEM_ID = MEM_ID;
+		this.MEM_PW = MEM_PW;
+		this.MEM_NAME = MEM_NAME;
+		this.MEM_PERM = MEM_PERM;
 	}
 	
-	public Member(String id, String pw) {
-		this.id = id;
-		this.pw = pw;
+	public Member(String MEM_ID, String MEM_PW) {
+		this.MEM_ID = MEM_ID;
+		this.MEM_PW = MEM_PW;
 	}
 
-	public String getId() {
-		return id;
+	public void setMEM_ID(String MEM_ID) {
+		MEM_ID = MEM_ID;
 	}
 
-	public String getPw() {
-		return pw;
+	public void setMEM_PW(String MEM_PW) {
+		MEM_PW = MEM_PW;
 	}
 
-	public String getName() {
-		return name;
+	public void setMEM_NAME(String MEM_NAME) {
+		MEM_NAME = MEM_NAME;
 	}
 
-	public String getBirthday() {
-		return birthday;
+	public void setMEM_PERM(String MEM_PERM) {
+		MEM_PERM = MEM_PERM;
 	}
 
-	public String getSex() {
-		return sex;
+	public String getMEM_ID() {
+		return MEM_ID;
 	}
 
-	public String getJob() {
-		return job;
+	public String getMEM_PW() {
+		return MEM_PW;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getMEM_NAME() {
+		return MEM_NAME;
 	}
 
-	public String getPhone() {
-		return phone;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public void setPw(String pw) {
-		this.pw = pw;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public void setBirthday(String birthday) {
-		this.birthday = birthday;
-	}
-
-	public void setSex(String sex) {
-		this.sex = sex;
-	}
-
-	public void setJob(String job) {
-		this.job = job;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
+	public String getMEM_PERM() {
+		return MEM_PERM;
 	}
 
 }
