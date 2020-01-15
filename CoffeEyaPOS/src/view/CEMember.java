@@ -36,7 +36,7 @@ public class CEMember {
 		frame.getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(40, 40, 1100, 680);
+		panel.setBounds(40, 160, 1100, 540);
 		frame.getContentPane().add(panel);
 		panel.setLayout(new GridLayout(1, 0, 0, 0));
 		
@@ -45,7 +45,6 @@ public class CEMember {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				CEJoin join = new CEJoin(loginUser);
-				frame.dispose();
 			}
 		});
 		panel.add(btnNewButton);
@@ -55,7 +54,6 @@ public class CEMember {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				CEMemModDel memmoddel = new CEMemModDel(loginUser);
-				frame.dispose();
 			}
 		});
 		panel.add(btnNewButton_1);
@@ -65,7 +63,6 @@ public class CEMember {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				CECommute commute = new CECommute(loginUser);
-				frame.dispose();
 			}
 		});
 		panel.add(btnNewButton_2);
@@ -75,9 +72,19 @@ public class CEMember {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				CEChange change = new CEChange(loginUser);
-				frame.dispose();
 			}
 		});
 		panel.add(btnNewButton_3);
+		
+		JButton btnNewButton_4 = new JButton("\uB3CC\uC544\uAC00\uAE30");
+		btnNewButton_4.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				CEMain main = new CEMain(loginUser);
+				frame.dispose();
+			}
+		});
+		btnNewButton_4.setBounds(1075, 10, 100, 100);
+		frame.getContentPane().add(btnNewButton_4);
 	}
 }

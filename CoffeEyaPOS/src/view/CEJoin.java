@@ -47,7 +47,7 @@ public class CEJoin { // 사용자 등록
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 1200, 800);
+		frame.setBounds(200, 200, 1200, 800);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
@@ -132,7 +132,6 @@ public class CEJoin { // 사용자 등록
 					
 					if (result) {
 						JOptionPane.showMessageDialog(frame, "회원 가입 성공");
-						CEMain main = new CEMain(loginUser);
 						frame.dispose(); // 화면 종료
 					} else {
 						JOptionPane.showMessageDialog(frame, "회원 가입 실패");

@@ -52,7 +52,7 @@ public class CEMain {
 		};
 		
 		
-		panel.setBounds(40, 40, 1100, 680);
+		panel.setBounds(0, 0, 1184, 761);
 		frame.getContentPane().add(panel);
 		panel.setLayout(new GridLayout(0, 2, 100, 100));
 		
@@ -76,7 +76,7 @@ public class CEMain {
 		JButton btnNewButton_2 = new JButton("\uB9E4\uCD9C \uC870\uD68C");
 		btnNewButton_2.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent arg0) {
+			public void mouseClicked(MouseEvent e) {
 				CEAnalysis analysis = new CEAnalysis(loginUser);
 				frame.dispose();
 			}
