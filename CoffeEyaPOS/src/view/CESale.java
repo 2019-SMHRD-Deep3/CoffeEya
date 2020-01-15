@@ -66,7 +66,15 @@ public class CESale {
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 
-		JButton btnNewButton = new JButton("\uB4A4\uB85C\uAC00\uAE30");
+		JButton btnNewButton = new JButton("");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			// 뒤로가기
+			public void mouseClicked(MouseEvent e) {
+				CEMain main = new CEMain(loginUser);
+				frame.dispose();
+			}
+		});
 		btnNewButton.setBounds(1122, 10, 60, 53);
 		panel.add(btnNewButton);
 
