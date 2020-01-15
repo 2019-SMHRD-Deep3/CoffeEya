@@ -47,7 +47,7 @@ public class CEJoin { // 사용자 등록
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(200, 200, 1200, 800);
+		frame.setBounds(150, 150, 1200, 800);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
