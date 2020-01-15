@@ -12,6 +12,8 @@ import controller.DetailManagementService;
 import controller.MemberManagementService;
 import model.Detail;
 import model.Member;
+import model.OrderingDAO;
+import model.ProductDAO;
 
 import java.awt.Font;
 import java.util.ArrayList;
@@ -101,14 +103,21 @@ public class CEAnalysis {
 		panel_1.add(scrollPane);
 
 		// 컬럼이름 복사, 데이터 복사
-		String[] columnNames = { "주문상세번호", "주문번호", "상품번호", "판매수량" };
+		String[] columnNames = {"주문 번호", "상품 이름", "단일 가격", "판매 수량","결제 수단","판매 사원","판매 날짜" };
 		ArrayList<Detail> list = service.detailLookup();
 
-		Object[][] data = new Object[list.size()][4];
+		Object[][] data = new Object[list.size()][7];
 
+		ProductDAO daoP = new ProductDAO();
+		OrderingDAO daoO = new OrderingDAO();
 		for (int i = 0; i < list.size(); i++) {
 			Detail d = list.get(i);
-			data[i] = new Object[] { d.getDE_NUM(), d.getOR_NUM(), d.getPRO_NUM(), d.getDE_AMOUNT() };
+			String PRO_NAME = daoP.getInfoProduct(d).getPRO_NAME();
+			int PRO_PRICE = daoP.getInfoProduct(d).getPRO_PRICE();
+			String OR_PAY = daoO.getInfoOrdering(d).getOR_PAY();
+			String MEM_ID = daoO.getInfoOrdering(d).getMEM_ID();
+			String OR_DATE = daoO.getInfoOrdering(d).getOR_DATE();
+			data[i] = new Object[] {d.getOR_NUM(), PRO_NAME, PRO_PRICE, d.getDE_AMOUNT(), OR_PAY, MEM_ID, OR_DATE };
 		}
 		table = new JTable(data, columnNames);
 		scrollPane.setViewportView(table);
