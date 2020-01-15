@@ -27,11 +27,9 @@ public class CEAnalysis {
 	private JFrame frame;
 	private JTextField textField;
 	private JTable table;
+	private Member loginUser;
 
-<<<<<<< HEAD
 
-=======
->>>>>>> branch 'master' of https://github.com/zz962123/CoffeEya.git
 	/**
 	 * Create the application.
 	 */

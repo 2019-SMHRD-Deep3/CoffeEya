@@ -77,7 +77,7 @@ public class CEMain {
 		btnNewButton_2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				CEAnalysis analysis = new CEAnalysis();
+				CEAnalysis analysis = new CEAnalysis(loginUser);
 				frame.dispose();
 			}
 		});
