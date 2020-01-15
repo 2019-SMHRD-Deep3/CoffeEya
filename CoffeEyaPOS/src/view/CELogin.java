@@ -38,6 +38,7 @@ public class CELogin {
 	private JButton btnNewButton_1;
 	private JPanel panel;
 
+
 	/**
 	 * Launch the application.
 	 */
@@ -86,12 +87,23 @@ public class CELogin {
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 
-		JLabel lblNewLabel = new JLabel("\uC544\uC774\uB514");
+
+		
+		
+		JLabel lblNewLabel = new JLabel("");
+		String imgPath1 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//man.png";
+		ImageIcon icon1 = new ImageIcon(imgPath1);
+		lblNewLabel.setIcon(icon1);
 		lblNewLabel.setBounds(229, 179, 190, 90);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(lblNewLabel);
 
-		JLabel lblNewLabel_1 = new JLabel("\uBE44\uBC00\uBC88\uD638");
+		JLabel lblNewLabel_1 = new JLabel("");
+		String imgPath2 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//pw.png";
+		ImageIcon icon2 = new ImageIcon(imgPath2);
+		lblNewLabel_1.setIcon(icon2);
+		
+		lblNewLabel_1.setFont(new Font("±¼¸²", Font.BOLD, 21));
 		lblNewLabel_1.setBounds(229, 291, 190, 90);
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(lblNewLabel_1);
@@ -150,5 +162,4 @@ public class CELogin {
 		panel_1.add(btnNewButton_1);
 
 	}
-
 }
