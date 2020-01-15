@@ -52,7 +52,7 @@ public class CEMain {
 		};
 		
 		
-		panel.setBounds(40, 40, 1100, 680);
+		panel.setBounds(0, 0, 1184, 761);
 		frame.getContentPane().add(panel);
 		panel.setLayout(new GridLayout(0, 2, 100, 100));
 		
