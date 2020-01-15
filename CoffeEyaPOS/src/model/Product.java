@@ -1,18 +1,22 @@
 package model;
 
 public class Product {
-	
+
 	private int PRO_NUM;
 	private String PRO_NAME;
 	private int PRO_PRICE;
-	
-	public Product(String PRO_NAME,  int PRO_PRICE) {
-		
+
+	public Product(int PRO_NUM) {
+		this.PRO_NUM = PRO_NUM;
+	}
+
+	public Product(String PRO_NAME, int PRO_PRICE) {
+
 		this.PRO_NAME = PRO_NAME;
 		this.PRO_PRICE = PRO_PRICE;
 	}
-	
-	public Product(int PRO_NUM, String PRO_NAME,  int PRO_PRICE) {
+
+	public Product(int PRO_NUM, String PRO_NAME, int PRO_PRICE) {
 		super();
 		this.PRO_NUM = PRO_NUM;
 		this.PRO_NAME = PRO_NAME;
@@ -43,6 +47,4 @@ public class Product {
 		this.PRO_PRICE = PRO_PRICE;
 	}
 
-
-	
 }

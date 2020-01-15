@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -163,18 +164,23 @@ public class CESale {
 		panel_9.add(panel_10);
 		panel_10.setLayout(new CardLayout(0, 0));
 
-		JButton btnNewButton_3 = new JButton("\uC544\uBA54\uB9AC\uCE74\uB178 3500\uC6D0");
-		btnNewButton_3.addMouseListener(new MouseAdapter() {
+		JButton americano = new JButton("\uC544\uBA54\uB9AC\uCE74\uB178 3500\uC6D0");
+		americano.addMouseListener(new MouseAdapter() {
 			// 아메리카노 클릭시, 주문표에 올라감
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
+				int infoNum = 1;
+				
+//				Product p = new Product(infoNum);
+				
+				
 			}
 		});
-		btnNewButton_3.addActionListener(new ActionListener() {
+		americano.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		panel_10.add(btnNewButton_3, "name_58620837806200");
+		panel_10.add(americano, "name_58620837806200");
 
 		JPanel panel_11 = new JPanel();
 		panel_11.setBounds(182, 10, 158, 89);
