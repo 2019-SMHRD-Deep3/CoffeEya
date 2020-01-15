@@ -15,7 +15,6 @@ public class MemberManagementService {
 			return false;
 		else
 			return true;
-
 	}
 
 	public Member memberLogin(Member m) {
@@ -25,5 +24,13 @@ public class MemberManagementService {
 
 	public ArrayList<Member> memberLookup(String loginId) {
 		return dao.selectAll(loginId);
+	}
+	
+	public boolean memberDelete(Member m) {
+		int rows = dao.delete(m);
+		if (rows == 0)
+			return false;
+		else
+			return true;
 	}
 }
