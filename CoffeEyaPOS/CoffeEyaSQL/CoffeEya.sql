@@ -12,10 +12,10 @@ drop table detail;
 --------------------------------------------------------
 
   CREATE TABLE "MEMBER" 
-   (	"MEM_ID" VARCHAR2(20 BYTE), 
-	"MEM_PW" VARCHAR2(20 BYTE), 
-	"MEM_NAME" VARCHAR2(20 BYTE), 
-	"MEM_PERM" VARCHAR2(20 BYTE)
+   (   "MEM_ID" VARCHAR2(40 BYTE), 
+   "MEM_PW" VARCHAR2(40 BYTE), 
+   "MEM_NAME" VARCHAR2(40 BYTE), 
+   "MEM_PERM" VARCHAR2(40 BYTE)
    ) ;
 REM INSERTING into MEMBER
 SET DEFINE OFF;
@@ -49,9 +49,9 @@ Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('1111','1111','1111
 --------------------------------------------------------
 
   CREATE TABLE "PRODUCT" 
-   (	"PRO_NUM" NUMBER(10,0), 
-	"PRO_NAME" VARCHAR2(20 BYTE), 
-	"PRO_PRICE" NUMBER(10,0)
+   (   "PRO_NUM" NUMBER(20,0), 
+   "PRO_NAME" VARCHAR2(40 BYTE), 
+   "PRO_PRICE" NUMBER(20,0)
    ) ;
 REM INSERTING into PRODUCT
 SET DEFINE OFF;
@@ -74,49 +74,15 @@ Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (16,'바닐라라떼',3500);
 Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (17,'아이스_바닐라라떼',3500);
 Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (18,'그린티라떼',3700);
 Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (19,'아이스_그린티라떼',3700);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (20,'오곡라떼',3700);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (21,'아이스_오곡라떼',3700);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (22,'쑥라떼',3700);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (23,'아이스_쑥라떼',3700);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (24,'고구마라떼',3700);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (25,'아이스_고구마라떼',3700);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (26,'딸기라떼',3700);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (27,'아이스_딸기라떼',3700);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (28,'쑥라떼',3700);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (29,'아이스_쑥라떼',3700);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (30,'레몬에이드',3700);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (31,'자몽에이드',3700);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (32,'딸기에이드',3700);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (33,'허브티',3000);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (34,'아이스_허브티',3000);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (35,'밀크티',3000);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (36,'아이스_밀크티',3000);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (37,'페퍼민트',3000);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (38,'아이스_페퍼민트',3000);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (39,'유자차',3000);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (40,'아이스_유자차',3000);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (41,'모과차',3000);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (42,'아이스_모과차',3000);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (43,'생강차',3000);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (44,'아이스_생강차',3000);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (45,'대추차',3000);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (46,'아이스_대추차',3000);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (47,'딸기요거트스무디',4000);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (48,'망고요거트스무디',4000);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (49,'블루베리요거트스무디',4000);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (50,'망고애플요거트스무디',4000);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (51,'바닐라쉐이크',4300);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (52,'초코쉐이크',4300);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (53,'블루베리쉐이크',4300);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (54,'딸기쉐이크',4300);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (55,'망고쉐이크',4300);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (56,'애플쉐이크',4300);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (57,'쿠키',2500);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (58,'마카롱',2500);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (59,'머핀',2500);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (60,'베이글',3000);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (61,'와플',3000);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (62,'조각케익',5000);
+Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (20,'고구마라떼',3700);
+Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (21,'아이스_고구마라떼',3700);
+Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (22,'딸기라떼',3700);
+Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (23,'아이스_딸기라떼',3700);
+Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (24,'쿠키',2500);
+Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (25,'마카롱',2500);
+Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (26,'머핀',2500);
+Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (27,'베이글',3000);
+Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (28,'조각케익',5000);
 
 --------------------------------------------------------
 --  DDL for Index MENU_PK
@@ -140,18 +106,22 @@ Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (62,'조각케익',5000);
 --------------------------------------------------------
 
   CREATE TABLE "ORDERING" 
-   (	"OR_NUM" NUMBER(10,0), 
-	"OR_DATE" DATE, 
-	"OR_PAY" VARCHAR2(20 BYTE), 
-	"OR_SUM" NUMBER(10,0), 
-	"MEM_ID" VARCHAR2(20 BYTE)
+   (   "OR_NUM" NUMBER(20,0), 
+   "OR_DATE" DATE, 
+   "OR_PAY" VARCHAR2(40 BYTE), 
+   "OR_SUM" NUMBER(20,0), 
+   "MEM_ID" VARCHAR2(40 BYTE)
    ) ;
 REM INSERTING into ORDERING
 SET DEFINE OFF;
 Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (1,to_date('20/01/01','RR/MM/DD'),'카드',6000,'곽창혁');
 Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (2,to_date('20/01/01','RR/MM/DD'),'카드',10000,'곽창혁');
 Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (3,to_date('20/01/02','RR/MM/DD'),'현금',9500,'노동경');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (4,to_date('20/01/02','RR/MM/DD'),'현금',8000,'노동경');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (4,to_date('20/01/02','RR/MM/DD'),'현금',18000,'김준형');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (5,to_date('20/01/04','RR/MM/DD'),'현금',22000,'김준형');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (6,to_date('20/01/04','RR/MM/DD'),'현금',22000,'김준형');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (7,to_date('20/01/05','RR/MM/DD'),'현금',18000,'김효진');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (8,to_date('20/01/06','RR/MM/DD'),'현금',4000,'김효진');
 --------------------------------------------------------
 --  DDL for Index ORDERING_PK
 --------------------------------------------------------
@@ -169,7 +139,7 @@ Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (4,to_date('20
 --------------------------------------------------------
 
   ALTER TABLE "ORDERING" ADD CONSTRAINT "ORDERING_NUMBER_FK" FOREIGN KEY ("MEM_ID")
-	  REFERENCES "MEMBER" ("MEM_ID") ENABLE;
+     REFERENCES "MEMBER" ("MEM_ID") ENABLE;
 
 
 
@@ -182,10 +152,10 @@ Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (4,to_date('20
 --------------------------------------------------------
 
   CREATE TABLE "DETAIL" 
-   (	"DE_NUM" NUMBER(10,0), 
-	"OR_NUM" NUMBER(10,0), 
-	"PRO_NUM" NUMBER(10,0), 
-	"DE_AMOUNT" NUMBER(10,0)
+   (   "DE_NUM" NUMBER(20,0), 
+   "OR_NUM" NUMBER(20,0), 
+   "PRO_NUM" NUMBER(20,0), 
+   "DE_AMOUNT" NUMBER(20,0)
    ) ;
 REM INSERTING into DETAIL
 SET DEFINE OFF;
@@ -194,9 +164,21 @@ Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (2,2,1,1);
 Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (3,2,2,1);
 Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (4,2,4,1);
 Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (5,3,2,2);
-Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (6,3,4,1);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (6,3,4,4);
 Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (7,4,3,1);
-Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (8,4,4,1);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (8,4,1,1);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (9,4,6,2);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (10,4,1,1);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (11,4,1,1);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (12,5,3,8);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (13,5,2,1);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (14,6,2,1);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (15,6,1,1);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (16,6,1,9);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (17,7,1,2);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (18,7,6,4);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (19,8,3,1);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (20,8,1,1);
 --------------------------------------------------------
 --  DDL for Index DETAIL_PK
 --------------------------------------------------------
@@ -214,9 +196,6 @@ Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (8,4,4,1);
 --------------------------------------------------------
 
   ALTER TABLE "DETAIL" ADD CONSTRAINT "DETAIL_ORDERING_FK" FOREIGN KEY ("OR_NUM")
-	  REFERENCES "ORDERING" ("OR_NUM") ENABLE;
+     REFERENCES "ORDERING" ("OR_NUM") ENABLE;
   ALTER TABLE "DETAIL" ADD CONSTRAINT "DETAIL_PRODUCT_FK" FOREIGN KEY ("PRO_NUM")
-	  REFERENCES "PRODUCT" ("PRO_NUM") ENABLE;
-
-  
-  
+     REFERENCES "PRODUCT" ("PRO_NUM") ENABLE;
