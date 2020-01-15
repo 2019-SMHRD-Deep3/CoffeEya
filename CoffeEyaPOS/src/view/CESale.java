@@ -2,10 +2,9 @@ package view;
 
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
@@ -13,7 +12,6 @@ import java.util.Arrays;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -24,8 +22,9 @@ import javax.swing.table.DefaultTableModel;
 import controller.ProductManagementService;
 import model.Member;
 import model.Product;
-import javax.swing.JScrollBar;
 import javax.swing.JList;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class CESale {
 
@@ -108,9 +107,22 @@ public class CESale {
 		panel_3.setLayout(new GridLayout(0, 2, 5, 5));
 
 		JButton btnNewButton_1 = new JButton("\uCE74\uB4DC");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 		panel_3.add(btnNewButton_1);
 
 		JButton btnNewButton_2 = new JButton("\uD604\uAE08");
+		btnNewButton_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		panel_3.add(btnNewButton_2);
 
 		JPanel panel_4 = new JPanel();
@@ -140,12 +152,6 @@ public class CESale {
 
 		// 컬럼이름 복사, 데이터 복사
 		String[] columnNames = { "상품명", "가격" };
-//		ArrayList<Product> list = pservice.productLookup();
-//		Object[][] data = new Object[list.size()][2];
-//		for (int i = 0; i < list.size(); i++) {
-//			Product p = list.get(i);
-//			data[i] = new Object[] { p.getPRO_NAME(), p.getPRO_PRICE() };
-//		}
 		defaultTableModel = new DefaultTableModel(null, columnNames);
 		table = new JTable(defaultTableModel);
 		scrollPane.setViewportView(table);
@@ -157,14 +163,24 @@ public class CESale {
 		JPanel panel_8 = new JPanel();
 		panel_8.setBounds(12, 276, 693, 87);
 		panel_2.add(panel_8);
-
-		JButton btnNewButton_3 = new JButton("New button");
-		panel_8.add(btnNewButton_3);
+		panel_8.setLayout(new CardLayout(0, 0));
 
 		JPanel panel_9 = new JPanel();
 		panel_9.setBounds(12, 373, 693, 292);
 		panel_2.add(panel_9);
-		panel_9.setLayout(new GridLayout(3, 4, 0, 0));
+		panel_9.setLayout(new GridLayout(0, 5, 0, 0));
+
+//		JButton btnNewButton_2 = new JButton("\uD604\uAE08");
+//		btnNewButton_2.addMouseListener(new MouseAdapter() {
+//			@Override
+//			public void mouseClicked(MouseEvent e) {
+//			}
+//		});
+//		btnNewButton_2.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) {
+//			}
+//		});
+//		panel_3.add(btnNewButton_2);
 
 		// 반복문으로 생성
 		ArrayList<Product> list = pservice.productLookup();
@@ -176,78 +192,21 @@ public class CESale {
 
 		JButton[] JButton10 = new JButton[data.length];
 		for (int i = 0; i < data.length; i++) {
+			final int j = i;
 			JButton10[i] = new JButton();
+			JButton10[i].setSize(130, 80);
 			panel_9.add(JButton10[i]);
 			JButton btnNewButton_4 = new JButton(Arrays.deepToString(data[i]) + "");
-			JButton10[i].add(btnNewButton_4, "name_61235236927400");
+			JButton10[i].add(btnNewButton_4);
 
+			JButton10[i].addMouseListener(new MouseAdapter() {
+				public void mouseClicked(MouseEvent e) {
+					Object[] row = new Object[2];
+					row[0] = data[j][0];
+					row[1] = data[j][1];
+					defaultTableModel.addRow(row);
+				}
+			});
 		}
-
-//		JPanel panel_10 = new JPanel();
-//		panel_10.setBounds(12, 10, 158, 89);
-//		panel_9.add(panel_10);
-//		panel_10.setLayout(new CardLayout(0, 0));
-//
-//		JButton americano = new JButton("\uC544\uBA54\uB9AC\uCE74\uB178 3000\uC6D0");
-//		americano.addMouseListener(new MouseAdapter() {
-//			// 아메리카노 클릭시, 주문표에 올라감
-//			@Override
-//			public void mouseClicked(MouseEvent arg0) {
-//				Object[] row = new Object[2];
-//				row[0] = "아메리카노";
-//				row[1] = 3500;
-//				defaultTableModel.addRow(row);
-//				totalMoney += 3500;
-//				
-//				
-//			}
-//		});
-//		americano.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent e) {
-//			}
-//		});
-//		panel_10.add(americano, "name_58620837806200");
-//
-//		JPanel panel_11 = new JPanel();
-//		panel_11.setBounds(182, 10, 158, 89);
-//		panel_9.add(panel_11);
-//		panel_11.setLayout(new CardLayout(0, 0));
-//
-//		JButton button = new JButton("\uC5D0\uC2A4\uD504\uB808\uC18C 2500\uC6D0");
-//		button.addMouseListener(new MouseAdapter() {
-//			// 에스프레소 클릭
-//			@Override
-//			public void mouseClicked(MouseEvent e) {
-//			}
-//		});
-//		panel_11.add(button, "name_61217660927000");
-//
-//		JPanel panel_12 = new JPanel();
-//		panel_12.setBounds(352, 10, 158, 89);
-//		panel_9.add(panel_12);
-//		panel_12.setLayout(new CardLayout(0, 0));
-//
-//		JButton btnNewButton_4 = new JButton("\uCE74\uD398\uB77C\uB5BC 3500\uC6D0");
-//		panel_12.add(btnNewButton_4, "name_61235236927400");
-//
-//		JPanel panel_13 = new JPanel();
-//		panel_13.setBounds(522, 10, 159, 89);
-//		panel_9.add(panel_13);
-//		panel_13.setLayout(new CardLayout(0, 0));
-//
-//		JButton button_1 = new JButton("\uCE74\uD398\uBAA8\uCE74 4500\uC6D0");
-//		panel_13.add(button_1, "name_61258732782000");
-//
-//		JPanel panel_14 = new JPanel();
-//		panel_14.setBounds(12, 109, 158, 89);
-//		panel_9.add(panel_14);
-//		panel_14.setLayout(new CardLayout(0, 0));
-//
-//		JButton btnNewButton_5 = new JButton("\uD654\uC774\uD2B8\uBAA8\uCE74 5500\uC6D0");
-//		panel_14.add(btnNewButton_5, "name_61331636810600");
-//		
-//		JList list = new JList();
-//		list.setBounds(261, 175, 1, 1);
-//		panel_9.add(list);
 	}
 }

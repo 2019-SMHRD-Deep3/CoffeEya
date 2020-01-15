@@ -20,8 +20,6 @@ import model.Member;
 import model.OrderingDAO;
 import model.ProductDAO;
 
-<<<<<<< HEAD
-=======
 import java.awt.Font;
 import java.awt.Graphics;
 import java.util.ArrayList;
@@ -36,7 +34,6 @@ import java.io.IOException;
 
 import javax.swing.JButton;
 
->>>>>>> branch 'master' of https://github.com/zz962123/CoffeEya.git
 public class CEAnalysis {
 	DetailManagementService service = new DetailManagementService();
 
