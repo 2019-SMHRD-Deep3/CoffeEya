@@ -2,40 +2,47 @@ package model;
 
 public class Product {
 	
-	private String MEM_NAME;
-	private int MEM_NUM;
-	private int MEM_PRICE;
+	private int PRO_NUM;
+	private String PRO_NAME;
+	private int PRO_PRICE;
 	
-	public Product(String MEM_NAME, int MEM_NUM, int MEM_PRICE) {
+	public Product(String PRO_NAME,  int PRO_PRICE) {
+		
+		this.PRO_NAME = PRO_NAME;
+		this.PRO_PRICE = PRO_PRICE;
+	}
+	
+	public Product(int PRO_NUM, String PRO_NAME,  int PRO_PRICE) {
 		super();
-		this.MEM_NAME = MEM_NAME;
-		this.MEM_NUM = MEM_NUM;
-		this.MEM_PRICE = MEM_PRICE;
+		this.PRO_NUM = PRO_NUM;
+		this.PRO_NAME = PRO_NAME;
+		this.PRO_PRICE = PRO_PRICE;
 	}
 
-	public String getMEM_NAME() {
-		return MEM_NAME;
+	public int getPRO_NUM() {
+		return PRO_NUM;
 	}
 
-	public int getMEM_NUM() {
-		return MEM_NUM;
+	public String getPRO_NAME() {
+		return PRO_NAME;
 	}
 
-	public int getMEM_PRICE() {
-		return MEM_PRICE;
+	public int getPRO_PRICE() {
+		return PRO_PRICE;
 	}
 
-	public void setMEM_NAME(String MEM_NAME) {
-		this.MEM_NAME = MEM_NAME;
+	public void setPRO_NUM(int PRO_NUM) {
+		this.PRO_NUM = PRO_NUM;
 	}
 
-	public void setMEM_NUM(int MEM_NUM) {
-		this.MEM_NUM = MEM_NUM;
+	public void setPRO_NAME(String PRO_NAME) {
+		this.PRO_NAME = PRO_NAME;
 	}
 
-	public void setMEM_PRICE(int MEM_PRICE) {
-		this.MEM_PRICE = MEM_PRICE;
+	public void setPRO_PRICE(int PRO_PRICE) {
+		this.PRO_PRICE = PRO_PRICE;
 	}
+
 
 	
 }

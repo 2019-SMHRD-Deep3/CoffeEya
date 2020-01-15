@@ -94,9 +94,22 @@ public class CEMain {
 		panel.add(btnNewButton_3);
 		
 		JButton btnNewButton_4 = new JButton("\uC124\uC815");
+		btnNewButton_4.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				CESet set = new CESet(loginUser);
+				frame.dispose();
+			}
+		});
 		panel.add(btnNewButton_4);
 		
-		JButton btnNewButton_5 = new JButton("\uC885\uB8CC");
+		JButton btnNewButton_5 = new JButton("\uB85C\uADF8\uC544\uC6C3");
+		btnNewButton_5.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				frame.dispose();
+			}
+		});
 		panel.add(btnNewButton_5);
 	}
 }

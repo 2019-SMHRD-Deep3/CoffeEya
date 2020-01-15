@@ -7,7 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class MemberDAO {
+public class OrderingDAO {
+
 
 	private String url = "jdbc:oracle:thin:@localhost:1521:xe";
 	private String user = "hr";
@@ -16,17 +17,18 @@ public class MemberDAO {
 	private PreparedStatement psmt = null;
 	private ResultSet rs = null;
 
-	public int insert(Member m) {
+	public int insert(Ordering o) {
 		int rows = 0;
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn = DriverManager.getConnection(url, user, password);
-			String sql = "INSERT INTO MEMBER VALUES (?,?,?,?)";
+			String sql = "INSERT INTO ORDERING VALUES (?,?,?,?,?)";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, m.getMEM_ID());
-			psmt.setString(2, m.getMEM_PW());
-			psmt.setString(3, m.getMEM_NAME());
-			psmt.setString(4, m.getMEM_PERM());
+			psmt.setInt(1, o.getOR_NUM());
+			psmt.setString(2, o.getOR_DATE());
+			psmt.setString(3, o.getOR_PAY());
+			psmt.setInt(4, o.getOR_SUM());
+			psmt.setString(5, o.getMEM_ID());
 
 			rows = psmt.executeUpdate();
 			if (rows == 0) {
@@ -51,26 +53,26 @@ public class MemberDAO {
 		return rows;
 	}
 
-	public Member selectOne(Member m) {
-		Member loginUser = null;
+	public Ordering getInfoOrdering(Detail d) {
+		Ordering infoOrdering = null;
 
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn = DriverManager.getConnection(url, user, password);
-			String sql = "SELECT * FROM MEMBER WHERE MEM_ID = ? AND MEM_PW =? ";
+			String sql = "SELECT * FROM ORDERING WHERE OR_NUM= ?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, m.getMEM_ID());
-			psmt.setString(2, m.getMEM_PW());
+			psmt.setInt(1, d.getOR_NUM());
+			
 			rs = psmt.executeQuery();
 
 			if (rs.next()) {
-				// 해당 ID와 PW를 가진 사람이 존재
+				int OR_NUM = rs.getInt("OR_NUM");
+				String OR_DATE = rs.getString("OR_DATE");
+				String OR_PAY = rs.getString("OR_PAY");
+				int OR_SUM = rs.getInt("OR_SUM");
 				String MEM_ID = rs.getString("MEM_ID");
-				String MEM_PW = rs.getString("MEM_PW");
-				String MEM_NAME = rs.getString("MEM_NAME");
-				String MEM_PERM = rs.getString("MEM_PERM");
 
-				loginUser = new Member(MEM_ID, MEM_PW, MEM_NAME, MEM_PERM);
+				infoOrdering = new Ordering(OR_NUM, OR_DATE, OR_PAY, OR_SUM, MEM_ID);
 			}
 
 		} catch (ClassNotFoundException e) {
@@ -93,27 +95,23 @@ public class MemberDAO {
 			}
 
 		}
-		return loginUser;
+		return infoOrdering;
 	}
 
-	public ArrayList<Member> selectAll(String loginId) {
-		ArrayList<Member> list = new ArrayList<>();
+	public ArrayList<Ordering> selectAll() {
+		ArrayList<Ordering> list = new ArrayList<>();
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn = DriverManager.getConnection(url, user, password);
-			String sql = "SELECT * FROM MEMBER WHERE MEM_ID != ?";
+			String sql = "SELECT * FROM ORDERING";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, loginId);
 			rs = psmt.executeQuery();
 
 			while (rs.next()) {
-				// 해당 ID와 PW를 가진 사람이 존재
-				String MEM_ID = rs.getString("MEM_ID");
-				String MEM_PW = rs.getString("MEM_PW");
-				String MEM_NAME = rs.getString("MEM_NAME");
-				String MEM_PERM = rs.getString("MEM_PERM");
+				int OR_NUM = rs.getInt("OR_NUM");
+				int OR_SUM = rs.getInt("OR_SUM");
 
-				list.add(new Member(MEM_ID, MEM_PW, MEM_NAME, MEM_PERM));
+				list.add(new Ordering(OR_NUM, OR_SUM));
 			}
 
 		} catch (ClassNotFoundException e) {
@@ -138,41 +136,5 @@ public class MemberDAO {
 		}
 		return list;
 	}
-	
-	public int delete(Member m) {
-		int rows = 0;
-		String url = "jdbc:oracle:thin:@localhost:1521:xe";
-		String user = "hr";
-		String password = "hr";
-		Connection conn = null;
-		PreparedStatement psmt = null;
-		
-		try { // try ~ catch ~ finally -> 예외처리
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			conn = DriverManager.getConnection(url, user, password);
-			String sql = "DELETE FROM MEMBER WHERE MEM_ID = ?";
-			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, m.getMEM_ID());
-			
-			rows = psmt.executeUpdate();
-			if (rows == 0) {
-				System.out.println("SQL문을 확인하세요.");
-			}
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				if (psmt != null)
-					psmt.close();
-				if (conn != null)
-					conn.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
-		return rows;
-	}
-	
+
 }

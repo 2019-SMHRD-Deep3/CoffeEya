@@ -7,6 +7,9 @@ public class Member {
 	private String MEM_NAME;
 	private String MEM_PERM;
 	
+	public Member(String MEM_ID) {
+		this.MEM_ID = MEM_ID;
+	}
 
 	public Member(String MEM_ID, String MEM_PW, String MEM_NAME, String MEM_PERM) {
 		this.MEM_ID = MEM_ID;

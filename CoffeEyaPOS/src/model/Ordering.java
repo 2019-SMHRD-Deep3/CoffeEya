@@ -2,21 +2,22 @@ package model;
 
 public class Ordering {
 	
-	private String MEM_ID;
-	private String OR_DATE;
 	private int OR_NUM;
+	private String OR_DATE;
 	private String OR_PAY;
 	private int OR_SUM;
+	private String MEM_ID;
 	
-	public Ordering(String MEM_ID, String OR_DATE, int OR_NUM, String OR_PAY, int OR_SUM) {
-		this.MEM_ID = MEM_ID;
-		this.OR_DATE = OR_DATE;
+	public Ordering(int OR_NUM, String OR_DATE, String OR_PAY, int OR_SUM, String MEM_ID) {
 		this.OR_NUM = OR_NUM;
+		this.OR_DATE = OR_DATE;
 		this.OR_PAY = OR_PAY;
 		this.OR_SUM = OR_SUM;
-		
-		
-		
+		this.MEM_ID = MEM_ID;
+
+	}
+
+	public Ordering(int oR_NUM2, int oR_SUM2) {
 	}
 
 	public void setMEM_ID(String MEM_ID) {
