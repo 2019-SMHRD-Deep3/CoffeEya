@@ -103,7 +103,7 @@ public class CEMain {
 		});
 		panel.add(btnNewButton_4);
 		
-		JButton btnNewButton_5 = new JButton("\uC885\uB8CC");
+		JButton btnNewButton_5 = new JButton("\uB85C\uADF8\uC544\uC6C3");
 		btnNewButton_5.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {

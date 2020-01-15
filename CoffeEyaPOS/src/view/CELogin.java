@@ -81,7 +81,7 @@ public class CELogin {
 				super.paintComponent(g);
 			}
 		};
-		
+
 		panel.setBounds(0, 0, 1200, 800);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);

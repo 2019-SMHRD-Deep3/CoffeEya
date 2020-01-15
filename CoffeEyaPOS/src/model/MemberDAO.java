@@ -138,4 +138,41 @@ public class MemberDAO {
 		}
 		return list;
 	}
+	
+	public int delete(Member m) {
+		int rows = 0;
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+		String user = "hr";
+		String password = "hr";
+		Connection conn = null;
+		PreparedStatement psmt = null;
+		
+		try { // try ~ catch ~ finally -> 예외처리
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			conn = DriverManager.getConnection(url, user, password);
+			String sql = "DELETE FROM MEMBER WHERE MEM_ID = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, m.getMEM_ID());
+			
+			rows = psmt.executeUpdate();
+			if (rows == 0) {
+				System.out.println("SQL문을 확인하세요.");
+			}
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (psmt != null)
+					psmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return rows;
+	}
+	
 }
