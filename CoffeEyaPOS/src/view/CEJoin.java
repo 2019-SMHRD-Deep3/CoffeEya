@@ -53,7 +53,11 @@ public class CEJoin {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+<<<<<<< HEAD
 		frame.setBounds(100, 100, 1200, 800);
+=======
+		frame.setBounds(150, 150, 1200, 800);
+>>>>>>> branch 'master' of https://github.com/zz962123/CoffeEya.git
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(new CardLayout(0, 0));
 		
