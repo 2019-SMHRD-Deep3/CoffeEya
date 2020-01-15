@@ -12,6 +12,8 @@ import controller.DetailManagementService;
 import controller.MemberManagementService;
 import model.Detail;
 import model.Member;
+import model.OrderingDAO;
+import model.ProductDAO;
 
 import java.awt.Font;
 import java.util.ArrayList;
@@ -28,7 +30,6 @@ public class CEAnalysis {
 	DetailManagementService service = new DetailManagementService();
 
 	private JFrame frame;
-	private JTextField textField;
 	private JTable table;
 	private Member loginUser;
 
@@ -45,6 +46,7 @@ public class CEAnalysis {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		int sum = 0;
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1200, 800);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -71,24 +73,34 @@ public class CEAnalysis {
 		panel.setBounds(12, 54, 1160, 95);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
+		
+				JLabel lblNewLabel_1 = new JLabel("\uAE08\uC77C \uD310\uB9E4\uB300\uAE08");
+				lblNewLabel_1.setBounds(12, 19, 195, 57);
+				panel.add(lblNewLabel_1);
+				lblNewLabel_1.setForeground(Color.WHITE);
+				lblNewLabel_1.setFont(new Font("굴림", Font.BOLD, 26));
+				lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 
 		JPanel panel_2 = new JPanel();
 		panel_2.setBackground(new Color(204, 153, 102));
-		panel_2.setBounds(12, 10, 238, 75);
+		panel_2.setBounds(12, 19, 195, 57);
 		panel.add(panel_2);
 		panel_2.setLayout(null);
+		
+		
+		ArrayList<Detail> listTemp = service.detailLookup();
 
-		JLabel lblNewLabel_1 = new JLabel("\uAE08\uC77C \uD310\uB9E4\uB300\uAE08");
-		lblNewLabel_1.setForeground(Color.WHITE);
-		lblNewLabel_1.setFont(new Font("굴림", Font.BOLD, 26));
-		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setBounds(12, 10, 214, 55);
-		panel_2.add(lblNewLabel_1);
-
-		textField = new JTextField();
-		textField.setBounds(262, 23, 886, 50);
-		panel.add(textField);
-		textField.setColumns(10);
+		ProductDAO daoSum = new ProductDAO();
+		for (int i = 0; i < listTemp.size(); i++) {
+			Detail d = listTemp.get(i);
+			int PRO_PRICE = daoSum.getInfoProduct(d).getPRO_PRICE();
+			sum += PRO_PRICE *d.getDE_AMOUNT();
+		}
+		JLabel lblNewLabel_2 = new JLabel(Integer.toString(sum) + " 원");
+		lblNewLabel_2.setForeground(Color.WHITE);
+		lblNewLabel_2.setFont(new Font("굴림", Font.BOLD, 26));
+		lblNewLabel_2.setBounds(249, 10, 273, 75);
+		panel.add(lblNewLabel_2);
 
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(Color.DARK_GRAY);
@@ -101,14 +113,21 @@ public class CEAnalysis {
 		panel_1.add(scrollPane);
 
 		// 컬럼이름 복사, 데이터 복사
-		String[] columnNames = { "주문상세번호", "주문번호", "상품번호", "판매수량" };
+		String[] columnNames = { "주문 번호", "상품 이름", "단일 가격", "판매 수량", "결제 수단", "판매 사원", "판매 날짜" };
 		ArrayList<Detail> list = service.detailLookup();
 
-		Object[][] data = new Object[list.size()][4];
-
+		Object[][] data = new Object[list.size()][7];
+		ProductDAO daoP = new ProductDAO();
+		OrderingDAO daoO = new OrderingDAO();
 		for (int i = 0; i < list.size(); i++) {
 			Detail d = list.get(i);
-			data[i] = new Object[] { d.getDE_NUM(), d.getOR_NUM(), d.getPRO_NUM(), d.getDE_AMOUNT() };
+			String PRO_NAME = daoP.getInfoProduct(d).getPRO_NAME();
+			int PRO_PRICE = daoP.getInfoProduct(d).getPRO_PRICE();
+			String OR_PAY = daoO.getInfoOrdering(d).getOR_PAY();
+			String MEM_ID = daoO.getInfoOrdering(d).getMEM_ID();
+			String OR_DATE = daoO.getInfoOrdering(d).getOR_DATE();
+			data[i] = new Object[] { d.getOR_NUM(), PRO_NAME, PRO_PRICE, d.getDE_AMOUNT(), OR_PAY, MEM_ID, OR_DATE };
+			sum += PRO_PRICE *d.getDE_AMOUNT();
 		}
 		table = new JTable(data, columnNames);
 		scrollPane.setViewportView(table);
