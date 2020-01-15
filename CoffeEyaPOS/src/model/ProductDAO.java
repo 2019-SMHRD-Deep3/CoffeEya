@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ProductDAO {
-
+	
 	private String url = "jdbc:oracle:thin:@localhost:1521:xe";
 	private String user = "hr";
 	private String password = "hr";
@@ -50,62 +50,22 @@ public class ProductDAO {
 		return rows;
 	}
 
-	public Product getInfoProduct(Detail d) {
-		Product infoProduct = null;
-
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			conn = DriverManager.getConnection(url, user, password);
-			String sql = "SELECT * FROM PRODUCT WHERE PRO_NUM= ?";
-			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1, d.getPRO_NUM());
-			rs = psmt.executeQuery();
-
-			if (rs.next()) {
-				int PRO_NUM = rs.getInt("PRO_NUM");
-				String PRO_NAME = rs.getString("PRO_NAME");
-				int PRO_PRICE = rs.getInt("PRO_PRICE");
-
-				infoProduct = new Product(PRO_NUM, PRO_NAME, PRO_PRICE);
-			}
-
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				if (rs != null) {
-					rs.close();
-				}
-				if (psmt != null) {
-					psmt.close();
-				}
-				if (conn != null) {
-					conn.close();
-				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-
-		}
-		return infoProduct;
-	}
-
-	public ArrayList<Product> selectAll() {
+	public ArrayList<Product> selectOne() {
 		ArrayList<Product> list = new ArrayList<>();
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn = DriverManager.getConnection(url, user, password);
-			String sql = "SELECT * FROM PRODUCT";
+			String sql = "SELECT * FROM PRODUCT WHERE PRO_NUM == ?";
 			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, 1);
 			rs = psmt.executeQuery();
 
 			while (rs.next()) {
+				// 해당 ID와 PW를 가진 사람이 존재
 				String PRO_NAME = rs.getString("PRO_NAME");
 				int PRO_PRICE = rs.getInt("PRO_PRICE");
 
-				list.add(new Product(PRO_NAME, PRO_PRICE));
+				list.add(new Product(PRO_NAME, PRO_PRICE ));
 			}
 
 		} catch (ClassNotFoundException e) {

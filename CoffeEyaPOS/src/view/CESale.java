@@ -135,9 +135,8 @@ public class CESale {
 		// 컬럼이름 복사, 데이터 복사
 		String[] columnNames = { "상품명", "가격" };
 		ArrayList<Product> list = pservice.productLookup();
-
+		
 		Object[][] data = new Object[list.size()][2];
-
 		for (int i = 0; i < list.size(); i++) {
 			Product p = list.get(i);
 			data[i] = new Object[] { p.getPRO_NAME(), p.getPRO_PRICE() };
@@ -170,9 +169,7 @@ public class CESale {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				int infoNum = 1;
-				
-//				Product p = new Product(infoNum);
-				
+				 = pro.getPRO_NAME();
 				
 			}
 		});
@@ -188,6 +185,12 @@ public class CESale {
 		panel_11.setLayout(new CardLayout(0, 0));
 
 		JButton button = new JButton("\uC5D0\uC2A4\uD504\uB808\uC18C 2500\uC6D0");
+		button.addMouseListener(new MouseAdapter() {
+			// 에스프레소 클릭
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
 		panel_11.add(button, "name_61217660927000");
 
 		JPanel panel_12 = new JPanel();

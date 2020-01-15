@@ -21,6 +21,6 @@ public class ProductManagementService {
 
 	public ArrayList<Product> productLookup() {
 		
-		return dao.selectAll();
+		return dao.selectOne();
 	}
 }
