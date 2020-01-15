@@ -59,6 +59,13 @@ public class CEMain {
 		panel.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("\uB9E4\uCD9C \uC870\uD68C");
+		btnNewButton_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				CEAnalysis analysis = new CEAnalysis(loginUser);
+				frame.dispose();
+			}
+		});
 		panel.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("\uC0AC\uC6A9\uC790");
