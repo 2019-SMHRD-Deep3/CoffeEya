@@ -132,6 +132,7 @@ public class CEJoin {
 				if (result) {
 					JOptionPane.showMessageDialog(frame,
 						    "회원 가입 성공");
+					CEMain main = new CEMain(loginUser);
 					frame.dispose(); // 화면 종료
 				} else{
 					JOptionPane.showMessageDialog(frame,

@@ -27,26 +27,12 @@ public class CEAnalysis {
 	private JTable table;
 
 	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					CEAnalysis window = new CEAnalysis();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
 	 * Create the application.
 	 */
-	public CEAnalysis() {
+	public CEAnalysis(Member loginUser) {
+		this.loginUser = loginUser;
 		initialize();
+		frame.setVisible(true);
 	}
 
 	/**
