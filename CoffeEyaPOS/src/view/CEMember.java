@@ -36,7 +36,7 @@ public class CEMember {
 		frame.getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(40, 40, 1100, 680);
+		panel.setBounds(40, 160, 1100, 540);
 		frame.getContentPane().add(panel);
 		panel.setLayout(new GridLayout(1, 0, 0, 0));
 		
@@ -45,21 +45,46 @@ public class CEMember {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				CEJoin join = new CEJoin(loginUser);
-				frame.dispose();
 			}
 		});
 		panel.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("\uC0AC\uC6A9\uC790 \uC815\uBCF4 \uC218\uC815");
+		JButton btnNewButton_1 = new JButton("\uC0AC\uC6A9\uC790 \uC815\uBCF4 \uC218\uC815 / \uC0AD\uC81C");
+		btnNewButton_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				CEMemModDel memmoddel = new CEMemModDel(loginUser);
+			}
+		});
 		panel.add(btnNewButton_1);
 		
-		JButton btnNewButton_2 = new JButton("\uC0AC\uC6A9\uC790 \uC815\uBCF4 \uC0AD\uC81C");
+		JButton btnNewButton_2 = new JButton("\uCD9C\uD1F4\uADFC \uAD00\uB9AC");
+		btnNewButton_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				CECommute commute = new CECommute(loginUser);
+			}
+		});
 		panel.add(btnNewButton_2);
 		
-		JButton btnNewButton_3 = new JButton("\uCD9C\uD1F4\uADFC\uAD00\uB9AC");
+		JButton btnNewButton_3 = new JButton("\uC0AC\uC6A9\uC790 \uBCC0\uACBD");
+		btnNewButton_3.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				CEChange change = new CEChange(loginUser);
+			}
+		});
 		panel.add(btnNewButton_3);
 		
-		JButton btnNewButton_4 = new JButton("\uC0AC\uC6A9\uC790 \uBCC0\uACBD");
-		panel.add(btnNewButton_4);
+		JButton btnNewButton_4 = new JButton("\uB3CC\uC544\uAC00\uAE30");
+		btnNewButton_4.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				CEMain main = new CEMain(loginUser);
+				frame.dispose();
+			}
+		});
+		btnNewButton_4.setBounds(1075, 10, 100, 100);
+		frame.getContentPane().add(btnNewButton_4);
 	}
 }

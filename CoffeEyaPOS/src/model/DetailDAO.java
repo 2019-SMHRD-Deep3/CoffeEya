@@ -20,7 +20,7 @@ public class DetailDAO {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn = DriverManager.getConnection(url, user, password);
-			String sql = "INSERT INTO MEMBER VALUES (?,?,?,?)";
+			String sql = "INSERT INTO DETAIL VALUES (?,?,?,?)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, d.getDE_NUM());
 			psmt.setInt(2, d.getOR_NUM());

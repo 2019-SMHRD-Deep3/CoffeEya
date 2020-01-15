@@ -20,6 +20,9 @@ import javax.swing.JTextField;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.ImageIcon;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JButton;
 
 public class CEAnalysis {
 	DetailManagementService service = new DetailManagementService();
@@ -28,7 +31,6 @@ public class CEAnalysis {
 	private JTextField textField;
 	private JTable table;
 	private Member loginUser;
-
 
 	/**
 	 * Create the application.
@@ -53,6 +55,17 @@ public class CEAnalysis {
 		lblNewLabel.setBounds(0, 0, 1184, 761);
 		frame.getContentPane().add(lblNewLabel);
 
+		JButton btnNewButton = new JButton("");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				CEMain main = new CEMain(loginUser);
+				frame.dispose();
+			}
+		});
+		btnNewButton.setBounds(1138, 10, 34, 34);
+		frame.getContentPane().add(btnNewButton);
+
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.DARK_GRAY);
 		panel.setBounds(12, 54, 1160, 95);
@@ -65,9 +78,9 @@ public class CEAnalysis {
 		panel.add(panel_2);
 		panel_2.setLayout(null);
 
-		JLabel lblNewLabel_1 = new JLabel("\uAE08\uC77C \uCD1D \uD310\uB9E4\uB7C9");
+		JLabel lblNewLabel_1 = new JLabel("\uAE08\uC77C \uD310\uB9E4\uB300\uAE08");
 		lblNewLabel_1.setForeground(Color.WHITE);
-		lblNewLabel_1.setFont(new Font("굴림", Font.BOLD, 24));
+		lblNewLabel_1.setFont(new Font("굴림", Font.BOLD, 26));
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setBounds(12, 10, 214, 55);
 		panel_2.add(lblNewLabel_1);
@@ -79,12 +92,12 @@ public class CEAnalysis {
 
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(Color.DARK_GRAY);
-		panel_1.setBounds(12, 159, 1160, 310);
+		panel_1.setBounds(12, 159, 1160, 253);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
 
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(12, 10, 1136, 290);
+		scrollPane.setBounds(12, 10, 1136, 233);
 		panel_1.add(scrollPane);
 
 		// 컬럼이름 복사, 데이터 복사
@@ -99,15 +112,25 @@ public class CEAnalysis {
 		}
 		table = new JTable(data, columnNames);
 		scrollPane.setViewportView(table);
-		
-		JLabel lblNewLabel_2 = new JLabel("");
-		lblNewLabel_2.setBounds(1138, 10, 34, 34);
-		frame.getContentPane().add(lblNewLabel_2);
-		
-		JLabel lblNewLabel_3 = new JLabel("");
-		lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\SM018\\Desktop\\\uB4A4\uB85C\uAC00\uAE30\uC544\uC774\uCF58.png"));
-		lblNewLabel_3.setBounds(1138, 10, 34, 34);
-		frame.getContentPane().add(lblNewLabel_3);
+
+		JPanel panel_3 = new JPanel();
+		panel_3.setBackground(Color.DARK_GRAY);
+		panel_3.setBounds(12, 422, 1160, 329);
+		frame.getContentPane().add(panel_3);
+		panel_3.setLayout(null);
+
+		JLabel lblNewLabel_4 = new JLabel("\uAE30\uC900\uBCC4 \uD310\uB9E4\uBE44\uC728");
+		lblNewLabel_4.setForeground(Color.WHITE);
+		lblNewLabel_4.setFont(new Font("굴림", Font.BOLD, 16));
+		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_4.setBounds(12, 10, 148, 40);
+		panel_3.add(lblNewLabel_4);
+
+		JPanel panel_4 = new JPanel();
+		panel_4.setBackground(new Color(204, 153, 102));
+		panel_4.setBounds(12, 10, 148, 40);
+		panel_3.add(panel_4);
+		panel_4.setLayout(null);
 
 	}
 }

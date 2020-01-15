@@ -143,12 +143,12 @@ public class CELogin {
 		btnNewButton_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+//				JOptionPane.showConfirmDialog(frame, "종료하시겠습니까?", "프로그램 종료", JOptionPane.YES_NO_OPTION);
 				frame.dispose();
 			}
 		});
 		panel_1.add(btnNewButton_1);
 
 	}
-
 
 }
