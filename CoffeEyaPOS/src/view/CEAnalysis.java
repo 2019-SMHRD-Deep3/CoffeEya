@@ -155,6 +155,12 @@ public class CEAnalysis {
 		panel_4.setBounds(12, 10, 148, 40);
 		panel_3.add(panel_4);
 		panel_4.setLayout(null);
+		
+		JPanel panel_6 = new JPanel();
+		
+		
+		panel_6.setBounds(70, 71, 200, 200);
+		panel_3.add(panel_6);
 
 	}
 }
