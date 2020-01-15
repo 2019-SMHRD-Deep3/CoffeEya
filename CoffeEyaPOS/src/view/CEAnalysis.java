@@ -28,11 +28,15 @@ public class CEAnalysis {
 	private JTextField textField;
 	private JTable table;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/zz962123/CoffeEya.git
 	/**
 	 * Create the application.
 	 */
-	public CEAnalysis() {
+	public CEAnalysis(Member loginUser) {
+		this.loginUser = loginUser;
 		initialize();
 		frame.setVisible(true);
 	}

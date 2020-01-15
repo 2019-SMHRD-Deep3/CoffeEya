@@ -1,5 +1,6 @@
 package view;
 
+import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,6 +8,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -30,6 +32,7 @@ public class CEJoin {
 	private JTextField textField_2;
 	private JTextField textField_3;
 	private Member loginUser;
+	
 
 	/**
 	 * Create the application.
@@ -129,6 +132,7 @@ public class CEJoin {
 				if (result) {
 					JOptionPane.showMessageDialog(frame,
 						    "회원 가입 성공");
+					CEMain main = new CEMain(loginUser);
 					frame.dispose(); // 화면 종료
 				} else{
 					JOptionPane.showMessageDialog(frame,
@@ -147,5 +151,6 @@ public class CEJoin {
 		});
 		panel_2.add(btnNewButton_1);
 		
+	
 	}
 }
