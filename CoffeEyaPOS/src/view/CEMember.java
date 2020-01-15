@@ -50,16 +50,34 @@ public class CEMember {
 		});
 		panel.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("\uC0AC\uC6A9\uC790 \uC815\uBCF4 \uC218\uC815");
+		JButton btnNewButton_1 = new JButton("\uC0AC\uC6A9\uC790 \uC815\uBCF4 \uC218\uC815 / \uC0AD\uC81C");
+		btnNewButton_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				CEMemModDel memmoddel = new CEMemModDel(loginUser);
+				frame.dispose();
+			}
+		});
 		panel.add(btnNewButton_1);
 		
-		JButton btnNewButton_2 = new JButton("\uC0AC\uC6A9\uC790 \uC815\uBCF4 \uC0AD\uC81C");
+		JButton btnNewButton_2 = new JButton("\uCD9C\uD1F4\uADFC \uAD00\uB9AC");
+		btnNewButton_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				CECommute commute = new CECommute(loginUser);
+				frame.dispose();
+			}
+		});
 		panel.add(btnNewButton_2);
 		
-		JButton btnNewButton_3 = new JButton("\uCD9C\uD1F4\uADFC\uAD00\uB9AC");
+		JButton btnNewButton_3 = new JButton("\uC0AC\uC6A9\uC790 \uBCC0\uACBD");
+		btnNewButton_3.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				CEChange change = new CEChange(loginUser);
+				frame.dispose();
+			}
+		});
 		panel.add(btnNewButton_3);
-		
-		JButton btnNewButton_4 = new JButton("\uC0AC\uC6A9\uC790 \uBCC0\uACBD");
-		panel.add(btnNewButton_4);
 	}
 }

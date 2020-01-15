@@ -74,6 +74,13 @@ public class CEMain {
 		panel.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("\uB9E4\uCD9C \uC870\uD68C");
+		btnNewButton_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				CEAnalysis analysis = new CEAnalysis(loginUser);
+				frame.dispose();
+			}
+		});
 		panel.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("\uC0AC\uC6A9\uC790");
@@ -87,9 +94,22 @@ public class CEMain {
 		panel.add(btnNewButton_3);
 		
 		JButton btnNewButton_4 = new JButton("\uC124\uC815");
+		btnNewButton_4.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				CESet set = new CESet(loginUser);
+				frame.dispose();
+			}
+		});
 		panel.add(btnNewButton_4);
 		
 		JButton btnNewButton_5 = new JButton("\uC885\uB8CC");
+		btnNewButton_5.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				frame.dispose();
+			}
+		});
 		panel.add(btnNewButton_5);
 	}
 }
