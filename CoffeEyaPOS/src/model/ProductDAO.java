@@ -100,10 +100,11 @@ public class ProductDAO {
 			rs = psmt.executeQuery();
 
 			while (rs.next()) {
+				int PRO_NUM = rs.getInt("PRO_NUM");
 				String PRO_NAME = rs.getString("PRO_NAME");
 				int PRO_PRICE = rs.getInt("PRO_PRICE");
 
-				list.add(new Product(PRO_NAME, PRO_PRICE));
+				list.add(new Product(PRO_NUM, PRO_NAME, PRO_PRICE));
 			}
 
 		} catch (ClassNotFoundException e) {

@@ -61,7 +61,6 @@ public class DetailDAO {
 			rs = psmt.executeQuery();
 
 			while (rs.next()) {
-				// 해당 ID와 PW를 가진 사람이 존재
 				int DE_NUM = rs.getInt("DE_NUM");
 				int OR_NUM = rs.getInt("OR_NUM");
 				int PRO_NUM = rs.getInt("PRO_NUM");
