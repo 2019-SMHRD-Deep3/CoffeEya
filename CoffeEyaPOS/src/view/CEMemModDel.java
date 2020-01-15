@@ -24,6 +24,7 @@ public class CEMemModDel { // 사용자 정보 수정 / 삭제
 	private JFrame frame;
 	private Member loginUser;
 	private JTextField textField;
+	private JTextField textField_1;
 
 
 	/**
@@ -40,7 +41,7 @@ public class CEMemModDel { // 사용자 정보 수정 / 삭제
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(200, 200, 1200, 800);
+		frame.setBounds(150, 150, 1200, 800);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -84,5 +85,38 @@ public class CEMemModDel { // 사용자 정보 수정 / 삭제
 			}
 		});
 		panel.add(btnNewButton_1);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(12, 198, 1160, 251);
+		frame.getContentPane().add(panel_1);
+		panel_1.setLayout(new GridLayout(1, 0, 0, 0));
+		
+		JLabel lblNewLabel_1 = new JLabel("\uC218\uC815\uD560 \uC544\uC774\uB514");
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_1.add(lblNewLabel_1);
+		
+		textField_1 = new JTextField();
+		panel_1.add(textField_1);
+		textField_1.setColumns(10);
+		
+		JButton button = new JButton("\uC218\uC815");
+		button.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				String infoId = textField_1.getText();
+				
+				Member m = new Member(infoId);
+				Member selectUser = service.memberSelect(m);
+				if (selectUser == null) {
+					JOptionPane.showMessageDialog(frame, "해당 아이디가 존재하지 않습니다.");
+				} else {
+					JOptionPane.showMessageDialog(frame, "수정화면으로 넘어갑니다.");
+					CEModify modify = new CEModify(selectUser);
+					frame.dispose();
+				}
+
+			}
+		});
+		panel_1.add(button);
 	}
 }

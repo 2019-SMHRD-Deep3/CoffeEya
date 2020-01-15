@@ -28,7 +28,7 @@ public class CECommute { // 출퇴근 관리
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(200, 200, 1200, 800);
+		frame.setBounds(150, 150, 1200, 800);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		

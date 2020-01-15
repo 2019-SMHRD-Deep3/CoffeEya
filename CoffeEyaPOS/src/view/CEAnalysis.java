@@ -20,10 +20,29 @@ import model.Member;
 import model.OrderingDAO;
 import model.ProductDAO;
 
+<<<<<<< HEAD
+=======
+import java.awt.Font;
+import java.awt.Graphics;
+import java.util.ArrayList;
+
+import javax.swing.JTextField;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.ImageIcon;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.io.IOException;
+
+import javax.swing.JButton;
+
+>>>>>>> branch 'master' of https://github.com/zz962123/CoffeEya.git
 public class CEAnalysis {
 	DetailManagementService service = new DetailManagementService();
 
 	private JFrame frame;
+	private JPanel panel;
+	private JPanel panel_5;
 	private JTable table;
 	private Member loginUser;
 
@@ -62,7 +81,7 @@ public class CEAnalysis {
 		btnNewButton.setBounds(1138, 10, 34, 34);
 		frame.getContentPane().add(btnNewButton);
 
-		JPanel panel = new JPanel();
+		panel = new JPanel();
 		panel.setBackground(Color.DARK_GRAY);
 		panel.setBounds(12, 54, 1160, 95);
 		frame.getContentPane().add(panel);
@@ -126,7 +145,7 @@ public class CEAnalysis {
 		table = new JTable(data, columnNames);
 		scrollPane.setViewportView(table);
 
-		JPanel panel_3 = new JPanel();
+		JPanel panel_3 = new JPanel();		
 		panel_3.setBackground(Color.DARK_GRAY);
 		panel_3.setBounds(12, 422, 1160, 329);
 		frame.getContentPane().add(panel_3);
@@ -144,6 +163,12 @@ public class CEAnalysis {
 		panel_4.setBounds(12, 10, 148, 40);
 		panel_3.add(panel_4);
 		panel_4.setLayout(null);
+		
+		JPanel panel_6 = new JPanel();
+		
+		
+		panel_6.setBounds(70, 71, 200, 200);
+		panel_3.add(panel_6);
 
 	}
 }

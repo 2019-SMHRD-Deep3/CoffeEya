@@ -33,4 +33,19 @@ public class MemberManagementService {
 		else
 			return true;
 	}
+	
+	public Member memberSelect(Member m) {
+		Member selectUser = dao.selectId(m);
+		return selectUser;
+	}
+	
+	public boolean memberModify(Member m) {
+		int rows = dao.update(m);
+		if (rows == 0) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+	
 }
