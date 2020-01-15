@@ -7,7 +7,7 @@ import model.Product;
 import model.ProductDAO;
 
 public class ProductManagementService {
-	
+
 	private ProductDAO dao = new ProductDAO();
 
 	public boolean productJoin(Product p) {
@@ -20,7 +20,12 @@ public class ProductManagementService {
 	}
 
 	public ArrayList<Product> productLookup() {
-		
+
+		return dao.selectAll();
+	}
+
+	public ArrayList<Product> productPickup() {
+
 		return dao.selectOne();
 	}
 }

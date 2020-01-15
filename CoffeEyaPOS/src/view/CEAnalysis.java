@@ -1,30 +1,24 @@
 package view;
 
-import java.awt.EventQueue;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import java.awt.Color;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.SwingConstants;
 
 import controller.DetailManagementService;
-import controller.MemberManagementService;
 import model.Detail;
 import model.Member;
 import model.OrderingDAO;
 import model.ProductDAO;
-
-import java.awt.Font;
-import java.util.ArrayList;
-
-import javax.swing.JTextField;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.ImageIcon;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import javax.swing.JButton;
 
 public class CEAnalysis {
 	DetailManagementService service = new DetailManagementService();
