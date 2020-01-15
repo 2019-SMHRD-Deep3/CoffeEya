@@ -20,12 +20,10 @@ import javax.swing.JTextField;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.ImageIcon;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
 public class CEAnalysis {
 	DetailManagementService service = new DetailManagementService();
-	private Member loginUser;
+
 	private JFrame frame;
 	private JTextField textField;
 	private JTable table;
@@ -34,8 +32,7 @@ public class CEAnalysis {
 	/**
 	 * Create the application.
 	 */
-	public CEAnalysis(Member loginUser) {
-		this.loginUser = loginUser;
+	public CEAnalysis() {
 		initialize();
 		frame.setVisible(true);
 	}
@@ -50,13 +47,6 @@ public class CEAnalysis {
 		frame.getContentPane().setLayout(null);
 
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				CEMain main = new CEMain(loginUser);
-				frame.dispose();
-			}
-		});
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setBounds(0, 0, 1184, 761);
 		frame.getContentPane().add(lblNewLabel);
