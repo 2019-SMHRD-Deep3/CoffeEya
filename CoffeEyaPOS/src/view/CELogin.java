@@ -162,5 +162,4 @@ public class CELogin {
 		panel_1.add(btnNewButton_1);
 
 	}
-
 }
