@@ -42,6 +42,15 @@ public class CESet {
 		});
 		btnNewButton.setBounds(1075, 10, 100, 100);
 		frame.getContentPane().add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("\uC0C1\uD488 \uC124\uC815");
+		btnNewButton_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				CESetProduct setProduct = new CESetProduct(loginUser);
+			}
+		});
+		btnNewButton_1.setBounds(12, 10, 262, 100);
+		frame.getContentPane().add(btnNewButton_1);
 	}
-
 }
