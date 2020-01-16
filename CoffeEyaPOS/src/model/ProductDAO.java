@@ -23,14 +23,11 @@ public class ProductDAO {
 			conn = DriverManager.getConnection(url, user, password);
 			String sql = "INSERT INTO PRODUCT VALUES (?,?,?)";
 			psmt = conn.prepareStatement(sql);
-			psmt.setInt(2, p.getPRO_NUM());
-			psmt.setString(1, p.getPRO_NAME());
+			psmt.setInt(1, p.getPRO_NUM());
+			psmt.setString(2, p.getPRO_NAME());
 			psmt.setInt(3, p.getPRO_PRICE());
 
 			rows = psmt.executeUpdate();
-			if (rows == 0) {
-				System.out.println("SQL문을 확인하세요");
-			}
 
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
@@ -170,6 +167,83 @@ public class ProductDAO {
 
 		}
 		return infoProduct;
+	}
+	
+	public int delete(Product p) {
+		int rows = 0;
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+		String user = "hr";
+		String password = "hr";
+		Connection conn = null;
+		PreparedStatement psmt = null;
+		
+		try { // try ~ catch ~ finally -> 예외처리
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			conn = DriverManager.getConnection(url, user, password);
+			String sql = "DELETE FROM PRODUCT WHERE PRO_NUM = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, p.getPRO_NUM());
+			
+			rows = psmt.executeUpdate();
+
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (psmt != null)
+					psmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return rows;
+	}
+	
+	public Product selectNum (Product p) {
+		Product selectProduct = null;
+
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			conn = DriverManager.getConnection(url, user, password);
+			String sql = "SELECT * FROM Product WHERE PRO_NUM = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, p.getPRO_NUM());
+			rs = psmt.executeQuery();
+
+			if (rs.next()) {
+				// 해당 ID와 PW를 가진 사람이 존재
+				int PRO_NUM = rs.getInt("PRO_NUM");
+				String PRO_NAME = rs.getString("PRO_NAME");
+				int PRO_PRICE = rs.getInt("PRO_PRICE");
+
+				selectProduct = new Product(PRO_NUM, PRO_NAME, PRO_PRICE);
+			}
+
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (psmt != null) {
+					psmt.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+		}
+		return selectProduct;
 	}
 
 }

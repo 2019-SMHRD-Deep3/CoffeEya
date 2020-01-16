@@ -18,14 +18,28 @@ public class ProductManagementService {
 			return true;
 
 	}
+	
+	public ArrayList<Product> productPickup() {
+		
+		return dao.selectOne();
+	}
 
 	public ArrayList<Product> productLookup() {
 
 		return dao.selectAll();
 	}
-
-	public ArrayList<Product> productPickup() {
-
-		return dao.selectOne();
+	
+	public boolean productDelete(Product p) {
+		int rows = dao.delete(p);
+		if (rows == 0)
+			return false;
+		else
+			return true;
 	}
+	
+	public Product productSelect(Product p) {
+		Product selectProduct = dao.selectNum(p);
+		return selectProduct;
+	}
+	
 }
