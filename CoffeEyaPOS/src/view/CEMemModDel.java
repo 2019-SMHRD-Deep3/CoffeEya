@@ -111,7 +111,7 @@ public class CEMemModDel { // 사용자 정보 수정 / 삭제
 					JOptionPane.showMessageDialog(frame, "해당 아이디가 존재하지 않습니다.");
 				} else {
 					JOptionPane.showMessageDialog(frame, "수정화면으로 넘어갑니다.");
-					CEModify modify = new CEModify(selectUser);
+					CEMemModify modify = new CEMemModify(selectUser);
 					frame.dispose();
 				}
 

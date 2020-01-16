@@ -18,7 +18,7 @@ import model.Member;
 
 import javax.swing.JRadioButton;
 
-public class CEModify {
+public class CEMemModify {
 	
 	MemberManagementService service = new MemberManagementService();
 
@@ -31,7 +31,7 @@ public class CEModify {
 	/**
 	 * Create the application.
 	 */
-	public CEModify(Member selectUser) {
+	public CEMemModify(Member selectUser) {
 		this.selectUser = selectUser;
 		initialize();
 		frame.setVisible(true);

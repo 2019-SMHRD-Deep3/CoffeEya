@@ -9,7 +9,7 @@ import javax.swing.JFrame;
 
 import model.Member;
 
-public class CEChange { // 사용자 변경
+public class CEMemCommute { // 출퇴근 관리
 
 	private JFrame frame;
 	private Member loginUser;
@@ -17,7 +17,7 @@ public class CEChange { // 사용자 변경
 	/**
 	 * Create the application.
 	 */
-	public CEChange(Member loginUser) {
+	public CEMemCommute(Member loginUser) {
 		this.loginUser = loginUser;
 		initialize();
 		frame.setVisible(true);
