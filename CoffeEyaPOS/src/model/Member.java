@@ -7,6 +7,10 @@ public class Member {
 	private String MEM_NAME;
 	private String MEM_PERM;
 	
+	public Member() {
+		
+	}
+	
 	public Member(String MEM_ID) {
 		this.MEM_ID = MEM_ID;
 	}

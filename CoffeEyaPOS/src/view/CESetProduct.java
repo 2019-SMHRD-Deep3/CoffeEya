@@ -201,7 +201,6 @@ public class CESetProduct {
 		String[] columnNames = { "상품 번호", "상품 이름", "상품 가격" };
 		ArrayList<Product> list = service.productLookup();
 		Object[][] data = new Object[list.size()][3];
-		ProductDAO daoP = new ProductDAO();
 		Product p = new Product();
 		for (int i = 0; i < list.size(); i++) {
 			p = list.get(i);

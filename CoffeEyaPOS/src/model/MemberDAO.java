@@ -93,14 +93,13 @@ public class MemberDAO {
 		return loginUser;
 	}
 
-	public ArrayList<Member> selectAll(String loginId) {
+	public ArrayList<Member> selectAll() {
 		ArrayList<Member> list = new ArrayList<>();
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn = DriverManager.getConnection(url, user, password);
-			String sql = "SELECT * FROM MEMBER WHERE MEM_ID != ?";
+			String sql = "SELECT * FROM MEMBER order by MEM_ID";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, loginId);
 			rs = psmt.executeQuery();
 
 			while (rs.next()) {

@@ -22,8 +22,8 @@ public class MemberManagementService {
 		return loginUser;
 	}
 
-	public ArrayList<Member> memberLookup(String loginId) {
-		return dao.selectAll(loginId);
+	public ArrayList<Member> memberLookup() {
+		return dao.selectAll();
 	}
 	
 	public boolean memberDelete(Member m) {
