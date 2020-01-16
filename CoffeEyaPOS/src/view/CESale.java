@@ -25,6 +25,7 @@ import model.Product;
 import javax.swing.JList;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JTabbedPane;
 
 public class CESale {
 
@@ -128,7 +129,10 @@ public class CESale {
 		JPanel panel_4 = new JPanel();
 		panel_4.setBounds(12, 10, 417, 238);
 		panel_1.add(panel_4);
-		panel_4.setLayout(null);
+		panel_4.setLayout(new CardLayout(0, 0));
+		
+		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		panel_4.add(tabbedPane, "name_142568054808900");
 
 		JPanel panel_2 = new JPanel();
 		panel_2.setBackground(Color.WHITE);
@@ -155,6 +159,7 @@ public class CESale {
 		defaultTableModel = new DefaultTableModel(null, columnNames);
 		table = new JTable(defaultTableModel);
 		scrollPane.setViewportView(table);
+		System.out.println("zz");
 
 		JPanel panel_7 = new JPanel();
 		panel_7.setBounds(487, 10, 194, 219);
@@ -193,11 +198,8 @@ public class CESale {
 		JButton[] JButton10 = new JButton[data.length];
 		for (int i = 0; i < data.length; i++) {
 			final int j = i;
-			JButton10[i] = new JButton();
-			JButton10[i].setSize(130, 80);
+			JButton10[i] = new JButton(Arrays.deepToString(data[i]) + "");
 			panel_9.add(JButton10[i]);
-			JButton btnNewButton_4 = new JButton(Arrays.deepToString(data[i]) + "");
-			JButton10[i].add(btnNewButton_4);
 
 			JButton10[i].addMouseListener(new MouseAdapter() {
 				public void mouseClicked(MouseEvent e) {
