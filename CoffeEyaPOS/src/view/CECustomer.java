@@ -44,7 +44,7 @@ public class CECustomer {
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				CEMemJoin join = new CEMemJoin(loginUser);
+				CECusJoin cusjoin = new CECusJoin(loginUser);
 			}
 		});
 		panel.add(btnNewButton);
