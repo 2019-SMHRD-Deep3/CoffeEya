@@ -44,7 +44,7 @@ public class CEMember {
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				CEJoin join = new CEJoin(loginUser);
+				CEMemJoin join = new CEMemJoin(loginUser);
 			}
 		});
 		panel.add(btnNewButton);
@@ -62,7 +62,7 @@ public class CEMember {
 		btnNewButton_2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				CECommute commute = new CECommute(loginUser);
+				CEMemCommute commute = new CEMemCommute(loginUser);
 			}
 		});
 		panel.add(btnNewButton_2);
@@ -71,7 +71,7 @@ public class CEMember {
 		btnNewButton_3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				CEChange change = new CEChange(loginUser);
+				CEMemChange change = new CEMemChange(loginUser);
 			}
 		});
 		panel.add(btnNewButton_3);

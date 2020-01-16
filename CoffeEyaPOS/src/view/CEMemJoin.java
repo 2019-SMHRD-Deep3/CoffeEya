@@ -26,7 +26,7 @@ import java.awt.SystemColor;
 import java.awt.Color;
 import java.awt.Font;
 
-public class CEJoin {
+public class CEMemJoin {
 	
 	MemberManagementService service = new MemberManagementService();
 	
@@ -42,7 +42,7 @@ public class CEJoin {
 	/**
 	 * Create the application.
 	 */
-	public CEJoin(Member loginUser) {
+	public CEMemJoin(Member loginUser) {
 		this.loginUser = loginUser;
 		initialize();
 		frame.setVisible(true);
