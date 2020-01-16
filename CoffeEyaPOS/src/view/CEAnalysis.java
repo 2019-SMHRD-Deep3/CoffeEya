@@ -45,8 +45,16 @@ public class CEAnalysis {
 
 	private JFrame frame;
 	private JPanel panel;
-	private JPanel panel_5;
+	private JPanel panel_1;
+	private JPanel panel_2;
+	private JPanel panel_3;
 	private JTable table;
+	private JLabel lblNewLabel;
+	private JLabel lblNewLabel_1;
+	private JLabel lblNewLabel_2;
+	private JLabel lblNewLabel_3;
+	private JButton btnNewButton;
+	private JScrollPane scrollPane;
 	private Member loginUser;
 
 	/**
@@ -68,12 +76,12 @@ public class CEAnalysis {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
-		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel = new JLabel("");
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setBounds(0, 0, 1184, 761);
 		frame.getContentPane().add(lblNewLabel);
 
-		JButton btnNewButton = new JButton("");
+		btnNewButton = new JButton("");
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -90,64 +98,62 @@ public class CEAnalysis {
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 
-		JLabel lblNewLabel_1 = new JLabel("\uAE08\uC77C \uD310\uB9E4\uB300\uAE08");
+		lblNewLabel_1 = new JLabel("\uAE08\uC77C \uD310\uB9E4\uB300\uAE08");
 		lblNewLabel_1.setBounds(12, 19, 195, 57);
 		panel.add(lblNewLabel_1);
 		lblNewLabel_1.setForeground(Color.WHITE);
 		lblNewLabel_1.setFont(new Font("굴림", Font.BOLD, 26));
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 
-		JPanel panel_2 = new JPanel();
+		panel_2 = new JPanel();
 		panel_2.setBackground(new Color(204, 153, 102));
 		panel_2.setBounds(12, 19, 195, 57);
 		panel.add(panel_2);
 		panel_2.setLayout(null);
 
 		ArrayList<Detail> listTemp = service.detailLookup();
-
 		ProductDAO daoSum = new ProductDAO();
+		Detail d = new Detail();
 		for (int i = 0; i < listTemp.size(); i++) {
-			Detail d = listTemp.get(i);
+			d = listTemp.get(i);
 			int PRO_PRICE = daoSum.getInfoProduct(d).getPRO_PRICE();
 			sum += PRO_PRICE * d.getDE_AMOUNT();
 		}
-		JLabel lblNewLabel_2 = new JLabel(Integer.toString(sum) + " 원");
+		lblNewLabel_2 = new JLabel(Integer.toString(sum) + " 원");
 		lblNewLabel_2.setForeground(Color.WHITE);
 		lblNewLabel_2.setFont(new Font("굴림", Font.BOLD, 26));
 		lblNewLabel_2.setBounds(249, 10, 273, 75);
 		panel.add(lblNewLabel_2);
 
-		JPanel panel_1 = new JPanel();
+		panel_1 = new JPanel();
 		panel_1.setBackground(Color.DARK_GRAY);
 		panel_1.setBounds(12, 159, 594, 592);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
 
-		JScrollPane scrollPane = new JScrollPane();
+		scrollPane = new JScrollPane();
 		scrollPane.setBounds(28, 23, 536, 542);
 		panel_1.add(scrollPane);
 
 		// 컬럼이름 복사, 데이터 복사
 		String[] columnNames = { "주문 번호", "상품 이름", "단일 가격", "판매 수량", "결제 수단", "판매 사원", "판매 날짜" };
 		ArrayList<Detail> list = service.detailLookup();
-
 		Object[][] data = new Object[list.size()][7];
 		ProductDAO daoP = new ProductDAO();
 		OrderingDAO daoO = new OrderingDAO();
 		for (int i = 0; i < list.size(); i++) {
-			Detail d = list.get(i);
+			d = list.get(i);
 			String PRO_NAME = daoP.getInfoProduct(d).getPRO_NAME();
 			int PRO_PRICE = daoP.getInfoProduct(d).getPRO_PRICE();
 			String OR_PAY = daoO.getInfoOrdering(d).getOR_PAY();
 			String MEM_ID = daoO.getInfoOrdering(d).getMEM_ID();
 			String OR_DATE = daoO.getInfoOrdering(d).getOR_DATE();
 			data[i] = new Object[] { d.getOR_NUM(), PRO_NAME, PRO_PRICE, d.getDE_AMOUNT(), OR_PAY, MEM_ID, OR_DATE };
-			sum += PRO_PRICE * d.getDE_AMOUNT();
 		}
 		table = new JTable(data, columnNames);
 		scrollPane.setViewportView(table);
 
-		JPanel panel_3 = new JPanel();
+		panel_3 = new JPanel();
 		panel_3.setBackground(Color.DARK_GRAY);
 		panel_3.setBounds(618, 159, 554, 592);
 		frame.getContentPane().add(panel_3);
@@ -155,10 +161,9 @@ public class CEAnalysis {
 
 		ArrayList<Detail> listCnt = service.detailLookup();
 		ArrayList<Product> ProductCnt = serviceP.productLookup();
-
 		int[] dataCnt = new int[ProductCnt.size()];
 		for (int i = 0; i < listCnt.size(); i++) {
-			Detail d = listCnt.get(i);
+			d = listCnt.get(i);
 			for (int j = 0; j < ProductCnt.size(); j++) {
 
 				if (d.getPRO_NUM() == j + 1) {
@@ -193,7 +198,7 @@ public class CEAnalysis {
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
-		JLabel lblNewLabel_3 = new JLabel("");
+		lblNewLabel_3 = new JLabel("");
 
 		String imgPathChart = this.getClass().getResource(".").getPath()
 				+ "..//..//CoffeEyaIMG//Sample_Chart_300_DPI.png";
