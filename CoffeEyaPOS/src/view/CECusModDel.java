@@ -53,22 +53,22 @@ public class CECusModDel {
 		frame.getContentPane().add(btnNewButton);
 
 		JPanel panel = new JPanel();
-		panel.setBounds(305, 182, 569, 100);
+		panel.setBounds(305, 324, 569, 78);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 		
 				textField = new JTextField();
-				textField.setBounds(124, 31, 288, 40);
+				textField.setBounds(124, 17, 288, 40);
 				panel.add(textField);
 				textField.setColumns(10);
 
 		JLabel lblNewLabel = new JLabel("\uC0AD\uC81C\uD560 \uC544\uC774\uB514");
-		lblNewLabel.setBounds(12, 24, 100, 53);
+		lblNewLabel.setBounds(12, 10, 100, 53);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(lblNewLabel);
 
 		JButton button = new JButton("\uC0AD\uC81C");
-		button.setBounds(449, 27, 100, 47);
+		button.setBounds(447, 15, 88, 43);
 		button.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -85,44 +85,43 @@ public class CECusModDel {
 			}
 		});
 		panel.add(button);
-
+		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(305, 325, 569, 86);
+		panel_1.setBounds(305, 438, 569, 78);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
 		
-				textField_1 = new JTextField();
-				textField_1.setBounds(122, 20, 289, 42);
-				panel_1.add(textField_1);
-				textField_1.setColumns(10);
-
-		JLabel lblNewLabel_1 = new JLabel("\uC218\uC815\uD560 \uC544\uC774\uB514");
-		lblNewLabel_1.setBounds(12, 10, 97, 61);
-		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		panel_1.add(lblNewLabel_1);
-		panel_1.add(textField_1);
-
-		JButton button_1 = new JButton("\uC218\uC815");
-		button_1.setBounds(452, 10, 91, 51);
-		button_1.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				String infoId = textField_1.getText();
+				JLabel lblNewLabel_1 = new JLabel("\uC218\uC815\uD560 \uC544\uC774\uB514");
+				lblNewLabel_1.setBounds(12, 10, 97, 61);
+				panel_1.add(lblNewLabel_1);
+				lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 				
-				Customer c = new Customer(infoId);
-				Customer selectCustomer = service.getInfoCustomer(c);
+						textField_1 = new JTextField();
+						textField_1.setBounds(121, 20, 289, 42);
+						panel_1.add(textField_1);
+						textField_1.setColumns(10);
+						
+								JButton button_1 = new JButton("\uC218\uC815");
+								button_1.setBounds(447, 15, 91, 51);
+								panel_1.add(button_1);
+								button_1.addMouseListener(new MouseAdapter() {
+									@Override
+									public void mouseClicked(MouseEvent arg0) {
+										String CUS_NUMBER = textField_1.getText();
+										
+										Customer c = new Customer(CUS_NUMBER);
+										Customer selectCustomer2 = service.getInfoCustomer(c);
 
-				if (selectCustomer == null) {
-					JOptionPane.showMessageDialog(frame, "해당 아이디가 존재하지 않습니다.");
-				} else {
-					JOptionPane.showMessageDialog(frame, "수정화면으로 넘어갑니다.");
-					CECusModify modify = new CECusModify(selectCustomer);
-					frame.dispose();
-				}
+										if (selectCustomer2 == null) {
+											JOptionPane.showMessageDialog(frame, "해당 고객번호가 존재하지 않습니다.");
+										} else {
+											JOptionPane.showMessageDialog(frame, "수정화면으로 넘어갑니다.");
+											CECusModify modify = new CECusModify(selectCustomer2);
+											frame.dispose();
+										}
 
-			}
-		});
-		panel_1.add(button_1);
+									}
+								});
 
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);

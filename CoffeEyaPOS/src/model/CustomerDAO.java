@@ -173,7 +173,6 @@ public class CustomerDAO {
 	
 	public Customer selectCNumber (Customer c) {
 		Customer selectCustomer = null;
-
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn = DriverManager.getConnection(url, user, password);
@@ -183,15 +182,14 @@ public class CustomerDAO {
 			rs = psmt.executeQuery();
 
 			if (rs.next()) {
-				// 해당 ID와 PW를 가진 사람이 존재
 				String CUS_NUMBER = rs.getString("CUS_NUMBER");
 				String CUS_NAME = rs.getString("CUS_NAME");
-				String CUS_SEX = rs.getString("CUS_SEX");
 				String CUS_PHONE = rs.getString("CUS_PHONE");
+				String CUS_SEX = rs.getString("CUS_SEX");
 				String CUS_BIRTHDAY = rs.getString("CUS_BIRTHDAY");
 				int CUS_POINT = rs.getInt("CUS_POINT");
 
-				selectCustomer = new Customer(CUS_NUMBER, CUS_NAME, CUS_SEX, CUS_PHONE, CUS_BIRTHDAY, CUS_POINT);
+				selectCustomer = new Customer(CUS_NUMBER, CUS_NAME, CUS_PHONE, CUS_SEX, CUS_BIRTHDAY, CUS_POINT);
 			}
 
 		} catch (ClassNotFoundException e) {
