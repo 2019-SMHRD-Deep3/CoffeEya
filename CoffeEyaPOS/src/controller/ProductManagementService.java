@@ -37,9 +37,18 @@ public class ProductManagementService {
 			return true;
 	}
 	
-	public Product productSelect(Product p) {
-		Product selectProduct = dao.selectNum(p);
-		return selectProduct;
+//	public Product productSelect(Product p) {
+//		Product selectProduct = dao.selectNum(p);
+//		return selectProduct;
+//	}
+	
+	public boolean productModify(Product p) {
+		int rows = dao.update(p);
+		if (rows == 0) {
+			return false;
+		} else {
+			return true;
+		}
 	}
 	
 }

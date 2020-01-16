@@ -53,7 +53,25 @@ public class CESetProduct {
 		frame.setVisible(true);
 	}
 
-	public void initializeShow() {
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(150, 150, 1200, 800);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+		JButton btnNewButton = new JButton("\uB3CC\uC544\uAC00\uAE30");
+		btnNewButton.setBounds(1075, 10, 100, 100);
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				frame.dispose();
+			}
+		});
+		frame.getContentPane().setLayout(null);
+		frame.getContentPane().add(btnNewButton);
+
 		panel = new JPanel();
 		panel.setBounds(12, 10, 512, 350);
 		frame.getContentPane().add(panel);
@@ -77,28 +95,6 @@ public class CESetProduct {
 		}
 		table = new JTable(data, columnNames);
 		scrollPane.setViewportView(table);
-	}
-
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(150, 150, 1200, 800);
-		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
-		JButton btnNewButton = new JButton("\uB3CC\uC544\uAC00\uAE30");
-		btnNewButton.setBounds(1075, 10, 100, 100);
-		btnNewButton.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				frame.dispose();
-			}
-		});
-		frame.getContentPane().setLayout(null);
-		frame.getContentPane().add(btnNewButton);
-
-		initializeShow();
 
 		panel_1 = new JPanel();
 		panel_1.setBounds(536, 10, 527, 350);
@@ -150,7 +146,7 @@ public class CESetProduct {
 				} else {
 					JOptionPane.showMessageDialog(frame, "상품 추가 실패");
 				}
-				initializeShow();
+				
 			}
 		});
 		panel_2.add(btnNewButton_1);
@@ -168,8 +164,8 @@ public class CESetProduct {
 				p.setPRO_NAME(infoPName);
 				p.setPRO_PRICE(infoPPrice);
 				
-				Product selectProduct= service.productSelect(p);
-				if (selectProduct == null) {
+				boolean result = service.productModify(p);
+				if (result == false) {
 					JOptionPane.showMessageDialog(frame, "해당 상품이 존재하지 않습니다.");
 				} else {
 					JOptionPane.showMessageDialog(frame, "수정 완료");

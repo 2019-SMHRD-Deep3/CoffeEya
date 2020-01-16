@@ -19,6 +19,8 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 
+import org.omg.stub.java.rmi._Remote_Stub;
+
 import controller.ProductManagementService;
 import model.Member;
 import model.Product;
@@ -26,6 +28,7 @@ import javax.swing.JList;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTabbedPane;
+import javax.swing.JLabel;
 
 public class CESale {
 
@@ -36,14 +39,10 @@ public class CESale {
 	private JTextField txtCoffeeya;
 	private JTable table;
 	private DefaultTableModel defaultTableModel;
-	int totalMoney;
+	private JLabel lblNewLabel10;
+	private JButton delrow;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-
-	}
+	public int totalMoney = 0;
 
 	/**
 	 * Create the application.
@@ -121,8 +120,9 @@ public class CESale {
 			}
 		});
 		btnNewButton_2.addActionListener(new ActionListener() {
+			// 결제 클릭시 이벤트
 			public void actionPerformed(ActionEvent e) {
-				System.out.println(totalMoney);
+
 			}
 		});
 		panel_3.add(btnNewButton_2);
@@ -130,10 +130,19 @@ public class CESale {
 		JPanel panel_4 = new JPanel();
 		panel_4.setBounds(12, 10, 417, 238);
 		panel_1.add(panel_4);
-		panel_4.setLayout(new CardLayout(0, 0));
-		
-		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-		panel_4.add(tabbedPane, "name_142568054808900");
+		panel_4.setLayout(null);
+
+		JPanel panel_10 = new JPanel();
+		panel_10.setBackground(Color.WHITE);
+		panel_10.setBounds(12, 10, 393, 142);
+		panel_4.add(panel_10);
+		panel_10.setLayout(null);
+
+		lblNewLabel10 = new JLabel(totalMoney + " 원");
+		lblNewLabel10.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel10.setBounds(154, 10, 227, 55);
+		panel_10.add(lblNewLabel10);
+
 		// 합계구하기
 
 		JPanel panel_2 = new JPanel();
@@ -165,6 +174,18 @@ public class CESale {
 		JPanel panel_7 = new JPanel();
 		panel_7.setBounds(487, 10, 194, 219);
 		panel_5.add(panel_7);
+		panel_7.setLayout(null);
+
+		// 주문 삭제버튼
+		delrow = new JButton("\uC0AD\uC81C");
+		delrow.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				delrow();
+			}
+		});
+		delrow.setBounds(47, 30, 97, 23);
+		panel_7.add(delrow);
 
 		JPanel panel_8 = new JPanel();
 		panel_8.setBounds(12, 276, 693, 87);
@@ -186,19 +207,33 @@ public class CESale {
 
 		JButton[] JButton10 = new JButton[data.length];
 		for (int i = 0; i < data.length; i++) {
-			final int j = i;
 			JButton10[i] = new JButton(Arrays.deepToString(data[i]) + "");
 			panel_9.add(JButton10[i]);
+		}
 
+		for (int i = 0; i < data.length; i++) {
+			final int jnum = i;
 			JButton10[i].addMouseListener(new MouseAdapter() {
 				public void mouseClicked(MouseEvent e) {
 					Object[] row = new Object[2];
-					row[0] = data[j][0];
-					row[1] = data[j][1];
+					row[0] = data[jnum][0];
+					row[1] = data[jnum][1];
 					defaultTableModel.addRow(row);
-					totalMoney += (int)row[1];
+					totalMoney += (int) row[1];
+					lblNewLabel10.setText(totalMoney + " 원");
 				}
 			});
 		}
+	}
+
+	private void delrow() {
+		int row = table.getSelectedRow();
+		if (row < 0)
+			return;
+		DefaultTableModel model = (DefaultTableModel) table.getModel();
+		int val = (int) table.getValueAt(row,1);
+		model.removeRow(row);
+		totalMoney -= val;
+		lblNewLabel10.setText(totalMoney + " 원");
 	}
 }
