@@ -50,6 +50,86 @@ public class ProductDAO {
 		return rows;
 	}
 
+	public ArrayList<Product> selectOne() {
+		ArrayList<Product> list = new ArrayList<>();
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			conn = DriverManager.getConnection(url, user, password);
+			String sql = "SELECT * FROM PRODUCT WHERE PRO_NUM == ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, 1);
+			rs = psmt.executeQuery();
+
+			while (rs.next()) {
+				String PRO_NAME = rs.getString("PRO_NAME");
+				int PRO_PRICE = rs.getInt("PRO_PRICE");
+
+				list.add(new Product(PRO_NAME, PRO_PRICE));
+			}
+
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (psmt != null) {
+					psmt.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+		}
+		return list;
+	}
+	
+	public ArrayList<Product> selectAll() {
+		ArrayList<Product> list = new ArrayList<>();
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			conn = DriverManager.getConnection(url, user, password);
+			String sql = "SELECT * FROM PRODUCT";
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+
+			while (rs.next()) {
+				int PRO_NUM = rs.getInt("PRO_NUM");
+				String PRO_NAME = rs.getString("PRO_NAME");
+				int PRO_PRICE = rs.getInt("PRO_PRICE");
+
+				list.add(new Product(PRO_NUM, PRO_NAME, PRO_PRICE));
+			}
+
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (psmt != null) {
+					psmt.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+		}
+		return list;
+	}
+
 	public Product getInfoProduct(Detail d) {
 		Product infoProduct = null;
 
@@ -90,45 +170,6 @@ public class ProductDAO {
 
 		}
 		return infoProduct;
-	}
-
-	public ArrayList<Product> selectAll() {
-		ArrayList<Product> list = new ArrayList<>();
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			conn = DriverManager.getConnection(url, user, password);
-			String sql = "SELECT * FROM PRODUCT";
-			psmt = conn.prepareStatement(sql);
-			rs = psmt.executeQuery();
-
-			while (rs.next()) {
-				String PRO_NAME = rs.getString("PRO_NAME");
-				int PRO_PRICE = rs.getInt("PRO_PRICE");
-
-				list.add(new Product(PRO_NAME, PRO_PRICE));
-			}
-
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				if (rs != null) {
-					rs.close();
-				}
-				if (psmt != null) {
-					psmt.close();
-				}
-				if (conn != null) {
-					conn.close();
-				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-
-		}
-		return list;
 	}
 
 }
