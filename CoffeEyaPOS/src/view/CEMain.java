@@ -16,12 +16,19 @@ import model.Member;
 import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.awt.Color;
+import javax.swing.JLabel;
 
 public class CEMain {
 
 	private JFrame frame;
 	private Member loginUser;
 	private JPanel panel;
+	private JPanel panel_1;
+	private JPanel panel_2;
+	private JPanel panel_4;
+	private JPanel panel_5;
+	private JPanel panel_6;
+	private JPanel panel_3;
 
 	/**
 	 * Create the application.
@@ -55,101 +62,140 @@ public class CEMain {
 
 		panel.setBounds(0, 0, 1184, 761);
 		frame.getContentPane().add(panel);
-		panel.setLayout(new GridLayout(2, 2, 100, 100));
-
-		JButton btnNewButton = new JButton("\uC601\uC5C5\uB4F1\uB85D");
-
-		btnNewButton.setBackground(new Color(139, 69, 19));
-		btnNewButton.setForeground(new Color(250, 235, 215));
-		btnNewButton.setFont(new Font("CookieRun Regular", Font.PLAIN, 25));
 
 		String imgPath1 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//edit.png";
 		ImageIcon icon1 = new ImageIcon(imgPath1);
-		btnNewButton.setIcon(icon1);
-
-		btnNewButton.addMouseListener(new MouseAdapter() {
+		panel.setLayout(null);
+		
+		panel_1 = new JPanel(){
+			@Override
+			protected void paintComponent(Graphics g) {
+				g.drawImage(icon1.getImage(), 0, 0, panel_1.getWidth(), panel_1.getHeight(), null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
+		
+		panel_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				CESale sale = new CESale(loginUser);
 				frame.dispose();
 			}
 		});
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		panel.add(btnNewButton);
-
-		JButton btnNewButton_1 = new JButton("");
+		panel_1.setBounds(69, 75, 262, 217);
+		panel.add(panel_1);
+		panel_1.setLayout(null);
 
 		String imgPath2 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//final.png";
 		ImageIcon icon2 = new ImageIcon(imgPath2);
-		btnNewButton_1.setIcon(icon2);
-
-		panel.add(btnNewButton_1);
-
-		JButton btnNewButton_2 = new JButton("");
-		String imgPath3 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//view.png";
-		ImageIcon icon3 = new ImageIcon(imgPath3);
-		btnNewButton_2.setIcon(icon3);
-
-		btnNewButton_2.addMouseListener(new MouseAdapter() {
+		
+		panel_2 = new JPanel() {
+			protected void paintComponent(Graphics g) {
+				g.drawImage(icon2.getImage(), 0, 0, panel_2.getWidth(), panel_2.getHeight(), null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
+		panel_2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				CEAnalysis analysis = new CEAnalysis(loginUser);
-				frame.dispose();
+				
 			}
 		});
-		panel.add(btnNewButton_2);
+		panel_2.setLayout(null);
+		panel_2.setBounds(470, 75, 262, 217);
+		panel.add(panel_2);
 
-		JButton btnNewButton_3 = new JButton("");
 		String imgPath4 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//user.png";
 		ImageIcon icon4 = new ImageIcon(imgPath4);
-		btnNewButton_3.setIcon(icon4);
-
-		btnNewButton_3.addMouseListener(new MouseAdapter() {
+		
+		panel_4 = new JPanel() {
+			protected void paintComponent(Graphics g) {
+				g.drawImage(icon4.getImage(), 0, 0, panel_4.getWidth(), panel_4.getHeight(), null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
+		panel_4.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				CEMember member = new CEMember(loginUser);
 				frame.dispose();
 			}
 		});
-		panel.add(btnNewButton_3);
-
-		JButton btnNewButton_4 = new JButton("");
-		String imgPath5 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//settings.png";
-		ImageIcon icon5 = new ImageIcon(imgPath5);
-		btnNewButton_4.setIcon(icon5);
-
-		btnNewButton_4.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		
+		String imgPath3 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//view.png";
+		ImageIcon icon3 = new ImageIcon(imgPath3);
+		
+		panel_3 = new JPanel() {
+			protected void paintComponent(Graphics g) {
+				g.drawImage(icon3.getImage(), 0, 0, panel_3.getWidth(), panel_3.getHeight(), null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
+		panel_3.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				CEAnalysis analysis = new CEAnalysis(loginUser);
+				frame.dispose();
 			}
 		});
-		btnNewButton_4.addMouseListener(new MouseAdapter() {
+		panel_3.setLayout(null);
+		panel_3.setBounds(854, 75, 262, 217);
+		panel.add(panel_3);
+		panel_4.setBounds(69, 451, 262, 217);
+		panel.add(panel_4);
+		panel_4.setLayout(null);
+		
+		String imgPath5 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//settings.png";
+		ImageIcon icon5 = new ImageIcon(imgPath5);
+		
+		panel_5 = new JPanel() {
+			protected void paintComponent(Graphics g) {
+				g.drawImage(icon5.getImage(), 0, 0, panel_5.getWidth(), panel_5.getHeight(), null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
+		panel_5.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				CESet set = new CESet(loginUser);
 				frame.dispose();
 			}
 		});
-		panel.add(btnNewButton_4);
-
-		JButton btnNewButton_5 = new JButton("");
-		String imgPath6 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//out.png";
+		panel_5.setLayout(null);
+		panel_5.setBounds(470, 451, 262, 217);
+		panel.add(panel_5);
+		
+		
+		String imgPath6 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//client.png";
 		ImageIcon icon6 = new ImageIcon(imgPath6);
-		btnNewButton_5.setIcon(icon6);
 
-		btnNewButton_5.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		
+		panel_6 = new JPanel() {
+			protected void paintComponent(Graphics g) {
+				g.drawImage(icon6.getImage(), 0, 0, panel_6.getWidth(), panel_6.getHeight(), null);
+				setOpaque(false);
+				super.paintComponent(g);
 			}
-		});
-		btnNewButton_5.addMouseListener(new MouseAdapter() {
+		};
+		panel_6.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				CECustomer customer = new CECustomer(loginUser);
 				frame.dispose();
 			}
 		});
-		panel.add(btnNewButton_5);
+		panel_6.setLayout(null);
+		panel_6.setBounds(854, 451, 262, 217);
+		panel.add(panel_6);
+		
+	
+		
+		
+
 	}
 }

@@ -81,20 +81,7 @@ public class CESetProduct {
 		scrollPane.setBounds(0, 0, 512, 350);
 		panel.add(scrollPane);
 
-		String[] columnNames = { "상품 번호", "상품 이름", "상품 가격" };
-		ArrayList<Product> list = service.productLookup();
-		Object[][] data = new Object[list.size()][3];
-		ProductDAO daoP = new ProductDAO();
-		Product p = new Product();
-		for (int i = 0; i < list.size(); i++) {
-			p = list.get(i);
-			int PRO_NUM = p.getPRO_NUM();
-			String PRO_NAME = p.getPRO_NAME();
-			int PRO_PRICE = p.getPRO_PRICE();
-			data[i] = new Object[] { PRO_NUM, PRO_NAME, PRO_PRICE };
-		}
-		table = new JTable(data, columnNames);
-		scrollPane.setViewportView(table);
+		productAll();
 
 		panel_1 = new JPanel();
 		panel_1.setBounds(536, 10, 527, 350);
@@ -143,6 +130,7 @@ public class CESetProduct {
 				boolean result = service.productJoin(p);
 				if (result) {
 					JOptionPane.showMessageDialog(frame, "상품 추가 성공");
+					productAll();
 				} else {
 					JOptionPane.showMessageDialog(frame, "상품 추가 실패");
 				}
@@ -169,6 +157,7 @@ public class CESetProduct {
 					JOptionPane.showMessageDialog(frame, "해당 상품이 존재하지 않습니다.");
 				} else {
 					JOptionPane.showMessageDialog(frame, "수정 완료");
+					productAll();
 				}
 			}
 		});
@@ -186,6 +175,7 @@ public class CESetProduct {
 
 				if (result) {
 					JOptionPane.showMessageDialog(frame, "삭제 성공");
+					productAll();
 				} else {
 					JOptionPane.showMessageDialog(frame, "삭제 실패");
 				}
@@ -193,5 +183,22 @@ public class CESetProduct {
 		});
 		panel_2.add(btnNewButton_3);
 
+	}
+
+	private void productAll() {
+		String[] columnNames = { "상품 번호", "상품 이름", "상품 가격" };
+		ArrayList<Product> list = service.productLookup();
+		Object[][] data = new Object[list.size()][3];
+		ProductDAO daoP = new ProductDAO();
+		Product p = new Product();
+		for (int i = 0; i < list.size(); i++) {
+			p = list.get(i);
+			int PRO_NUM = p.getPRO_NUM();
+			String PRO_NAME = p.getPRO_NAME();
+			int PRO_PRICE = p.getPRO_PRICE();
+			data[i] = new Object[] { PRO_NUM, PRO_NAME, PRO_PRICE };
+		}
+		table = new JTable(data, columnNames);
+		scrollPane.setViewportView(table);
 	}
 }
