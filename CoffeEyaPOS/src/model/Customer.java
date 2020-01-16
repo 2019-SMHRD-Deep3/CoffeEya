@@ -27,6 +27,10 @@ public class Customer {
 		this.CUS_POINT = CUS_POINT;
 	}
 
+	public Customer(int infoId) {
+		CUS_NUMBER = infoId;
+	}
+
 	public int getCUS_NUMBER() {
 		return CUS_NUMBER;
 	}

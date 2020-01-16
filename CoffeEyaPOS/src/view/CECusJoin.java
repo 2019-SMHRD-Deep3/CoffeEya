@@ -162,7 +162,7 @@ public class CECusJoin {
 		panel_1.add(rdbtnNewRadioButton);
 		
 		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("\uC5EC\uC790");
-		rdbtnNewRadioButton_1.setBounds(172, 27, 49, 23);
+		rdbtnNewRadioButton_1.setBounds(164, 22, 75, 33);
 		panel_1.add(rdbtnNewRadioButton_1);
 		
 		JPanel panel_2 = new JPanel();

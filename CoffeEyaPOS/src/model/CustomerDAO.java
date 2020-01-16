@@ -55,9 +55,9 @@ public class CustomerDAO {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn = DriverManager.getConnection(url, user, password);
-			String sql = "SELECT * FROM CUSTOMER WHERE CUS_NAME = ?";
+			String sql = "SELECT * FROM CUSTOMER WHERE CUS_NUMBER = ?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, c.getCUS_NAME());
+			psmt.setInt(1, c.getCUS_NUMBER());
 			rs = psmt.executeQuery();
 
 			if (rs.next()) {
