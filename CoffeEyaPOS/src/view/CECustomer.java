@@ -54,6 +54,10 @@ public class CECustomer {
 		panel.add(btnNewButton);
 
 		JButton btnNewButton_1 = new JButton("\uACE0\uAC1D \uC218\uC815 / \uC0AD\uC81C");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 		btnNewButton_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -63,6 +67,10 @@ public class CECustomer {
 		panel.add(btnNewButton_1);
 
 		JButton btnNewButton_2 = new JButton("\uACE0\uAC1D \uC870\uD68C");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnNewButton_2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {

@@ -87,5 +87,7 @@ public class CEMember {
 		});
 		btnNewButton_4.setBounds(1075, 10, 100, 100);
 		frame.getContentPane().add(btnNewButton_4);
+		
+		
 	}
 }
