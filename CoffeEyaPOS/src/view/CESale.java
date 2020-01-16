@@ -36,7 +36,7 @@ public class CESale {
 	private JTextField txtCoffeeya;
 	private JTable table;
 	private DefaultTableModel defaultTableModel;
-	private int totalMoney;
+	int totalMoney;
 
 	/**
 	 * Launch the application.
@@ -122,6 +122,7 @@ public class CESale {
 		});
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				System.out.println(totalMoney);
 			}
 		});
 		panel_3.add(btnNewButton_2);
@@ -133,6 +134,7 @@ public class CESale {
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		panel_4.add(tabbedPane, "name_142568054808900");
+		// 합계구하기
 
 		JPanel panel_2 = new JPanel();
 		panel_2.setBackground(Color.WHITE);
@@ -159,7 +161,6 @@ public class CESale {
 		defaultTableModel = new DefaultTableModel(null, columnNames);
 		table = new JTable(defaultTableModel);
 		scrollPane.setViewportView(table);
-		System.out.println("zz");
 
 		JPanel panel_7 = new JPanel();
 		panel_7.setBounds(487, 10, 194, 219);
@@ -174,18 +175,6 @@ public class CESale {
 		panel_9.setBounds(12, 373, 693, 292);
 		panel_2.add(panel_9);
 		panel_9.setLayout(new GridLayout(0, 5, 0, 0));
-
-//		JButton btnNewButton_2 = new JButton("\uD604\uAE08");
-//		btnNewButton_2.addMouseListener(new MouseAdapter() {
-//			@Override
-//			public void mouseClicked(MouseEvent e) {
-//			}
-//		});
-//		btnNewButton_2.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent e) {
-//			}
-//		});
-//		panel_3.add(btnNewButton_2);
 
 		// 반복문으로 생성
 		ArrayList<Product> list = pservice.productLookup();
@@ -207,6 +196,7 @@ public class CESale {
 					row[0] = data[j][0];
 					row[1] = data[j][1];
 					defaultTableModel.addRow(row);
+					totalMoney += (int)row[1];
 				}
 			});
 		}
