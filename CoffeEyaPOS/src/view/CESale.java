@@ -187,6 +187,17 @@ public class CESale {
 		});
 		delrow.setBounds(47, 30, 97, 23);
 		panel_7.add(delrow);
+		
+		// 주문 정보 초기화
+		JButton btnNewButton_3 = new JButton("\uCD08\uAE30\uD654");
+		btnNewButton_3.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+			}
+		});
+		btnNewButton_3.setBounds(47, 155, 97, 23);
+		panel_7.add(btnNewButton_3);
 
 		JPanel panel_8 = new JPanel();
 		panel_8.setBounds(12, 276, 693, 87);
@@ -259,4 +270,5 @@ public class CESale {
 		totalMoney -= valprice;
 		lblNewLabel10.setText(totalMoney + " 원");
 	}
+	
 }
