@@ -1,43 +1,36 @@
 package view;
 
-import java.awt.EventQueue;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.io.IOException;
+import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import java.awt.Color;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.SwingConstants;
 
 import org.knowm.xchart.BitmapEncoder;
 import org.knowm.xchart.BitmapEncoder.BitmapFormat;
 import org.knowm.xchart.PieChart;
 import org.knowm.xchart.PieChartBuilder;
-import org.knowm.xchart.SwingWrapper;
 import org.knowm.xchart.style.PieStyler.AnnotationType;
 import org.knowm.xchart.style.Styler.ChartTheme;
 
 import controller.DetailManagementService;
-import controller.MemberManagementService;
 import controller.ProductManagementService;
+//github.com/zz962123/CoffeEya.git
 import model.Detail;
 import model.Member;
 import model.OrderingDAO;
 import model.Product;
 import model.ProductDAO;
-
-import java.awt.Font;
-import java.awt.Graphics;
-import java.util.ArrayList;
-
-import javax.swing.JTextField;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.ImageIcon;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.io.IOException;
-
-import javax.swing.JButton;
 
 public class CEAnalysis {
 	DetailManagementService service = new DetailManagementService();
