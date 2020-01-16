@@ -1,19 +1,9 @@
 package view;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.io.IOException;
-import java.util.ArrayList;
-
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
+import java.awt.Color;
 import javax.swing.SwingConstants;
 
 import org.knowm.xchart.BitmapEncoder;
@@ -25,12 +15,23 @@ import org.knowm.xchart.style.Styler.ChartTheme;
 
 import controller.DetailManagementService;
 import controller.ProductManagementService;
-//github.com/zz962123/CoffeEya.git
 import model.Detail;
 import model.Member;
 import model.OrderingDAO;
 import model.Product;
 import model.ProductDAO;
+
+import java.awt.Font;
+import java.util.ArrayList;
+
+import java.io.IOException;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseAdapter;
+
+import javax.swing.JTable;
+import javax.swing.JButton;
+import javax.swing.ImageIcon;
+import javax.swing.JScrollPane;
 
 public class CEAnalysis {
 	DetailManagementService service = new DetailManagementService();
