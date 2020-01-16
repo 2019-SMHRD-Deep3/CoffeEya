@@ -25,6 +25,7 @@ import model.Product;
 import javax.swing.JList;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JTabbedPane;
 
 public class CESale {
 
@@ -35,7 +36,7 @@ public class CESale {
 	private JTextField txtCoffeeya;
 	private JTable table;
 	private DefaultTableModel defaultTableModel;
-	private int totalMoney;
+	int totalMoney;
 
 	/**
 	 * Launch the application.
@@ -121,6 +122,7 @@ public class CESale {
 		});
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				System.out.println(totalMoney);
 			}
 		});
 		panel_3.add(btnNewButton_2);
@@ -128,7 +130,11 @@ public class CESale {
 		JPanel panel_4 = new JPanel();
 		panel_4.setBounds(12, 10, 417, 238);
 		panel_1.add(panel_4);
-		panel_4.setLayout(null);
+		panel_4.setLayout(new CardLayout(0, 0));
+		
+		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		panel_4.add(tabbedPane, "name_142568054808900");
+		// 합계구하기
 
 		JPanel panel_2 = new JPanel();
 		panel_2.setBackground(Color.WHITE);
@@ -170,18 +176,6 @@ public class CESale {
 		panel_2.add(panel_9);
 		panel_9.setLayout(new GridLayout(0, 5, 0, 0));
 
-//		JButton btnNewButton_2 = new JButton("\uD604\uAE08");
-//		btnNewButton_2.addMouseListener(new MouseAdapter() {
-//			@Override
-//			public void mouseClicked(MouseEvent e) {
-//			}
-//		});
-//		btnNewButton_2.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent e) {
-//			}
-//		});
-//		panel_3.add(btnNewButton_2);
-
 		// 반복문으로 생성
 		ArrayList<Product> list = pservice.productLookup();
 		Object[][] data = new Object[list.size()][2];
@@ -193,11 +187,8 @@ public class CESale {
 		JButton[] JButton10 = new JButton[data.length];
 		for (int i = 0; i < data.length; i++) {
 			final int j = i;
-			JButton10[i] = new JButton();
-			JButton10[i].setSize(130, 80);
+			JButton10[i] = new JButton(Arrays.deepToString(data[i]) + "");
 			panel_9.add(JButton10[i]);
-			JButton btnNewButton_4 = new JButton(Arrays.deepToString(data[i]) + "");
-			JButton10[i].add(btnNewButton_4);
 
 			JButton10[i].addMouseListener(new MouseAdapter() {
 				public void mouseClicked(MouseEvent e) {
@@ -205,6 +196,7 @@ public class CESale {
 					row[0] = data[j][0];
 					row[1] = data[j][1];
 					defaultTableModel.addRow(row);
+					totalMoney += (int)row[1];
 				}
 			});
 		}
