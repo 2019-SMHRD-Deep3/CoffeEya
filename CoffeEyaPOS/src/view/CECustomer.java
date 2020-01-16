@@ -12,19 +12,19 @@ import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class CEMember {
+public class CECustomer {
 
 	private JFrame frame;
 	private Member loginUser;
 
 	/**
-	 * Create the application.
-	 */
-	public CEMember(Member loginUser) {
-		this.loginUser = loginUser;
-		initialize();
-		frame.setVisible(true);
-	}
+		 * Create the application.
+		 */
+		public CECustomer(Member loginUser) {
+			this.loginUser = loginUser;
+			initialize();
+			frame.setVisible(true);
+		}
 
 	/**
 	 * Initialize the contents of the frame.
@@ -34,13 +34,13 @@ public class CEMember {
 		frame.setBounds(100, 100, 1200, 800);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		
+
 		JPanel panel = new JPanel();
 		panel.setBounds(40, 160, 1100, 540);
 		frame.getContentPane().add(panel);
 		panel.setLayout(new GridLayout(1, 0, 0, 0));
-		
-		JButton btnNewButton = new JButton("\uC9C1\uC6D0 \uB4F1\uB85D");
+
+		JButton btnNewButton = new JButton("\uACE0\uAC1D \uB4F1\uB85D");
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
@@ -48,8 +48,8 @@ public class CEMember {
 			}
 		});
 		panel.add(btnNewButton);
-		
-		JButton btnNewButton_1 = new JButton("\uC9C1\uC6D0 \uC218\uC815 / \uC0AD\uC81C");
+
+		JButton btnNewButton_1 = new JButton("\uACE0\uAC1D \uC218\uC815 / \uC0AD\uC81C");
 		btnNewButton_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -57,8 +57,8 @@ public class CEMember {
 			}
 		});
 		panel.add(btnNewButton_1);
-		
-		JButton btnNewButton_2 = new JButton("\uC9C1\uC6D0 \uADFC\uD0DC\uAD00\uB9AC");
+
+		JButton btnNewButton_2 = new JButton("\uACE0\uAC1D \uC870\uD68C");
 		btnNewButton_2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -66,16 +66,7 @@ public class CEMember {
 			}
 		});
 		panel.add(btnNewButton_2);
-		
-		JButton btnNewButton_3 = new JButton("\uC7AC \uB85C\uADF8\uC778");
-		btnNewButton_3.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				CEMemChange change = new CEMemChange(loginUser);
-			}
-		});
-		panel.add(btnNewButton_3);
-		
+
 		JButton btnNewButton_4 = new JButton("\uB3CC\uC544\uAC00\uAE30");
 		btnNewButton_4.addMouseListener(new MouseAdapter() {
 			@Override
