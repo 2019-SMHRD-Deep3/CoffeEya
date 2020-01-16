@@ -55,43 +55,47 @@ public class CEMain {
 
 		panel.setBounds(0, 0, 1184, 761);
 		frame.getContentPane().add(panel);
-		panel.setLayout(new GridLayout(2, 2, 100, 100));
-<<<<<<< HEAD
-		
-		JButton btnNewButton = new JButton("");
-		
-=======
 
-		JButton btnNewButton = new JButton("\uC601\uC5C5\uB4F1\uB85D");
-
-		btnNewButton.setBackground(new Color(139, 69, 19));
-		btnNewButton.setForeground(new Color(250, 235, 215));
-		btnNewButton.setFont(new Font("CookieRun Regular", Font.PLAIN, 25));
-
->>>>>>> branch 'master' of https://github.com/zz962123/CoffeEya.git
 		String imgPath1 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//edit.png";
 		ImageIcon icon1 = new ImageIcon(imgPath1);
-		btnNewButton.setIcon(icon1);
-<<<<<<< HEAD
+		panel.setLayout(null);
 		
+		JPanel panel_1 = new JPanel();
 		
-=======
-
->>>>>>> branch 'master' of https://github.com/zz962123/CoffeEya.git
-		btnNewButton.addMouseListener(new MouseAdapter() {
+		panel_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				CESale sale = new CESale(loginUser);
 				frame.dispose();
+				System.out.println("Ddddd");
 			}
 		});
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		panel.add(btnNewButton);
+		panel_1.setBounds(44, 75, 262, 217);
+		panel.add(panel_1);
+		panel_1.setLayout(null);
+//		
+//		JButton btnNewButton = new JButton("");
+//		btnNewButton.setBounds(102, 108, 185, 155);
+//		panel_1.add(btnNewButton);
+//		btnNewButton.setFont(new Font("CookieRun Regular", Font.PLAIN, 25));
+//		btnNewButton.setIcon(icon1);
+//		
+//		
+//
+//		btnNewButton.addMouseListener(new MouseAdapter() {
+//			@Override
+//			public void mouseClicked(MouseEvent e) {
+//				CESale sale = new CESale(loginUser);
+//				frame.dispose();
+//			}
+//		});
+//		btnNewButton.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) {
+//			}
+//		});
 
 		JButton btnNewButton_1 = new JButton("");
+		btnNewButton_1.setBounds(395, 0, 394, 380);
 
 		String imgPath2 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//final.png";
 		ImageIcon icon2 = new ImageIcon(imgPath2);
@@ -100,6 +104,7 @@ public class CEMain {
 		panel.add(btnNewButton_1);
 
 		JButton btnNewButton_2 = new JButton("");
+		btnNewButton_2.setBounds(789, 0, 394, 380);
 		String imgPath3 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//view.png";
 		ImageIcon icon3 = new ImageIcon(imgPath3);
 		btnNewButton_2.setIcon(icon3);
@@ -114,6 +119,7 @@ public class CEMain {
 		panel.add(btnNewButton_2);
 
 		JButton btnNewButton_3 = new JButton("");
+		btnNewButton_3.setBounds(1, 380, 394, 380);
 		String imgPath4 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//user.png";
 		ImageIcon icon4 = new ImageIcon(imgPath4);
 		btnNewButton_3.setIcon(icon4);
@@ -128,6 +134,7 @@ public class CEMain {
 		panel.add(btnNewButton_3);
 
 		JButton btnNewButton_4 = new JButton("");
+		btnNewButton_4.setBounds(395, 380, 394, 380);
 		String imgPath5 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//settings.png";
 		ImageIcon icon5 = new ImageIcon(imgPath5);
 		btnNewButton_4.setIcon(icon5);
@@ -146,6 +153,7 @@ public class CEMain {
 		panel.add(btnNewButton_4);
 
 		JButton btnNewButton_5 = new JButton("");
+		btnNewButton_5.setBounds(789, 380, 394, 380);
 		String imgPath6 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//out.png";
 		ImageIcon icon6 = new ImageIcon(imgPath6);
 		btnNewButton_5.setIcon(icon6);
