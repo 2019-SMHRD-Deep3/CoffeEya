@@ -92,7 +92,7 @@ public class ProductDAO {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn = DriverManager.getConnection(url, user, password);
-			String sql = "SELECT * FROM PRODUCT";
+			String sql = "SELECT * FROM PRODUCT order by PRO_NUM";
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
 
