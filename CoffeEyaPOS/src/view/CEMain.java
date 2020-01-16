@@ -59,17 +59,13 @@ public class CEMain {
 		frame.getContentPane().add(panel);
 		panel.setLayout(new GridLayout(2, 2, 100, 100));
 		
-		JButton btnNewButton = new JButton("\uC601\uC5C5\uB4F1\uB85D");
-		
-	
-		btnNewButton.setBackground(new Color(139, 69, 19));
-		btnNewButton.setForeground(new Color(250, 235, 215));
-		btnNewButton.setFont(new Font("CookieRun Regular", Font.PLAIN, 25));
+		JButton btnNewButton = new JButton("");
 		
 		String imgPath1 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//edit.png";
 		ImageIcon icon1 = new ImageIcon(imgPath1);
 		btnNewButton.setIcon(icon1);
-	
+		
+		
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {

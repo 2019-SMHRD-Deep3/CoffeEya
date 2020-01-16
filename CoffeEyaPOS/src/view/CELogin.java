@@ -89,7 +89,6 @@ public class CELogin {
 
 
 		
-		
 		JLabel lblNewLabel = new JLabel("");
 		String imgPath1 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//man.png";
 		ImageIcon icon1 = new ImageIcon(imgPath1);
@@ -111,14 +110,14 @@ public class CELogin {
 		textField = new JTextField();
 		textField.setFont(new Font("±¼¸²", Font.PLAIN, 20));
 		textField.setBackground(SystemColor.inactiveCaptionBorder);
-		textField.setBounds(515, 180, 380, 90);
+		textField.setBounds(515, 187, 380, 60);
 		panel.add(textField);
 		textField.setColumns(10);
 
 		textField_1 = new JTextField();
 		textField_1.setFont(new Font("±¼¸²", Font.PLAIN, 20));
 		textField_1.setBackground(SystemColor.inactiveCaptionBorder);
-		textField_1.setBounds(515, 292, 380, 90);
+		textField_1.setBounds(515, 267, 380, 61);
 		panel.add(textField_1);
 		textField_1.setColumns(10);
 
