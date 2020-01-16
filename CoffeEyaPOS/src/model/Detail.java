@@ -14,6 +14,9 @@ public class Detail {
 		this.DE_AMOUNT = DE_AMOUNT;
 	}
 
+	public Detail() {
+	}
+
 	public int getDE_NUM() {
 		return DE_NUM;
 	}
