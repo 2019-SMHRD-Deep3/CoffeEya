@@ -1,7 +1,5 @@
 package view;
 
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -11,6 +9,8 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class CECustomer {
 
@@ -18,13 +18,13 @@ public class CECustomer {
 	private Member loginUser;
 
 	/**
-		 * Create the application.
-		 */
-		public CECustomer(Member loginUser) {
-			this.loginUser = loginUser;
-			initialize();
-			frame.setVisible(true);
-		}
+	 * Create the application.
+	 */
+	public CECustomer(Member loginUser) {
+		this.loginUser = loginUser;
+		initialize();
+		frame.setVisible(true);
+	}
 
 	/**
 	 * Initialize the contents of the frame.
@@ -41,10 +41,14 @@ public class CECustomer {
 		panel.setLayout(new GridLayout(1, 0, 0, 0));
 
 		JButton btnNewButton = new JButton("\uACE0\uAC1D \uB4F1\uB85D");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				CEMemJoin join = new CEMemJoin(loginUser);
+				CECusJoin cusJoin = new CECusJoin(loginUser);
 			}
 		});
 		panel.add(btnNewButton);
@@ -53,7 +57,7 @@ public class CECustomer {
 		btnNewButton_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				CEMemModDel memmoddel = new CEMemModDel(loginUser);
+				CECusModDel cusModDel = new CECusModDel(loginUser);
 			}
 		});
 		panel.add(btnNewButton_1);
@@ -62,7 +66,7 @@ public class CECustomer {
 		btnNewButton_2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				CEMemCommute commute = new CEMemCommute(loginUser);
+				CECusSearch cusSearch = new CECusSearch(loginUser);
 			}
 		});
 		panel.add(btnNewButton_2);

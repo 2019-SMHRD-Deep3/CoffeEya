@@ -6,6 +6,10 @@ public class Product {
 	private String PRO_NAME;
 	private int PRO_PRICE;
 
+	public Product() {
+		
+	}
+	
 	public Product(int PRO_NUM) {
 		this.PRO_NUM = PRO_NUM;
 	}
