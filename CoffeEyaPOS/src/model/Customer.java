@@ -1,14 +1,14 @@
 package model;
 
 public class Customer {
-	private int CUS_NUMBER;;
+	private String CUS_NUMBER;;
 	private String CUS_NAME;
 	private String CUS_PHONE;
 	private String CUS_SEX;
 	private String CUS_BIRTHDAY;
 	private int CUS_POINT;
 
-	public Customer(int CUS_NUMBER, String CUS_NAME, String CUS_PHONE, String CUS_SEX, String CUS_BIRTHDAY) {
+	public Customer(String CUS_NUMBER, String CUS_NAME, String CUS_PHONE, String CUS_SEX, String CUS_BIRTHDAY) {
 		this.CUS_NUMBER = CUS_NUMBER;
 		this.CUS_NAME = CUS_NAME;
 		this.CUS_PHONE = CUS_PHONE;
@@ -17,7 +17,7 @@ public class Customer {
 		CUS_POINT = 0;
 	}
 
-	public Customer(int CUS_NUMBER, String CUS_NAME, String CUS_PHONE, String CUS_SEX, String CUS_BIRTHDAY,
+	public Customer(String CUS_NUMBER, String CUS_NAME, String CUS_PHONE, String CUS_SEX, String CUS_BIRTHDAY,
 			int CUS_POINT) {
 		this.CUS_NUMBER = CUS_NUMBER;
 		this.CUS_NAME = CUS_NAME;
@@ -27,15 +27,15 @@ public class Customer {
 		this.CUS_POINT = CUS_POINT;
 	}
 
-	public Customer(int infoId) {
-		CUS_NUMBER = infoId;
+	public Customer(String CUS_NUMBER) {
+		this.CUS_NUMBER = CUS_NUMBER;
 	}
 
-	public int getCUS_NUMBER() {
+	public String getCUS_NUMBER() {
 		return CUS_NUMBER;
 	}
 
-	public void setCUS_NUMBER(int CUS_NUMBER) {
+	public void setCUS_NUMBER(String CUS_NUMBER) {
 		this.CUS_NUMBER = CUS_NUMBER;
 	}
 

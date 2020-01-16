@@ -17,8 +17,8 @@ public class CustomerManagementService {
 	}
 
 	public Customer getInfoCustomer(Customer c) {
-		Customer infoCustomer = dao.selectOne(c);
-		return infoCustomer;
+		Customer selectCustomer = dao.selectCNumber(c);
+		return selectCustomer;
 	}
 
 	public ArrayList<Customer> customerLookup() {

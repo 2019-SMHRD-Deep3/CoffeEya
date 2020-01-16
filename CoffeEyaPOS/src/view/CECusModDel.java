@@ -72,7 +72,7 @@ public class CECusModDel {
 		button.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				int infoId = Integer.parseInt(textField.getText());
+				String infoId = textField.getText();
 				Customer c = new Customer(infoId);
 				boolean result = service.customerDelete(c);
 
@@ -107,15 +107,16 @@ public class CECusModDel {
 		button_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				int CUS_NUMBER = Integer.parseInt(textField.getText());
+				String infoId = textField_1.getText();
+				
+				Customer c = new Customer(infoId);
+				Customer selectCustomer = service.getInfoCustomer(c);
 
-				Customer c = new Customer(CUS_NUMBER);
-				Customer selectUser = service.getInfoCustomer(c);
-				if (selectUser == null) {
+				if (selectCustomer == null) {
 					JOptionPane.showMessageDialog(frame, "해당 아이디가 존재하지 않습니다.");
 				} else {
 					JOptionPane.showMessageDialog(frame, "수정화면으로 넘어갑니다.");
-					CECusModify cusModify = new CECusModify(selectUser);
+					CECusModify modify = new CECusModify(selectCustomer);
 					frame.dispose();
 				}
 

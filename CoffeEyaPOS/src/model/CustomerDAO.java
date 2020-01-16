@@ -22,7 +22,7 @@ public class CustomerDAO {
 			conn = DriverManager.getConnection(url, user, password);
 			String sql = "INSERT INTO CUSTOMER VALUES (?,?,?,?,?,?)";
 			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1, c.getCUS_NUMBER());
+			psmt.setString(1, c.getCUS_NUMBER());
 			psmt.setString(2, c.getCUS_NAME());
 			psmt.setString(3, c.getCUS_PHONE());
 			psmt.setString(4, c.getCUS_SEX());
@@ -57,11 +57,11 @@ public class CustomerDAO {
 			conn = DriverManager.getConnection(url, user, password);
 			String sql = "SELECT * FROM CUSTOMER WHERE CUS_NUMBER = ?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1, c.getCUS_NUMBER());
+			psmt.setString(1, c.getCUS_NUMBER());
 			rs = psmt.executeQuery();
 
 			if (rs.next()) {
-				int CUS_NUMBER = rs.getInt("CUS_NUMBER");
+				String CUS_NUMBER = rs.getString("CUS_NUMBER");
 				String CUS_NAME = rs.getString("CUS_NAME");
 				String CUS_PHONE = rs.getString("CUS_PHONE");
 				String CUS_SEX = rs.getString("CUS_SEX");
@@ -104,7 +104,7 @@ public class CustomerDAO {
 			rs = psmt.executeQuery();
 
 			while (rs.next()) {
-				int CUS_NUMBER = rs.getInt("CUS_NUMBER");
+				String CUS_NUMBER = rs.getString("CUS_NUMBER");
 				String CUS_NAME = rs.getString("CUS_NAME");
 				String CUS_PHONE = rs.getString("CUS_PHONE");
 				String CUS_SEX = rs.getString("CUS_SEX");
@@ -150,7 +150,7 @@ public class CustomerDAO {
 			conn = DriverManager.getConnection(url, user, password);
 			String sql = "DELETE FROM CUSTOMER WHERE CUS_NUMBER = ?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1, c.getCUS_NUMBER());
+			psmt.setString(1, c.getCUS_NUMBER());
 
 			rows = psmt.executeUpdate();
 
@@ -170,6 +170,52 @@ public class CustomerDAO {
 		}
 		return rows;
 	}
+	
+	public Customer selectCNumber (Customer c) {
+		Customer selectCustomer = null;
+
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			conn = DriverManager.getConnection(url, user, password);
+			String sql = "SELECT * FROM CUSTOMER WHERE CUS_NUMBER = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, c.getCUS_NUMBER());
+			rs = psmt.executeQuery();
+
+			if (rs.next()) {
+				// 해당 ID와 PW를 가진 사람이 존재
+				String CUS_NUMBER = rs.getString("CUS_NUMBER");
+				String CUS_NAME = rs.getString("CUS_NAME");
+				String CUS_SEX = rs.getString("CUS_SEX");
+				String CUS_PHONE = rs.getString("CUS_PHONE");
+				String CUS_BIRTHDAY = rs.getString("CUS_BIRTHDAY");
+				int CUS_POINT = rs.getInt("CUS_POINT");
+
+				selectCustomer = new Customer(CUS_NUMBER, CUS_NAME, CUS_SEX, CUS_PHONE, CUS_BIRTHDAY, CUS_POINT);
+			}
+
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (psmt != null) {
+					psmt.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+		}
+		return selectCustomer;
+	}
 
 	public int update(Customer c) {
 		int rows = 0;
@@ -185,7 +231,7 @@ public class CustomerDAO {
 			conn = DriverManager.getConnection(url, user, password);
 			String sql = "UPDATE Customer SET CUS_NAME = ?, CUS_PHONE = ?, CUS_SEX = ?,  CUS_BIRTHDAY = ?,CUS_POINT = ?,where CUS_NUMBER = ?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1, c.getCUS_NUMBER());
+			psmt.setString(1, c.getCUS_NUMBER());
 			psmt.setString(2, c.getCUS_NAME());
 			psmt.setString(3, c.getCUS_PHONE());
 			psmt.setString(4, c.getCUS_SEX());

@@ -203,7 +203,7 @@ Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (20,8,1,1);
   ALTER TABLE "DETAIL" ADD CONSTRAINT "DETAIL_PRODUCT_FK" FOREIGN KEY ("PRO_NUM")
      REFERENCES "PRODUCT" ("PRO_NUM") ENABLE;
      
-     --------------------------------------------------------
+--------------------------------------------------------
 --  ÆÄÀÏÀÌ »ý¼ºµÊ - ¸ñ¿äÀÏ-1¿ù-16-2020   
 --------------------------------------------------------
 --------------------------------------------------------
@@ -211,7 +211,7 @@ Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (20,8,1,1);
 --------------------------------------------------------
 
   CREATE TABLE "CUSTOMER" 
-   (	"CUS_NUMBER" NUMBER(20,0), 
+   (	"CUS_NUMBER" VARCHAR2(40 BYTE), 
 	"CUS_NAME" VARCHAR2(40 BYTE), 
 	"CUS_PHONE" VARCHAR2(40 BYTE), 
 	"CUS_SEX" VARCHAR2(40 BYTE), 
@@ -228,8 +228,15 @@ Insert into CUSTOMER (CUS_NUMBER,CUS_NAME,CUS_PHONE,CUS_SEX,CUS_BIRTHDAY,CUS_POI
 Insert into CUSTOMER (CUS_NUMBER,CUS_NAME,CUS_PHONE,CUS_SEX,CUS_BIRTHDAY,CUS_POINT) values (7006,'ÀÌÀç¿ø','010-3628-4491','FEMALE',to_date('99/11/06','RR/MM/DD'),5142);
 Insert into CUSTOMER (CUS_NUMBER,CUS_NAME,CUS_PHONE,CUS_SEX,CUS_BIRTHDAY,CUS_POINT) values (7007,'±èÀÎ¿ì','010-5496-8125','MALE',to_date('00/07/08','RR/MM/DD'),3213);
 Insert into CUSTOMER (CUS_NUMBER,CUS_NAME,CUS_PHONE,CUS_SEX,CUS_BIRTHDAY,CUS_POINT) values (7008,'À¯ÁöÀ±','010-8486-1138','MALE',to_date('00/02/12','RR/MM/DD'),153);
-Insert into CUSTOMER (CUS_NUMBER,CUS_NAME,CUS_PHONE,CUS_SEX,CUS_BIRTHDAY,CUS_POINT) values (7004,'À±ÁöÇý','010-8487-4564','FEMALE',to_date('90/02/09','RR/MM/DD'),15);
-Insert into CUSTOMER (CUS_NUMBER,CUS_NAME,CUS_PHONE,CUS_SEX,CUS_BIRTHDAY,CUS_POINT) values (7005,'°­Çý¼º','010-4644-4852','FEMALE',to_date('98/08/17','RR/MM/DD'),816);
-Insert into CUSTOMER (CUS_NUMBER,CUS_NAME,CUS_PHONE,CUS_SEX,CUS_BIRTHDAY,CUS_POINT) values (7006,'ÀÌÀç¿ø','010-3628-4491','FEMALE',to_date('99/11/06','RR/MM/DD'),1315);
-Insert into CUSTOMER (CUS_NUMBER,CUS_NAME,CUS_PHONE,CUS_SEX,CUS_BIRTHDAY,CUS_POINT) values (7007,'±èÀÎ¿ì','010-5496-8125','MALE',to_date('00/07/08','RR/MM/DD'),2318);
-Insert into CUSTOMER (CUS_NUMBER,CUS_NAME,CUS_PHONE,CUS_SEX,CUS_BIRTHDAY,CUS_POINT) values (7008,'À¯ÁöÀ±','010-8486-1138','MALE',to_date('00/02/12','RR/MM/DD'),1542);
+--------------------------------------------------------
+--  DDL for Index CUSTOMER_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "CUSTOMER_PK" ON "CUSTOMER" ("CUS_NUMBER") 
+  ;
+--------------------------------------------------------
+--  Constraints for Table CUSTOMER
+--------------------------------------------------------
+
+  ALTER TABLE "CUSTOMER" MODIFY ("CUS_NUMBER" NOT NULL ENABLE);
+  ALTER TABLE "CUSTOMER" ADD CONSTRAINT "CUSTOMER_PK" PRIMARY KEY ("CUS_NUMBER") ENABLE;

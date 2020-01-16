@@ -106,7 +106,7 @@ public class CECusModify {
 		btnNewButton_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				int CUS_NUMBER = selectUser.getCUS_NUMBER();
+				String CUS_NUMBER = selectUser.getCUS_NUMBER();
 				String CUS_NAME = textField.getText();
 				String CUS_PHONE = textField_1.getText();
 				String CUS_BIRTHDAY = textField_2.getText();

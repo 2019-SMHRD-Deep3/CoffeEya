@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 
+import model.Customer;
 import model.Member;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
