@@ -176,7 +176,7 @@ public class CECusJoin {
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				int infoNumber = Integer.parseInt(textField.getText());
+				String infoNumber = textField.getText();
 				String infoName = textField_1.getText();
 				String infoPhone = textField_2.getText();
 				String infoSex;
