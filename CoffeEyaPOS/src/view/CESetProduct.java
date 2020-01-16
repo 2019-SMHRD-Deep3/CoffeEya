@@ -137,6 +137,18 @@ public class CESetProduct {
 				
 			}
 		});
+		
+		JButton btnNewButton_4 = new JButton("\uCD08\uAE30\uD654");
+		btnNewButton_4.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				productAll();
+				textField.setText("");
+				textField_1.setText("");
+				textField_2.setText("");
+			}
+		});
+		panel_2.add(btnNewButton_4);
 		panel_2.add(btnNewButton_1);
 
 		btnNewButton_2 = new JButton("\uC218\uC815");
@@ -199,6 +211,15 @@ public class CESetProduct {
 			data[i] = new Object[] { PRO_NUM, PRO_NAME, PRO_PRICE };
 		}
 		table = new JTable(data, columnNames);
+		table.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				int index = table.getSelectedRow();
+				textField.setText((int)table.getValueAt(index, 0) + "");
+				textField_1.setText((String) table.getValueAt(index, 1));
+				textField_2.setText((int) table.getValueAt(index, 2) + "");
+			}
+		});
 		scrollPane.setViewportView(table);
 	}
 }
