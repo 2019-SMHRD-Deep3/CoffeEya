@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.EventQueue;
+import java.awt.Graphics;
 
 import javax.swing.JFrame;
 
@@ -10,6 +11,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import java.awt.GridLayout;
@@ -21,6 +23,8 @@ import controller.CustomerManagementService;
 import model.Member;
 
 import javax.swing.JRadioButton;
+import javax.swing.SwingConstants;
+import java.awt.Font;
 
 public class CECusModify {
 	CustomerManagementService service = new CustomerManagementService();
@@ -30,6 +34,7 @@ public class CECusModify {
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private Customer selectUser;
+	private JPanel panel;
 
 	/**
 	 * Create the application.
@@ -59,12 +64,24 @@ public class CECusModify {
 		btnNewButton.setBounds(1075, 10, 100, 100);
 		frame.getContentPane().add(btnNewButton);
 
-		JPanel panel = new JPanel();
+		String imgPath = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//textInput2.png";
+		ImageIcon icon = new ImageIcon(imgPath);
+		
+		panel = new JPanel(){
+			@Override
+			protected void paintComponent(Graphics g) {
+				g.drawImage(icon.getImage(), 0, 0, panel.getWidth(), panel.getHeight(), null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
 		panel.setBounds(12, 200, 1160, 400);
 		frame.getContentPane().add(panel);
 		panel.setLayout(new GridLayout(0, 2, 0, 0));
 
 		JLabel lblNewLabel = new JLabel("\uACE0\uAC1D\uC131\uBA85 \uBCC0\uACBD");
+		lblNewLabel.setFont(new Font("Yoon® 대한", Font.PLAIN, 15));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(lblNewLabel);
 
 		textField = new JTextField();
@@ -72,6 +89,8 @@ public class CECusModify {
 		textField.setColumns(10);
 
 		JLabel lblNewLabel_1 = new JLabel("\uACE0\uAC1D\uC804\uD654\uBC88\uD638 \uBCC0\uACBD");
+		lblNewLabel_1.setFont(new Font("Yoon® 대한", Font.PLAIN, 15));
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(lblNewLabel_1);
 
 		textField_1 = new JTextField();
@@ -79,6 +98,8 @@ public class CECusModify {
 		textField_1.setColumns(10);
 
 		JLabel lblNewLabel_2 = new JLabel("\uACE0\uAC1D\uC0DD\uC77C \uBCC0\uACBD (\uC5EC\uC12F \uC790\uB9AC)");
+		lblNewLabel_2.setFont(new Font("Yoon® 대한", Font.PLAIN, 15));
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(lblNewLabel_2);
 
 		textField_2 = new JTextField();
@@ -86,6 +107,8 @@ public class CECusModify {
 		textField_2.setColumns(10);
 
 		JLabel lblNewLabel_3 = new JLabel("\uACE0\uAC1D\uC131\uBCC4 \uBCC0\uACBD");
+		lblNewLabel_3.setFont(new Font("Yoon® 대한", Font.PLAIN, 15));
+		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(lblNewLabel_3);
 
 		JPanel panel_1 = new JPanel();
@@ -93,9 +116,11 @@ public class CECusModify {
 		panel_1.setLayout(new GridLayout(1, 0, 0, 0));
 
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("\uB0A8\uC131");
+		rdbtnNewRadioButton.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(rdbtnNewRadioButton);
 
 		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("\uC5EC\uC131");
+		rdbtnNewRadioButton_1.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(rdbtnNewRadioButton_1);
 
 		ButtonGroup perm = new ButtonGroup();

@@ -67,11 +67,12 @@ public class CEMember {
 		});
 		panel.add(btnNewButton_2);
 		
-		JButton btnNewButton_3 = new JButton("\uC7AC \uB85C\uADF8\uC778");
+		JButton btnNewButton_3 = new JButton("\uB85C\uADF8 \uC544\uC6C3");
 		btnNewButton_3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				CEMemChange change = new CEMemChange(loginUser);
+				CEReLogin reLogin = new CEReLogin();
+				frame.dispose();
 			}
 		});
 		panel.add(btnNewButton_3);
