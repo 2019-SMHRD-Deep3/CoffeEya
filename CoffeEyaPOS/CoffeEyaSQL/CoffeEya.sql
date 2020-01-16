@@ -2,6 +2,7 @@ drop table member cascade CONSTRAINTS;
 drop table product cascade CONSTRAINTS;
 drop table ordering cascade CONSTRAINTS;
 drop table detail;
+drop table customer;
 
 
 --------------------------------------------------------
@@ -11,10 +12,12 @@ drop table detail;
 --  DDL for Table MEMBER
 --------------------------------------------------------
 
-  CREATE TABLE "MEMBER" 
+
+
+CREATE TABLE "MEMBER" 
    (   "MEM_ID" VARCHAR2(40 BYTE), 
    "MEM_PW" VARCHAR2(40 BYTE), 
-   "MEM_NAME" VARCHAR2(40 BYTE), 
+   "MEM_NAME" VARCHAR2(40 BYTE),
    "MEM_PERM" VARCHAR2(40 BYTE)
    ) ;
 REM INSERTING into MEMBER
@@ -199,3 +202,34 @@ Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (20,8,1,1);
      REFERENCES "ORDERING" ("OR_NUM") ENABLE;
   ALTER TABLE "DETAIL" ADD CONSTRAINT "DETAIL_PRODUCT_FK" FOREIGN KEY ("PRO_NUM")
      REFERENCES "PRODUCT" ("PRO_NUM") ENABLE;
+     
+     --------------------------------------------------------
+--  ÆÄÀÏÀÌ »ý¼ºµÊ - ¸ñ¿äÀÏ-1¿ù-16-2020   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table CUSTOMER
+--------------------------------------------------------
+
+  CREATE TABLE "CUSTOMER" 
+   (	"CUS_NUMBER" NUMBER(20,0), 
+	"CUS_NAME" VARCHAR2(40 BYTE), 
+	"CUS_PHONE" VARCHAR2(40 BYTE), 
+	"CUS_SEX" VARCHAR2(40 BYTE), 
+	"CUS_BIRTHDAY" DATE, 
+	"CUS_POINT" NUMBER(20,0)
+   ) ;
+REM INSERTING into CUSTOMER
+SET DEFINE OFF;
+Insert into CUSTOMER (CUS_NUMBER,CUS_NAME,CUS_PHONE,CUS_SEX,CUS_BIRTHDAY,CUS_POINT) values (7001,'±èÇý¸®','010-8447-4564','FEMALE',to_date('98/11/04','RR/MM/DD'),1320);
+Insert into CUSTOMER (CUS_NUMBER,CUS_NAME,CUS_PHONE,CUS_SEX,CUS_BIRTHDAY,CUS_POINT) values (7002,'°í¼º¿ø','010-4644','MALE',to_date('96/03/02','RR/MM/DD'),260);
+Insert into CUSTOMER (CUS_NUMBER,CUS_NAME,CUS_PHONE,CUS_SEX,CUS_BIRTHDAY,CUS_POINT) values (7003,'ÀÌÀç¿í','010-3628','MALE',to_date('94/08/12','RR/MM/DD'),873);
+Insert into CUSTOMER (CUS_NUMBER,CUS_NAME,CUS_PHONE,CUS_SEX,CUS_BIRTHDAY,CUS_POINT) values (7004,'À±ÁöÇý','010-8487-4564','FEMALE',to_date('90/02/09','RR/MM/DD'),1358);
+Insert into CUSTOMER (CUS_NUMBER,CUS_NAME,CUS_PHONE,CUS_SEX,CUS_BIRTHDAY,CUS_POINT) values (7005,'°­Çý¼º','010-4644-4852','FEMALE',to_date('98/08/17','RR/MM/DD'),1351);
+Insert into CUSTOMER (CUS_NUMBER,CUS_NAME,CUS_PHONE,CUS_SEX,CUS_BIRTHDAY,CUS_POINT) values (7006,'ÀÌÀç¿ø','010-3628-4491','FEMALE',to_date('99/11/06','RR/MM/DD'),5142);
+Insert into CUSTOMER (CUS_NUMBER,CUS_NAME,CUS_PHONE,CUS_SEX,CUS_BIRTHDAY,CUS_POINT) values (7007,'±èÀÎ¿ì','010-5496-8125','MALE',to_date('00/07/08','RR/MM/DD'),3213);
+Insert into CUSTOMER (CUS_NUMBER,CUS_NAME,CUS_PHONE,CUS_SEX,CUS_BIRTHDAY,CUS_POINT) values (7008,'À¯ÁöÀ±','010-8486-1138','MALE',to_date('00/02/12','RR/MM/DD'),153);
+Insert into CUSTOMER (CUS_NUMBER,CUS_NAME,CUS_PHONE,CUS_SEX,CUS_BIRTHDAY,CUS_POINT) values (7004,'À±ÁöÇý','010-8487-4564','FEMALE',to_date('90/02/09','RR/MM/DD'),15);
+Insert into CUSTOMER (CUS_NUMBER,CUS_NAME,CUS_PHONE,CUS_SEX,CUS_BIRTHDAY,CUS_POINT) values (7005,'°­Çý¼º','010-4644-4852','FEMALE',to_date('98/08/17','RR/MM/DD'),816);
+Insert into CUSTOMER (CUS_NUMBER,CUS_NAME,CUS_PHONE,CUS_SEX,CUS_BIRTHDAY,CUS_POINT) values (7006,'ÀÌÀç¿ø','010-3628-4491','FEMALE',to_date('99/11/06','RR/MM/DD'),1315);
+Insert into CUSTOMER (CUS_NUMBER,CUS_NAME,CUS_PHONE,CUS_SEX,CUS_BIRTHDAY,CUS_POINT) values (7007,'±èÀÎ¿ì','010-5496-8125','MALE',to_date('00/07/08','RR/MM/DD'),2318);
+Insert into CUSTOMER (CUS_NUMBER,CUS_NAME,CUS_PHONE,CUS_SEX,CUS_BIRTHDAY,CUS_POINT) values (7008,'À¯ÁöÀ±','010-8486-1138','MALE',to_date('00/02/12','RR/MM/DD'),1542);
