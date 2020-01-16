@@ -43,6 +43,7 @@ public class CESale {
 	private JButton delrow;
 
 	public int totalMoney = 0;
+	private ArrayList<String> menuName = new ArrayList<String>();
 
 	/**
 	 * Create the application.
@@ -166,7 +167,7 @@ public class CESale {
 		panel_6.add(scrollPane, "name_1462951108600");
 
 		// 컬럼이름 복사, 데이터 복사
-		String[] columnNames = { "상품명", "가격" };
+		String[] columnNames = { "상품명", "가격", "개수" };
 		defaultTableModel = new DefaultTableModel(null, columnNames);
 		table = new JTable(defaultTableModel);
 		scrollPane.setViewportView(table);
@@ -215,15 +216,30 @@ public class CESale {
 			final int jnum = i;
 			JButton10[i].addMouseListener(new MouseAdapter() {
 				public void mouseClicked(MouseEvent e) {
-					Object[] row = new Object[2];
-					row[0] = data[jnum][0];
-					row[1] = data[jnum][1];
-					defaultTableModel.addRow(row);
-					totalMoney += (int) row[1];
-					lblNewLabel10.setText(totalMoney + " 원");
+					addrow(jnum, data);
 				}
 			});
 		}
+	}
+
+	private void addrow(int jnum, Object[][] data) {
+		Object[] row = new Object[3];
+		row[0] = data[jnum][0];
+		row[1] = data[jnum][1];
+		row[2] = 1;
+		// ArrayList에 메뉴가 등록되었는지 확인
+		int index = menuName.indexOf(data[jnum][0]);
+
+		if (index == -1) {
+			menuName.add((String) data[jnum][0]);
+			defaultTableModel.addRow(row);
+		} else {
+			int num = (Integer) defaultTableModel.getValueAt(index, 2);
+			defaultTableModel.setValueAt(++num, index, 2);
+		}
+		totalMoney += (int) row[1];
+		lblNewLabel10.setText(totalMoney + " 원");
+
 	}
 
 	private void delrow() {
@@ -231,9 +247,16 @@ public class CESale {
 		if (row < 0)
 			return;
 		DefaultTableModel model = (DefaultTableModel) table.getModel();
-		int val = (int) table.getValueAt(row,1);
-		model.removeRow(row);
-		totalMoney -= val;
+		int valprice = (int) table.getValueAt(row, 1);
+
+		if ((int) model.getValueAt(row, 2) == 1) {
+			menuName.remove(row);
+			model.removeRow(row);
+		} else {
+			int num = (Integer) defaultTableModel.getValueAt(row, 2);
+			defaultTableModel.setValueAt(--num, row, 2);
+		}
+		totalMoney -= valprice;
 		lblNewLabel10.setText(totalMoney + " 원");
 	}
 }
