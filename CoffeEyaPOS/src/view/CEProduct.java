@@ -25,6 +25,9 @@ import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.TableColumnModel;
 
 public class CEProduct {
 
@@ -211,6 +214,21 @@ public class CEProduct {
 			data[i] = new Object[] { PRO_NUM, PRO_NAME, PRO_PRICE };
 		}
 		table = new JTable(data, columnNames);
+		  scrollPane.setViewportView(table);
+	      // DefaultTableCellHeaderRenderer 생성 (가운데 정렬을 위한)
+	      DefaultTableCellRenderer tScheduleCellRenderer = new DefaultTableCellRenderer();
+
+	      // DefaultTableCellHeaderRenderer의 정렬을 가운데 정렬로 지정
+	      tScheduleCellRenderer.setHorizontalAlignment(SwingConstants.CENTER);
+
+	      // 정렬할 테이블의 ColumnModel을 가져옴
+	      TableColumnModel tcmSchedule = table.getColumnModel();
+
+	      // 반복문을 이용하여 테이블을 가운데 정렬로 지정
+	      for (int i = 0; i < tcmSchedule.getColumnCount(); i++) {
+	      tcmSchedule.getColumn(i).setCellRenderer(tScheduleCellRenderer);
+	      }
+		
 		table.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {

@@ -190,7 +190,9 @@ public class CESale {
 		btnNewButton_3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				
+//				// Row가 0으로 되는 코드, 하지만 초기화 한 번은 가능/두번째부터 오류 발생, 누적 가격도 변화 없음
+//				DefaultTableModel model = (DefaultTableModel)table.getModel();
+//				model.setNumRows(0);
 			}
 		});
 		btnNewButton_3.setBounds(47, 155, 97, 23);
