@@ -63,6 +63,7 @@ public class CECusJoin {
     */
    private void initialize() {
       frame = new JFrame();
+      frame.setResizable(false);
 
       frame.setBounds(100, 100, 1200, 800);
       frame.setBounds(150, 150, 1200, 800);
@@ -239,6 +240,7 @@ public class CECusJoin {
       panel.add(lblNewLabel_5);
       
       textField_4 = new JTextField();
+      textField_4.setFont(new Font("±¼¸²", Font.PLAIN, 12));
       textField_4.setBackground(SystemColor.inactiveCaptionBorder);
       textField_4.setBounds(300, 446, 280, 54);
       panel.add(textField_4);
