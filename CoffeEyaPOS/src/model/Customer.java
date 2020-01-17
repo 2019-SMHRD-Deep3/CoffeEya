@@ -1,12 +1,16 @@
 package model;
 
 public class Customer {
-	private String CUS_NUMBER;;
+	private String CUS_NUMBER;
 	private String CUS_NAME;
 	private String CUS_PHONE;
 	private String CUS_SEX;
 	private String CUS_BIRTHDAY;
 	private int CUS_POINT;
+	
+	public Customer() {
+		
+	}
 
 	public Customer(String CUS_NUMBER, String CUS_NAME, String CUS_PHONE, String CUS_SEX, String CUS_BIRTHDAY) {
 		this.CUS_NUMBER = CUS_NUMBER;

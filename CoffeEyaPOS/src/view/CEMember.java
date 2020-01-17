@@ -64,7 +64,7 @@ public class CEMember {
 		frame.getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(824, 600, 316, 100);
+		panel.setBounds(856, 590, 284, 110);
 		frame.getContentPane().add(panel);
 		panel.setLayout(new GridLayout(1, 0, 0, 0));
 		
@@ -171,7 +171,6 @@ public class CEMember {
 				textField_1.setText("");
 				textField_2.setText("");
 				perm.clearSelection();
-				
 			}
 		});
 		panel_4.setBounds(462, 313, 100, 100);

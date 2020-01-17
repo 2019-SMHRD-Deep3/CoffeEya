@@ -45,6 +45,7 @@ public class CEMain {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setResizable(false);
 		frame.setBounds(100, 100, 1200, 800);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -163,7 +164,7 @@ public class CEMain {
 		panel_5.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				CESetProduct setProduct = new CESetProduct(loginUser);
+				CEProduct setProduct = new CEProduct(loginUser);
 				frame.dispose();
 			}
 		});
@@ -184,7 +185,7 @@ public class CEMain {
 		panel_6.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				CECustomer customer = new CECustomer(loginUser);
+				CECustomerM customer = new CECustomerM(loginUser);
 				frame.dispose();
 			}
 		});

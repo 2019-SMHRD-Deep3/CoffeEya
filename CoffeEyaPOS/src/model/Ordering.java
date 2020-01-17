@@ -22,6 +22,9 @@ public class Ordering {
 		this.OR_SUM = OR_SUM;
 	}
 
+	public Ordering() {
+	}
+
 	public void setMEM_ID(String MEM_ID) {
 		this.MEM_ID = MEM_ID;
 	}

@@ -5,25 +5,21 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.Color;
 import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.TableColumnModel;
 
 import org.knowm.xchart.BitmapEncoder;
 import org.knowm.xchart.BitmapEncoder.BitmapFormat;
 import org.knowm.xchart.CategoryChart;
 import org.knowm.xchart.CategoryChartBuilder;
-import org.knowm.xchart.PieChart;
-import org.knowm.xchart.PieChartBuilder;
-import org.knowm.xchart.style.PieStyler.AnnotationType;
 import org.knowm.xchart.style.Styler.ChartTheme;
 import org.knowm.xchart.style.Styler.LegendPosition;
 
 import controller.DetailManagementService;
 import controller.MemberManagementService;
-import controller.ProductManagementService;
 import model.Detail;
 import model.Member;
-import model.Ordering;
 import model.OrderingDAO;
-import model.Product;
 
 import java.awt.Font;
 import java.util.ArrayList;
@@ -149,6 +145,19 @@ public class CESellerAnalysis {
 
 		table = new JTable(data2, columnNames);
 		scrollPane.setViewportView(table);
+		// DefaultTableCellHeaderRenderer 생성 (가운데 정렬을 위한)
+		DefaultTableCellRenderer tScheduleCellRenderer = new DefaultTableCellRenderer();
+
+		// DefaultTableCellHeaderRenderer의 정렬을 가운데 정렬로 지정
+		tScheduleCellRenderer.setHorizontalAlignment(SwingConstants.CENTER);
+
+		// 정렬할 테이블의 ColumnModel을 가져옴
+		TableColumnModel tcmSchedule = table.getColumnModel();
+
+		// 반복문을 이용하여 테이블을 가운데 정렬로 지정
+		for (int i = 0; i < tcmSchedule.getColumnCount(); i++) {
+		tcmSchedule.getColumn(i).setCellRenderer(tScheduleCellRenderer);
+		}
 
 		panel_3 = new JPanel();
 		panel_3.setBackground(Color.DARK_GRAY);
@@ -156,7 +165,7 @@ public class CESellerAnalysis {
 		frame.getContentPane().add(panel_3);
 		panel_3.setLayout(null);
 
-		CategoryChart chart = new CategoryChartBuilder().width(2000).height(800).title("판매자기준 판매비율").xAxisTitle("판매자")
+		CategoryChart chart = new CategoryChartBuilder().width(2000).height(600).title("판매자기준 판매비율").xAxisTitle("판매자")
 				.yAxisTitle("판매 수량").theme(ChartTheme.GGPlot2).build();
 
 		// Customize Chart
