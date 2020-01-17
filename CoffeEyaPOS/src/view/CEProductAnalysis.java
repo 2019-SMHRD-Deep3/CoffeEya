@@ -5,6 +5,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.Color;
 import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.TableColumnModel;
 
 import org.knowm.xchart.BitmapEncoder;
 import org.knowm.xchart.BitmapEncoder.BitmapFormat;
@@ -111,7 +113,7 @@ public class CEProductAnalysis {
 		panel_1.setLayout(null);
 
 		scrollPane = new JScrollPane();
-		scrollPane.setBounds(27, 25, 348, 542);
+		scrollPane.setBounds(12, 25, 382, 542);
 		panel_1.add(scrollPane);
 
 		ArrayList<Detail> listCnt = service.detailLookup();
@@ -145,6 +147,19 @@ public class CEProductAnalysis {
 
 		table = new JTable(data2, columnNames);
 		scrollPane.setViewportView(table);
+		// DefaultTableCellHeaderRenderer 생성 (가운데 정렬을 위한)
+		DefaultTableCellRenderer tScheduleCellRenderer = new DefaultTableCellRenderer();
+
+		// DefaultTableCellHeaderRenderer의 정렬을 가운데 정렬로 지정
+		tScheduleCellRenderer.setHorizontalAlignment(SwingConstants.CENTER);
+
+		// 정렬할 테이블의 ColumnModel을 가져옴
+		TableColumnModel tcmSchedule = table.getColumnModel();
+
+		// 반복문을 이용하여 테이블을 가운데 정렬로 지정
+		for (int i = 0; i < tcmSchedule.getColumnCount(); i++) {
+		tcmSchedule.getColumn(i).setCellRenderer(tScheduleCellRenderer);
+		}
 
 		panel_3 = new JPanel();
 		panel_3.setBackground(Color.DARK_GRAY);
@@ -152,7 +167,7 @@ public class CEProductAnalysis {
 		frame.getContentPane().add(panel_3);
 		panel_3.setLayout(null);
 
-		PieChart chart = new PieChartBuilder().width(1200).height(2200).title("상품기준 판매비율").theme(ChartTheme.GGPlot2)
+		PieChart chart = new PieChartBuilder().width(1200).height(2400).title("상품기준 판매비율").theme(ChartTheme.GGPlot2)
 				.build();
 
 		// Customize Chart

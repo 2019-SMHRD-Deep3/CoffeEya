@@ -9,7 +9,6 @@ import java.util.ArrayList;
 
 public class OrderingDAO {
 
-
 	private String url = "jdbc:oracle:thin:@localhost:1521:xe";
 	private String user = "hr";
 	private String password = "hr";
@@ -62,7 +61,7 @@ public class OrderingDAO {
 			String sql = "SELECT * FROM ORDERING WHERE OR_NUM= ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, d.getOR_NUM());
-			
+
 			rs = psmt.executeQuery();
 
 			if (rs.next()) {
