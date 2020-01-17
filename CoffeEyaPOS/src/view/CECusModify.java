@@ -156,5 +156,15 @@ public class CECusModify {
 		});
 		btnNewButton_1.setBounds(900, 610, 272, 141);
 		frame.getContentPane().add(btnNewButton_1);
+		
+		JPanel panel_2 = new JPanel();
+		panel_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				frame.dispose();
+			}
+		});
+		panel_2.setBounds(193, 47, 126, 76);
+		frame.getContentPane().add(panel_2);
 	}
 }
