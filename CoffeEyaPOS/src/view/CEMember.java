@@ -282,10 +282,10 @@ public class CEMember {
 				lblNewLabel_5.setText((String)table.getValueAt(index, 0));
 				textField.setText((String)table.getValueAt(index, 1));
 				textField_2.setText((String) table.getValueAt(index, 2));
-				if (((String) table.getValueAt(index, 3)).equals("MANAGER")) {
+				if (((String) table.getValueAt(index, 3)).equals("MANAGER") || ((String) table.getValueAt(index, 3)).equals("manager") ) {
 					rdbtnNewRadioButton.setSelected(true);
 					rdbtnNewRadioButton_1.setSelected(false);
-				} else if (((String) table.getValueAt(index, 3)).equals("EMPLOYEE")) {
+				} else if (((String) table.getValueAt(index, 3)).equals("EMPLOYEE") || ((String) table.getValueAt(index, 3)).equals("employee") ) {
 					rdbtnNewRadioButton.setSelected(false);
 					rdbtnNewRadioButton_1.setSelected(true);
 				}
