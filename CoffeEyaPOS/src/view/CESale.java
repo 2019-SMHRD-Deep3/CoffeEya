@@ -125,7 +125,8 @@ public class CESale {
 		panel_3.add(cash);
 
 		JPanel panel_4 = new JPanel();
-		panel_4.setBounds(12, 10, 417, 238);
+		panel_4.setBackground(Color.DARK_GRAY);
+		panel_4.setBounds(12, 10, 417, 511);
 		panel_1.add(panel_4);
 		panel_4.setLayout(null);
 
