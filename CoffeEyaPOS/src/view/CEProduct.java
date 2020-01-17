@@ -1,8 +1,6 @@
 package view;
 
-import java.awt.Color;
 import java.awt.EventQueue;
-import java.awt.Graphics;
 
 import javax.swing.JFrame;
 
@@ -12,7 +10,6 @@ import model.OrderingDAO;
 import model.Product;
 import model.ProductDAO;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -29,7 +26,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-public class CESetProduct {
+public class CEProduct {
 
 	ProductManagementService service = new ProductManagementService();
 
@@ -46,14 +43,11 @@ public class CESetProduct {
 	private JButton btnNewButton_1;
 	private JButton btnNewButton_2;
 	private JButton btnNewButton_3;
-	private JPanel panel_3;
-	private JPanel panel_4;
-	private JPanel panel_5;
 
 	/**
 	 * Create the application.
 	 */
-	public CESetProduct(Member loginUser) {
+	public CEProduct(Member loginUser) {
 		this.loginUser = loginUser;
 		initialize();
 		frame.setVisible(true);
@@ -65,7 +59,6 @@ public class CESetProduct {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(150, 150, 1200, 800);
-		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		JButton btnNewButton = new JButton("\uB3CC\uC544\uAC00\uAE30");
@@ -92,58 +85,26 @@ public class CESetProduct {
 		productAll();
 
 		panel_1 = new JPanel();
-		panel_1.setBounds(536, 42, 527, 278);
+		panel_1.setBounds(536, 10, 527, 350);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(new GridLayout(0, 2, 0, 0));
 
-		String imgPath = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//p_number.png";
-		ImageIcon icon = new ImageIcon(imgPath);
-		
-		panel_3 = new JPanel() {
-			@Override
-			protected void paintComponent(Graphics g) {
-				g.drawImage(icon.getImage(), 0, 0, panel_3.getWidth(), panel_3.getHeight(), null);
-				setOpaque(false);
-				super.paintComponent(g);
-			}
-		};
-		panel_1.add(panel_3);
+		JLabel lblNewLabel = new JLabel("\uC0C1\uD488 \uBC88\uD638");
+		panel_1.add(lblNewLabel);
 
-			
 		textField = new JTextField();
 		panel_1.add(textField);
 		textField.setColumns(10);
-		
-		String imgPath1 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//p_name.png";
-		ImageIcon icon1 = new ImageIcon(imgPath1);
-		
-		
-		panel_4 = new JPanel() {
-			@Override
-			protected void paintComponent(Graphics g) {
-				g.drawImage(icon1.getImage(), 0, 0, panel_4.getWidth(), panel_4.getHeight(), null);
-				setOpaque(false);
-				super.paintComponent(g);
-			}
-		};
-		panel_1.add(panel_4);
+
+		JLabel lblNewLabel_1 = new JLabel("\uC0C1\uD488 \uC774\uB984");
+		panel_1.add(lblNewLabel_1);
 
 		textField_1 = new JTextField();
 		panel_1.add(textField_1);
 		textField_1.setColumns(10);
-		
-		String imgPath2 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//p_price.png";
-		ImageIcon icon2 = new ImageIcon(imgPath2);
-		
-		panel_5 = new JPanel(){
-			@Override
-			protected void paintComponent(Graphics g) {
-				g.drawImage(icon2.getImage(), 0, 0, panel_5.getWidth(), panel_5.getHeight(), null);
-				setOpaque(false);
-				super.paintComponent(g);
-			}
-		};
-		panel_1.add(panel_5);
+
+		JLabel lblNewLabel_2 = new JLabel("\uC0C1\uD488 \uAC00\uACA9");
+		panel_1.add(lblNewLabel_2);
 
 		textField_2 = new JTextField();
 		panel_1.add(textField_2);
