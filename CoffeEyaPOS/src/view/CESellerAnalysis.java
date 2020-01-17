@@ -8,22 +8,25 @@ import javax.swing.SwingConstants;
 
 import org.knowm.xchart.BitmapEncoder;
 import org.knowm.xchart.BitmapEncoder.BitmapFormat;
+import org.knowm.xchart.CategoryChart;
+import org.knowm.xchart.CategoryChartBuilder;
 import org.knowm.xchart.PieChart;
 import org.knowm.xchart.PieChartBuilder;
 import org.knowm.xchart.style.PieStyler.AnnotationType;
 import org.knowm.xchart.style.Styler.ChartTheme;
+import org.knowm.xchart.style.Styler.LegendPosition;
 
 import controller.DetailManagementService;
+import controller.MemberManagementService;
 import controller.ProductManagementService;
 import model.Detail;
 import model.Member;
+import model.Ordering;
 import model.OrderingDAO;
 import model.Product;
-import model.ProductDAO;
 
 import java.awt.Font;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.io.IOException;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseAdapter;
@@ -33,9 +36,9 @@ import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import javax.swing.JScrollPane;
 
-public class CEProductAnalysis {
-	DetailManagementService service = new DetailManagementService();
-	ProductManagementService serviceP = new ProductManagementService();
+public class CESellerAnalysis {
+	DetailManagementService serviceD = new DetailManagementService();
+	MemberManagementService serviceM = new MemberManagementService();
 
 	private JFrame frame;
 	private JPanel panel;
@@ -53,7 +56,7 @@ public class CEProductAnalysis {
 	/**
 	 * Create the application.
 	 */
-	public CEProductAnalysis(Member loginUser) {
+	public CESellerAnalysis(Member loginUser) {
 		this.loginUser = loginUser;
 		initialize();
 		frame.setVisible(true);
@@ -89,7 +92,7 @@ public class CEProductAnalysis {
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 
-		lblNewLabel_1 = new JLabel("\uC0C1\uD488 \uAE30\uC900");
+		lblNewLabel_1 = new JLabel("\uD310\uB9E4\uC790 \uAE30\uC900");
 		lblNewLabel_1.setBounds(12, 19, 1136, 57);
 		panel.add(lblNewLabel_1);
 		lblNewLabel_1.setForeground(Color.WHITE);
@@ -111,17 +114,19 @@ public class CEProductAnalysis {
 		panel_1.setLayout(null);
 
 		scrollPane = new JScrollPane();
-		scrollPane.setBounds(28, 45, 536, 504);
+		scrollPane.setBounds(28, 47, 536, 502);
 		panel_1.add(scrollPane);
 
-		ArrayList<Detail> listCnt = service.detailLookup();
-		ArrayList<Product> ProductCnt = serviceP.productLookup();
-		int[] dataCnt = new int[ProductCnt.size()];
+		OrderingDAO daoO = new OrderingDAO();
+		ArrayList<Detail> listCnt = serviceD.detailLookup();
+		ArrayList<Member> MemberCnt = serviceM.memberLookup();
+		int[] dataCnt = new int[MemberCnt.size()];
 		for (int i = 0; i < listCnt.size(); i++) {
 			d = listCnt.get(i);
-			for (int j = 0; j < ProductCnt.size(); j++) {
+			String MEM_ID = daoO.getInfoOrdering(d).getMEM_ID();
+			for (int j = 0; j < MemberCnt.size(); j++) {
 
-				if (d.getPRO_NUM() == j + 1) {
+				if (MEM_ID.equals(MemberCnt.get(j).getMEM_ID())) {
 					dataCnt[j] += d.getDE_AMOUNT();
 				}
 
@@ -129,17 +134,16 @@ public class CEProductAnalysis {
 		}
 
 		// 컬럼이름 복사, 데이터 복사
-		String[] columnNames = { "상품 이름", "판매 수량" };
-		Object[][] data = new Object[dataCnt.length][2];
+		String[] columnNames = { "차트 번호", "판매자 이름", "판매 수량" };
+		Object[][] data = new Object[dataCnt.length - 1][3];
 		int cnt = 0;
-		
 		for (int i = 0; i < dataCnt.length; i++) {
 			if (dataCnt[i] != 0) {
-				data[cnt++] = new Object[] { ProductCnt.get(i).getPRO_NAME(), dataCnt[i] };
+				data[cnt] = new Object[] { 1 + cnt++, MemberCnt.get(i).getMEM_ID(), dataCnt[i] };
 			}
 		}
 		Object[][] data2 = new Object[cnt][2];
-		for(int i=0; i<cnt;i++) {
+		for (int i = 0; i < cnt; i++) {
 			data2[i] = data[i];
 		}
 
@@ -152,27 +156,36 @@ public class CEProductAnalysis {
 		frame.getContentPane().add(panel_3);
 		panel_3.setLayout(null);
 
-		PieChart chart = new PieChartBuilder().width(900).height(900).title("상품기준 판매비율").theme(ChartTheme.GGPlot2)
-				.build();
+		CategoryChart chart = new CategoryChartBuilder().width(900).height(900).title("판매자기준 판매비율").xAxisTitle("판매자")
+				.yAxisTitle("판매 수량").theme(ChartTheme.GGPlot2).build();
 
 		// Customize Chart
-		chart.getStyler().setLegendVisible(false);
-		chart.getStyler().setAnnotationType(AnnotationType.LabelAndPercentage);
-		chart.getStyler().setAnnotationDistance(1.15);
-		chart.getStyler().setPlotContentSize(.7);
-		chart.getStyler().setStartAngleInDegrees(90);
+		chart.getStyler().setLegendPosition(LegendPosition.InsideNW);
+		chart.getStyler().setHasAnnotations(true);
 
 		// Series
+		int cnt2 = 0;
 		for (int i = 0; i < dataCnt.length; i++) {
 			if (dataCnt[i] != 0) {
-				chart.addSeries(ProductCnt.get(i).getPRO_NAME(), dataCnt[i]);
+				cnt2++;
 			}
 		}
+		int cnt3 = 0;
+		int[] arr1 = new int[cnt2];
+		int[] arr2 = new int[cnt2];
+		for (int i = 0; i < dataCnt.length; i++) {
+			arr1[cnt3] = cnt3 + 1;
+			if (dataCnt[i] != 0) {
+				arr2[cnt3++] = dataCnt[i];
+			}
+		}
+
+		chart.addSeries("판매 수량", arr1, arr2);
 
 		// save it in high-res
 		try {
 			BitmapEncoder.saveBitmapWithDPI(chart,
-					this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//Sample_Chart_300_DPI",
+					this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//Sample_Chart2_300_DPI",
 					BitmapFormat.PNG, 40);
 		} catch (IOException e1) {
 			e1.printStackTrace();
@@ -180,7 +193,7 @@ public class CEProductAnalysis {
 		lblNewLabel_3 = new JLabel("");
 
 		String imgPathChart = this.getClass().getResource(".").getPath()
-				+ "..//..//CoffeEyaIMG//Sample_Chart_300_DPI.png";
+				+ "..//..//CoffeEyaIMG//Sample_Chart2_300_DPI.png";
 		ImageIcon iconChart = new ImageIcon(imgPathChart);
 		lblNewLabel_3.setIcon(iconChart);
 		lblNewLabel_3.setBounds(23, 25, 509, 539);
