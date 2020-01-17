@@ -66,30 +66,6 @@ public class CEMember {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JPanel panel = new JPanel();
-		panel.setBounds(856, 590, 284, 110);
-		frame.getContentPane().add(panel);
-		panel.setLayout(new GridLayout(1, 0, 0, 0));
-		
-		JButton btnNewButton_2 = new JButton("\uC9C1\uC6D0 \uADFC\uD0DC\uAD00\uB9AC");
-		btnNewButton_2.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				CEMemCommute commute = new CEMemCommute(loginUser);
-			}
-		});
-		panel.add(btnNewButton_2);
-		
-		JButton btnNewButton_3 = new JButton("\uB85C\uADF8 \uC544\uC6C3");
-		btnNewButton_3.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				CEReLogin reLogin = new CEReLogin();
-				frame.dispose();
-			}
-		});
-		panel.add(btnNewButton_3);
-		
 		JButton btnNewButton_4 = new JButton("\uB3CC\uC544\uAC00\uAE30");
 		btnNewButton_4.addMouseListener(new MouseAdapter() {
 			@Override
@@ -241,6 +217,16 @@ public class CEMember {
 		});
 		panel_7.setBounds(800, 313, 100, 100);
 		frame.getContentPane().add(panel_7);
+		
+		JButton btnNewButton_2 = new JButton("\uCD9C\uACB0 \uAD00\uB9AC");
+		btnNewButton_2.setBounds(837, 584, 284, 110);
+		frame.getContentPane().add(btnNewButton_2);
+		btnNewButton_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				CEMemCommute commute = new CEMemCommute(loginUser);
+			}
+		});
 		
 		memberAll();
 		

@@ -17,6 +17,7 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.awt.Color;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 public class CEMain {
 
@@ -122,8 +123,12 @@ public class CEMain {
 		panel_4.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				CEMember member = new CEMember(loginUser);
-				frame.dispose();
+				if (loginUser.getMEM_PERM().equals("EMPLOYEE")) {
+					JOptionPane.showMessageDialog(frame, "접근 할 수 없습니다.");
+				} else if (loginUser.getMEM_PERM().equals("MANAGER")) {
+					CEMember member = new CEMember(loginUser);
+					frame.dispose();
+				}
 			}
 		});
 
@@ -164,8 +169,12 @@ public class CEMain {
 		panel_5.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				CEProduct setProduct = new CEProduct(loginUser);
-				frame.dispose();
+				if (loginUser.getMEM_PERM().equals("EMPLOYEE")) {
+					JOptionPane.showMessageDialog(frame, "접근 할 수 없습니다.");
+				} else if (loginUser.getMEM_PERM().equals("MANAGER")) {
+					CEProduct setProduct = new CEProduct(loginUser);
+					frame.dispose();
+				}
 			}
 		});
 		panel_5.setLayout(null);
@@ -185,8 +194,12 @@ public class CEMain {
 		panel_6.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				CECustomer customer = new CECustomer(loginUser);
-				frame.dispose();
+				if (loginUser.getMEM_PERM().equals("EMPLOYEE")) {
+					JOptionPane.showMessageDialog(frame, "접근 할 수 없습니다.");
+				} else if (loginUser.getMEM_PERM().equals("MANAGER")) {
+					CECustomer customer = new CECustomer(loginUser);
+					frame.dispose();
+				}
 			}
 		});
 		panel_6.setLayout(null);
@@ -197,8 +210,20 @@ public class CEMain {
 		lblNewLabel.setFont(new Font("굴림", Font.BOLD, 18));
 		lblNewLabel.setForeground(Color.BLACK);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(827, 10, 345, 37);
+		lblNewLabel.setBounds(790, 10, 345, 37);
 		panel.add(lblNewLabel);
+
+		JPanel panel_7 = new JPanel();
+		panel_7.setBackground(Color.RED);
+		panel_7.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				CEReLogin reLogin = new CEReLogin();
+				frame.dispose();
+			}
+		});
+		panel_7.setBounds(1147, 10, 37, 37);
+		panel.add(panel_7);
 
 	}
 }
