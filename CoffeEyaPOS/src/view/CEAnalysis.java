@@ -169,6 +169,12 @@ public class CEAnalysis {
 		panel_3.add(button);
 		
 		button_1 = new JButton("\uB0A0\uC9DC \uAE30\uC900");
+		button_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				CECalendarAnalysis calendarAnalysis = new CECalendarAnalysis(loginUser);
+			}
+		});
 		button_1.setFont(new Font("±¼¸²", Font.BOLD, 26));
 		button_1.setBounds(88, 442, 373, 77);
 		panel_3.add(button_1);

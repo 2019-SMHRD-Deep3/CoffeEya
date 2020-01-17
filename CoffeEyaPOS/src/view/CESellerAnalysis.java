@@ -109,12 +109,12 @@ public class CESellerAnalysis {
 
 		panel_1 = new JPanel();
 		panel_1.setBackground(Color.DARK_GRAY);
-		panel_1.setBounds(12, 159, 594, 592);
+		panel_1.setBounds(12, 159, 1160, 110);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
 
 		scrollPane = new JScrollPane();
-		scrollPane.setBounds(28, 47, 536, 502);
+		scrollPane.setBounds(12, 10, 1136, 90);
 		panel_1.add(scrollPane);
 
 		OrderingDAO daoO = new OrderingDAO();
@@ -152,11 +152,11 @@ public class CESellerAnalysis {
 
 		panel_3 = new JPanel();
 		panel_3.setBackground(Color.DARK_GRAY);
-		panel_3.setBounds(618, 159, 554, 592);
+		panel_3.setBounds(12, 279, 1160, 472);
 		frame.getContentPane().add(panel_3);
 		panel_3.setLayout(null);
 
-		CategoryChart chart = new CategoryChartBuilder().width(900).height(900).title("판매자기준 판매비율").xAxisTitle("판매자")
+		CategoryChart chart = new CategoryChartBuilder().width(2000).height(800).title("판매자기준 판매비율").xAxisTitle("판매자")
 				.yAxisTitle("판매 수량").theme(ChartTheme.GGPlot2).build();
 
 		// Customize Chart
@@ -196,7 +196,7 @@ public class CESellerAnalysis {
 				+ "..//..//CoffeEyaIMG//Sample_Chart2_300_DPI.png";
 		ImageIcon iconChart = new ImageIcon(imgPathChart);
 		lblNewLabel_3.setIcon(iconChart);
-		lblNewLabel_3.setBounds(23, 25, 509, 539);
+		lblNewLabel_3.setBounds(26, 26, 1107, 424);
 		panel_3.add(lblNewLabel_3);
 	}
 }
