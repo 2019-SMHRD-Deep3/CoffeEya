@@ -106,12 +106,12 @@ public class CEProductAnalysis {
 
 		panel_1 = new JPanel();
 		panel_1.setBackground(Color.DARK_GRAY);
-		panel_1.setBounds(12, 159, 594, 592);
+		panel_1.setBounds(12, 159, 406, 592);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
 
 		scrollPane = new JScrollPane();
-		scrollPane.setBounds(28, 45, 536, 504);
+		scrollPane.setBounds(27, 25, 348, 542);
 		panel_1.add(scrollPane);
 
 		ArrayList<Detail> listCnt = service.detailLookup();
@@ -148,11 +148,11 @@ public class CEProductAnalysis {
 
 		panel_3 = new JPanel();
 		panel_3.setBackground(Color.DARK_GRAY);
-		panel_3.setBounds(618, 159, 554, 592);
+		panel_3.setBounds(430, 159, 742, 592);
 		frame.getContentPane().add(panel_3);
 		panel_3.setLayout(null);
 
-		PieChart chart = new PieChartBuilder().width(900).height(900).title("상품기준 판매비율").theme(ChartTheme.GGPlot2)
+		PieChart chart = new PieChartBuilder().width(1200).height(2200).title("상품기준 판매비율").theme(ChartTheme.GGPlot2)
 				.build();
 
 		// Customize Chart
@@ -173,17 +173,18 @@ public class CEProductAnalysis {
 		try {
 			BitmapEncoder.saveBitmapWithDPI(chart,
 					this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//Sample_Chart_300_DPI",
-					BitmapFormat.PNG, 40);
+					BitmapFormat.PNG, 38);
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
 		lblNewLabel_3 = new JLabel("");
+		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 
 		String imgPathChart = this.getClass().getResource(".").getPath()
 				+ "..//..//CoffeEyaIMG//Sample_Chart_300_DPI.png";
 		ImageIcon iconChart = new ImageIcon(imgPathChart);
 		lblNewLabel_3.setIcon(iconChart);
-		lblNewLabel_3.setBounds(23, 25, 509, 539);
+		lblNewLabel_3.setBounds(12, 25, 718, 539);
 		panel_3.add(lblNewLabel_3);
 	}
 }
