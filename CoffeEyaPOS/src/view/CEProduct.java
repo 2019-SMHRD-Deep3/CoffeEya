@@ -28,6 +28,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableColumnModel;
+import javax.swing.JComboBox;
 
 public class CEProduct {
 
@@ -198,7 +199,7 @@ public class CEProduct {
 			}
 		});
 		panel_2.add(btnNewButton_3);
-
+		
 	}
 
 	private void productAll() {
