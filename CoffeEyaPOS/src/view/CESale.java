@@ -5,6 +5,8 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
@@ -12,6 +14,7 @@ import java.util.Arrays;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -19,16 +22,10 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 
-import org.omg.stub.java.rmi._Remote_Stub;
-
 import controller.ProductManagementService;
 import model.Member;
 import model.Product;
-import javax.swing.JList;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.JTabbedPane;
-import javax.swing.JLabel;
+import java.awt.GridBagLayout;
 
 public class CESale {
 
@@ -120,6 +117,7 @@ public class CESale {
 			@Override
 			// 결제 클릭시 이벤트
 			public void mouseClicked(MouseEvent e) {
+				
 			}
 		});
 		panel_3.add(cash);
@@ -137,8 +135,9 @@ public class CESale {
 		panel_10.setLayout(null);
 
 		lblNewLabel10 = new JLabel(totalMoney + " 원");
+		lblNewLabel10.setFont(new Font("굴림", Font.BOLD, 30));
 		lblNewLabel10.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel10.setBounds(154, 77, 227, 55);
+		lblNewLabel10.setBounds(206, 48, 147, 49);
 		panel_10.add(lblNewLabel10);
 
 		// 합계구하기
@@ -190,7 +189,9 @@ public class CESale {
 		btnNewButton_3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				
+//				// Row가 0으로 되는 코드, 하지만 초기화 한 번은 가능/두번째부터 오류 발생, 누적 가격도 변화 없음
+//				DefaultTableModel model = (DefaultTableModel)table.getModel();
+//				model.setNumRows(0);
 			}
 		});
 		btnNewButton_3.setBounds(47, 155, 97, 23);
@@ -204,7 +205,7 @@ public class CESale {
 		JPanel panel_9 = new JPanel();
 		panel_9.setBounds(12, 373, 693, 292);
 		panel_2.add(panel_9);
-		panel_9.setLayout(new GridLayout(0, 5, 0, 0));
+		panel_9.setLayout(new GridLayout(0, 4, 0, 0));
 
 		// 반복문으로 생성
 		ArrayList<Product> list = pservice.productLookup();
@@ -217,6 +218,7 @@ public class CESale {
 		JButton[] JButton10 = new JButton[data.length];
 		for (int i = 0; i < data.length; i++) {
 			JButton10[i] = new JButton(Arrays.deepToString(data[i]) + "");
+			JButton10[i].setPreferredSize(new Dimension(200, 100));
 			panel_9.add(JButton10[i]);
 		}
 

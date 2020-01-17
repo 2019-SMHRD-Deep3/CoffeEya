@@ -63,6 +63,7 @@ public class CECusJoin {
     */
    private void initialize() {
       frame = new JFrame();
+      frame.setResizable(false);
 
       frame.setBounds(100, 100, 1200, 800);
       frame.setBounds(150, 150, 1200, 800);
@@ -239,6 +240,7 @@ public class CECusJoin {
       panel.add(lblNewLabel_5);
       
       textField_4 = new JTextField();
+      textField_4.setFont(new Font("굴림", Font.PLAIN, 12));
       textField_4.setBackground(SystemColor.inactiveCaptionBorder);
       textField_4.setBounds(300, 446, 280, 54);
       panel.add(textField_4);
@@ -291,7 +293,7 @@ public class CECusJoin {
             boolean result = service.customerJoin(c);
             if (result) {
                JOptionPane.showMessageDialog(frame, "회원 가입 성공");
-               CECustomerM customer = new CECustomerM(loginUser);
+               CECustomer customer = new CECustomer(loginUser);
                frame.dispose(); // 화면 종료
             } else{
                JOptionPane.showMessageDialog(frame, "회원 가입 실패");
@@ -305,7 +307,7 @@ public class CECusJoin {
       btnNewButton_1.addMouseListener(new MouseAdapter() {
          @Override
          public void mouseClicked(MouseEvent e) {
-        	 CECustomerM customer = new CECustomerM(loginUser);
+        	 CECustomer customer = new CECustomer(loginUser);
              frame.dispose();
          }
       });
