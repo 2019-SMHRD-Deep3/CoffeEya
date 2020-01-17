@@ -107,26 +107,22 @@ public class CESale {
 		panel_1.add(panel_3);
 		panel_3.setLayout(new GridLayout(0, 2, 5, 5));
 
-		JButton btnNewButton_1 = new JButton("\uCE74\uB4DC");
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+		JButton card = new JButton("\uCE74\uB4DC");
+		card.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
 			}
 		});
-		panel_3.add(btnNewButton_1);
+		panel_3.add(card);
 
-		JButton btnNewButton_2 = new JButton("\uD604\uAE08");
-		btnNewButton_2.addMouseListener(new MouseAdapter() {
+		JButton cash = new JButton("\uD604\uAE08");
+		cash.addMouseListener(new MouseAdapter() {
 			@Override
+			// 결제 클릭시 이벤트
 			public void mouseClicked(MouseEvent e) {
 			}
 		});
-		btnNewButton_2.addActionListener(new ActionListener() {
-			// 결제 클릭시 이벤트
-			public void actionPerformed(ActionEvent e) {
-
-			}
-		});
-		panel_3.add(btnNewButton_2);
+		panel_3.add(cash);
 
 		JPanel panel_4 = new JPanel();
 		panel_4.setBounds(12, 10, 417, 238);
@@ -141,7 +137,7 @@ public class CESale {
 
 		lblNewLabel10 = new JLabel(totalMoney + " 원");
 		lblNewLabel10.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel10.setBounds(154, 10, 227, 55);
+		lblNewLabel10.setBounds(154, 77, 227, 55);
 		panel_10.add(lblNewLabel10);
 
 		// 합계구하기
