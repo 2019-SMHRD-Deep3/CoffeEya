@@ -5,6 +5,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.Color;
 import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.TableColumnModel;
 
 import org.knowm.xchart.BitmapEncoder;
 import org.knowm.xchart.BitmapEncoder.BitmapFormat;
@@ -114,12 +116,12 @@ public class CEAnalysis {
 
 		panel_1 = new JPanel();
 		panel_1.setBackground(Color.DARK_GRAY);
-		panel_1.setBounds(12, 159, 594, 592);
+		panel_1.setBounds(12, 159, 771, 592);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
 
 		scrollPane = new JScrollPane();
-		scrollPane.setBounds(28, 23, 536, 542);
+		scrollPane.setBounds(28, 23, 715, 542);
 		panel_1.add(scrollPane);
 
 		// 컬럼이름 복사, 데이터 복사
@@ -134,15 +136,28 @@ public class CEAnalysis {
 			int PRO_PRICE = daoP.getInfoProduct(d).getPRO_PRICE();
 			String OR_PAY = daoO.getInfoOrdering(d).getOR_PAY();
 			String MEM_ID = daoO.getInfoOrdering(d).getMEM_ID();
-			String OR_DATE = daoO.getInfoOrdering(d).getOR_DATE();
+			String OR_DATE = daoO.getInfoOrdering(d).getOR_DATE().substring(0, 10);
 			data[i] = new Object[] { d.getOR_NUM(), PRO_NAME, PRO_PRICE, d.getDE_AMOUNT(), OR_PAY, MEM_ID, OR_DATE };
 		}
 		table = new JTable(data, columnNames);
 		scrollPane.setViewportView(table);
+		// DefaultTableCellHeaderRenderer 생성 (가운데 정렬을 위한)
+		DefaultTableCellRenderer tScheduleCellRenderer = new DefaultTableCellRenderer();
+
+		// DefaultTableCellHeaderRenderer의 정렬을 가운데 정렬로 지정
+		tScheduleCellRenderer.setHorizontalAlignment(SwingConstants.CENTER);
+
+		// 정렬할 테이블의 ColumnModel을 가져옴
+		TableColumnModel tcmSchedule = table.getColumnModel();
+
+		// 반복문을 이용하여 테이블을 가운데 정렬로 지정
+		for (int i = 0; i < tcmSchedule.getColumnCount(); i++) {
+		tcmSchedule.getColumn(i).setCellRenderer(tScheduleCellRenderer);
+		}
 
 		panel_3 = new JPanel();
 		panel_3.setBackground(Color.DARK_GRAY);
-		panel_3.setBounds(618, 159, 554, 592);
+		panel_3.setBounds(795, 159, 377, 592);
 		frame.getContentPane().add(panel_3);
 		panel_3.setLayout(null);
 
@@ -154,9 +169,9 @@ public class CEAnalysis {
 			}
 		});
 		btnNewButton.setFont(new Font("굴림", Font.BOLD, 26));
-		btnNewButton.setBounds(88, 165, 373, 77);
+		btnNewButton.setBounds(85, 168, 220, 77);
 		panel_3.add(btnNewButton);
-		
+
 		button = new JButton("\uD310\uB9E4\uC790 \uAE30\uC900");
 		button.addMouseListener(new MouseAdapter() {
 			@Override
@@ -165,9 +180,9 @@ public class CEAnalysis {
 			}
 		});
 		button.setFont(new Font("굴림", Font.BOLD, 26));
-		button.setBounds(88, 305, 373, 77);
+		button.setBounds(85, 301, 220, 77);
 		panel_3.add(button);
-		
+
 		button_1 = new JButton("\uB0A0\uC9DC \uAE30\uC900");
 		button_1.addMouseListener(new MouseAdapter() {
 			@Override
@@ -176,20 +191,20 @@ public class CEAnalysis {
 			}
 		});
 		button_1.setFont(new Font("굴림", Font.BOLD, 26));
-		button_1.setBounds(88, 442, 373, 77);
+		button_1.setBounds(85, 440, 220, 77);
 		panel_3.add(button_1);
-		
+
 		panel_4 = new JPanel();
 		panel_4.setBackground(new Color(204, 153, 102));
-		panel_4.setBounds(12, 27, 530, 69);
+		panel_4.setBounds(12, 47, 353, 69);
 		panel_3.add(panel_4);
 		panel_4.setLayout(null);
-		
+
 		lblNewLabel_3 = new JLabel("\uC2DC\uAC01\uD654\uBA74 \uC120\uD0DD");
 		lblNewLabel_3.setForeground(Color.WHITE);
 		lblNewLabel_3.setFont(new Font("굴림", Font.BOLD, 28));
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3.setBounds(12, 10, 506, 49);
+		lblNewLabel_3.setBounds(0, 10, 353, 49);
 		panel_4.add(lblNewLabel_3);
 
 		btnNewButton_1 = new JButton("");
