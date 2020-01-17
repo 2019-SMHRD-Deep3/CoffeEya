@@ -190,12 +190,11 @@ public class CECusJoin {
             
             boolean result = service.customerJoin(c);
             if (result) {
-               JOptionPane.showMessageDialog(frame,
-                      "회원 가입 성공");
+               JOptionPane.showMessageDialog(frame, "회원 가입 성공");
+               CECustomerM customer = new CECustomerM(loginUser);
                frame.dispose(); // 화면 종료
             } else{
-               JOptionPane.showMessageDialog(frame,
-                      "회원 가입 실패");
+               JOptionPane.showMessageDialog(frame, "회원 가입 실패");
             }
          }
       });
@@ -206,7 +205,8 @@ public class CECusJoin {
       btnNewButton_1.addMouseListener(new MouseAdapter() {
          @Override
          public void mouseClicked(MouseEvent e) {
-            frame.dispose();
+        	 CECustomerM customer = new CECustomerM(loginUser);
+             frame.dispose();
          }
       });
       panel_2.add(btnNewButton_1);

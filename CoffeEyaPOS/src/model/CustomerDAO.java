@@ -111,7 +111,7 @@ public class CustomerDAO {
 				String CUS_BIRTHDAY = rs.getString("CUS_BIRTHDAY");
 				int CUS_POINT = rs.getInt("CUS_POINT");
 
-				list.add(new Customer(CUS_NUMBER, CUS_NAME, CUS_PHONE, CUS_SEX, CUS_BIRTHDAY, CUS_POINT));
+				list.add(new Customer(CUS_NUMBER, CUS_NAME, CUS_PHONE, CUS_SEX, CUS_BIRTHDAY.substring(0, 10), CUS_POINT));
 			}
 
 		} catch (ClassNotFoundException e) {
@@ -227,14 +227,14 @@ public class CustomerDAO {
 			Class.forName("oracle.jdbc.driver.OracleDriver"); // OracleDriver driver = new OracleDrivedr(); 객체를 직접 생성하기
 																// 위해 코드를 작성하면 오라클 이외의 다른 제품을 사용할때 다 변경해야하는 수고로움이 있다.
 			conn = DriverManager.getConnection(url, user, password);
-			String sql = "UPDATE Customer SET CUS_NAME = ?, CUS_PHONE = ?, CUS_SEX = ?,  CUS_BIRTHDAY = ?,CUS_POINT = ?,where CUS_NUMBER = ?";
+			String sql = "UPDATE CUSTOMER SET CUS_NAME = ?, CUS_PHONE = ?, CUS_SEX = ?,  CUS_BIRTHDAY = ?,CUS_POINT = ? where CUS_NUMBER = ?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, c.getCUS_NUMBER());
-			psmt.setString(2, c.getCUS_NAME());
-			psmt.setString(3, c.getCUS_PHONE());
-			psmt.setString(4, c.getCUS_SEX());
-			psmt.setString(5, c.getCUS_BIRTHDAY());
-			psmt.setInt(6, c.getCUS_POINT());
+			psmt.setString(1, c.getCUS_NAME());
+			psmt.setString(2, c.getCUS_PHONE());
+			psmt.setString(3, c.getCUS_SEX());
+			psmt.setString(4, c.getCUS_BIRTHDAY());
+			psmt.setInt(5, c.getCUS_POINT());
+			psmt.setString(6, c.getCUS_NUMBER());
 
 			rows = psmt.executeUpdate();
 

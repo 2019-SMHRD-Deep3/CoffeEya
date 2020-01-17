@@ -26,7 +26,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-public class CESetProduct {
+public class CEProduct {
 
 	ProductManagementService service = new ProductManagementService();
 
@@ -47,7 +47,7 @@ public class CESetProduct {
 	/**
 	 * Create the application.
 	 */
-	public CESetProduct(Member loginUser) {
+	public CEProduct(Member loginUser) {
 		this.loginUser = loginUser;
 		initialize();
 		frame.setVisible(true);
