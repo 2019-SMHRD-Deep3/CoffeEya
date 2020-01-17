@@ -38,6 +38,15 @@ public class CECusJoin {
    private Member loginUser;
    private JPanel panel_4;
    private JTextField textField_4;
+   private JPanel panel_3;
+   private JLabel lblNewLabel;
+   private JLabel lblNewLabel_1;
+   private JLabel lblNewLabel_2;
+   private JLabel lblNewLabel_3;
+   private JLabel lblNewLabel_4;
+   private JLabel lblNewLabel_5;
+   private JPanel panel_1;
+   private JPanel panel;
    
 
    /**
@@ -74,102 +83,193 @@ public class CECusJoin {
       frame.getContentPane().add(panel_4, "name_2532572478074700");
       panel_4.setLayout(null);
       
-      JPanel panel_3 = new JPanel();
-      panel_3.setBackground(new Color(139, 69, 19));
-      panel_3.setBounds(565, 10, 619, 740);
+      String imgPath1 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//blur.png";
+      ImageIcon icon1 = new ImageIcon(imgPath1);
+      
+      panel_3 = new JPanel(){
+          @Override
+          protected void paintComponent(Graphics g) {
+             g.drawImage(icon1.getImage(), 0, 0, panel_3.getWidth(), panel_3.getHeight(), null);
+             setOpaque(false);
+             super.paintComponent(g);
+          }
+       };
+      panel_3.setBackground(Color.WHITE);
+      panel_3.setBounds(565, 0, 619, 750);
       panel_4.add(panel_3);
       panel_3.setLayout(null);
       
-      JLabel lblNewLabel = new JLabel("\uACE0\uAC1D \uB4F1\uB85D");
+      String imgPath2 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//cus1.png";
+      ImageIcon icon2 = new ImageIcon(imgPath2);
+      
+      lblNewLabel = new JLabel(""){
+          @Override
+          protected void paintComponent(Graphics g) {
+             g.drawImage(icon2.getImage(), 0, 0, lblNewLabel.getWidth(), lblNewLabel.getHeight(), null);
+             setOpaque(false);
+             super.paintComponent(g);
+          }
+       };
       lblNewLabel.setBackground(new Color(240, 240, 240));
       lblNewLabel.setFont(new Font("HY견고딕", Font.PLAIN, 20));
       lblNewLabel.setForeground(new Color(250, 235, 215));
-      lblNewLabel.setBounds(0, 0, 580, 100);
+      lblNewLabel.setBounds(110, 0, 393, 85);
       panel_3.add(lblNewLabel);
       lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
       
-      JPanel panel = new JPanel();
-      panel.setBackground(new Color(139, 69, 19));
-      panel.setBounds(0, 110, 580, 500);
+      String imgPath9 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//bg_sky.png";
+      ImageIcon icon9 = new ImageIcon(imgPath9);
+      
+      panel = new JPanel(){
+          @Override
+          protected void paintComponent(Graphics g) {
+             g.drawImage(icon9.getImage(), 0, 0, panel.getWidth(), panel.getHeight(), null);
+             setOpaque(false);
+             super.paintComponent(g);
+          }
+       };
+      panel.setBackground(Color.WHITE);
+      panel.setBounds(0, 87, 619, 523);
       panel_3.add(panel);
       panel.setLayout(null);
       
-      JLabel lblNewLabel_1 = new JLabel("\uACE0\uAC1D \uBC88\uD638");
-      lblNewLabel_1.setBounds(0, 0, 280, 84);
+      String imgPath3 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//cus2.png";
+      ImageIcon icon3 = new ImageIcon(imgPath3);
+      
+      lblNewLabel_1 = new JLabel(""){
+          @Override
+          protected void paintComponent(Graphics g) {
+             g.drawImage(icon3.getImage(), 0, 0, lblNewLabel_1.getWidth(), lblNewLabel_1.getHeight(), null);
+             setOpaque(false);
+             super.paintComponent(g);
+          }
+       };
+      lblNewLabel_1.setBounds(61, 38, 165, 46);
       lblNewLabel_1.setFont(new Font("HY견고딕", Font.PLAIN, 20));
       lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
       lblNewLabel_1.setForeground(new Color(250, 235, 215));
       panel.add(lblNewLabel_1);
       
       textField = new JTextField();
-      textField.setBounds(300, 0, 280, 84);
+      textField.setBounds(300, 30, 280, 54);
       textField.setBackground(SystemColor.inactiveCaptionBorder);
       panel.add(textField);
       textField.setColumns(10);
       
-      JLabel lblNewLabel_2 = new JLabel("\uACE0\uAC1D \uC131\uBA85");
-      lblNewLabel_2.setBounds(0, 104, 280, 84);
+      String imgPath4 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//cus3.png";
+      ImageIcon icon4 = new ImageIcon(imgPath4);
+      
+      
+      lblNewLabel_2 = new JLabel(""){
+          @Override
+          protected void paintComponent(Graphics g) {
+             g.drawImage(icon4.getImage(), 0, 0, lblNewLabel_2.getWidth(), lblNewLabel_2.getHeight(), null);
+             setOpaque(false);
+             super.paintComponent(g);
+          }
+       };
+      lblNewLabel_2.setBounds(61, 142, 165, 46);
       lblNewLabel_2.setFont(new Font("HY견고딕", Font.PLAIN, 20));
       lblNewLabel_2.setForeground(new Color(250, 235, 215));
       lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
       panel.add(lblNewLabel_2);
       
       textField_1 = new JTextField();
-      textField_1.setBounds(300, 104, 280, 84);
+      textField_1.setBounds(300, 134, 280, 54);
       textField_1.setBackground(SystemColor.inactiveCaptionBorder);
       panel.add(textField_1);
       textField_1.setColumns(10);
       
-      JLabel lblNewLabel_3 = new JLabel("\uC804\uD654 \uBC88\uD638");
-      lblNewLabel_3.setBounds(0, 208, 280, 84);
+      String imgPath5 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//cus4.png";
+      ImageIcon icon5 = new ImageIcon(imgPath5);
+      
+      
+      lblNewLabel_3 = new JLabel(""){
+          @Override
+          protected void paintComponent(Graphics g) {
+             g.drawImage(icon5.getImage(), 0, 0, lblNewLabel_3.getWidth(), lblNewLabel_3.getHeight(), null);
+             setOpaque(false);
+             super.paintComponent(g);
+          }
+       };
+      lblNewLabel_3.setBounds(61, 246, 165, 46);
       lblNewLabel_3.setFont(new Font("HY견고딕", Font.PLAIN, 20));
       lblNewLabel_3.setForeground(new Color(250, 235, 215));
       lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
       panel.add(lblNewLabel_3);
       
       textField_2 = new JTextField();
-      textField_2.setBounds(300, 208, 280, 84);
+      textField_2.setBounds(300, 238, 280, 54);
       textField_2.setBackground(SystemColor.inactiveCaptionBorder);
       panel.add(textField_2);
       textField_2.setColumns(10);
       
-      JLabel lblNewLabel_4 = new JLabel("\uC131\uBCC4");
-      lblNewLabel_4.setBounds(0, 312, 280, 84);
+      String imgPath6 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//cus5.png";
+      ImageIcon icon6 = new ImageIcon(imgPath6);
+      
+      lblNewLabel_4 = new JLabel(""){
+          @Override
+          protected void paintComponent(Graphics g) {
+             g.drawImage(icon6.getImage(), 0, 0, lblNewLabel_4.getWidth(), lblNewLabel_4.getHeight(), null);
+             setOpaque(false);
+             super.paintComponent(g);
+          }
+       };
+      lblNewLabel_4.setBounds(61, 348, 165, 46);
       lblNewLabel_4.setFont(new Font("HY견고딕", Font.PLAIN, 20));
       lblNewLabel_4.setForeground(new Color(250, 235, 215));
       lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
       panel.add(lblNewLabel_4);
       
-      JLabel lblNewLabel_5 = new JLabel("\uC0DD\uB144 \uC6D4\uC77C(\uC5EC\uC12F \uC790\uB9AC)");
-      lblNewLabel_5.setBounds(0, 416, 280, 84);
+      String imgPath7 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//cus6.png";
+      ImageIcon icon7 = new ImageIcon(imgPath7);
+      
+      lblNewLabel_5 = new JLabel(""){
+          @Override
+          protected void paintComponent(Graphics g) {
+             g.drawImage(icon7.getImage(), 0, 0, lblNewLabel_5.getWidth(), lblNewLabel_5.getHeight(), null);
+             setOpaque(false);
+             super.paintComponent(g);
+          }
+       };
+      lblNewLabel_5.setBounds(61, 446, 165, 46);
       lblNewLabel_5.setFont(new Font("HY견고딕", Font.PLAIN, 20));
       lblNewLabel_5.setForeground(new Color(250, 235, 215));
       lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
       panel.add(lblNewLabel_5);
       
       textField_4 = new JTextField();
-      textField_4.setBounds(300, 416, 280, 84);
+      textField_4.setBackground(SystemColor.inactiveCaptionBorder);
+      textField_4.setBounds(300, 446, 280, 54);
       panel.add(textField_4);
       textField_4.setColumns(10);
       
-      JPanel panel_1 = new JPanel();
-      panel_1.setBounds(300, 312, 280, 84);
+      
+      panel_1 = new JPanel();
+      panel_1.setBackground(SystemColor.inactiveCaptionBorder);
+      panel_1.setBounds(321, 331, 247, 75);
       panel.add(panel_1);
       panel_1.setLayout(null);
       
       JRadioButton rdbtnNewRadioButton = new JRadioButton("\uB0A8\uC790");
-      rdbtnNewRadioButton.setBounds(61, 22, 75, 33);
+      rdbtnNewRadioButton.setFont(new Font("HY견고딕", Font.PLAIN, 12));
+      rdbtnNewRadioButton.setBackground(SystemColor.inactiveCaptionBorder);
+      rdbtnNewRadioButton.setHorizontalAlignment(SwingConstants.CENTER);
+      rdbtnNewRadioButton.setBounds(8, 18, 75, 33);
       panel_1.add(rdbtnNewRadioButton);
       
       JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("\uC5EC\uC790");
-      rdbtnNewRadioButton_1.setBounds(164, 22, 75, 33);
+      rdbtnNewRadioButton_1.setFont(new Font("HY견고딕", Font.PLAIN, 12));
+      rdbtnNewRadioButton_1.setBackground(SystemColor.inactiveCaptionBorder);
+      rdbtnNewRadioButton_1.setHorizontalAlignment(SwingConstants.CENTER);
+      rdbtnNewRadioButton_1.setBounds(135, 18, 75, 33);
       panel_1.add(rdbtnNewRadioButton_1);
       
       JPanel panel_2 = new JPanel();
-      panel_2.setBackground(new Color(139, 69, 19));
-      panel_2.setBounds(99, 632, 446, 78);
+      panel_2.setBackground(Color.WHITE);
+      panel_2.setBounds(52, 652, 523, 47);
       panel_3.add(panel_2);
-      panel_2.setLayout(new GridLayout(1, 0, 20, 0));
+      panel_2.setLayout(new GridLayout(1, 0, 0, 0));
       
       JButton btnNewButton = new JButton("\uB4F1\uB85D");
       btnNewButton.setFont(new Font("HY견고딕", Font.PLAIN, 20));
@@ -190,12 +290,11 @@ public class CECusJoin {
             
             boolean result = service.customerJoin(c);
             if (result) {
-               JOptionPane.showMessageDialog(frame,
-                      "회원 가입 성공");
+               JOptionPane.showMessageDialog(frame, "회원 가입 성공");
+               CECustomerM customer = new CECustomerM(loginUser);
                frame.dispose(); // 화면 종료
             } else{
-               JOptionPane.showMessageDialog(frame,
-                      "회원 가입 실패");
+               JOptionPane.showMessageDialog(frame, "회원 가입 실패");
             }
          }
       });
@@ -206,7 +305,8 @@ public class CECusJoin {
       btnNewButton_1.addMouseListener(new MouseAdapter() {
          @Override
          public void mouseClicked(MouseEvent e) {
-            frame.dispose();
+        	 CECustomerM customer = new CECustomerM(loginUser);
+             frame.dispose();
          }
       });
       panel_2.add(btnNewButton_1);

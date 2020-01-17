@@ -163,7 +163,7 @@ public class CEMain {
 		panel_5.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				CESetProduct setProduct = new CESetProduct(loginUser);
+				CEProduct setProduct = new CEProduct(loginUser);
 				frame.dispose();
 			}
 		});
@@ -184,7 +184,7 @@ public class CEMain {
 		panel_6.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				CECustomer customer = new CECustomer(loginUser);
+				CECustomerM customer = new CECustomerM(loginUser);
 				frame.dispose();
 			}
 		});
