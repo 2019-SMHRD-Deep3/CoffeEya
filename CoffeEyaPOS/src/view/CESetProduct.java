@@ -59,13 +59,14 @@ public class CESetProduct {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(150, 150, 1200, 800);
-		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		JButton btnNewButton = new JButton("\uB3CC\uC544\uAC00\uAE30");
 		btnNewButton.setBounds(1075, 10, 100, 100);
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
+				CEMain main = new CEMain(loginUser);
 				frame.dispose();
 			}
 		});
