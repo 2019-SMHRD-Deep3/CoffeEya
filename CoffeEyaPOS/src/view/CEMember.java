@@ -126,6 +126,7 @@ public class CEMember {
 		panel_2.add(lblNewLabel);
 
 		lblNewLabel_5 = new JLabel("\uC0AC\uC6A9\uC790 \uC120\uD0DD");
+		lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_2.add(lblNewLabel_5);
 
 		String imgPath1 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//pw.png";
