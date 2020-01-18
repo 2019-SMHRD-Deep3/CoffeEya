@@ -9,12 +9,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -22,10 +25,11 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 
+import controller.OrderingManagementService;
 import controller.ProductManagementService;
 import model.Member;
+import model.Ordering;
 import model.Product;
-import java.awt.GridBagLayout;
 
 public class CESale {
 
@@ -37,10 +41,16 @@ public class CESale {
 	private JTable table;
 	private DefaultTableModel defaultTableModel;
 	private JLabel lblNewLabel10;
+	private JLabel label_4;
+	private JLabel label_1;
+	private JLabel label;
 	private JButton delrow;
 
+	public String cashcard = "";
 	public int totalMoney = 0;
 	private ArrayList<String> menuName = new ArrayList<String>();
+	SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+	OrderingManagementService Oservice = new OrderingManagementService();
 
 	/**
 	 * Create the application.
@@ -117,7 +127,8 @@ public class CESale {
 			@Override
 			// 결제 클릭시 이벤트
 			public void mouseClicked(MouseEvent e) {
-				
+				cashcard = "현금";
+				addorder();
 			}
 		});
 		panel_3.add(cash);
@@ -130,18 +141,68 @@ public class CESale {
 
 		JPanel panel_10 = new JPanel();
 		panel_10.setBackground(Color.WHITE);
-		panel_10.setBounds(12, 10, 393, 142);
+		panel_10.setBounds(12, 10, 393, 162);
 		panel_4.add(panel_10);
 		panel_10.setLayout(null);
 
 		lblNewLabel10 = new JLabel(totalMoney + " 원");
 		lblNewLabel10.setFont(new Font("굴림", Font.BOLD, 30));
-		lblNewLabel10.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel10.setBounds(206, 48, 147, 49);
+		lblNewLabel10.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblNewLabel10.setBounds(200, 22, 167, 43);
 		panel_10.add(lblNewLabel10);
 
-		// 합계구하기
+		JLabel lblNewLabel = new JLabel("\uCD1D\uB9E4\uCD9C\uC561");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setFont(new Font("굴림", Font.BOLD, 24));
+		lblNewLabel.setBounds(12, 22, 148, 43);
+		panel_10.add(lblNewLabel);
 
+		JLabel lblNewLabel_1 = new JLabel("\uD560\uC778\uAE08\uC561");
+		lblNewLabel_1.setFont(new Font("굴림", Font.BOLD, 24));
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setForeground(Color.BLACK);
+		lblNewLabel_1.setBounds(12, 86, 148, 43);
+		panel_10.add(lblNewLabel_1);
+
+		label_4 = new JLabel("0 \uC6D0");
+		label_4.setHorizontalAlignment(SwingConstants.RIGHT);
+		label_4.setFont(new Font("굴림", Font.BOLD, 30));
+		label_4.setBounds(200, 86, 167, 43);
+		panel_10.add(label_4);
+
+		JPanel panel_11 = new JPanel();
+		panel_11.setBounds(12, 183, 391, 128);
+		panel_4.add(panel_11);
+		panel_11.setLayout(null);
+
+		JLabel lblNewLabel_2 = new JLabel("\uBC1B\uC744\uAE08\uC561");
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_2.setFont(new Font("굴림", Font.BOLD, 24));
+		lblNewLabel_2.setBounds(12, 15, 156, 42);
+		panel_11.add(lblNewLabel_2);
+
+		// 받을금액
+		label_1 = new JLabel("0 \uC6D0");
+		label_1.setHorizontalAlignment(SwingConstants.RIGHT);
+		label_1.setFont(new Font("굴림", Font.BOLD, 30));
+		label_1.setBounds(201, 14, 167, 43);
+		panel_11.add(label_1);
+
+		JLabel label_2 = new JLabel("\uC801\uB9BD\uAE08\uC561");
+		label_2.setHorizontalAlignment(SwingConstants.CENTER);
+		label_2.setForeground(Color.BLACK);
+		label_2.setFont(new Font("굴림", Font.BOLD, 24));
+		label_2.setBounds(13, 67, 148, 43);
+		panel_11.add(label_2);
+
+		// 적립금액
+		label = new JLabel("0 \uC6D0");
+		label.setHorizontalAlignment(SwingConstants.RIGHT);
+		label.setFont(new Font("굴림", Font.BOLD, 30));
+		label.setBounds(201, 67, 167, 43);
+		panel_11.add(label);
+
+		// 합계구하기
 		JPanel panel_2 = new JPanel();
 		panel_2.setBackground(Color.WHITE);
 		panel_2.setBounds(10, 86, 717, 675);
@@ -183,15 +244,21 @@ public class CESale {
 		});
 		delrow.setBounds(47, 30, 97, 23);
 		panel_7.add(delrow);
-		
+
 		// 주문 정보 초기화
 		JButton btnNewButton_3 = new JButton("\uCD08\uAE30\uD654");
 		btnNewButton_3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-//				// Row가 0으로 되는 코드, 하지만 초기화 한 번은 가능/두번째부터 오류 발생, 누적 가격도 변화 없음
-//				DefaultTableModel model = (DefaultTableModel)table.getModel();
-//				model.setNumRows(0);
+				// Row가 0으로 되는 코드, 하지만 초기화 한 번은 가능/두번째부터 오류 발생, 누적 가격도 변화 없음
+				DefaultTableModel model = (DefaultTableModel) table.getModel();
+				model.setNumRows(0);
+				menuName.clear();
+				totalMoney = 0;
+				lblNewLabel10.setText(totalMoney + " 원");
+				label_4.setText(totalMoney / 10 + " 원");
+				label_1.setText(totalMoney - (totalMoney / 10) + " 원");
+				label.setText(totalMoney / 10 + " 원");
 			}
 		});
 		btnNewButton_3.setBounds(47, 155, 97, 23);
@@ -249,7 +316,9 @@ public class CESale {
 		}
 		totalMoney += (int) row[1];
 		lblNewLabel10.setText(totalMoney + " 원");
-
+		label_4.setText(totalMoney / 10 + " 원");
+		label_1.setText(totalMoney - (totalMoney / 10) + " 원");
+		label.setText(totalMoney / 10 + " 원");
 	}
 
 	private void delrow() {
@@ -268,6 +337,35 @@ public class CESale {
 		}
 		totalMoney -= valprice;
 		lblNewLabel10.setText(totalMoney + " 원");
+		label_4.setText(totalMoney / 10 + " 원");
+		label_1.setText(totalMoney - (totalMoney / 10) + " 원");
+		label.setText(totalMoney / 10 + " 원");
 	}
-	
+
+	protected void addorder() {
+		Date time = new Date(0);
+		int row = table.getRowCount();
+		DefaultTableModel model = (DefaultTableModel) table.getModel();
+
+		int num = Oservice.OrderingCount();
+		String date = format.format(time);
+		String pay = cashcard;
+		int sum = totalMoney;
+		String id = loginUser.getMEM_ID();
+		System.out.println(num);
+
+		Ordering o = new Ordering(num, date, pay, sum, id);
+		boolean result = Oservice.OrderingJoin(o);
+		if (result) {
+			JOptionPane.showMessageDialog(frame, "결제 완료");
+		} else {
+			JOptionPane.showMessageDialog(frame, "결제 오류");
+		}
+//		for (int i = 0; i < row; i++) {
+//			String name = (String) defaultTableModel.getValueAt(i, 0);
+//			int price = (int) defaultTableModel.getValueAt(i, 1);
+//			int num = (Integer) defaultTableModel.getValueAt(i, 2);
+//			
+//		}
+	}
 }
