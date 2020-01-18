@@ -122,6 +122,9 @@ public class CESale {
 		card.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
+				cashcard = "카드";
+				addorder();
+				adddetail();
 			}
 		});
 		panel_3.add(card);
@@ -256,14 +259,8 @@ public class CESale {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				// Row가 0으로 되는 코드, 하지만 초기화 한 번은 가능/두번째부터 오류 발생, 누적 가격도 변화 없음
-				DefaultTableModel model = (DefaultTableModel) table.getModel();
-				model.setNumRows(0);
-				menuName.clear();
-				totalMoney = 0;
-				lblNewLabel10.setText(totalMoney + " 원");
-				label_4.setText(totalMoney / 10 + " 원");
-				label_1.setText(totalMoney - (totalMoney / 10) + " 원");
-				label.setText(totalMoney / 10 + " 원");
+				resetmenu();
+
 			}
 		});
 		btnNewButton_3.setBounds(47, 155, 97, 23);
@@ -321,8 +318,8 @@ public class CESale {
 		}
 		totalMoney += (int) row[1];
 		lblNewLabel10.setText(totalMoney + " 원");
-		label_4.setText(totalMoney / 10 + " 원");
-		label_1.setText(totalMoney - (totalMoney / 10) + " 원");
+		label_4.setText(0 + " 원");
+		label_1.setText(totalMoney + " 원");
 		label.setText(totalMoney / 10 + " 원");
 	}
 
@@ -342,8 +339,8 @@ public class CESale {
 		}
 		totalMoney -= valprice;
 		lblNewLabel10.setText(totalMoney + " 원");
-		label_4.setText(totalMoney / 10 + " 원");
-		label_1.setText(totalMoney - (totalMoney / 10) + " 원");
+		label_4.setText(0 + " 원");
+		label_1.setText(totalMoney + " 원");
 		label.setText(totalMoney / 10 + " 원");
 	}
 
@@ -357,6 +354,8 @@ public class CESale {
 		String id = loginUser.getMEM_ID();
 
 		Ordering o = new Ordering(++num, date, pay, sum, id);
+		Oservice.OrderingJoin(o);
+
 	}
 
 	protected void adddetail() {
@@ -375,12 +374,26 @@ public class CESale {
 			result = Dservice.DetailJoin(d);
 
 		}
-		
+
 		if (result) {
 			JOptionPane.showMessageDialog(frame, "결제 완료");
+			resetmenu();
 		} else {
 			JOptionPane.showMessageDialog(frame, "결제 오류");
+			resetmenu();
 		}
 
+	}
+
+	public void resetmenu() {
+
+		DefaultTableModel model = (DefaultTableModel) table.getModel();
+		model.setNumRows(0);
+		menuName.clear();
+		totalMoney = 0;
+		lblNewLabel10.setText(totalMoney + " 원");
+		label_4.setText(0 + " 원");
+		label_1.setText(totalMoney + " 원");
+		label.setText(totalMoney / 10 + " 원");
 	}
 }
