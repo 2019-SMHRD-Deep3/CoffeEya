@@ -50,5 +50,10 @@ public class ProductManagementService {
 			return true;
 		}
 	}
+
+	public int ProName(String proname) {
+		
+		return dao.ProNum(proname);
+	}
 	
 }

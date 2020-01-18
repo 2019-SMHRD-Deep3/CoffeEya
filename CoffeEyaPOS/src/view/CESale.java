@@ -25,8 +25,10 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 
+import controller.DetailManagementService;
 import controller.OrderingManagementService;
 import controller.ProductManagementService;
+import model.Detail;
 import model.Member;
 import model.Ordering;
 import model.Product;
@@ -51,6 +53,8 @@ public class CESale {
 	private ArrayList<String> menuName = new ArrayList<String>();
 	SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 	OrderingManagementService Oservice = new OrderingManagementService();
+	DetailManagementService Dservice = new DetailManagementService();
+	ProductManagementService Pservice = new ProductManagementService();
 
 	/**
 	 * Create the application.
@@ -344,36 +348,38 @@ public class CESale {
 	}
 
 	protected void addorder() {
-		Date time = new Date(0);
+		Date time = new Date();
 
 		int num = Oservice.OrderingCount();
 		String date = format.format(time);
 		String pay = cashcard;
 		int sum = totalMoney;
 		String id = loginUser.getMEM_ID();
-		System.out.println(num);
 
-		Ordering o = new Ordering(num, date, pay, sum, id);
-		boolean result = Oservice.OrderingJoin(o);
-		if (result) {
-			JOptionPane.showMessageDialog(frame, "결제 완료");
-		} else {
-			JOptionPane.showMessageDialog(frame, "결제 오류");
-		}
+		Ordering o = new Ordering(++num, date, pay, sum, id);
 	}
 
 	protected void adddetail() {
 		int row = table.getRowCount();
 		DefaultTableModel model = (DefaultTableModel) table.getModel();
-		
-		int denum;
-		int ornum;
-		
-		for (int i = 0; i < row; i++) {
-			String name = (String) defaultTableModel.getValueAt(i, 0);
-			int price = (int) defaultTableModel.getValueAt(i, 1);
-			int num = (Integer) defaultTableModel.getValueAt(i, 2);
+		boolean result = false;
 
+		for (int i = 0; i < row; i++) {
+
+			int denum = Dservice.DetailCount(); // 반복할수록 증가
+			int ornum = Oservice.OrderingCount(); // 반복해도 그대로
+			int pronum = Pservice.ProName((String) defaultTableModel.getValueAt(i, 0)); // 반복하면 주문메뉴가 바뀜
+			int cnt = (int) defaultTableModel.getValueAt(i, 2); // 주문메뉴에 따라서 개수바뀜
+
+			Detail d = new Detail(denum, ornum, pronum, cnt);
+			result = Dservice.DetailJoin(d);
+
+		}
+		
+		if (result) {
+			JOptionPane.showMessageDialog(frame, "결제 완료");
+		} else {
+			JOptionPane.showMessageDialog(frame, "결제 오류");
 		}
 
 	}
