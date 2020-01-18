@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.EventQueue;
+import java.awt.Graphics;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -13,6 +14,7 @@ import java.awt.GridLayout;
 
 import javax.swing.ButtonGroup;
 import javax.swing.ButtonModel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -29,9 +31,10 @@ import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableColumnModel;
 import javax.swing.JRadioButton;
+import java.awt.Color;
 
 public class CEMember {
-	
+
 	MemberManagementService service = new MemberManagementService();
 
 	private JFrame frame;
@@ -46,7 +49,9 @@ public class CEMember {
 	private JTextField textField;
 	private JRadioButton rdbtnNewRadioButton;
 	private JRadioButton rdbtnNewRadioButton_1;
-
+	private JLabel lblNewLabel;
+	private JPanel panel;
+	private JPanel panel_4;
 
 	/**
 	 * Create the application.
@@ -62,85 +67,161 @@ public class CEMember {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(188, 143, 143));
 		frame.setBounds(100, 100, 1200, 800);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		
-		JButton btnNewButton_4 = new JButton("\uB3CC\uC544\uAC00\uAE30");
-		btnNewButton_4.addMouseListener(new MouseAdapter() {
+
+		String imgPath5 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//bback2.png";
+		ImageIcon icon5 = new ImageIcon(imgPath5);
+
+		panel = new JPanel() {
+			@Override
+			protected void paintComponent(Graphics g) {
+				g.drawImage(icon5.getImage(), 0, 0, panel.getWidth(), panel.getHeight(), null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
+		panel.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				CEMain main = new CEMain(loginUser);
 				frame.dispose();
 			}
 		});
-		btnNewButton_4.setBounds(1075, 10, 100, 100);
-		frame.getContentPane().add(btnNewButton_4);
-		
+		panel.setBounds(1054, 46, 67, 67);
+		frame.getContentPane().add(panel);
+		panel.setLayout(null);
+
+
 		panel_1 = new JPanel();
-		panel_1.setBounds(12, 10, 438, 293);
+		panel_1.setBackground(new Color(188, 143, 143));
+		panel_1.setBounds(12, 10, 438, 531);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
-		
+
 		scrollPane = new JScrollPane();
-		scrollPane.setBounds(0, 0, 438, 293);
+		scrollPane.setBounds(0, 0, 438, 526);
 		panel_1.add(scrollPane);
-		
+
 		JPanel panel_2 = new JPanel();
-		panel_2.setBounds(462, 10, 438, 293);
+		panel_2.setBackground(new Color(188, 143, 143));
+		panel_2.setBounds(508, 10, 463, 531);
 		frame.getContentPane().add(panel_2);
 		panel_2.setLayout(new GridLayout(0, 2, 0, 0));
-		
-		JLabel lblNewLabel = new JLabel("\uC544\uC774\uB514");
+
+		String imgPath = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//man.png";
+		ImageIcon icon = new ImageIcon(imgPath);
+
+		lblNewLabel = new JLabel("") {
+			@Override
+			protected void paintComponent(Graphics g) {
+				g.drawImage(icon.getImage(), 55, 35, 45, 45, null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_2.add(lblNewLabel);
-		
+
 		lblNewLabel_5 = new JLabel("\uC0AC\uC6A9\uC790 \uC120\uD0DD");
 		panel_2.add(lblNewLabel_5);
-		
-		JLabel lblNewLabel_1 = new JLabel("\uBE44\uBC00\uBC88\uD638");
+
+		String imgPath1 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//pw.png";
+		ImageIcon icon1 = new ImageIcon(imgPath1);
+
+		JLabel lblNewLabel_1 = new JLabel("") {
+			@Override
+			protected void paintComponent(Graphics g) {
+				g.drawImage(icon1.getImage(), 55, 35, 45, 45, null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_2.add(lblNewLabel_1);
-		
+
 		textField = new JTextField();
 		panel_2.add(textField);
 		textField.setColumns(10);
-		
-		JLabel lblNewLabel_2 = new JLabel("\uBE44\uBC00\uBC88\uD638 \uD655\uC778");
+
+		String imgPath2 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//pw.png";
+		ImageIcon icon2 = new ImageIcon(imgPath2);
+
+		JLabel lblNewLabel_2 = new JLabel("") {
+			@Override
+			protected void paintComponent(Graphics g) {
+				g.drawImage(icon1.getImage(), 55, 35, 45, 45, null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_2.add(lblNewLabel_2);
-		
+
 		textField_1 = new JTextField();
 		panel_2.add(textField_1);
 		textField_1.setColumns(10);
-		
-		JLabel lblNewLabel_3 = new JLabel("\uC774\uB984");
+
+		String imgPath3 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//name.png";
+		ImageIcon icon3 = new ImageIcon(imgPath3);
+
+		JLabel lblNewLabel_3 = new JLabel("") {
+			@Override
+			protected void paintComponent(Graphics g) {
+				g.drawImage(icon3.getImage(), 55, 35, 45, 45, null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
+		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_2.add(lblNewLabel_3);
-		
+
 		textField_2 = new JTextField();
 		panel_2.add(textField_2);
 		textField_2.setColumns(10);
-		
-		JLabel lblNewLabel_4 = new JLabel("\uAD8C\uD55C");
+
+		String imgPath4 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//power.png";
+		ImageIcon icon4 = new ImageIcon(imgPath4);
+
+		JLabel lblNewLabel_4 = new JLabel("") {
+			@Override
+			protected void paintComponent(Graphics g) {
+				g.drawImage(icon4.getImage(), 55, 35, 45, 45, null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
+		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_2.add(lblNewLabel_4);
-		
+
 		JPanel panel_3 = new JPanel();
 		panel_2.add(panel_3);
 		panel_3.setLayout(new GridLayout(1, 0, 0, 0));
-		
-		
-		
+
 		rdbtnNewRadioButton = new JRadioButton("\uAD00\uB9AC\uC790");
 		panel_3.add(rdbtnNewRadioButton);
-		
+
 		rdbtnNewRadioButton_1 = new JRadioButton("\uC9C1\uC6D0");
 		panel_3.add(rdbtnNewRadioButton_1);
 
-	
-		
 		ButtonGroup perm = new ButtonGroup();
 		perm.add(rdbtnNewRadioButton);
 		perm.add(rdbtnNewRadioButton_1);
+
+		String imgPath6 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//reset.png";
+		ImageIcon icon6 = new ImageIcon(imgPath6);
 		
-		
-		JPanel panel_4 = new JPanel();
+		panel_4 = new JPanel(){
+			@Override
+			protected void paintComponent(Graphics g) {
+				g.drawImage(icon6.getImage(), 35, 35, 45, 45, null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
+		panel_4.setToolTipText("");
 		panel_4.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -152,10 +233,20 @@ public class CEMember {
 				perm.clearSelection();
 			}
 		});
-		panel_4.setBounds(462, 313, 100, 100);
+		panel_4.setBounds(462, 587, 100, 100);
 		frame.getContentPane().add(panel_4);
+
+		String imgPath7 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//plus.png";
+		ImageIcon icon7 = new ImageIcon(imgPath7);
 		
-		JPanel panel_5 = new JPanel();
+		JPanel panel_5 = new JPanel(){
+			@Override
+			protected void paintComponent(Graphics g) {
+				g.drawImage(icon7.getImage(), 35, 35, 45, 45, null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
 		panel_5.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -163,10 +254,20 @@ public class CEMember {
 				frame.dispose();
 			}
 		});
-		panel_5.setBounds(574, 313, 100, 100);
+		panel_5.setBounds(574, 587, 100, 100);
 		frame.getContentPane().add(panel_5);
+
+		String imgPath8 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//repair.png";
+		ImageIcon icon8 = new ImageIcon(imgPath8);
 		
-		JPanel panel_6 = new JPanel();
+		JPanel panel_6 = new JPanel(){
+			@Override
+			protected void paintComponent(Graphics g) {
+				g.drawImage(icon8.getImage(), 35, 35, 45, 45, null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
 		panel_6.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -180,11 +281,11 @@ public class CEMember {
 				} else {
 					infoPerm = "EMPLOYEE";
 				}
-				
+
 				if (infoPw.equals(infoPwCheck)) {
-					Member m = new Member(infoId, infoPw, infoName, infoPerm);					
+					Member m = new Member(infoId, infoPw, infoName, infoPerm);
 					boolean result = service.memberModify(m);
-					
+
 					if (result) {
 						JOptionPane.showMessageDialog(frame, "수정 성공");
 						memberAll();
@@ -196,17 +297,27 @@ public class CEMember {
 				}
 			}
 		});
-		panel_6.setBounds(686, 313, 100, 100);
+		panel_6.setBounds(686, 587, 100, 100);
 		frame.getContentPane().add(panel_6);
+
+		String imgPath9 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//garbage.png";
+		ImageIcon icon9 = new ImageIcon(imgPath9);
 		
-		JPanel panel_7 = new JPanel();
+		JPanel panel_7 = new JPanel(){
+			@Override
+			protected void paintComponent(Graphics g) {
+				g.drawImage(icon9.getImage(), 35, 35, 45, 45, null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
 		panel_7.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				String infoId = lblNewLabel_5.getText();
 				Member m = new Member(infoId);
 				boolean result = service.memberDelete(m);
-				
+
 				if (result) {
 					JOptionPane.showMessageDialog(frame, "삭제 성공");
 					memberAll();
@@ -215,11 +326,11 @@ public class CEMember {
 				}
 			}
 		});
-		panel_7.setBounds(800, 313, 100, 100);
+		panel_7.setBounds(800, 587, 100, 100);
 		frame.getContentPane().add(panel_7);
-		
+
 		JButton btnNewButton_2 = new JButton("\uCD9C\uACB0 \uAD00\uB9AC");
-		btnNewButton_2.setBounds(837, 584, 284, 110);
+		btnNewButton_2.setBounds(989, 587, 132, 100);
 		frame.getContentPane().add(btnNewButton_2);
 		btnNewButton_2.addMouseListener(new MouseAdapter() {
 			@Override
@@ -227,11 +338,11 @@ public class CEMember {
 				CEMemCommute commute = new CEMemCommute(loginUser);
 			}
 		});
-		
+
 		memberAll();
-		
+
 	}
-	
+
 	public void memberAll() {
 		String[] columnNames = { "사용자 아이디", "사용자 비밀번호", "사용자 이름", "사용자 권한" };
 		ArrayList<Member> list = service.memberLookup();
@@ -246,32 +357,34 @@ public class CEMember {
 			data[i] = new Object[] { MEM_ID, MEM_PW, MEM_NAME, MEM_PERM };
 		}
 		table = new JTable(data, columnNames);
-		  scrollPane.setViewportView(table);
-	      // DefaultTableCellHeaderRenderer 생성 (가운데 정렬을 위한)
-	      DefaultTableCellRenderer tScheduleCellRenderer = new DefaultTableCellRenderer();
+		scrollPane.setViewportView(table);
+		// DefaultTableCellHeaderRenderer 생성 (가운데 정렬을 위한)
+		DefaultTableCellRenderer tScheduleCellRenderer = new DefaultTableCellRenderer();
 
-	      // DefaultTableCellHeaderRenderer의 정렬을 가운데 정렬로 지정
-	      tScheduleCellRenderer.setHorizontalAlignment(SwingConstants.CENTER);
+		// DefaultTableCellHeaderRenderer의 정렬을 가운데 정렬로 지정
+		tScheduleCellRenderer.setHorizontalAlignment(SwingConstants.CENTER);
 
-	      // 정렬할 테이블의 ColumnModel을 가져옴
-	      TableColumnModel tcmSchedule = table.getColumnModel();
+		// 정렬할 테이블의 ColumnModel을 가져옴
+		TableColumnModel tcmSchedule = table.getColumnModel();
 
-	      // 반복문을 이용하여 테이블을 가운데 정렬로 지정
-	      for (int i = 0; i < tcmSchedule.getColumnCount(); i++) {
-	      tcmSchedule.getColumn(i).setCellRenderer(tScheduleCellRenderer);
-	      }
-		
+		// 반복문을 이용하여 테이블을 가운데 정렬로 지정
+		for (int i = 0; i < tcmSchedule.getColumnCount(); i++) {
+			tcmSchedule.getColumn(i).setCellRenderer(tScheduleCellRenderer);
+		}
+
 		table.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				int index = table.getSelectedRow();
-				lblNewLabel_5.setText((String)table.getValueAt(index, 0));
-				textField.setText((String)table.getValueAt(index, 1));
+				lblNewLabel_5.setText((String) table.getValueAt(index, 0));
+				textField.setText((String) table.getValueAt(index, 1));
 				textField_2.setText((String) table.getValueAt(index, 2));
-				if (((String) table.getValueAt(index, 3)).equals("MANAGER") || ((String) table.getValueAt(index, 3)).equals("manager") ) {
+				if (((String) table.getValueAt(index, 3)).equals("MANAGER")
+						|| ((String) table.getValueAt(index, 3)).equals("manager")) {
 					rdbtnNewRadioButton.setSelected(true);
 					rdbtnNewRadioButton_1.setSelected(false);
-				} else if (((String) table.getValueAt(index, 3)).equals("EMPLOYEE") || ((String) table.getValueAt(index, 3)).equals("employee") ) {
+				} else if (((String) table.getValueAt(index, 3)).equals("EMPLOYEE")
+						|| ((String) table.getValueAt(index, 3)).equals("employee")) {
 					rdbtnNewRadioButton.setSelected(false);
 					rdbtnNewRadioButton_1.setSelected(true);
 				}
