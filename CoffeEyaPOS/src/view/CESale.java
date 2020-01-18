@@ -129,6 +129,7 @@ public class CESale {
 			public void mouseClicked(MouseEvent e) {
 				cashcard = "현금";
 				addorder();
+				adddetail();
 			}
 		});
 		panel_3.add(cash);
@@ -344,8 +345,6 @@ public class CESale {
 
 	protected void addorder() {
 		Date time = new Date(0);
-		int row = table.getRowCount();
-		DefaultTableModel model = (DefaultTableModel) table.getModel();
 
 		int num = Oservice.OrderingCount();
 		String date = format.format(time);
@@ -361,11 +360,17 @@ public class CESale {
 		} else {
 			JOptionPane.showMessageDialog(frame, "결제 오류");
 		}
-//		for (int i = 0; i < row; i++) {
-//			String name = (String) defaultTableModel.getValueAt(i, 0);
-//			int price = (int) defaultTableModel.getValueAt(i, 1);
-//			int num = (Integer) defaultTableModel.getValueAt(i, 2);
-//			
-//		}
+	}
+
+	protected void adddetail() {
+		int row = table.getRowCount();
+		DefaultTableModel model = (DefaultTableModel) table.getModel();
+		for (int i = 0; i < row; i++) {
+			String name = (String) defaultTableModel.getValueAt(i, 0);
+			int price = (int) defaultTableModel.getValueAt(i, 1);
+			int num = (Integer) defaultTableModel.getValueAt(i, 2);
+
+		}
+
 	}
 }
