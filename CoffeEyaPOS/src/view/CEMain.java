@@ -31,6 +31,7 @@ public class CEMain {
 	private JPanel panel_6;
 	private JPanel panel_3;
 	private JLabel lblNewLabel;
+	private JPanel panel_7;
 
 	/**
 	 * Create the application.
@@ -213,7 +214,17 @@ public class CEMain {
 		lblNewLabel.setBounds(790, 10, 345, 37);
 		panel.add(lblNewLabel);
 
-		JPanel panel_7 = new JPanel();
+		String imgPath7 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//bback.png";
+		ImageIcon icon7 = new ImageIcon(imgPath7);
+
+		
+		panel_7 = new JPanel(){
+			protected void paintComponent(Graphics g) {
+				g.drawImage(icon7.getImage(), 0, 0, panel_7.getWidth(), panel_7.getHeight(), null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
 		panel_7.setBackground(Color.RED);
 		panel_7.addMouseListener(new MouseAdapter() {
 			@Override

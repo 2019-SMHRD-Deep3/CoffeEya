@@ -71,7 +71,8 @@ public class CESellerAnalysis {
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setBounds(0, 0, 1184, 761);
 		frame.getContentPane().add(lblNewLabel);
-
+		
+		
 		btnNewButton = new JButton("");
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
