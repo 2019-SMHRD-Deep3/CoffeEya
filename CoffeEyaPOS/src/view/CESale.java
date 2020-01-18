@@ -365,6 +365,10 @@ public class CESale {
 	protected void adddetail() {
 		int row = table.getRowCount();
 		DefaultTableModel model = (DefaultTableModel) table.getModel();
+		
+		int denum;
+		int ornum;
+		
 		for (int i = 0; i < row; i++) {
 			String name = (String) defaultTableModel.getValueAt(i, 0);
 			int price = (int) defaultTableModel.getValueAt(i, 1);
