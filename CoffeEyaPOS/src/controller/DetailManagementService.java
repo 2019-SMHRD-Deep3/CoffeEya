@@ -18,8 +18,21 @@ public class DetailManagementService {
 
 	}
 
-
 	public ArrayList<Detail> detailLookup() {
+
 		return dao.selectAll();
+	}
+
+	public int DetailCount() {
+
+		return dao.detailCount();
+	}
+
+	public boolean DetailJoin(Detail d) {
+		int rows = dao.insert(d);
+		if (rows == 0)
+			return false;
+		else
+			return true;
 	}
 }

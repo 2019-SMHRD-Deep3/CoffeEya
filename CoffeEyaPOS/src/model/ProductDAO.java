@@ -86,7 +86,7 @@ public class ProductDAO {
 		}
 		return list;
 	}
-	
+
 	public ArrayList<Product> selectAll() {
 		ArrayList<Product> list = new ArrayList<>();
 		try {
@@ -168,7 +168,7 @@ public class ProductDAO {
 		}
 		return infoProduct;
 	}
-	
+
 	public int delete(Product p) {
 		int rows = 0;
 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
@@ -176,14 +176,14 @@ public class ProductDAO {
 		String password = "hr";
 		Connection conn = null;
 		PreparedStatement psmt = null;
-		
+
 		try { // try ~ catch ~ finally -> 예외처리
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn = DriverManager.getConnection(url, user, password);
 			String sql = "DELETE FROM PRODUCT WHERE PRO_NUM = ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, p.getPRO_NUM());
-			
+
 			rows = psmt.executeUpdate();
 
 		} catch (ClassNotFoundException e) {
@@ -202,7 +202,7 @@ public class ProductDAO {
 		}
 		return rows;
 	}
-	
+
 //	public Product selectNum (Product p) {
 //		Product selectProduct = null;
 //
@@ -245,7 +245,7 @@ public class ProductDAO {
 //		}
 //		return selectProduct;
 //	}
-	
+
 	public int update(Product p) {
 		int rows = 0;
 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
@@ -253,7 +253,7 @@ public class ProductDAO {
 		String password = "hr";
 		Connection conn = null;
 		PreparedStatement psmt = null;
-		
+
 		try { // try ~ catch ~ finally -> 예외처리
 			Class.forName("oracle.jdbc.driver.OracleDriver"); // OracleDriver driver = new OracleDrivedr(); 객체를 직접 생성하기
 																// 위해 코드를 작성하면 오라클 이외의 다른 제품을 사용할때 다 변경해야하는 수고로움이 있다.
@@ -263,9 +263,9 @@ public class ProductDAO {
 			psmt.setString(1, p.getPRO_NAME());
 			psmt.setInt(2, p.getPRO_PRICE());
 			psmt.setInt(3, p.getPRO_NUM());
-			
+
 			rows = psmt.executeUpdate();
-			
+
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
@@ -283,5 +283,41 @@ public class ProductDAO {
 		return rows;
 	}
 
+	public int ProNum(String proname) {
+		int PRO_NUM = 0;
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			conn = DriverManager.getConnection(url, user, password);
+			String sql = "SELECT * FROM PRODUCT WHERE PRO_NAME = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, proname);
+			rs = psmt.executeQuery();
+
+			if (rs.next()) {
+				PRO_NUM = rs.getInt("PRO_NUM");
+			}
+
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (psmt != null) {
+					psmt.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+		}
+		return PRO_NUM;
+	}
 
 }

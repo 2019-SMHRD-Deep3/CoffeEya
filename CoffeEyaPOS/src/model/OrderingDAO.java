@@ -137,7 +137,7 @@ public class OrderingDAO {
 	}
 	
 	public int orderingCount() {
-		int cnt = 1;
+		int cnt = 0;
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn = DriverManager.getConnection(url, user, password);
