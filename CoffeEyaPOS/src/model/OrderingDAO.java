@@ -171,5 +171,113 @@ public class OrderingDAO {
 		}
 		return cnt;
 	}
+	
+	public int selectOrderingSum() {
+		int orderingSum = 0;
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			conn = DriverManager.getConnection(url, user, password);
+			String sql = "SELECT OR_SUM FROM ORDERING";
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+
+			while (rs.next()) {
+				orderingSum += rs.getInt("OR_SUM");
+			}
+
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (psmt != null) {
+					psmt.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+		}
+		return orderingSum;
+	}
+	
+	public int selectOrderingCashSum() {
+		int orderingCashSum = 0;
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			conn = DriverManager.getConnection(url, user, password);
+			String sql = "SELECT OR_SUM FROM ORDERING WHERE OR_PAY = '현금'";
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+
+			while (rs.next()) {
+				orderingCashSum += rs.getInt("OR_SUM");
+			}
+
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (psmt != null) {
+					psmt.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+		}
+		return orderingCashSum;
+	}
+	
+	public int selectOrderingCardSum() {
+		int orderingCardSum = 0;
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			conn = DriverManager.getConnection(url, user, password);
+			String sql = "SELECT OR_SUM FROM ORDERING WHERE OR_PAY = '카드'";
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+
+			while (rs.next()) {
+				orderingCardSum += rs.getInt("OR_SUM");
+			}
+
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (psmt != null) {
+					psmt.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+		}
+		return orderingCardSum;
+	}
 
 }

@@ -9,9 +9,13 @@ import java.awt.CardLayout;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
+import controller.OrderingManagementService;
 import model.Member;
+import model.Ordering;
+
 import java.awt.GridLayout;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 import javax.swing.JSeparator;
@@ -19,6 +23,8 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 
 public class CEDeadline {
+	
+	OrderingManagementService service = new OrderingManagementService();
 
 	private JFrame frame;
 	private Member loginUser;
@@ -38,6 +44,10 @@ public class CEDeadline {
 	private JTextField textField_13;
 	private JTextField textField_14;
 	private JTextField textField_15;
+	
+	private int orderingSum = service.OrderingSum();
+	private int orderingCashSum = service.OrderingCashSum();
+	private int orderingCardSum = service.OrderingCardSum();
 
 	/**
 	 * Create the application.
@@ -94,7 +104,7 @@ public class CEDeadline {
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_3 = new JLabel("New label");
+		JLabel lblNewLabel_3 = new JLabel(String.valueOf((int)(orderingSum / 1.1)));
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_1.add(lblNewLabel_3);
 		
@@ -102,7 +112,7 @@ public class CEDeadline {
 		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(lblNewLabel_4);
 		
-		JLabel lblNewLabel_5 = new JLabel("New label");
+		JLabel lblNewLabel_5 = new JLabel(String.valueOf(orderingSum - (int)(orderingSum / 1.1)));
 		lblNewLabel_5.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_1.add(lblNewLabel_5);
 		
@@ -110,7 +120,7 @@ public class CEDeadline {
 		lblNewLabel_6.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(lblNewLabel_6);
 		
-		JLabel lblNewLabel_7 = new JLabel("New label");
+		JLabel lblNewLabel_7 = new JLabel(String.valueOf(((int)(orderingSum / 1.1)) + (orderingSum - (int)(orderingSum / 1.1))));
 		lblNewLabel_7.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_1.add(lblNewLabel_7);
 		
@@ -118,7 +128,7 @@ public class CEDeadline {
 		lblNewLabel_8.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(lblNewLabel_8);
 		
-		JLabel lblNewLabel_9 = new JLabel("New label");
+		JLabel lblNewLabel_9 = new JLabel(String.valueOf(orderingCashSum));
 		lblNewLabel_9.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_1.add(lblNewLabel_9);
 		
@@ -126,15 +136,15 @@ public class CEDeadline {
 		lblNewLabel_10.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(lblNewLabel_10);
 		
-		JLabel lblNewLabel_11 = new JLabel("New label");
+		JLabel lblNewLabel_11 = new JLabel(String.valueOf(orderingCardSum));
 		lblNewLabel_11.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_1.add(lblNewLabel_11);
 		
-		JLabel lblNewLabel_14 = new JLabel("\uC601\uC5C5 \uC900\uBE44\uAE08");
+		JLabel lblNewLabel_14 = new JLabel("\uC2DC\uC7AC\uAE08");
 		lblNewLabel_14.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(lblNewLabel_14);
 		
-		JLabel lblNewLabel_15 = new JLabel("New label");
+		JLabel lblNewLabel_15 = new JLabel("300000");
 		lblNewLabel_15.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_1.add(lblNewLabel_15);
 		
@@ -152,10 +162,8 @@ public class CEDeadline {
 		sl_panel_2.putConstraint(SpringLayout.EAST, lblNewLabel_12, 150, SpringLayout.WEST, panel_2);
 		panel_2.add(lblNewLabel_12);
 		
-		JLabel lblNewLabel_13 = new JLabel("\uB9E4\uCD9C\uC561 \uCD9C\uB825");
-		
-		
-		
+		JLabel lblNewLabel_13 = new JLabel(String.valueOf(orderingSum));
+		sl_panel_2.putConstraint(SpringLayout.EAST, lblNewLabel_13, 0, SpringLayout.EAST, panel_2);
 		sl_panel_2.putConstraint(SpringLayout.EAST, lblNewLabel_13, 0, SpringLayout.EAST, panel_2);
 		lblNewLabel_13.setHorizontalAlignment(SwingConstants.RIGHT);
 		sl_panel_2.putConstraint(SpringLayout.NORTH, lblNewLabel_13, 0, SpringLayout.NORTH, panel_2);
@@ -188,12 +196,12 @@ public class CEDeadline {
 		lblNewLabel_16.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(lblNewLabel_16);
 		
-		textField = new JTextField();
+		textField = new JTextField("2");
 		textField.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(textField);
 		textField.setColumns(10);
 		
-		textField_1 = new JTextField();
+		textField_1 = new JTextField(String.valueOf(Integer.parseInt(textField.getText()) * 50000));
 		textField_1.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_3.add(textField_1);
 		textField_1.setColumns(10);
@@ -202,12 +210,12 @@ public class CEDeadline {
 		lblNewLabel_17.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(lblNewLabel_17);
 		
-		textField_2 = new JTextField();
+		textField_2 = new JTextField("10");
 		textField_2.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(textField_2);
 		textField_2.setColumns(10);
 		
-		textField_3 = new JTextField();
+		textField_3 = new JTextField(String.valueOf(Integer.parseInt(textField_2.getText()) * 10000));
 		textField_3.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_3.add(textField_3);
 		textField_3.setColumns(10);
@@ -216,12 +224,12 @@ public class CEDeadline {
 		lblNewLabel_18.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(lblNewLabel_18);
 		
-		textField_4 = new JTextField();
+		textField_4 = new JTextField("20");
 		textField_4.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(textField_4);
 		textField_4.setColumns(10);
 		
-		textField_5 = new JTextField();
+		textField_5 = new JTextField(String.valueOf(Integer.parseInt(textField_4.getText()) * 5000));
 		textField_5.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_3.add(textField_5);
 		textField_5.setColumns(10);
@@ -230,12 +238,12 @@ public class CEDeadline {
 		lblNewLabel_19.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(lblNewLabel_19);
 		
-		textField_6 = new JTextField();
+		textField_6 = new JTextField("50");
 		textField_6.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(textField_6);
 		textField_6.setColumns(10);
 		
-		textField_7 = new JTextField();
+		textField_7 = new JTextField(String.valueOf(Integer.parseInt(textField_6.getText()) * 1000));
 		textField_7.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_3.add(textField_7);
 		textField_7.setColumns(10);
@@ -244,12 +252,12 @@ public class CEDeadline {
 		lblNewLabel_20.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(lblNewLabel_20);
 		
-		textField_8 = new JTextField();
+		textField_8 = new JTextField("30");
 		textField_8.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(textField_8);
 		textField_8.setColumns(10);
 		
-		textField_9 = new JTextField();
+		textField_9 = new JTextField(String.valueOf(Integer.parseInt(textField_8.getText()) * 500));
 		textField_9.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_3.add(textField_9);
 		textField_9.setColumns(10);
@@ -258,12 +266,12 @@ public class CEDeadline {
 		lblNewLabel_21.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(lblNewLabel_21);
 		
-		textField_10 = new JTextField();
+		textField_10 = new JTextField("100");
 		textField_10.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(textField_10);
 		textField_10.setColumns(10);
 		
-		textField_11 = new JTextField();
+		textField_11 = new JTextField(String.valueOf(Integer.parseInt(textField_10.getText()) * 100));
 		textField_11.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_3.add(textField_11);
 		textField_11.setColumns(10);
@@ -272,12 +280,12 @@ public class CEDeadline {
 		lblNewLabel_22.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(lblNewLabel_22);
 		
-		textField_12 = new JTextField();
+		textField_12 = new JTextField("0");
 		textField_12.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(textField_12);
 		textField_12.setColumns(10);
 		
-		textField_13 = new JTextField();
+		textField_13 = new JTextField(String.valueOf(Integer.parseInt(textField_12.getText()) * 50));
 		textField_13.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_3.add(textField_13);
 		textField_13.setColumns(10);
@@ -286,12 +294,12 @@ public class CEDeadline {
 		lblNewLabel_23.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(lblNewLabel_23);
 		
-		textField_14 = new JTextField();
+		textField_14 = new JTextField("0");
 		textField_14.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(textField_14);
 		textField_14.setColumns(10);
 		
-		textField_15 = new JTextField();
+		textField_15 = new JTextField(String.valueOf(Integer.parseInt(textField_14.getText()) * 10));
 		textField_15.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_3.add(textField_15);
 		textField_15.setColumns(10);
@@ -305,23 +313,23 @@ public class CEDeadline {
 		lblNewLabel_27.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_4.add(lblNewLabel_27);
 		
-		JLabel lblNewLabel_29 = new JLabel("\uB3C8\uD1B5 \uAE08\uC561 \uC785\uB825");
+		JLabel lblNewLabel_29 = new JLabel(String.valueOf(Integer.parseInt(textField_1.getText()) + Integer.parseInt(textField_3.getText()) + Integer.parseInt(textField_5.getText()) + Integer.parseInt(textField_7.getText()) + Integer.parseInt(textField_9.getText()) + Integer.parseInt(textField_11.getText()) + Integer.parseInt(textField_13.getText()) + Integer.parseInt(textField_15.getText())));
 		lblNewLabel_29.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_4.add(lblNewLabel_29);
 		
-		JLabel lblNewLabel_28 = new JLabel("\uD604\uAE08 \uB9E4\uCD9C \uCD1D \uAE08\uC561");
+		JLabel lblNewLabel_28 = new JLabel("\uC2DC\uC7AC\uAE08");
 		lblNewLabel_28.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_4.add(lblNewLabel_28);
 		
-		JLabel lblNewLabel_30 = new JLabel("\uD604\uAE08 \uB9E4\uCD9C \uCD1D \uAE08\uC561 \uC785\uB825");
+		JLabel lblNewLabel_30 = new JLabel(lblNewLabel_15.getText());
 		lblNewLabel_30.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_4.add(lblNewLabel_30);
 		
-		JLabel lblNewLabel_31 = new JLabel("\uCC28\uC561");
+		JLabel lblNewLabel_31 = new JLabel("\uD604\uAE08 \uB9E4\uCD9C \uCD1D \uAE08\uC561");
 		lblNewLabel_31.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_4.add(lblNewLabel_31);
 		
-		JLabel lblNewLabel_32 = new JLabel("\uCC28\uC561 \uC785\uB825");
+		JLabel lblNewLabel_32 = new JLabel(String.valueOf(Integer.parseInt(lblNewLabel_29.getText()) - Integer.parseInt(lblNewLabel_30.getText())));
 		lblNewLabel_32.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_4.add(lblNewLabel_32);
 		
