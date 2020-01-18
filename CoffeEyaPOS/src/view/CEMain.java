@@ -32,7 +32,7 @@ public class CEMain {
 	private JPanel panel_3;
 	private JLabel lblNewLabel;
 	private JPanel panel_7;
-
+	
 	/**
 	 * Create the application.
 	 */
@@ -51,7 +51,7 @@ public class CEMain {
 		frame.setBounds(100, 100, 1200, 800);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-
+		
 		String imgPath = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//mainCoffee.jpg";
 		ImageIcon icon = new ImageIcon(imgPath);
 
@@ -104,7 +104,7 @@ public class CEMain {
 		panel_2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-
+				CEDeadline deadline = new CEDeadline(loginUser);
 			}
 		});
 		panel_2.setLayout(null);

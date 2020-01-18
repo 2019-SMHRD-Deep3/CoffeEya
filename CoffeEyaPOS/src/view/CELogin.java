@@ -26,6 +26,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.SystemColor;
 import java.awt.Font;
+import java.awt.Color;
 
 public class CELogin {
 	private MemberManagementService service = new MemberManagementService();
@@ -125,15 +126,12 @@ public class CELogin {
 		textField_1.setColumns(10);
 
 		panel_1 = new JPanel();
+		panel_1.setBackground(new Color(255, 0, 0, 0));
 		panel_1.setBounds(413, 465, 380, 60);
 		panel.add(panel_1);
-		panel_1.setLayout(new GridLayout(1, 0, 5, 0));
+		panel_1.setLayout(new GridLayout(1, 0, 20, 0));
 
 		btnNewButton = new JButton("\uB85C\uADF8\uC778");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
