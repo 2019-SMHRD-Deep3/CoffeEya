@@ -208,10 +208,10 @@ public class CEMain {
 		panel.add(panel_6);
 
 		lblNewLabel = new JLabel("Á÷±Þ : " + loginUser.getMEM_PERM() + "    »ç¿ëÀÚ : " + loginUser.getMEM_NAME());
-		lblNewLabel.setFont(new Font("±¼¸²", Font.BOLD, 18));
+		lblNewLabel.setFont(new Font("±¼¸²", Font.BOLD, 25));
 		lblNewLabel.setForeground(Color.BLACK);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(790, 10, 345, 37);
+		lblNewLabel.setBounds(628, 16, 489, 37);
 		panel.add(lblNewLabel);
 
 		String imgPath7 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//bback.png";
@@ -233,7 +233,7 @@ public class CEMain {
 				frame.dispose();
 			}
 		});
-		panel_7.setBounds(1147, 10, 37, 37);
+		panel_7.setBounds(1118, 20, 53, 53);
 		panel.add(panel_7);
 
 	}
