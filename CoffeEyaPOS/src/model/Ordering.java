@@ -21,7 +21,7 @@ public class Ordering {
 		this.OR_NUM = OR_NUM;
 		this.OR_SUM = OR_SUM;
 	}
-
+	
 	public Ordering() {
 	}
 

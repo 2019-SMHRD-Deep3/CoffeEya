@@ -22,5 +22,17 @@ public class OrderingManagementService {
 
 		return dao.orderingCount();
 	}
+	
+	public int OrderingSum() {
+		return dao.selectOrderingSum();
+	}
+	
+	public int OrderingCashSum() {
+		return dao.selectOrderingCashSum();
+	}
+	
+	public int OrderingCardSum() {
+		return dao.selectOrderingCardSum();
+	}
 
 }
