@@ -84,7 +84,7 @@ public class CELogin {
 			}
 		};
 
-		panel.setBounds(0, 0, 1200, 800);
+		panel.setBounds(0, 0, 1194, 771);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 
