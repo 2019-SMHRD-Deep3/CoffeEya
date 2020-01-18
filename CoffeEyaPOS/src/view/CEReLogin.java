@@ -52,6 +52,7 @@ public class CEReLogin {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setResizable(false);
 		frame.setBounds(100, 100, 1200, 800);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -68,7 +69,7 @@ public class CEReLogin {
 			}
 		};
 
-		panel.setBounds(0, 0, 1200, 800);
+		panel.setBounds(0, 0, 1194, 771);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 

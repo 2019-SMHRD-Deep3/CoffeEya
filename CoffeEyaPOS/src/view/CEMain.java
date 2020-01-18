@@ -64,7 +64,7 @@ public class CEMain {
 			}
 		};
 
-		panel.setBounds(0, 0, 1184, 761);
+		panel.setBounds(0, 0, 1194, 771);
 		frame.getContentPane().add(panel);
 
 		String imgPath1 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//edit.png";

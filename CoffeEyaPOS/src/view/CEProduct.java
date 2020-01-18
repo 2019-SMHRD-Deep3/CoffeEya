@@ -200,6 +200,10 @@ public class CEProduct {
 		});
 		panel_2.add(btnNewButton_3);
 		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setBounds(12, 370, 160, 21);
+		frame.getContentPane().add(comboBox);
+		
 	}
 
 	private void productAll() {
