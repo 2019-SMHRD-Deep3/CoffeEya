@@ -21,9 +21,12 @@ import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.TableColumnModel;
 import javax.swing.JRadioButton;
 
-public class CECustomerM {
+public class CECustomer {
 
 	CustomerManagementService service = new CustomerManagementService();
 
@@ -54,7 +57,7 @@ public class CECustomerM {
 	/**
 	 * Create the application.
 	 */
-	public CECustomerM(Member loginUser) {
+	public CECustomer(Member loginUser) {
 		this.loginUser = loginUser;
 		initialize();
 		frame.setVisible(true);
@@ -241,6 +244,21 @@ public class CECustomerM {
 			data[i] = new Object[] { CUS_NUMBER, CUS_NAME, CUS_PHONE, CUS_SEX, CUS_BIRTHDAY, CUS_POINT };
 		}
 		table = new JTable(data, columnNames);
+		  scrollPane.setViewportView(table);
+	      // DefaultTableCellHeaderRenderer 생성 (가운데 정렬을 위한)
+	      DefaultTableCellRenderer tScheduleCellRenderer = new DefaultTableCellRenderer();
+
+	      // DefaultTableCellHeaderRenderer의 정렬을 가운데 정렬로 지정
+	      tScheduleCellRenderer.setHorizontalAlignment(SwingConstants.CENTER);
+
+	      // 정렬할 테이블의 ColumnModel을 가져옴
+	      TableColumnModel tcmSchedule = table.getColumnModel();
+
+	      // 반복문을 이용하여 테이블을 가운데 정렬로 지정
+	      for (int i = 0; i < tcmSchedule.getColumnCount(); i++) {
+	      tcmSchedule.getColumn(i).setCellRenderer(tScheduleCellRenderer);
+	      }
+		
 		table.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {

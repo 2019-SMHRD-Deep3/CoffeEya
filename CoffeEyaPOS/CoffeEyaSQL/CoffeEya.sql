@@ -26,7 +26,8 @@ Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('°ûÃ¢Çõ','1111','°û
 Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('³ëµ¿°æ','1111','³ëµ¿°æ','manager');
 Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('±èÁØÇü','1111','±èÁØÇü','manager');
 Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('±èÈ¿Áø','1111','±èÁØÇü','manager');
-Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('1111','1111','1111','employee');
+Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('1111','1111','¾Æ¸£¹ÙÀÌÆ®»ý1','employee');
+
 --------------------------------------------------------
 --  DDL for Index MEMBER_PK
 --------------------------------------------------------
@@ -118,14 +119,17 @@ Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (28,'Á¶°¢ÄÉÀÍ',5000);
 REM INSERTING into ORDERING
 SET DEFINE OFF;
 Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (1,to_date('20/01/01','RR/MM/DD'),'Ä«µå',6000,'°ûÃ¢Çõ');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (2,to_date('20/01/01','RR/MM/DD'),'Ä«µå',10000,'°ûÃ¢Çõ');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (3,to_date('20/01/02','RR/MM/DD'),'Çö±Ý',9500,'³ëµ¿°æ');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (4,to_date('20/01/02','RR/MM/DD'),'Çö±Ý',18000,'±èÁØÇü');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (5,to_date('20/01/04','RR/MM/DD'),'Çö±Ý',22000,'±èÁØÇü');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (6,to_date('20/01/04','RR/MM/DD'),'Çö±Ý',22000,'±èÁØÇü');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (7,to_date('20/01/04','RR/MM/DD'),'Çö±Ý',18000,'±èÈ¿Áø');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (2,to_date('20/01/01','RR/MM/DD'),'Ä«µå',10000,'±èÈ¿Áø');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (3,to_date('20/01/02','RR/MM/DD'),'Çö±Ý',9500,'±èÁØÇü');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (4,to_date('20/01/02','RR/MM/DD'),'Ä«µå',18000,'±èÁØÇü');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (5,to_date('20/01/03','RR/MM/DD'),'Çö±Ý',22000,'³ëµ¿°æ');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (6,to_date('20/01/03','RR/MM/DD'),'Çö±Ý',22000,'°ûÃ¢Çõ');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (7,to_date('20/01/03','RR/MM/DD'),'Ä«µå',18000,'³ëµ¿°æ');
 Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (8,to_date('20/01/04','RR/MM/DD'),'Çö±Ý',4000,'±èÈ¿Áø');
---------------------------------------------------------
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (9,to_date('20/01/04','RR/MM/DD'),'Ä«µå',6000,'±èÈ¿Áø');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (10,to_date('20/01/04','RR/MM/DD'),'Ä«µå',10000,'°ûÃ¢Çõ');
+
+------------------------------------------------------
 --  DDL for Index ORDERING_PK
 --------------------------------------------------------
 
@@ -166,22 +170,32 @@ Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (1,1,1,2);
 Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (2,2,1,1);
 Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (3,2,2,1);
 Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (4,2,4,1);
-Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (5,3,2,2);
-Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (6,3,4,4);
-Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (7,4,3,1);
-Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (8,4,1,1);
-Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (9,4,6,2);
-Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (10,4,1,1);
-Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (11,4,1,1);
-Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (12,5,3,8);
-Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (13,5,2,1);
-Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (14,6,2,1);
-Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (15,6,1,1);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (5,3,8,2);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (6,3,10,4);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (7,4,18,1);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (8,4,8,1);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (9,4,2,2);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (10,4,3,1);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (11,4,3,1);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (12,5,7,8);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (13,5,7,1);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (14,6,9,1);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (15,6,13,1);
 Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (16,6,1,9);
-Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (17,7,1,2);
-Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (18,7,6,4);
-Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (19,8,3,1);
-Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (20,8,1,1);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (17,7,4,2);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (18,7,3,4);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (19,8,9,1);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (20,8,18,1);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (21,8,27,2);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (22,8,11,1);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (23,8,10,1);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (24,8,11,1);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (25,8,10,2);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (26,8,2,4);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (27,9,20,1);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (28,9,22,1);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (29,10,17,2);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (30,10,13,1);
 --------------------------------------------------------
 --  DDL for Index DETAIL_PK
 --------------------------------------------------------
@@ -211,12 +225,12 @@ Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (20,8,1,1);
 --------------------------------------------------------
 
   CREATE TABLE "CUSTOMER" 
-   (	"CUS_NUMBER" VARCHAR2(40 BYTE), 
-	"CUS_NAME" VARCHAR2(40 BYTE), 
-	"CUS_PHONE" VARCHAR2(40 BYTE), 
-	"CUS_SEX" VARCHAR2(40 BYTE), 
-	"CUS_BIRTHDAY" DATE, 
-	"CUS_POINT" NUMBER(20,0)
+   (   "CUS_NUMBER" VARCHAR2(40 BYTE), 
+   "CUS_NAME" VARCHAR2(40 BYTE), 
+   "CUS_PHONE" VARCHAR2(40 BYTE), 
+   "CUS_SEX" VARCHAR2(40 BYTE), 
+   "CUS_BIRTHDAY" DATE, 
+   "CUS_POINT" NUMBER(20,0)
    ) ;
 REM INSERTING into CUSTOMER
 SET DEFINE OFF;
