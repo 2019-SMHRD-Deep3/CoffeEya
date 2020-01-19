@@ -17,7 +17,6 @@ import model.Member;
 import net.sourceforge.jdatepicker.impl.JDatePanelImpl;
 import net.sourceforge.jdatepicker.impl.JDatePickerImpl;
 import net.sourceforge.jdatepicker.impl.UtilDateModel;
-import javax.swing.JSeparator;
 
 public class CESaleStart {
 
@@ -32,32 +31,16 @@ public class CESaleStart {
 	private JTextField textField_7;
 	private JTextField textField_8;
 	
-	private Date selectedDate;
+//	private Date selectedDate;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					CESaleStart window = new CESaleStart();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the application.
 	 */
-//	public CESaleStart(Member loginUser) {
-	public CESaleStart() {
-//		this.loginUser = loginUser;
+	public CESaleStart(Member loginUser) {
+		this.loginUser = loginUser;
 		initialize();
-//		frame.setVisible(true);
+		frame.setVisible(true);
 	}
 
 	/**
@@ -65,7 +48,7 @@ public class CESaleStart {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 600, 400);
+		frame.setBounds(400, 300, 600, 400);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -208,6 +191,6 @@ public class CESaleStart {
 		 
 		panel_1.add(datePicker);
 		
-		selectedDate = (Date) datePicker.getModel().getValue();
+//		selectedDate = (Date) datePicker.getModel().getValue();
 	}
 }

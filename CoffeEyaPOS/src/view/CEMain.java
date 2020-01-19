@@ -83,8 +83,7 @@ public class CEMain {
 		panel_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				CESale sale = new CESale(loginUser);
-				frame.dispose();
+				CESaleStart saleStart = new CESaleStart(loginUser);
 			}
 		});
 		panel_1.setBounds(69, 75, 262, 217);
