@@ -90,9 +90,10 @@ public class CECustomer {
 		ImageIcon icon3 = new ImageIcon(imgPath3);
 
 		panel_1 = new JPanel();
+		panel_1.setBackground(new Color(250, 235, 215));
 		panel_1.setBounds(80, 320, 541, 252);
 		frame.getContentPane().add(panel_1);
-		panel_1.setLayout(new GridLayout(0, 2, 4, 4));
+		panel_1.setLayout(new GridLayout(0, 2, 70, 5));
 
 		
 		String imgPath = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//cus2.png";
@@ -114,7 +115,7 @@ public class CECustomer {
 		String imgPath2 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//cus3.png";
 		ImageIcon cus3 = new ImageIcon(imgPath2);
 		
-		lblNewLabel_1 = new JLabel("\uACE0\uAC1D \uC774\uB984"){
+		lblNewLabel_1 = new JLabel(""){
 			@Override
 			protected void paintComponent(Graphics g) {
 				g.drawImage(cus3.getImage(), 0, 0, lblNewLabel_1.getWidth(), lblNewLabel_1.getHeight(), null);
@@ -129,7 +130,7 @@ public class CECustomer {
 		textField.setColumns(10);
 
 		
-		String imgPath4 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//cus2.png";
+		String imgPath4 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//cus4.png";
 		ImageIcon cus5 = new ImageIcon(imgPath4);
 		
 		lblNewLabel_2 = new JLabel(){
@@ -150,7 +151,7 @@ public class CECustomer {
 		String imgPath11 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//cus5.png";
 		ImageIcon cus11 = new ImageIcon(imgPath11);
 		
-		lblNewLabel_3 = new JLabel("\uACE0\uAC1D \uC131\uBCC4"){
+		lblNewLabel_3 = new JLabel(""){
 			@Override
 			protected void paintComponent(Graphics g) {
 				g.drawImage(cus11.getImage(), 0, 0, lblNewLabel_3.getWidth(), lblNewLabel_3.getHeight(), null);
@@ -161,13 +162,18 @@ public class CECustomer {
 		panel_1.add(lblNewLabel_3);
 
 		panel_2 = new JPanel();
+		panel_2.setBackground(new Color(250, 235, 215));
 		panel_1.add(panel_2);
 		panel_2.setLayout(new GridLayout(1, 0, 0, 0));
 
 		rdbtnNewRadioButton = new JRadioButton("\uB0A8\uC790");
+		rdbtnNewRadioButton.setBackground(new Color(250, 235, 215));
+		rdbtnNewRadioButton.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_2.add(rdbtnNewRadioButton);
 
 		rdbtnNewRadioButton_1 = new JRadioButton("\uC5EC\uC790");
+		rdbtnNewRadioButton_1.setBackground(new Color(250, 235, 215));
+		rdbtnNewRadioButton_1.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_2.add(rdbtnNewRadioButton_1);
 
 		ButtonGroup sex = new ButtonGroup();
@@ -178,7 +184,7 @@ public class CECustomer {
 		String imgPath12 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//cus6.png";
 		ImageIcon cus12 = new ImageIcon(imgPath12);
 		
-		lblNewLabel_4 = new JLabel("\uACE0\uAC1D \uC0DD\uB144\uC6D4\uC77C"){
+		lblNewLabel_4 = new JLabel(""){
 			@Override
 			protected void paintComponent(Graphics g) {
 				g.drawImage(cus12.getImage(), 0, 0, lblNewLabel_4.getWidth(), lblNewLabel_4.getHeight(), null);
@@ -192,7 +198,16 @@ public class CECustomer {
 		panel_1.add(textField_2);
 		textField_2.setColumns(10);
 
-		lblNewLabel_6 = new JLabel("\uACE0\uAC1D \uC801\uB9BD\uD3EC\uC778\uD2B8");
+		String imgPath13 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//cus8.png";
+		ImageIcon cus13 = new ImageIcon(imgPath13);
+		lblNewLabel_6 = new JLabel(""){
+			@Override
+			protected void paintComponent(Graphics g) {
+				g.drawImage(cus13.getImage(), 0, 0, lblNewLabel_6.getWidth(), lblNewLabel_6.getHeight(), null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
 		panel_1.add(lblNewLabel_6);
 
 		textField_3 = new JTextField();
