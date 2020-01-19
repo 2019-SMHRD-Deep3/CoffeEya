@@ -100,7 +100,7 @@ public class CEMember {
 
 
 		panel_1 = new JPanel();
-		panel_1.setBackground(new Color(188, 143, 143));
+		panel_1.setBackground(new Color(250, 235, 215));
 		panel_1.setBounds(12, 10, 438, 123);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
