@@ -124,9 +124,9 @@ public class CEMain {
 		panel_4.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if (loginUser.getMEM_PERM().equals("EMPLOYEE")) {
+				if (loginUser.getMEM_PERM().equals("EMPLOYEE")||loginUser.getMEM_PERM().equals("employee")) {
 					JOptionPane.showMessageDialog(frame, "접근 할 수 없습니다.");
-				} else if (loginUser.getMEM_PERM().equals("MANAGER")) {
+				} else if (loginUser.getMEM_PERM().equals("MANAGER")||loginUser.getMEM_PERM().equals("manager")) {
 					CEMember member = new CEMember(loginUser);
 					frame.dispose();
 				}
@@ -170,9 +170,9 @@ public class CEMain {
 		panel_5.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if (loginUser.getMEM_PERM().equals("EMPLOYEE")) {
+				if (loginUser.getMEM_PERM().equals("EMPLOYEE")||loginUser.getMEM_PERM().equals("employee")) {
 					JOptionPane.showMessageDialog(frame, "접근 할 수 없습니다.");
-				} else if (loginUser.getMEM_PERM().equals("MANAGER")) {
+				} else if (loginUser.getMEM_PERM().equals("MANAGER")||loginUser.getMEM_PERM().equals("manager")) {
 					CEProduct setProduct = new CEProduct(loginUser);
 					frame.dispose();
 				}
@@ -195,9 +195,9 @@ public class CEMain {
 		panel_6.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if (loginUser.getMEM_PERM().equals("EMPLOYEE")) {
+				if (loginUser.getMEM_PERM().equals("EMPLOYEE")||loginUser.getMEM_PERM().equals("employee")) {
 					JOptionPane.showMessageDialog(frame, "접근 할 수 없습니다.");
-				} else if (loginUser.getMEM_PERM().equals("MANAGER")) {
+				} else if (loginUser.getMEM_PERM().equals("MANAGER")||loginUser.getMEM_PERM().equals("manager")) {
 					CECustomer customer = new CECustomer(loginUser);
 					frame.dispose();
 				}
@@ -211,7 +211,7 @@ public class CEMain {
 		lblNewLabel.setFont(new Font("굴림", Font.BOLD, 25));
 		lblNewLabel.setForeground(Color.BLACK);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblNewLabel.setBounds(470, 16, 647, 37);
+		lblNewLabel.setBounds(429, 20, 647, 37);
 		panel.add(lblNewLabel);
 
 		String imgPath7 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//bback.png";

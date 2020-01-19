@@ -83,19 +83,9 @@ public class CECusJoin {
       };
       frame.getContentPane().add(panel_4, "name_2532572478074700");
       panel_4.setLayout(null);
-      
-      String imgPath1 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//blur.png";
-      ImageIcon icon1 = new ImageIcon(imgPath1);
-      
-      panel_3 = new JPanel(){
-          @Override
-          protected void paintComponent(Graphics g) {
-             g.drawImage(icon1.getImage(), 0, 0, panel_3.getWidth(), panel_3.getHeight(), null);
-             setOpaque(false);
-             super.paintComponent(g);
-          }
-       };
-      panel_3.setBackground(Color.WHITE);
+        
+      panel_3 = new JPanel();
+      panel_3.setBackground(new Color(255,0,0,0));
       panel_3.setBounds(565, 0, 619, 750);
       panel_4.add(panel_3);
       panel_3.setLayout(null);
@@ -114,7 +104,7 @@ public class CECusJoin {
       lblNewLabel.setBackground(new Color(240, 240, 240));
       lblNewLabel.setFont(new Font("HY°ß°íµñ", Font.PLAIN, 20));
       lblNewLabel.setForeground(new Color(250, 235, 215));
-      lblNewLabel.setBounds(110, 0, 393, 85);
+      lblNewLabel.setBounds(185, 10, 265, 67);
       panel_3.add(lblNewLabel);
       lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
       
@@ -132,10 +122,10 @@ public class CECusJoin {
       panel.setBackground(Color.WHITE);
       panel.setBounds(0, 87, 619, 523);
       panel_3.add(panel);
-      panel.setLayout(null);
       
       String imgPath3 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//cus2.png";
       ImageIcon icon3 = new ImageIcon(imgPath3);
+      panel.setLayout(null);
       
       lblNewLabel_1 = new JLabel(""){
           @Override
@@ -152,7 +142,7 @@ public class CECusJoin {
       panel.add(lblNewLabel_1);
       
       textField = new JTextField();
-      textField.setBounds(300, 30, 280, 54);
+      textField.setBounds(300, 38, 280, 46);
       textField.setBackground(SystemColor.inactiveCaptionBorder);
       panel.add(textField);
       textField.setColumns(10);
@@ -176,7 +166,7 @@ public class CECusJoin {
       panel.add(lblNewLabel_2);
       
       textField_1 = new JTextField();
-      textField_1.setBounds(300, 134, 280, 54);
+      textField_1.setBounds(300, 142, 280, 46);
       textField_1.setBackground(SystemColor.inactiveCaptionBorder);
       panel.add(textField_1);
       textField_1.setColumns(10);
@@ -200,7 +190,7 @@ public class CECusJoin {
       panel.add(lblNewLabel_3);
       
       textField_2 = new JTextField();
-      textField_2.setBounds(300, 238, 280, 54);
+      textField_2.setBounds(300, 246, 280, 46);
       textField_2.setBackground(SystemColor.inactiveCaptionBorder);
       panel.add(textField_2);
       textField_2.setColumns(10);
@@ -240,16 +230,16 @@ public class CECusJoin {
       panel.add(lblNewLabel_5);
       
       textField_4 = new JTextField();
+      textField_4.setBounds(300, 454, 280, 46);
       textField_4.setFont(new Font("±¼¸²", Font.PLAIN, 12));
       textField_4.setBackground(SystemColor.inactiveCaptionBorder);
-      textField_4.setBounds(300, 446, 280, 54);
       panel.add(textField_4);
       textField_4.setColumns(10);
       
       
       panel_1 = new JPanel();
+      panel_1.setBounds(321, 352, 247, 54);
       panel_1.setBackground(SystemColor.inactiveCaptionBorder);
-      panel_1.setBounds(321, 331, 247, 75);
       panel.add(panel_1);
       panel_1.setLayout(null);
       
@@ -257,23 +247,24 @@ public class CECusJoin {
       rdbtnNewRadioButton.setFont(new Font("HY°ß°íµñ", Font.PLAIN, 12));
       rdbtnNewRadioButton.setBackground(SystemColor.inactiveCaptionBorder);
       rdbtnNewRadioButton.setHorizontalAlignment(SwingConstants.CENTER);
-      rdbtnNewRadioButton.setBounds(8, 18, 75, 33);
+      rdbtnNewRadioButton.setBounds(35, 18, 75, 33);
       panel_1.add(rdbtnNewRadioButton);
       
       JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("\uC5EC\uC790");
       rdbtnNewRadioButton_1.setFont(new Font("HY°ß°íµñ", Font.PLAIN, 12));
       rdbtnNewRadioButton_1.setBackground(SystemColor.inactiveCaptionBorder);
       rdbtnNewRadioButton_1.setHorizontalAlignment(SwingConstants.CENTER);
-      rdbtnNewRadioButton_1.setBounds(135, 18, 75, 33);
+      rdbtnNewRadioButton_1.setBounds(139, 18, 75, 33);
       panel_1.add(rdbtnNewRadioButton_1);
       
-      JPanel panel_2 = new JPanel();
-      panel_2.setBackground(Color.WHITE);
-      panel_2.setBounds(52, 652, 523, 47);
-      panel_3.add(panel_2);
-      panel_2.setLayout(new GridLayout(1, 0, 0, 0));
+      JButton btnNewButton_1 = new JButton("\uCDE8\uC18C");
+      btnNewButton_1.setBounds(343, 654, 100, 40);
+      panel_3.add(btnNewButton_1);
+      btnNewButton_1.setFont(new Font("HY°ß°íµñ", Font.PLAIN, 20));
       
       JButton btnNewButton = new JButton("\uB4F1\uB85D");
+      btnNewButton.setBounds(185, 654, 100, 40);
+      panel_3.add(btnNewButton);
       btnNewButton.setFont(new Font("HY°ß°íµñ", Font.PLAIN, 20));
       btnNewButton.addMouseListener(new MouseAdapter() {
          @Override
@@ -300,10 +291,6 @@ public class CECusJoin {
             }
          }
       });
-      panel_2.add(btnNewButton);
-      
-      JButton btnNewButton_1 = new JButton("\uCDE8\uC18C");
-      btnNewButton_1.setFont(new Font("HY°ß°íµñ", Font.PLAIN, 20));
       btnNewButton_1.addMouseListener(new MouseAdapter() {
          @Override
          public void mouseClicked(MouseEvent e) {
@@ -311,7 +298,6 @@ public class CECusJoin {
              frame.dispose();
          }
       });
-      panel_2.add(btnNewButton_1);
       ButtonGroup perm = new ButtonGroup();
    }
 }

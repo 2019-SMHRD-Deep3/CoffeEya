@@ -22,6 +22,7 @@ import model.Ordering;
 import model.OrderingDAO;
 
 import java.awt.Font;
+import java.awt.Graphics;
 import java.util.ArrayList;
 import java.io.IOException;
 import java.awt.event.MouseEvent;
@@ -41,10 +42,10 @@ public class CEMonthCalendarAnalysis {
 	private JLabel lblNewLabel;
 	private JLabel lblNewLabel_1;
 	private JLabel lblNewLabel_3;
-	private JButton btnNewButton;
 	private Member loginUser;
 	private String infoYear;
 	private String infoMonth;
+	private JPanel panel_1;
 
 	/**
 	 * Create the application.
@@ -71,24 +72,14 @@ public class CEMonthCalendarAnalysis {
 		lblNewLabel.setBounds(0, 0, 1184, 761);
 		frame.getContentPane().add(lblNewLabel);
 
-		btnNewButton = new JButton("");
-		btnNewButton.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				frame.dispose();
-			}
-		});
-		btnNewButton.setBounds(1138, 10, 34, 34);
-		frame.getContentPane().add(btnNewButton);
-
 		panel = new JPanel();
 		panel.setBackground(Color.DARK_GRAY);
-		panel.setBounds(12, 54, 1160, 95);
+		panel.setBounds(12, 10, 1160, 92);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 
 		lblNewLabel_1 = new JLabel("\uB0A0\uC9DC \uAE30\uC900");
-		lblNewLabel_1.setBounds(12, 19, 1136, 57);
+		lblNewLabel_1.setBounds(12, 19, 1058, 57);
 		panel.add(lblNewLabel_1);
 		lblNewLabel_1.setForeground(Color.WHITE);
 		lblNewLabel_1.setFont(new Font("±¼¸²", Font.BOLD, 26));
@@ -96,9 +87,29 @@ public class CEMonthCalendarAnalysis {
 
 		panel_2 = new JPanel();
 		panel_2.setBackground(new Color(204, 153, 102));
-		panel_2.setBounds(12, 19, 1136, 57);
+		panel_2.setBounds(12, 19, 1058, 57);
 		panel.add(panel_2);
 		panel_2.setLayout(null);
+		
+		String imgPath3 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//bback.png";
+		ImageIcon icon3 = new ImageIcon(imgPath3);
+		panel_1 = new JPanel(){
+			@Override
+			protected void paintComponent(Graphics g) {
+				g.drawImage(icon3.getImage(), 0, 0, panel_1.getWidth(), panel_1.getHeight(), null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
+		panel_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				frame.dispose();
+			}
+		});
+		
+		panel_1.setBounds(1092, 19, 56, 57);
+		panel.add(panel_1);
 
 		OrderingDAO daoO = new OrderingDAO();
 		ArrayList<Detail> listCnt = serviceD.detailLookup();
@@ -124,7 +135,7 @@ public class CEMonthCalendarAnalysis {
 
 		panel_3 = new JPanel();
 		panel_3.setBackground(Color.DARK_GRAY);
-		panel_3.setBounds(12, 159, 1160, 592);
+		panel_3.setBounds(12, 112, 1160, 639);
 		frame.getContentPane().add(panel_3);
 		panel_3.setLayout(null);
 
@@ -160,7 +171,7 @@ public class CEMonthCalendarAnalysis {
 				+ "..//..//CoffeEyaIMG//Sample_Chart3_300_DPI.png";
 		ImageIcon iconChart = new ImageIcon(imgPathChart);
 		lblNewLabel_3.setIcon(iconChart);
-		lblNewLabel_3.setBounds(26, 10, 1107, 572);
+		lblNewLabel_3.setBounds(26, 10, 1107, 619);
 		panel_3.add(lblNewLabel_3);
 	}
 }

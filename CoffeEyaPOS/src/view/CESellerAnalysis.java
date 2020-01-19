@@ -22,6 +22,7 @@ import model.Member;
 import model.OrderingDAO;
 
 import java.awt.Font;
+import java.awt.Graphics;
 import java.util.ArrayList;
 import java.io.IOException;
 import java.awt.event.MouseEvent;
@@ -45,9 +46,9 @@ public class CESellerAnalysis {
 	private JLabel lblNewLabel;
 	private JLabel lblNewLabel_1;
 	private JLabel lblNewLabel_3;
-	private JButton btnNewButton;
 	private JScrollPane scrollPane;
 	private Member loginUser;
+	private JPanel panel_4;
 
 	/**
 	 * Create the application.
@@ -71,26 +72,15 @@ public class CESellerAnalysis {
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setBounds(0, 0, 1184, 761);
 		frame.getContentPane().add(lblNewLabel);
-		
-		
-		btnNewButton = new JButton("");
-		btnNewButton.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				frame.dispose();
-			}
-		});
-		btnNewButton.setBounds(1138, 10, 34, 34);
-		frame.getContentPane().add(btnNewButton);
 
 		panel = new JPanel();
 		panel.setBackground(Color.DARK_GRAY);
-		panel.setBounds(12, 54, 1160, 95);
+		panel.setBounds(12, 10, 1160, 91);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 
 		lblNewLabel_1 = new JLabel("\uD310\uB9E4\uC790 \uAE30\uC900");
-		lblNewLabel_1.setBounds(12, 19, 1136, 57);
+		lblNewLabel_1.setBounds(12, 19, 1067, 57);
 		panel.add(lblNewLabel_1);
 		lblNewLabel_1.setForeground(Color.WHITE);
 		lblNewLabel_1.setFont(new Font("굴림", Font.BOLD, 26));
@@ -98,15 +88,34 @@ public class CESellerAnalysis {
 
 		panel_2 = new JPanel();
 		panel_2.setBackground(new Color(204, 153, 102));
-		panel_2.setBounds(12, 19, 1136, 57);
+		panel_2.setBounds(12, 19, 1067, 57);
 		panel.add(panel_2);
 		panel_2.setLayout(null);
+
+		String imgPath3 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//bback.png";
+		ImageIcon icon3 = new ImageIcon(imgPath3);
+		panel_4 = new JPanel() {
+			@Override
+			protected void paintComponent(Graphics g) {
+				g.drawImage(icon3.getImage(), 0, 0, panel_4.getWidth(), panel_4.getHeight(), null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
+		panel_4.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				frame.dispose();
+			}
+		});
+		panel_4.setBounds(1091, 19, 57, 57);
+		panel.add(panel_4);
 
 		Detail d = new Detail();
 
 		panel_1 = new JPanel();
 		panel_1.setBackground(Color.DARK_GRAY);
-		panel_1.setBounds(12, 159, 1160, 110);
+		panel_1.setBounds(12, 111, 1160, 112);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
 
@@ -157,12 +166,12 @@ public class CESellerAnalysis {
 
 		// 반복문을 이용하여 테이블을 가운데 정렬로 지정
 		for (int i = 0; i < tcmSchedule.getColumnCount(); i++) {
-		tcmSchedule.getColumn(i).setCellRenderer(tScheduleCellRenderer);
+			tcmSchedule.getColumn(i).setCellRenderer(tScheduleCellRenderer);
 		}
 
 		panel_3 = new JPanel();
 		panel_3.setBackground(Color.DARK_GRAY);
-		panel_3.setBounds(12, 279, 1160, 472);
+		panel_3.setBounds(12, 233, 1160, 518);
 		frame.getContentPane().add(panel_3);
 		panel_3.setLayout(null);
 
@@ -206,7 +215,7 @@ public class CESellerAnalysis {
 				+ "..//..//CoffeEyaIMG//Sample_Chart2_300_DPI.png";
 		ImageIcon iconChart = new ImageIcon(imgPathChart);
 		lblNewLabel_3.setIcon(iconChart);
-		lblNewLabel_3.setBounds(26, 26, 1107, 424);
+		lblNewLabel_3.setBounds(26, 26, 1107, 470);
 		panel_3.add(lblNewLabel_3);
 	}
 }
