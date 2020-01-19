@@ -145,7 +145,7 @@ public class CESellerAnalysis {
 		int cnt = 0;
 		for (int i = 0; i < dataCnt.length; i++) {
 			if (dataCnt[i] != 0) {
-				data[cnt] = new Object[] { 1 + cnt++, MemberCnt.get(i).getMEM_ID(), dataCnt[i] };
+				data[cnt] = new Object[] { 1 + cnt++, MemberCnt.get(i).getMEM_NAME(), dataCnt[i] };
 			}
 		}
 		Object[][] data2 = new Object[cnt][2];

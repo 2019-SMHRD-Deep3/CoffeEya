@@ -22,6 +22,7 @@ import controller.DetailManagementService;
 import controller.ProductManagementService;
 import model.Detail;
 import model.Member;
+import model.MemberDAO;
 import model.Ordering;
 import model.OrderingDAO;
 import model.Product;
@@ -30,6 +31,7 @@ import model.ProductDAO;
 public class CEAnalysis {
 	DetailManagementService service = new DetailManagementService();
 	ProductManagementService serviceP = new ProductManagementService();
+	MemberDAO memberdao = new MemberDAO();
 	ProductDAO productdao = new ProductDAO();
 	OrderingDAO orderingdao = new OrderingDAO();
 	Product pro = new Product();
@@ -83,7 +85,7 @@ public class CEAnalysis {
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 
-		lblNewLabel_1 = new JLabel("\uAE08\uC77C \uD310\uB9E4\uB300\uAE08");
+		lblNewLabel_1 = new JLabel("\uC6D4\uAC04 \uD310\uB9E4\uB300\uAE08");
 		lblNewLabel_1.setBounds(12, 19, 322, 57);
 		panel.add(lblNewLabel_1);
 		lblNewLabel_1.setForeground(Color.WHITE);
@@ -156,9 +158,9 @@ public class CEAnalysis {
 			String PRO_NAME = pro.getPRO_NAME();
 			int PRO_PRICE = pro.getPRO_PRICE();
 			String OR_PAY = ord.getOR_PAY();
-			String MEM_ID = ord.getMEM_ID();
+			String MEM_NAME = memberdao.getName(ord.getMEM_ID());
 			String OR_DATE = ord.getOR_DATE().substring(0, 10);
-			data[i] = new Object[] { d.getOR_NUM(), PRO_NAME, PRO_PRICE, d.getDE_AMOUNT(), OR_PAY, MEM_ID, OR_DATE };
+			data[i] = new Object[] { d.getOR_NUM(), PRO_NAME, PRO_PRICE, d.getDE_AMOUNT(), OR_PAY, MEM_NAME, OR_DATE };
 		}
 		table = new JTable(data, columnNames);
 		scrollPane.setViewportView(table);
