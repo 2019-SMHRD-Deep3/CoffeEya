@@ -1,43 +1,37 @@
 package view;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import java.awt.Color;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableColumnModel;
-
-import org.knowm.xchart.BitmapEncoder;
-import org.knowm.xchart.BitmapEncoder.BitmapFormat;
-import org.knowm.xchart.PieChart;
-import org.knowm.xchart.PieChartBuilder;
-import org.knowm.xchart.style.PieStyler.AnnotationType;
-import org.knowm.xchart.style.Styler.ChartTheme;
 
 import controller.DetailManagementService;
 import controller.ProductManagementService;
 import model.Detail;
 import model.Member;
+import model.Ordering;
 import model.OrderingDAO;
 import model.Product;
 import model.ProductDAO;
 
-import java.awt.Font;
-import java.util.ArrayList;
-
-import java.io.IOException;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseAdapter;
-
-import javax.swing.JTable;
-import javax.swing.JButton;
-import javax.swing.ImageIcon;
-import javax.swing.JScrollPane;
-
 public class CEAnalysis {
 	DetailManagementService service = new DetailManagementService();
 	ProductManagementService serviceP = new ProductManagementService();
+	ProductDAO productdao = new ProductDAO();
+	OrderingDAO orderingdao = new OrderingDAO();
+	Product pro = new Product();
+	Ordering ord = new Ordering();
 
 	private JFrame frame;
 	private JPanel panel;
@@ -101,11 +95,11 @@ public class CEAnalysis {
 		panel_2.setLayout(null);
 
 		ArrayList<Detail> listTemp = service.detailLookup();
-		ProductDAO daoSum = new ProductDAO();
+//		ProductDAO daoSum = new ProductDAO();
 		Detail d = new Detail();
 		for (int i = 0; i < listTemp.size(); i++) {
 			d = listTemp.get(i);
-			int PRO_PRICE = daoSum.getInfoProduct(d).getPRO_PRICE();
+			int PRO_PRICE = productdao.getInfoProduct(d).getPRO_PRICE();
 			sum += PRO_PRICE * d.getDE_AMOUNT();
 		}
 		lblNewLabel_2 = new JLabel(Integer.toString(sum) + " 원");
@@ -128,15 +122,18 @@ public class CEAnalysis {
 		String[] columnNames = { "주문 번호", "상품 이름", "단일 가격", "판매 수량", "결제 수단", "판매 사원", "판매 날짜" };
 		ArrayList<Detail> list = service.detailLookup();
 		Object[][] data = new Object[list.size()][7];
-		ProductDAO daoP = new ProductDAO();
-		OrderingDAO daoO = new OrderingDAO();
+//		ProductDAO daoP = new ProductDAO();
+//		OrderingDAO daoO = new OrderingDAO();
 		for (int i = 0; i < list.size(); i++) {
 			d = list.get(i);
-			String PRO_NAME = daoP.getInfoProduct(d).getPRO_NAME();
-			int PRO_PRICE = daoP.getInfoProduct(d).getPRO_PRICE();
-			String OR_PAY = daoO.getInfoOrdering(d).getOR_PAY();
-			String MEM_ID = daoO.getInfoOrdering(d).getMEM_ID();
-			String OR_DATE = daoO.getInfoOrdering(d).getOR_DATE().substring(0, 10);
+			pro = productdao.getInfoProduct(d);
+			ord = orderingdao.getInfoOrdering(d);
+			
+			String PRO_NAME = pro.getPRO_NAME();
+			int PRO_PRICE = pro.getPRO_PRICE();
+			String OR_PAY = ord.getOR_PAY();
+			String MEM_ID = ord.getMEM_ID();
+			String OR_DATE = ord.getOR_DATE().substring(0, 10);
 			data[i] = new Object[] { d.getOR_NUM(), PRO_NAME, PRO_PRICE, d.getDE_AMOUNT(), OR_PAY, MEM_ID, OR_DATE };
 		}
 		table = new JTable(data, columnNames);

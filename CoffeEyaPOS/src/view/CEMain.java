@@ -210,8 +210,8 @@ public class CEMain {
 		lblNewLabel = new JLabel("직급 : " + loginUser.getMEM_PERM() + "    사용자 : " + loginUser.getMEM_NAME());
 		lblNewLabel.setFont(new Font("굴림", Font.BOLD, 25));
 		lblNewLabel.setForeground(Color.BLACK);
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(628, 16, 489, 37);
+		lblNewLabel.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblNewLabel.setBounds(470, 16, 647, 37);
 		panel.add(lblNewLabel);
 
 		String imgPath7 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//bback.png";
