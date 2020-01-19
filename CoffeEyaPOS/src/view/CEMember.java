@@ -40,7 +40,6 @@ public class CEMember {
 
 	private JFrame frame;
 	private Member loginUser;
-	private JPanel panel_1;
 	private JScrollPane scrollPane;
 
 	private JTable table;
@@ -57,6 +56,7 @@ public class CEMember {
 	private JLabel label;
 	private JLabel label_1;
 	private JLabel label_2;
+	private JPanel panel_1;
 
 	/**
 	 * Create the application.
@@ -106,7 +106,7 @@ public class CEMember {
 		panel_1.setLayout(null);
 
 		scrollPane = new JScrollPane();
-		scrollPane.setBounds(0, 0, 438, 526);
+		scrollPane.setBounds(0, 0, 438, 123);
 		panel_1.add(scrollPane);
 
 		JPanel panel_2 = new JPanel();

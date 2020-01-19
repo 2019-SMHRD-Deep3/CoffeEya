@@ -566,6 +566,13 @@ public class CEDeadline {
 		panel_6.add(btnNewButton_12);
 		
 		JButton btnNewButton_13 = new JButton("\u2190");
+		btnNewButton_13.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				CEMain main = new CEMain(loginUser);
+				frame.dispose();
+			}
+		});
 		btnNewButton_13.setBackground(SystemColor.activeCaption);
 		btnNewButton_13.setBackground(new Color(19,35,93));
 		btnNewButton_13.setForeground(SystemColor.inactiveCaptionBorder);
