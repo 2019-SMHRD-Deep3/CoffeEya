@@ -33,6 +33,7 @@ import javax.swing.table.TableColumnModel;
 import javax.swing.JComboBox;
 import java.awt.SystemColor;
 import java.awt.Color;
+import java.awt.Font;
 
 public class CEProduct {
 
@@ -134,6 +135,7 @@ public class CEProduct {
 		panel_1.add(lblNewLabel);
 
 		textField = new JTextField();
+		textField.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
 		textField.setBackground(new Color(255, 218, 185));
 		panel_1.add(textField);
 		textField.setColumns(10);
@@ -152,6 +154,7 @@ public class CEProduct {
 		panel_1.add(lblNewLabel_1);
 
 		textField_1 = new JTextField();
+		textField_1.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
 		textField_1.setBackground(new Color(255, 218, 185));
 		panel_1.add(textField_1);
 		textField_1.setColumns(10);
@@ -170,6 +173,7 @@ public class CEProduct {
 		panel_1.add(lblNewLabel_2);
 
 		textField_2 = new JTextField();
+		textField_2.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
 		textField_2.setBackground(new Color(255, 218, 185));
 		panel_1.add(textField_2);
 		textField_2.setColumns(10);
@@ -297,21 +301,25 @@ public class CEProduct {
 		frame.getContentPane().add(panel_6);
 		
 		JLabel lblNewLabel_3 = new JLabel("\uCD08\uAE30\uD654");
+		lblNewLabel_3.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 12));
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3.setBounds(560, 216, 57, 15);
 		frame.getContentPane().add(lblNewLabel_3);
 		
 		JLabel label = new JLabel("\uCD94\uAC00");
+		label.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 12));
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		label.setBounds(563, 322, 57, 15);
 		frame.getContentPane().add(label);
 		
 		JLabel label_1 = new JLabel("\uC218\uC815");
+		label_1.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 12));
 		label_1.setHorizontalAlignment(SwingConstants.CENTER);
 		label_1.setBounds(563, 420, 57, 15);
 		frame.getContentPane().add(label_1);
 		
 		JLabel label_2 = new JLabel("\uC0AD\uC81C");
+		label_2.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 12));
 		label_2.setHorizontalAlignment(SwingConstants.CENTER);
 		label_2.setBounds(563, 515, 57, 15);
 		frame.getContentPane().add(label_2);

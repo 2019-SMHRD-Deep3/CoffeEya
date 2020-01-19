@@ -132,7 +132,9 @@ public class CELogin {
 		panel_1.setLayout(new GridLayout(1, 0, 20, 0));
 
 		btnNewButton = new JButton("\uB85C\uADF8\uC778");
-		btnNewButton.setFont(new Font("±¼¸²", Font.BOLD, 18));
+		btnNewButton.setForeground(SystemColor.inactiveCaptionBorder);
+		btnNewButton.setBackground(new Color(19,35,93));
+		btnNewButton.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -153,7 +155,9 @@ public class CELogin {
 		panel_1.add(btnNewButton);
 
 		btnNewButton_1 = new JButton("\uC885\uB8CC");
-		btnNewButton_1.setFont(new Font("±¼¸²", Font.BOLD, 18));
+		btnNewButton_1.setForeground(SystemColor.inactiveCaptionBorder);
+		btnNewButton_1.setBackground(new Color(19,35,93));
+		btnNewButton_1.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
 		btnNewButton_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {

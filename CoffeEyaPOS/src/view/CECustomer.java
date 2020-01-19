@@ -28,6 +28,7 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableColumnModel;
 import javax.swing.JRadioButton;
 import java.awt.Color;
+import java.awt.Font;
 
 public class CECustomer {
 
@@ -109,6 +110,7 @@ public class CECustomer {
 		panel_1.add(lblNewLabel);
 
 		lblNewLabel_5 = new JLabel("\uACE0\uAC1D \uBC88\uD638 \uC120\uD0DD");
+		lblNewLabel_5.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15));
 		panel_1.add(lblNewLabel_5);
 
 		String imgPath2 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//cus3.png";
@@ -125,6 +127,7 @@ public class CECustomer {
 		panel_1.add(lblNewLabel_1);
 
 		textField = new JTextField();
+		textField.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15));
 		textField.setBackground(new Color(255, 218, 185));
 		panel_1.add(textField);
 		textField.setColumns(10);
@@ -143,6 +146,7 @@ public class CECustomer {
 		panel_1.add(lblNewLabel_2);
 
 		textField_1 = new JTextField();
+		textField_1.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15));
 		textField_1.setBackground(new Color(255, 218, 185));
 		panel_1.add(textField_1);
 		textField_1.setColumns(10);
@@ -166,11 +170,13 @@ public class CECustomer {
 		panel_2.setLayout(new GridLayout(1, 0, 0, 0));
 
 		rdbtnNewRadioButton = new JRadioButton("\uB0A8\uC790");
+		rdbtnNewRadioButton.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15));
 		rdbtnNewRadioButton.setBackground(new Color(250, 235, 215));
 		rdbtnNewRadioButton.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_2.add(rdbtnNewRadioButton);
 
 		rdbtnNewRadioButton_1 = new JRadioButton("\uC5EC\uC790");
+		rdbtnNewRadioButton_1.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15));
 		rdbtnNewRadioButton_1.setBackground(new Color(250, 235, 215));
 		rdbtnNewRadioButton_1.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_2.add(rdbtnNewRadioButton_1);
@@ -193,6 +199,7 @@ public class CECustomer {
 		panel_1.add(lblNewLabel_4);
 
 		textField_2 = new JTextField();
+		textField_2.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15));
 		textField_2.setBackground(new Color(255, 218, 185));
 		panel_1.add(textField_2);
 		textField_2.setColumns(10);
@@ -210,6 +217,7 @@ public class CECustomer {
 		panel_1.add(lblNewLabel_6);
 
 		textField_3 = new JTextField();
+		textField_3.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15));
 		textField_3.setBackground(new Color(255, 218, 185));
 		panel_1.add(textField_3);
 		textField_3.setColumns(10);
@@ -346,21 +354,25 @@ public class CECustomer {
 		frame.getContentPane().add(panel_3);
 
 		JLabel lblNewLabel_7 = new JLabel("\uCD08\uAE30\uD654");
+		lblNewLabel_7.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 12));
 		lblNewLabel_7.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_7.setBounds(753, 240, 57, 15);
 		frame.getContentPane().add(lblNewLabel_7);
 
 		JLabel label = new JLabel("\uD68C\uC6D0\uAC00\uC785");
+		label.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 12));
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		label.setBounds(754, 337, 57, 15);
 		frame.getContentPane().add(label);
 
 		JLabel label_1 = new JLabel("\uC815\uBCF4\uC218\uC815");
+		label_1.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 12));
 		label_1.setHorizontalAlignment(SwingConstants.CENTER);
 		label_1.setBounds(752, 434, 57, 15);
 		frame.getContentPane().add(label_1);
 
 		JLabel label_2 = new JLabel("\uD68C\uC6D0\uC0AD\uC81C");
+		label_2.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 12));
 		label_2.setHorizontalAlignment(SwingConstants.CENTER);
 		label_2.setBounds(753, 532, 57, 15);
 		frame.getContentPane().add(label_2);
