@@ -186,7 +186,7 @@ public class CEProduct {
 				super.paintComponent(g);
 			}
 		};
-		panel_2.setBounds(558, 183, 60, 60);
+		panel_2.setBounds(560, 146, 60, 60);
 		frame.getContentPane().add(panel_2);
 		
 		String imgPath5 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//plus.png";
@@ -220,7 +220,7 @@ public class CEProduct {
 				}
 			}
 		});
-		panel_4.setBounds(560, 265, 60, 60);
+		panel_4.setBounds(560, 252, 60, 60);
 		frame.getContentPane().add(panel_4);
 		
 		String imgPath6 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//repair.png";
@@ -284,12 +284,32 @@ public class CEProduct {
 				}
 			}
 		});
-		panel_6.setBounds(560, 438, 60, 60);
+		panel_6.setBounds(560, 445, 60, 60);
 		frame.getContentPane().add(panel_6);
 
 		JComboBox comboBox = new JComboBox();
 		comboBox.setBounds(12, 370, 160, 21);
 		frame.getContentPane().add(comboBox);
+		
+		JLabel lblNewLabel_3 = new JLabel("\uCD08\uAE30\uD654");
+		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_3.setBounds(560, 216, 57, 15);
+		frame.getContentPane().add(lblNewLabel_3);
+		
+		JLabel label = new JLabel("\uCD94\uAC00");
+		label.setHorizontalAlignment(SwingConstants.CENTER);
+		label.setBounds(563, 322, 57, 15);
+		frame.getContentPane().add(label);
+		
+		JLabel label_1 = new JLabel("\uC218\uC815");
+		label_1.setHorizontalAlignment(SwingConstants.CENTER);
+		label_1.setBounds(563, 420, 57, 15);
+		frame.getContentPane().add(label_1);
+		
+		JLabel label_2 = new JLabel("\uC0AD\uC81C");
+		label_2.setHorizontalAlignment(SwingConstants.CENTER);
+		label_2.setBounds(563, 515, 57, 15);
+		frame.getContentPane().add(label_2);
 
 	}
 
