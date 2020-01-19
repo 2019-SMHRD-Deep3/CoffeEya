@@ -10,8 +10,10 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
 import controller.OrderingManagementService;
+import controller.VaultCashManagermentService;
 import model.Member;
 import model.Ordering;
+import model.VaultCash;
 
 import java.awt.GridLayout;
 import java.text.SimpleDateFormat;
@@ -26,7 +28,8 @@ import java.awt.event.MouseEvent;
 
 public class CEDeadline {
 	
-	OrderingManagementService service = new OrderingManagementService();
+	OrderingManagementService oService = new OrderingManagementService();
+	VaultCashManagermentService vService = new VaultCashManagermentService();
 
 	private JFrame frame;
 	private Member loginUser;
@@ -54,6 +57,8 @@ public class CEDeadline {
 	private int orderingSum;
 	private int orderingCashSum;
 	private int orderingCardSum;
+	private int vaultCashSum = vService.vaultCashLookup();
+	private int[] vaultCashData = vService.vaultCashLookup2();
 
 	/**
 	 * Create the application.
@@ -91,7 +96,7 @@ public class CEDeadline {
 		
 		lblNewLabel_1.setText(deadLineTime);
 		deadLineTime2 = lblNewLabel_1.getText();
-		orderingSum = service.OrderingSum(deadLineTime2);
+		orderingSum = oService.OrderingSum(deadLineTime2);
 		
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		sl_panel.putConstraint(SpringLayout.NORTH, lblNewLabel_1, 0, SpringLayout.NORTH, lblNewLabel);
@@ -133,7 +138,7 @@ public class CEDeadline {
 		lblNewLabel_8.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(lblNewLabel_8);
 		
-		orderingCashSum = service.OrderingCashSum(deadLineTime2);
+		orderingCashSum = oService.OrderingCashSum(deadLineTime2);
 		JLabel lblNewLabel_9 = new JLabel(String.valueOf(orderingCashSum));
 		lblNewLabel_9.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_1.add(lblNewLabel_9);
@@ -142,7 +147,7 @@ public class CEDeadline {
 		lblNewLabel_10.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(lblNewLabel_10);
 		
-		orderingCardSum = service.OrderingCardSum(deadLineTime2);
+		orderingCardSum = oService.OrderingCardSum(deadLineTime2);
 		JLabel lblNewLabel_11 = new JLabel(String.valueOf(orderingCardSum));
 		lblNewLabel_11.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_1.add(lblNewLabel_11);
@@ -151,7 +156,7 @@ public class CEDeadline {
 		lblNewLabel_14.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(lblNewLabel_14);
 		
-		JLabel lblNewLabel_15 = new JLabel("300000");
+		JLabel lblNewLabel_15 = new JLabel(String.valueOf(vaultCashSum));
 		lblNewLabel_15.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_1.add(lblNewLabel_15);
 		
@@ -203,7 +208,7 @@ public class CEDeadline {
 		lblNewLabel_16.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(lblNewLabel_16);
 		
-		textField = new JTextField(String.valueOf((Integer.parseInt(lblNewLabel_9.getText()) + Integer.parseInt(lblNewLabel_15.getText())) / 50000));
+		textField = new JTextField(String.valueOf(vaultCashData[0] + (Integer.parseInt(lblNewLabel_9.getText()) / 50000)));
 		textField.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(textField);
 		textField.setColumns(10);
@@ -217,7 +222,7 @@ public class CEDeadline {
 		lblNewLabel_17.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(lblNewLabel_17);
 		
-		textField_2 = new JTextField(String.valueOf((Integer.parseInt(lblNewLabel_9.getText()) + Integer.parseInt(lblNewLabel_15.getText())) % 50000 / 10000));
+		textField_2 = new JTextField(String.valueOf(vaultCashData[1] + (Integer.parseInt(lblNewLabel_9.getText()) % 50000 / 10000)));
 		textField_2.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(textField_2);
 		textField_2.setColumns(10);
@@ -231,7 +236,7 @@ public class CEDeadline {
 		lblNewLabel_18.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(lblNewLabel_18);
 		
-		textField_4 = new JTextField(String.valueOf((Integer.parseInt(lblNewLabel_9.getText()) + Integer.parseInt(lblNewLabel_15.getText())) % 10000 / 5000));
+		textField_4 = new JTextField(String.valueOf(vaultCashData[2] + (Integer.parseInt(lblNewLabel_9.getText()) % 10000 / 5000)));
 		textField_4.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(textField_4);
 		textField_4.setColumns(10);
@@ -245,7 +250,7 @@ public class CEDeadline {
 		lblNewLabel_19.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(lblNewLabel_19);
 		
-		textField_6 = new JTextField(String.valueOf((Integer.parseInt(lblNewLabel_9.getText()) + Integer.parseInt(lblNewLabel_15.getText())) % 5000 / 1000));
+		textField_6 = new JTextField(String.valueOf(vaultCashData[3] + (Integer.parseInt(lblNewLabel_9.getText()) % 5000 / 1000)));
 		textField_6.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(textField_6);
 		textField_6.setColumns(10);
@@ -259,7 +264,7 @@ public class CEDeadline {
 		lblNewLabel_20.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(lblNewLabel_20);
 		
-		textField_8 = new JTextField(String.valueOf((Integer.parseInt(lblNewLabel_9.getText()) + Integer.parseInt(lblNewLabel_15.getText())) % 1000 / 500));
+		textField_8 = new JTextField(String.valueOf(vaultCashData[4] + (Integer.parseInt(lblNewLabel_9.getText()) % 1000 / 500)));
 		textField_8.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(textField_8);
 		textField_8.setColumns(10);
@@ -273,7 +278,7 @@ public class CEDeadline {
 		lblNewLabel_21.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(lblNewLabel_21);
 		
-		textField_10 = new JTextField(String.valueOf((Integer.parseInt(lblNewLabel_9.getText()) + Integer.parseInt(lblNewLabel_15.getText())) % 500 / 100));
+		textField_10 = new JTextField(String.valueOf(vaultCashData[5] + (Integer.parseInt(lblNewLabel_9.getText()) % 500 / 100)));
 		textField_10.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(textField_10);
 		textField_10.setColumns(10);
@@ -287,7 +292,7 @@ public class CEDeadline {
 		lblNewLabel_22.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(lblNewLabel_22);
 		
-		textField_12 = new JTextField(String.valueOf((Integer.parseInt(lblNewLabel_9.getText()) + Integer.parseInt(lblNewLabel_15.getText())) % 100 / 50));
+		textField_12 = new JTextField(String.valueOf(vaultCashData[6] + (Integer.parseInt(lblNewLabel_9.getText()) % 100 / 50)));
 		textField_12.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(textField_12);
 		textField_12.setColumns(10);
@@ -301,7 +306,7 @@ public class CEDeadline {
 		lblNewLabel_23.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(lblNewLabel_23);
 		
-		textField_14 = new JTextField(String.valueOf((Integer.parseInt(lblNewLabel_9.getText()) + Integer.parseInt(lblNewLabel_15.getText())) % 50 / 10));
+		textField_14 = new JTextField(String.valueOf(vaultCashData[7] + (Integer.parseInt(lblNewLabel_9.getText()) % 50 / 10)));
 		textField_14.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(textField_14);
 		textField_14.setColumns(10);
@@ -385,11 +390,50 @@ public class CEDeadline {
 		panel_5.add(btnClear);
 		
 		JButton btnClear_1 = new JButton("Clear");
+		btnClear_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				textField.setText("0");
+				textField_2.setText("0");
+				textField_4.setText("0");
+				textField_6.setText("0");
+				textField_8.setText("0");
+				textField_10.setText("0");
+				textField_12.setText("0");
+				textField_14.setText("0");
+				
+				textField_1.setText(String.valueOf(Integer.parseInt(textField.getText()) * 50000));
+				textField_3.setText(String.valueOf(Integer.parseInt(textField_2.getText()) * 10000));
+				textField_5.setText(String.valueOf(Integer.parseInt(textField_4.getText()) * 5000));
+				textField_7.setText(String.valueOf(Integer.parseInt(textField_6.getText()) * 1000));
+				textField_9.setText(String.valueOf(Integer.parseInt(textField_8.getText()) * 500));
+				textField_11.setText(String.valueOf(Integer.parseInt(textField_10.getText()) * 100));
+				textField_13.setText(String.valueOf(Integer.parseInt(textField_12.getText()) * 50));
+				textField_15.setText(String.valueOf(Integer.parseInt(textField_14.getText()) * 10));
+				
+				lblNewLabel_29.setText(String.valueOf(Integer.parseInt(textField_1.getText()) + Integer.parseInt(textField_3.getText()) + Integer.parseInt(textField_5.getText()) + Integer.parseInt(textField_7.getText()) + Integer.parseInt(textField_9.getText()) + Integer.parseInt(textField_11.getText()) + Integer.parseInt(textField_13.getText()) + Integer.parseInt(textField_15.getText())));
+				lblNewLabel_32.setText(String.valueOf(Integer.parseInt(lblNewLabel_29.getText()) - Integer.parseInt(lblNewLabel_30.getText())));
+			}
+		});
 		panel_5.add(btnClear_1);
 		
 		JButton btnEnter = new JButton("Enter");
-		btnEnter.setBounds(854, 598, 108, 76);
-		frame.getContentPane().add(btnEnter);
+		panel_5.add(btnEnter);
+		
+		JPanel panel_6 = new JPanel();
+		panel_6.setBounds(836, 10, 336, 130);
+		frame.getContentPane().add(panel_6);
+		panel_6.setLayout(new GridLayout(1, 0, 0, 0));
+		
+		JButton btnNewButton_12 = new JButton("\uC815\uC0B0");
+		btnNewButton_12.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				CEMain main = new CEMain(loginUser);
+				frame.dispose();
+			}
+		});
+		panel_6.add(btnNewButton_12);
 		btnEnter.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
@@ -406,5 +450,7 @@ public class CEDeadline {
 				lblNewLabel_32.setText(String.valueOf(Integer.parseInt(lblNewLabel_29.getText()) - Integer.parseInt(lblNewLabel_30.getText())));
 			}
 		});
+		
+		
 	}
 }
