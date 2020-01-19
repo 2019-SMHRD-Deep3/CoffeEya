@@ -47,10 +47,10 @@ public class CECustomer {
 	private JRadioButton rdbtnNewRadioButton_1;
 	private JTextField textField_1;
 	private JTextField textField_2;
-	private JPanel panel_3;
-	private JPanel panel_4;
-	private JPanel panel_5;
-	private JPanel panel_6;
+	private JPanel panel_add;
+	private JPanel panel_reflash;
+	private JPanel panel_rename;
+	private JPanel panel_del;
 	private JLabel lblNewLabel_6;
 	private JTextField textField_3;
 
@@ -68,7 +68,7 @@ public class CECustomer {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 1200, 800);
+		frame.setBounds(100, 100, 860, 624);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
@@ -89,11 +89,11 @@ public class CECustomer {
 				frame.dispose();
 			}
 		});
-		button.setBounds(1092, 10, 80, 80);
+		button.setBounds(735, 25, 80, 80);
 		frame.getContentPane().add(button);
 		
 		panel_1 = new JPanel();
-		panel_1.setBounds(12, 320, 436, 300);
+		panel_1.setBounds(80, 320, 541, 252);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(new GridLayout(0, 2, 0, 0));
 		
@@ -148,8 +148,8 @@ public class CECustomer {
 		panel_1.add(textField_3);
 		textField_3.setColumns(10);
 		
-		panel_3 = new JPanel();
-		panel_3.addMouseListener(new MouseAdapter() {
+		panel_add = new JPanel();
+		panel_add.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				customerAll();
@@ -161,22 +161,22 @@ public class CECustomer {
 				sex.clearSelection();
 			}
 		});
-		panel_3.setBounds(12, 630, 100, 100);
-		frame.getContentPane().add(panel_3);
+		panel_add.setBounds(724, 252, 100, 100);
+		frame.getContentPane().add(panel_add);
 		
-		panel_4 = new JPanel();
-		panel_4.addMouseListener(new MouseAdapter() {
+		panel_reflash = new JPanel();
+		panel_reflash.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				CECusJoin join = new CECusJoin(loginUser);
 				frame.dispose();
 			}
 		});
-		panel_4.setBounds(124, 630, 100, 100);
-		frame.getContentPane().add(panel_4);
+		panel_reflash.setBounds(724, 142, 100, 100);
+		frame.getContentPane().add(panel_reflash);
 		
-		panel_5 = new JPanel();
-		panel_5.addMouseListener(new MouseAdapter() {
+		panel_rename = new JPanel();
+		panel_rename.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				String CUS_NUMBER = lblNewLabel_5.getText();
@@ -202,11 +202,11 @@ public class CECustomer {
 				}
 			}
 		});
-		panel_5.setBounds(236, 630, 100, 100);
-		frame.getContentPane().add(panel_5);
+		panel_rename.setBounds(724, 472, 100, 100);
+		frame.getContentPane().add(panel_rename);
 		
-		panel_6 = new JPanel();
-		panel_6.addMouseListener(new MouseAdapter() {
+		panel_del = new JPanel();
+		panel_del.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				String infoId = lblNewLabel_5.getText();
@@ -221,8 +221,8 @@ public class CECustomer {
 				}
 			}
 		});
-		panel_6.setBounds(348, 630, 100, 100);
-		frame.getContentPane().add(panel_6);
+		panel_del.setBounds(724, 362, 100, 100);
+		frame.getContentPane().add(panel_del);
 
 		customerAll();
 
