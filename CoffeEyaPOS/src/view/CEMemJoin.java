@@ -86,7 +86,7 @@ public class CEMemJoin {
 //				super.paintComponent(g);
 //			}
 //		};
-		panel_3.setBackground(SystemColor.inactiveCaptionBorder);
+		panel_3.setBackground(new Color(255,0,0,0));
 		panel_3.setBounds(596, 8, 580, 740);
 		panel_4.add(panel_3);
 		panel_3.setLayout(null);
@@ -105,7 +105,7 @@ public class CEMemJoin {
 		lblNewLabel.setBackground(new Color(240, 240, 240));
 		lblNewLabel.setFont(new Font("HY°ß°íµñ", Font.PLAIN, 20));
 		lblNewLabel.setForeground(new Color(250, 235, 215));
-		lblNewLabel.setBounds(0, 0, 580, 100);
+		lblNewLabel.setBounds(61, 10, 469, 90);
 		panel_3.add(lblNewLabel);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 
@@ -113,10 +113,10 @@ public class CEMemJoin {
 		panel.setBackground(new Color(255,0,0,0));
 		panel.setBounds(0, 110, 580, 500);
 		panel_3.add(panel);
-		panel.setLayout(new GridLayout(0, 2, 20, 20));
 
 		String imgPath3 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//user2.png";
 		ImageIcon icon3 = new ImageIcon(imgPath3);
+		panel.setLayout(null);
 		
 		JLabel lblNewLabel_1 = new JLabel(""){
 			@Override
@@ -126,13 +126,15 @@ public class CEMemJoin {
 				super.paintComponent(g);
 			}
 		};
+		lblNewLabel_1.setBounds(0, 0, 280, 84);
 		lblNewLabel_1.setFont(new Font("HY°ß°íµñ", Font.PLAIN, 20));
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setForeground(new Color(250, 235, 215));
 		panel.add(lblNewLabel_1);
 
 		textField = new JTextField();
-		textField.setBackground(SystemColor.inactiveCaptionBorder);
+		textField.setBounds(300, 0, 255, 84);
+		textField.setBackground(new Color(255, 228, 181));
 		panel.add(textField);
 		textField.setColumns(10);
 
@@ -147,13 +149,15 @@ public class CEMemJoin {
 				super.paintComponent(g);
 			}
 		};
+		lblNewLabel_2.setBounds(0, 104, 280, 84);
 		lblNewLabel_2.setFont(new Font("HY°ß°íµñ", Font.PLAIN, 20));
 		lblNewLabel_2.setForeground(new Color(250, 235, 215));
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(lblNewLabel_2);
 
 		textField_1 = new JTextField();
-		textField_1.setBackground(SystemColor.inactiveCaptionBorder);
+		textField_1.setBounds(300, 104, 255, 84);
+		textField_1.setBackground(new Color(255, 228, 181));
 		panel.add(textField_1);
 		textField_1.setColumns(10);
 
@@ -168,13 +172,15 @@ public class CEMemJoin {
 				super.paintComponent(g);
 			}
 		};
+		lblNewLabel_3.setBounds(0, 208, 280, 84);
 		lblNewLabel_3.setFont(new Font("HY°ß°íµñ", Font.PLAIN, 20));
 		lblNewLabel_3.setForeground(new Color(250, 235, 215));
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(lblNewLabel_3);
 
 		textField_2 = new JTextField();
-		textField_2.setBackground(SystemColor.inactiveCaptionBorder);
+		textField_2.setBounds(300, 208, 255, 84);
+		textField_2.setBackground(new Color(255, 228, 181));
 		panel.add(textField_2);
 		textField_2.setColumns(10);
 
@@ -189,13 +195,15 @@ public class CEMemJoin {
 				super.paintComponent(g);
 			}
 		};
+		lblNewLabel_4.setBounds(0, 312, 280, 84);
 		lblNewLabel_4.setFont(new Font("HY°ß°íµñ", Font.PLAIN, 20));
 		lblNewLabel_4.setForeground(new Color(250, 235, 215));
 		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(lblNewLabel_4);
 
 		textField_3 = new JTextField();
-		textField_3.setBackground(SystemColor.inactiveCaptionBorder);
+		textField_3.setBounds(300, 312, 255, 84);
+		textField_3.setBackground(new Color(255, 228, 181));
 		panel.add(textField_3);
 		textField_3.setColumns(10);
 
@@ -210,25 +218,29 @@ public class CEMemJoin {
 				super.paintComponent(g);
 			}
 		};
+		lblNewLabel_5.setBounds(0, 416, 280, 84);
 		lblNewLabel_5.setFont(new Font("HY°ß°íµñ", Font.PLAIN, 20));
 		lblNewLabel_5.setForeground(new Color(250, 235, 215));
 		lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(lblNewLabel_5);
 
 		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(300, 416, 280, 84);
 		panel_1.setBackground(new Color(255,0,0,0));
 		panel.add(panel_1);
-		panel_1.setLayout(new GridLayout(1, 0, 0, 0));
+		panel_1.setLayout(null);
 
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("\uAD00\uB9AC\uC790");
-		rdbtnNewRadioButton.setBackground(SystemColor.inactiveCaptionBorder);
+		rdbtnNewRadioButton.setBounds(8, 18, 110, 43);
+		rdbtnNewRadioButton.setBackground(new Color(250, 235, 215));
 		rdbtnNewRadioButton.setFont(new Font("HY°ß°íµñ", Font.PLAIN, 20));
 		rdbtnNewRadioButton.setHorizontalAlignment(SwingConstants.CENTER);
 		rdbtnNewRadioButton.setForeground(new Color(153, 0, 51));
 		panel_1.add(rdbtnNewRadioButton);
 
 		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("\uC9C1\uC6D0");
-		rdbtnNewRadioButton_1.setBackground(SystemColor.inactiveCaptionBorder);
+		rdbtnNewRadioButton_1.setBounds(135, 18, 110, 43);
+		rdbtnNewRadioButton_1.setBackground(new Color(250, 235, 215));
 		rdbtnNewRadioButton_1.setFont(new Font("HY°ß°íµñ", Font.PLAIN, 20));
 		rdbtnNewRadioButton_1.setHorizontalAlignment(SwingConstants.CENTER);
 		rdbtnNewRadioButton_1.setForeground(new Color(153, 0, 51));
@@ -243,9 +255,10 @@ public class CEMemJoin {
 		panel_2.setBackground(new Color(255,0,0,0));
 		panel_2.setBounds(0, 620, 580, 120);
 		panel_3.add(panel_2);
-		panel_2.setLayout(new GridLayout(1, 0, 20, 0));
 
 		JButton btnNewButton = new JButton("\uB4F1\uB85D");
+		btnNewButton.setBackground(new Color(250, 235, 215));
+		btnNewButton.setBounds(208, 27, 115, 66);
 		btnNewButton.setForeground(new Color(153, 0, 51));
 		btnNewButton.setFont(new Font("HY°ß°íµñ", Font.PLAIN, 20));
 		btnNewButton.addMouseListener(new MouseAdapter() {
@@ -278,9 +291,12 @@ public class CEMemJoin {
 				}
 			}
 		});
+		panel_2.setLayout(null);
 		panel_2.add(btnNewButton);
 
 		JButton btnNewButton_1 = new JButton("\uCDE8\uC18C");
+		btnNewButton_1.setBackground(new Color(250, 235, 215));
+		btnNewButton_1.setBounds(382, 27, 122, 66);
 		btnNewButton_1.setForeground(new Color(153, 0, 51));
 		btnNewButton_1.setFont(new Font("HY°ß°íµñ", Font.PLAIN, 20));
 		btnNewButton_1.addMouseListener(new MouseAdapter() {

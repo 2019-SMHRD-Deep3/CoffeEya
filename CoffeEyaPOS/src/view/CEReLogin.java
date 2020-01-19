@@ -8,6 +8,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
+
 import javax.swing.SpringLayout;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
@@ -38,6 +40,8 @@ public class CEReLogin {
 	private JButton btnNewButton_1;
 	private JPanel panel;
 
+	private JPanel panel_2;
+
 
 	/**
 	 * Create the application.
@@ -53,7 +57,7 @@ public class CEReLogin {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setResizable(false);
-		frame.setBounds(100, 100, 1200, 800);
+		frame.setBounds(100, 100, 895, 582);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
@@ -69,7 +73,7 @@ public class CEReLogin {
 			}
 		};
 
-		panel.setBounds(0, 0, 1194, 771);
+		panel.setBounds(0, 0, 885, 551);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 
@@ -78,7 +82,7 @@ public class CEReLogin {
 		String imgPath1 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//man.png";
 		ImageIcon icon1 = new ImageIcon(imgPath1);
 		lblNewLabel.setIcon(icon1);
-		lblNewLabel.setBounds(231, 226, 190, 90);
+		lblNewLabel.setBounds(150, 189, 190, 90);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(lblNewLabel);
 
@@ -88,30 +92,32 @@ public class CEReLogin {
 		lblNewLabel_1.setIcon(icon2);
 
 		lblNewLabel_1.setFont(new Font("±¼¸²", Font.BOLD, 21));
-		lblNewLabel_1.setBounds(232, 325, 190, 90);
+		lblNewLabel_1.setBounds(150, 288, 190, 90);
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(lblNewLabel_1);
 
 		textField = new JTextField();
 		textField.setFont(new Font("±¼¸²", Font.PLAIN, 20));
-		textField.setBackground(SystemColor.inactiveCaptionBorder);
-		textField.setBounds(515, 238, 380, 60);
+		textField.setBackground(new Color(250, 235, 215));
+		textField.setBounds(322, 204, 380, 60);
 		panel.add(textField);
 		textField.setColumns(10);
 
 		textField_1 = new JTextField();
 		textField_1.setFont(new Font("±¼¸²", Font.PLAIN, 20));
-		textField_1.setBackground(SystemColor.inactiveCaptionBorder);
-		textField_1.setBounds(514, 338, 380, 60);
+		textField_1.setBackground(new Color(250, 235, 215));
+		textField_1.setBounds(322, 304, 380, 60);
 		panel.add(textField_1);
 		textField_1.setColumns(10);
 
 		panel_1 = new JPanel();
-		panel_1.setBounds(413, 465, 380, 60);
+		panel_1.setBackground(new Color(255, 0, 0, 0));
+		panel_1.setBounds(252, 421, 380, 60);
 		panel.add(panel_1);
-		panel_1.setLayout(new GridLayout(1, 0, 5, 0));
+		panel_1.setLayout(new GridLayout(1, 0, 20, 0));
 
 		btnNewButton = new JButton("\uB85C\uADF8\uC778");
+		btnNewButton.setFont(new Font("±¼¸²", Font.BOLD, 18));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -136,6 +142,7 @@ public class CEReLogin {
 		panel_1.add(btnNewButton);
 
 		btnNewButton_1 = new JButton("\uC885\uB8CC");
+		btnNewButton_1.setFont(new Font("±¼¸²", Font.BOLD, 18));
 		btnNewButton_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -144,6 +151,18 @@ public class CEReLogin {
 			}
 		});
 		panel_1.add(btnNewButton_1);
-
+		String imgPath3 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//logo.png";
+		ImageIcon icon3 = new ImageIcon(imgPath3);
+		
+		panel_2 = new JPanel(){
+			@Override
+			protected void paintComponent(Graphics g) {
+				g.drawImage(icon3.getImage(), 0, 0, panel_2.getWidth(), panel_2.getHeight(), null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
+		panel_2.setBounds(13, 9, 210, 210);
+		panel.add(panel_2);
 	}
 }

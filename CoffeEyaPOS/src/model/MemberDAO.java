@@ -213,6 +213,46 @@ public class MemberDAO {
 		return selectUser;
 	}
 	
+	public String getName (String stringMEM_ID) {
+		Member selectUser = null;
+		String MEM_NAME ="";
+
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			conn = DriverManager.getConnection(url, user, password);
+			String sql = "SELECT * FROM MEMBER WHERE MEM_ID = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, stringMEM_ID);
+			rs = psmt.executeQuery();
+
+			if (rs.next()) {
+				// 해당 ID와 PW를 가진 사람이 존재
+				MEM_NAME = rs.getString("MEM_NAME");
+			}
+
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (psmt != null) {
+					psmt.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+		}
+		return MEM_NAME;
+	}
+	
 	public int update(Member m) {
 		int rows = 0;
 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
