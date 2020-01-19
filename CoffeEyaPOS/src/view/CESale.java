@@ -59,6 +59,7 @@ public class CESale {
 	DetailManagementService Dservice = new DetailManagementService();
 	ProductManagementService Pservice = new ProductManagementService();
 	private JPanel panel_8;
+	private JLabel lblNewLabel_3;
 
 	/**
 	 * Create the application.
@@ -107,7 +108,7 @@ public class CESale {
 		txtCoffeeya.setFont(new Font("±¼¸²", Font.BOLD, 25));
 		txtCoffeeya.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCoffeeya.setText("CoffeEya");
-		txtCoffeeya.setBounds(12, 10, 270, 53);
+		txtCoffeeya.setBounds(102, 10, 270, 53);
 		panel.add(txtCoffeeya);
 		txtCoffeeya.setColumns(10);
 		
@@ -131,6 +132,20 @@ public class CESale {
 		});
 		panel_8.setBounds(1108, 10, 60, 60);
 		panel.add(panel_8);
+		
+		String imgPath1 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//logo.png";
+		ImageIcon icon1 = new ImageIcon(imgPath1);
+		
+		lblNewLabel_3 = new JLabel(""){
+			@Override
+			protected void paintComponent(Graphics g) {
+				g.drawImage(icon1.getImage(), 0, 0, lblNewLabel_3.getWidth(), lblNewLabel_3.getHeight(), null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
+		lblNewLabel_3.setBounds(12, 0, 80, 80);
+		panel.add(lblNewLabel_3);
 
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(Color.WHITE);
