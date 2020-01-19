@@ -95,11 +95,10 @@ public class CECustomer {
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(new GridLayout(0, 2, 70, 5));
 
-		
 		String imgPath = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//cus2.png";
 		ImageIcon cus2 = new ImageIcon(imgPath);
-		
-		lblNewLabel = new JLabel(){
+
+		lblNewLabel = new JLabel() {
 			@Override
 			protected void paintComponent(Graphics g) {
 				g.drawImage(cus2.getImage(), 0, 0, lblNewLabel.getWidth(), lblNewLabel.getHeight(), null);
@@ -114,8 +113,8 @@ public class CECustomer {
 
 		String imgPath2 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//cus3.png";
 		ImageIcon cus3 = new ImageIcon(imgPath2);
-		
-		lblNewLabel_1 = new JLabel(""){
+
+		lblNewLabel_1 = new JLabel("") {
 			@Override
 			protected void paintComponent(Graphics g) {
 				g.drawImage(cus3.getImage(), 0, 0, lblNewLabel_1.getWidth(), lblNewLabel_1.getHeight(), null);
@@ -126,14 +125,14 @@ public class CECustomer {
 		panel_1.add(lblNewLabel_1);
 
 		textField = new JTextField();
+		textField.setBackground(new Color(255, 218, 185));
 		panel_1.add(textField);
 		textField.setColumns(10);
 
-		
 		String imgPath4 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//cus4.png";
 		ImageIcon cus5 = new ImageIcon(imgPath4);
-		
-		lblNewLabel_2 = new JLabel(){
+
+		lblNewLabel_2 = new JLabel() {
 			@Override
 			protected void paintComponent(Graphics g) {
 				g.drawImage(cus5.getImage(), 0, 0, lblNewLabel_2.getWidth(), lblNewLabel_2.getHeight(), null);
@@ -144,14 +143,14 @@ public class CECustomer {
 		panel_1.add(lblNewLabel_2);
 
 		textField_1 = new JTextField();
+		textField_1.setBackground(new Color(255, 218, 185));
 		panel_1.add(textField_1);
 		textField_1.setColumns(10);
 
-		
 		String imgPath11 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//cus5.png";
 		ImageIcon cus11 = new ImageIcon(imgPath11);
-		
-		lblNewLabel_3 = new JLabel(""){
+
+		lblNewLabel_3 = new JLabel("") {
 			@Override
 			protected void paintComponent(Graphics g) {
 				g.drawImage(cus11.getImage(), 0, 0, lblNewLabel_3.getWidth(), lblNewLabel_3.getHeight(), null);
@@ -162,7 +161,7 @@ public class CECustomer {
 		panel_1.add(lblNewLabel_3);
 
 		panel_2 = new JPanel();
-		panel_2.setBackground(new Color(250, 235, 215));
+		panel_2.setBackground(new Color(255, 0, 0, 0));
 		panel_1.add(panel_2);
 		panel_2.setLayout(new GridLayout(1, 0, 0, 0));
 
@@ -180,11 +179,10 @@ public class CECustomer {
 		sex.add(rdbtnNewRadioButton);
 		sex.add(rdbtnNewRadioButton_1);
 
-		
 		String imgPath12 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//cus6.png";
 		ImageIcon cus12 = new ImageIcon(imgPath12);
-		
-		lblNewLabel_4 = new JLabel(""){
+
+		lblNewLabel_4 = new JLabel("") {
 			@Override
 			protected void paintComponent(Graphics g) {
 				g.drawImage(cus12.getImage(), 0, 0, lblNewLabel_4.getWidth(), lblNewLabel_4.getHeight(), null);
@@ -195,12 +193,13 @@ public class CECustomer {
 		panel_1.add(lblNewLabel_4);
 
 		textField_2 = new JTextField();
+		textField_2.setBackground(new Color(255, 218, 185));
 		panel_1.add(textField_2);
 		textField_2.setColumns(10);
 
 		String imgPath13 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//cus8.png";
 		ImageIcon cus13 = new ImageIcon(imgPath13);
-		lblNewLabel_6 = new JLabel(""){
+		lblNewLabel_6 = new JLabel("") {
 			@Override
 			protected void paintComponent(Graphics g) {
 				g.drawImage(cus13.getImage(), 0, 0, lblNewLabel_6.getWidth(), lblNewLabel_6.getHeight(), null);
@@ -211,14 +210,14 @@ public class CECustomer {
 		panel_1.add(lblNewLabel_6);
 
 		textField_3 = new JTextField();
+		textField_3.setBackground(new Color(255, 218, 185));
 		panel_1.add(textField_3);
 		textField_3.setColumns(10);
 
-		
 		String imgPath5 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//reset.png";
 		ImageIcon icon4 = new ImageIcon(imgPath5);
-		
-		panel_reflash2 = new JPanel(){
+
+		panel_reflash2 = new JPanel() {
 			@Override
 			protected void paintComponent(Graphics g) {
 				g.drawImage(icon4.getImage(), 0, 0, panel_reflash2.getWidth(), panel_reflash2.getHeight(), null);
@@ -241,10 +240,9 @@ public class CECustomer {
 		panel_reflash2.setBounds(747, 168, 67, 67);
 		frame.getContentPane().add(panel_reflash2);
 
-		
 		String imgPath10 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//plus.png";
 		ImageIcon icon5 = new ImageIcon(imgPath10);
-		
+
 		panel_add = new JPanel() {
 			protected void paintComponent(Graphics g) {
 				g.drawImage(icon5.getImage(), 0, 0, panel_add.getWidth(), panel_add.getHeight(), null);
@@ -262,12 +260,10 @@ public class CECustomer {
 		panel_add.setBounds(747, 265, 67, 67);
 		frame.getContentPane().add(panel_add);
 
-		
-		
 		String imgPath6 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//repair.png";
 		ImageIcon icon6 = new ImageIcon(imgPath6);
-		
-		panel_rename = new JPanel(){
+
+		panel_rename = new JPanel() {
 			protected void paintComponent(Graphics g) {
 				g.drawImage(icon6.getImage(), 0, 0, panel_rename.getWidth(), panel_rename.getHeight(), null);
 				setOpaque(false);
@@ -303,11 +299,10 @@ public class CECustomer {
 		panel_rename.setBounds(747, 362, 67, 67);
 		frame.getContentPane().add(panel_rename);
 
-		
 		String imgPath7 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//garbage.png";
 		ImageIcon icon7 = new ImageIcon(imgPath7);
-		
-		panel_del = new JPanel(){
+
+		panel_del = new JPanel() {
 			protected void paintComponent(Graphics g) {
 				g.drawImage(icon7.getImage(), 0, 0, panel_del.getWidth(), panel_del.getHeight(), null);
 				setOpaque(false);
@@ -349,22 +344,22 @@ public class CECustomer {
 		});
 		panel_3.setBounds(741, 23, 75, 74);
 		frame.getContentPane().add(panel_3);
-		
+
 		JLabel lblNewLabel_7 = new JLabel("\uCD08\uAE30\uD654");
 		lblNewLabel_7.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_7.setBounds(753, 240, 57, 15);
 		frame.getContentPane().add(lblNewLabel_7);
-		
+
 		JLabel label = new JLabel("\uD68C\uC6D0\uAC00\uC785");
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		label.setBounds(754, 337, 57, 15);
 		frame.getContentPane().add(label);
-		
+
 		JLabel label_1 = new JLabel("\uC815\uBCF4\uC218\uC815");
 		label_1.setHorizontalAlignment(SwingConstants.CENTER);
 		label_1.setBounds(752, 434, 57, 15);
 		frame.getContentPane().add(label_1);
-		
+
 		JLabel label_2 = new JLabel("\uD68C\uC6D0\uC0AD\uC81C");
 		label_2.setHorizontalAlignment(SwingConstants.CENTER);
 		label_2.setBounds(753, 532, 57, 15);

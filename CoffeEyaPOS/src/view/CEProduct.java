@@ -134,7 +134,7 @@ public class CEProduct {
 		panel_1.add(lblNewLabel);
 
 		textField = new JTextField();
-		textField.setBackground(SystemColor.inactiveCaptionBorder);
+		textField.setBackground(new Color(255, 218, 185));
 		panel_1.add(textField);
 		textField.setColumns(10);
 
@@ -152,7 +152,7 @@ public class CEProduct {
 		panel_1.add(lblNewLabel_1);
 
 		textField_1 = new JTextField();
-		textField_1.setBackground(SystemColor.inactiveCaptionBorder);
+		textField_1.setBackground(new Color(255, 218, 185));
 		panel_1.add(textField_1);
 		textField_1.setColumns(10);
 
@@ -170,7 +170,7 @@ public class CEProduct {
 		panel_1.add(lblNewLabel_2);
 
 		textField_2 = new JTextField();
-		textField_2.setBackground(SystemColor.inactiveCaptionBorder);
+		textField_2.setBackground(new Color(255, 218, 185));
 		panel_1.add(textField_2);
 		textField_2.setColumns(10);
 		
