@@ -52,6 +52,10 @@ public class CEMember {
 	private JLabel lblNewLabel;
 	private JPanel panel;
 	private JPanel panel_4;
+	private JLabel lblNewLabel_6;
+	private JLabel label;
+	private JLabel label_1;
+	private JLabel label_2;
 
 	/**
 	 * Create the application.
@@ -67,8 +71,8 @@ public class CEMember {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.getContentPane().setBackground(new Color(188, 143, 143));
-		frame.setBounds(100, 100, 1200, 800);
+		frame.getContentPane().setBackground(new Color(250, 235, 215));
+		frame.setBounds(100, 100, 613, 712);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
@@ -90,14 +94,14 @@ public class CEMember {
 				frame.dispose();
 			}
 		});
-		panel.setBounds(1054, 46, 67, 67);
+		panel.setBounds(495, 10, 67, 67);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 
 
 		panel_1 = new JPanel();
 		panel_1.setBackground(new Color(188, 143, 143));
-		panel_1.setBounds(12, 10, 438, 531);
+		panel_1.setBounds(12, 10, 438, 123);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
 
@@ -106,8 +110,8 @@ public class CEMember {
 		panel_1.add(scrollPane);
 
 		JPanel panel_2 = new JPanel();
-		panel_2.setBackground(new Color(188, 143, 143));
-		panel_2.setBounds(508, 10, 463, 531);
+		panel_2.setBackground(new Color(250, 235, 215));
+		panel_2.setBounds(12, 209, 438, 389);
 		frame.getContentPane().add(panel_2);
 		panel_2.setLayout(new GridLayout(0, 2, 0, 0));
 
@@ -117,7 +121,7 @@ public class CEMember {
 		lblNewLabel = new JLabel("") {
 			@Override
 			protected void paintComponent(Graphics g) {
-				g.drawImage(icon.getImage(), 55, 35, 45, 45, null);
+				g.drawImage(icon.getImage(), 55, 30, 45, 45, null);
 				setOpaque(false);
 				super.paintComponent(g);
 			}
@@ -126,6 +130,7 @@ public class CEMember {
 		panel_2.add(lblNewLabel);
 
 		lblNewLabel_5 = new JLabel("\uC0AC\uC6A9\uC790 \uC120\uD0DD");
+		lblNewLabel_5.setBackground(new Color(255, 218, 185));
 		lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_2.add(lblNewLabel_5);
 
@@ -135,7 +140,7 @@ public class CEMember {
 		JLabel lblNewLabel_1 = new JLabel("") {
 			@Override
 			protected void paintComponent(Graphics g) {
-				g.drawImage(icon1.getImage(), 55, 35, 45, 45, null);
+				g.drawImage(icon1.getImage(), 55, 30, 45, 45, null);
 				setOpaque(false);
 				super.paintComponent(g);
 			}
@@ -144,6 +149,7 @@ public class CEMember {
 		panel_2.add(lblNewLabel_1);
 
 		textField = new JTextField();
+		textField.setBackground(new Color(255, 218, 185));
 		panel_2.add(textField);
 		textField.setColumns(10);
 
@@ -153,7 +159,7 @@ public class CEMember {
 		JLabel lblNewLabel_2 = new JLabel("") {
 			@Override
 			protected void paintComponent(Graphics g) {
-				g.drawImage(icon1.getImage(), 55, 35, 45, 45, null);
+				g.drawImage(icon1.getImage(), 55, 30, 45, 45, null);
 				setOpaque(false);
 				super.paintComponent(g);
 			}
@@ -162,6 +168,7 @@ public class CEMember {
 		panel_2.add(lblNewLabel_2);
 
 		textField_1 = new JTextField();
+		textField_1.setBackground(new Color(255, 218, 185));
 		panel_2.add(textField_1);
 		textField_1.setColumns(10);
 
@@ -171,7 +178,7 @@ public class CEMember {
 		JLabel lblNewLabel_3 = new JLabel("") {
 			@Override
 			protected void paintComponent(Graphics g) {
-				g.drawImage(icon3.getImage(), 55, 35, 45, 45, null);
+				g.drawImage(icon3.getImage(), 55, 30, 45, 45, null);
 				setOpaque(false);
 				super.paintComponent(g);
 			}
@@ -180,6 +187,7 @@ public class CEMember {
 		panel_2.add(lblNewLabel_3);
 
 		textField_2 = new JTextField();
+		textField_2.setBackground(new Color(255, 218, 185));
 		panel_2.add(textField_2);
 		textField_2.setColumns(10);
 
@@ -189,7 +197,7 @@ public class CEMember {
 		JLabel lblNewLabel_4 = new JLabel("") {
 			@Override
 			protected void paintComponent(Graphics g) {
-				g.drawImage(icon4.getImage(), 55, 35, 45, 45, null);
+				g.drawImage(icon4.getImage(), 55, 30, 45, 45, null);
 				setOpaque(false);
 				super.paintComponent(g);
 			}
@@ -198,13 +206,18 @@ public class CEMember {
 		panel_2.add(lblNewLabel_4);
 
 		JPanel panel_3 = new JPanel();
+		panel_3.setBackground(new Color(250, 235, 215));
 		panel_2.add(panel_3);
 		panel_3.setLayout(new GridLayout(1, 0, 0, 0));
 
 		rdbtnNewRadioButton = new JRadioButton("\uAD00\uB9AC\uC790");
+		rdbtnNewRadioButton.setBackground(new Color(250, 235, 215));
+		rdbtnNewRadioButton.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(rdbtnNewRadioButton);
 
 		rdbtnNewRadioButton_1 = new JRadioButton("\uC9C1\uC6D0");
+		rdbtnNewRadioButton_1.setBackground(new Color(250, 235, 215));
+		rdbtnNewRadioButton_1.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(rdbtnNewRadioButton_1);
 
 		ButtonGroup perm = new ButtonGroup();
@@ -217,7 +230,7 @@ public class CEMember {
 		panel_4 = new JPanel(){
 			@Override
 			protected void paintComponent(Graphics g) {
-				g.drawImage(icon6.getImage(), 35, 35, 45, 45, null);
+				g.drawImage(icon6.getImage(), 35, 30, 45, 45, null);
 				setOpaque(false);
 				super.paintComponent(g);
 			}
@@ -234,7 +247,7 @@ public class CEMember {
 				perm.clearSelection();
 			}
 		});
-		panel_4.setBounds(462, 587, 100, 100);
+		panel_4.setBounds(480, 132, 100, 100);
 		frame.getContentPane().add(panel_4);
 
 		String imgPath7 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//plus.png";
@@ -243,7 +256,7 @@ public class CEMember {
 		JPanel panel_5 = new JPanel(){
 			@Override
 			protected void paintComponent(Graphics g) {
-				g.drawImage(icon7.getImage(), 35, 35, 45, 45, null);
+				g.drawImage(icon7.getImage(), 35, 30, 45, 45, null);
 				setOpaque(false);
 				super.paintComponent(g);
 			}
@@ -255,7 +268,7 @@ public class CEMember {
 				frame.dispose();
 			}
 		});
-		panel_5.setBounds(574, 587, 100, 100);
+		panel_5.setBounds(480, 271, 100, 100);
 		frame.getContentPane().add(panel_5);
 
 		String imgPath8 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//repair.png";
@@ -264,7 +277,7 @@ public class CEMember {
 		JPanel panel_6 = new JPanel(){
 			@Override
 			protected void paintComponent(Graphics g) {
-				g.drawImage(icon8.getImage(), 35, 35, 45, 45, null);
+				g.drawImage(icon8.getImage(), 35, 30, 45, 45, null);
 				setOpaque(false);
 				super.paintComponent(g);
 			}
@@ -298,7 +311,7 @@ public class CEMember {
 				}
 			}
 		});
-		panel_6.setBounds(686, 587, 100, 100);
+		panel_6.setBounds(480, 416, 100, 100);
 		frame.getContentPane().add(panel_6);
 
 		String imgPath9 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//garbage.png";
@@ -327,18 +340,28 @@ public class CEMember {
 				}
 			}
 		});
-		panel_7.setBounds(800, 587, 100, 100);
+		panel_7.setBounds(480, 551, 100, 100);
 		frame.getContentPane().add(panel_7);
-
-		JButton btnNewButton_2 = new JButton("\uCD9C\uACB0 \uAD00\uB9AC");
-		btnNewButton_2.setBounds(989, 587, 132, 100);
-		frame.getContentPane().add(btnNewButton_2);
-		btnNewButton_2.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				CEMemCommute commute = new CEMemCommute(loginUser);
-			}
-		});
+		
+		lblNewLabel_6 = new JLabel("\uCD08\uAE30\uD654");
+		lblNewLabel_6.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_6.setBounds(505, 230, 57, 15);
+		frame.getContentPane().add(lblNewLabel_6);
+		
+		label = new JLabel("\uCD94\uAC00");
+		label.setHorizontalAlignment(SwingConstants.CENTER);
+		label.setBounds(505, 371, 57, 15);
+		frame.getContentPane().add(label);
+		
+		label_1 = new JLabel("\uC218\uC815");
+		label_1.setHorizontalAlignment(SwingConstants.CENTER);
+		label_1.setBounds(505, 515, 57, 15);
+		frame.getContentPane().add(label_1);
+		
+		label_2 = new JLabel("\uC0AD\uC81C");
+		label_2.setHorizontalAlignment(SwingConstants.CENTER);
+		label_2.setBounds(505, 649, 57, 15);
+		frame.getContentPane().add(label_2);
 
 		memberAll();
 
