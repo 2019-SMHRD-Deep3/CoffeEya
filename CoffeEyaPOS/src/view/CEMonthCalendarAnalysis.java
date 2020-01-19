@@ -2,6 +2,7 @@ package view;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import java.awt.Color;
 import javax.swing.SwingConstants;
@@ -126,11 +127,24 @@ public class CEMonthCalendarAnalysis {
 			String OR_DATE = o.getOR_DATE();
 			String dateYear = OR_DATE.substring(0, 4);
 			String dateMonth = OR_DATE.substring(5, 7);
-			if (dateYear.equals(infoYear) && dateMonth.equals(infoMonth)) {
-				int date = Integer.parseInt(OR_DATE.substring(8, 10)) - 1;
-				dataCnt[date] += d.getDE_AMOUNT();
+			String dateMonth1 = OR_DATE.substring(6, 7);
+			
+			if(infoMonth.length()==2) {
+				if (dateYear.equals(infoYear) && dateMonth.equals(infoMonth)) {
+					int date = Integer.parseInt(OR_DATE.substring(8, 10)) - 1;
+					dataCnt[date] += d.getDE_AMOUNT();
+				}
+				cnt++;
+			}else if(infoMonth.length()==1) {
+				if (dateYear.equals(infoYear) && dateMonth1.equals(infoMonth)) {
+					int date = Integer.parseInt(OR_DATE.substring(8, 10)) - 1;
+					dataCnt[date] += d.getDE_AMOUNT();
+				}
+				cnt++;
+			}else {
+				JOptionPane.showMessageDialog(frame, "입력 오류");
 			}
-			cnt++;
+
 		}
 
 		panel_3 = new JPanel();
