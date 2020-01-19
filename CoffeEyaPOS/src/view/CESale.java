@@ -122,6 +122,13 @@ public class CESale {
 				super.paintComponent(g);
 			}
 		};
+		panel_8.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				CEMain main = new CEMain(loginUser);
+				frame.dispose();
+			}
+		});
 		panel_8.setBounds(1108, 10, 60, 60);
 		panel.add(panel_8);
 
