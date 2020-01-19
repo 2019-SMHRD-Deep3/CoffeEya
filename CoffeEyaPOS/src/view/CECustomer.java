@@ -186,7 +186,7 @@ public class CECustomer {
 		panel_add.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				CEMemJoin sale = new CEMemJoin(loginUser);
+				CECusJoin sale = new CECusJoin(loginUser);
 				frame.dispose();
 			}
 		});
