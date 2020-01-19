@@ -4,6 +4,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="C:/oraclexe/app/oracle/product/11.2.0/server/jdbc/lib/ojdbc6.jar"/>
 	<classpathentry kind="lib" path="CoffeEyaLib/xchart-3.6.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/SM018/Desktop/jdatepicker-1.3.2.jar"/>
+	<classpathentry kind="lib" path="CoffeEyaLib/JDatePicker-1.3.2-dist/jdatepicker-1.3.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
