@@ -13,12 +13,16 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import controller.VaultCashManagermentService;
 import model.Member;
+import model.VaultCash;
 import net.sourceforge.jdatepicker.impl.JDatePanelImpl;
 import net.sourceforge.jdatepicker.impl.JDatePickerImpl;
 import net.sourceforge.jdatepicker.impl.UtilDateModel;
 
 public class CESaleStart {
+	
+	VaultCashManagermentService service = new VaultCashManagermentService();
 
 	private JFrame frame;
 	private Member loginUser;
@@ -30,6 +34,7 @@ public class CESaleStart {
 	private JTextField textField_6;
 	private JTextField textField_7;
 	private JTextField textField_8;
+	private VaultCash vaultCash;
 	
 //	private Date selectedDate;
 
@@ -170,17 +175,6 @@ public class CESaleStart {
 		});
 		panel.add(btnNewButton_1);
 		
-		JButton btnNewButton_2 = new JButton("\uC601\uC5C5 \uC2DC\uC791");
-		btnNewButton_2.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				CESale sale = new CESale(loginUser);
-				frame.dispose();
-			}
-		});
-		btnNewButton_2.setBounds(12, 251, 266, 100);
-		frame.getContentPane().add(btnNewButton_2);
-		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBounds(12, 10, 266, 33);
 		frame.getContentPane().add(panel_1);
@@ -190,6 +184,34 @@ public class CESaleStart {
 		JDatePickerImpl datePicker = new JDatePickerImpl(datePanel);
 		 
 		panel_1.add(datePicker);
+		
+		
+		JPanel panel_2 = new JPanel();
+		panel_2.setBounds(12, 251, 266, 100);
+		frame.getContentPane().add(panel_2);
+		panel_2.setLayout(new GridLayout(0, 2, 0, 0));
+		
+		JButton btnNewButton_2 = new JButton("\uC601\uC5C5 \uC2DC\uC791");
+		panel_2.add(btnNewButton_2);
+		
+		JButton btnNewButton_3 = new JButton("\uCDE8\uC18C");
+		btnNewButton_3.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				CEMain main = new CEMain(loginUser);
+				frame.dispose();
+			}
+		});
+		vaultCash = new VaultCash(Integer.parseInt(textField_1.getText()), Integer.parseInt(textField_2.getText()), Integer.parseInt(textField_3.getText()), Integer.parseInt(textField_4.getText()), Integer.parseInt(textField_5.getText()), Integer.parseInt(textField_6.getText()), Integer.parseInt(textField_7.getText()), Integer.parseInt(textField_8.getText()));
+		panel_2.add(btnNewButton_3);
+		btnNewButton_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				service.vaultCashJoin(vaultCash);
+				CESale sale = new CESale(loginUser);
+				frame.dispose();
+			}
+		});
 		
 //		selectedDate = (Date) datePicker.getModel().getValue();
 	}

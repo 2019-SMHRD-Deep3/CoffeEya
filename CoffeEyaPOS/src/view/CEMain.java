@@ -84,6 +84,7 @@ public class CEMain {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				CESaleStart saleStart = new CESaleStart(loginUser);
+				frame.dispose();
 			}
 		});
 		panel_1.setBounds(69, 75, 262, 217);
@@ -104,6 +105,7 @@ public class CEMain {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				CEDeadline deadline = new CEDeadline(loginUser);
+				frame.dispose();
 			}
 		});
 		panel_2.setLayout(null);
