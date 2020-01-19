@@ -4,6 +4,7 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -32,6 +34,7 @@ import model.Detail;
 import model.Member;
 import model.Ordering;
 import model.Product;
+import java.awt.SystemColor;
 
 public class CESale {
 
@@ -55,6 +58,7 @@ public class CESale {
 	OrderingManagementService Oservice = new OrderingManagementService();
 	DetailManagementService Dservice = new DetailManagementService();
 	ProductManagementService Pservice = new ProductManagementService();
+	private JPanel panel_8;
 
 	/**
 	 * Create the application.
@@ -84,17 +88,18 @@ public class CESale {
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 
-		JButton btnNewButton = new JButton("");
-		btnNewButton.addMouseListener(new MouseAdapter() {
-			@Override
-			// 뒤로가기
-			public void mouseClicked(MouseEvent e) {
-				CEMain main = new CEMain(loginUser);
-				frame.dispose();
-			}
-		});
-		btnNewButton.setBounds(1122, 10, 60, 53);
-		panel.add(btnNewButton);
+		
+//		JButton btnNewButton = new JButton("");
+//		btnNewButton.addMouseListener(new MouseAdapter() {
+//			@Override
+//			// 뒤로가기
+//			public void mouseClicked(MouseEvent e) {
+//				CEMain main = new CEMain(loginUser);
+//				frame.dispose();
+//			}
+//		});
+//		btnNewButton.setBounds(1122, 10, 60, 53);
+//		panel.add(btnNewButton);
 
 		txtCoffeeya = new JTextField();
 		txtCoffeeya.setForeground(Color.WHITE);
@@ -105,6 +110,20 @@ public class CESale {
 		txtCoffeeya.setBounds(12, 10, 270, 53);
 		panel.add(txtCoffeeya);
 		txtCoffeeya.setColumns(10);
+		
+		String imgPath = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//bback2.png";
+		ImageIcon icon = new ImageIcon(imgPath);
+		
+		panel_8 = new JPanel(){
+			@Override
+			protected void paintComponent(Graphics g) {
+				g.drawImage(icon.getImage(), 0, 0, panel_8.getWidth(), panel_8.getHeight(), null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
+		panel_8.setBounds(1108, 10, 60, 60);
+		panel.add(panel_8);
 
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(Color.WHITE);
@@ -114,11 +133,14 @@ public class CESale {
 
 		JPanel panel_3 = new JPanel();
 		panel_3.setBackground(Color.WHITE);
-		panel_3.setBounds(12, 531, 417, 134);
+		panel_3.setBounds(12, 562, 417, 78);
 		panel_1.add(panel_3);
 		panel_3.setLayout(new GridLayout(0, 2, 5, 5));
 
 		JButton card = new JButton("\uCE74\uB4DC");
+		card.setForeground(SystemColor.inactiveCaptionBorder);
+		card.setFont(new Font("굴림", Font.BOLD, 20));
+		card.setBackground(Color.DARK_GRAY);
 		card.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
@@ -130,6 +152,9 @@ public class CESale {
 		panel_3.add(card);
 
 		JButton cash = new JButton("\uD604\uAE08");
+		cash.setForeground(SystemColor.inactiveCaptionBorder);
+		cash.setFont(new Font("굴림", Font.BOLD, 20));
+		cash.setBackground(Color.DARK_GRAY);
 		cash.addMouseListener(new MouseAdapter() {
 			@Override
 			// 결제 클릭시 이벤트
@@ -179,7 +204,7 @@ public class CESale {
 		panel_10.add(label_4);
 
 		JPanel panel_11 = new JPanel();
-		panel_11.setBounds(12, 183, 391, 128);
+		panel_11.setBounds(12, 183, 391, 162);
 		panel_4.add(panel_11);
 		panel_11.setLayout(null);
 
@@ -200,14 +225,14 @@ public class CESale {
 		label_2.setHorizontalAlignment(SwingConstants.CENTER);
 		label_2.setForeground(Color.BLACK);
 		label_2.setFont(new Font("굴림", Font.BOLD, 24));
-		label_2.setBounds(13, 67, 148, 43);
+		label_2.setBounds(20, 89, 148, 43);
 		panel_11.add(label_2);
 
 		// 적립금액
 		label = new JLabel("0 \uC6D0");
 		label.setHorizontalAlignment(SwingConstants.RIGHT);
 		label.setFont(new Font("굴림", Font.BOLD, 30));
-		label.setBounds(201, 67, 167, 43);
+		label.setBounds(201, 87, 167, 43);
 		panel_11.add(label);
 
 		// 합계구하기
@@ -218,6 +243,7 @@ public class CESale {
 		panel_2.setLayout(null);
 
 		JPanel panel_5 = new JPanel();
+		panel_5.setBackground(Color.DARK_GRAY);
 		panel_5.setBounds(12, 10, 693, 239);
 		panel_2.add(panel_5);
 		panel_5.setLayout(null);
@@ -244,17 +270,23 @@ public class CESale {
 
 		// 주문 삭제버튼
 		delrow = new JButton("\uC0AD\uC81C");
+		delrow.setFont(new Font("굴림", Font.BOLD, 15));
+		delrow.setForeground(SystemColor.inactiveCaptionBorder);
+		delrow.setBackground(Color.DARK_GRAY);
 		delrow.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				delrow();
 			}
 		});
-		delrow.setBounds(47, 30, 97, 23);
+		delrow.setBounds(47, 61, 97, 48);
 		panel_7.add(delrow);
 
 		// 주문 정보 초기화
 		JButton btnNewButton_3 = new JButton("\uCD08\uAE30\uD654");
+		btnNewButton_3.setFont(new Font("굴림", Font.BOLD, 15));
+		btnNewButton_3.setForeground(SystemColor.inactiveCaptionBorder);
+		btnNewButton_3.setBackground(Color.DARK_GRAY);
 		btnNewButton_3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -263,16 +295,11 @@ public class CESale {
 
 			}
 		});
-		btnNewButton_3.setBounds(47, 155, 97, 23);
+		btnNewButton_3.setBounds(47, 130, 97, 48);
 		panel_7.add(btnNewButton_3);
 
-		JPanel panel_8 = new JPanel();
-		panel_8.setBounds(12, 276, 693, 87);
-		panel_2.add(panel_8);
-		panel_8.setLayout(new CardLayout(0, 0));
-
 		JPanel panel_9 = new JPanel();
-		panel_9.setBounds(12, 373, 693, 292);
+		panel_9.setBounds(12, 259, 693, 406);
 		panel_2.add(panel_9);
 		panel_9.setLayout(new GridLayout(0, 4, 0, 0));
 
