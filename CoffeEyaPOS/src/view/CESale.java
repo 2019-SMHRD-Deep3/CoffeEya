@@ -327,15 +327,15 @@ public class CESale {
 
 		// 반복문으로 생성
 		ArrayList<Product> list = pservice.productLookup();
-		Object[][] data = new Object[list.size()][1];
+		Object[][] data = new Object[list.size()][2];
 		for (int i = 0; i < list.size(); i++) {
 			Product p = list.get(i);
-			data[i] = new Object[] { p.getPRO_NAME()};
+			data[i] = new Object[] { p.getPRO_NAME(),p.getPRO_PRICE()};
 		}
 
 		JButton[] JButton10 = new JButton[data.length];
 		for (int i = 0; i < data.length; i++) {
-			JButton10[i] = new JButton(Arrays.deepToString(data[i]) + "");
+			JButton10[i] = new JButton(data[i][0] + "");
 			JButton10[i].setPreferredSize(new Dimension(200, 100));
 			panel_9.add(JButton10[i]);
 		}
