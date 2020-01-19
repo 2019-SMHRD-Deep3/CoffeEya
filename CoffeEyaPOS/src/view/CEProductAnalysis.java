@@ -24,6 +24,7 @@ import model.Product;
 import model.ProductDAO;
 
 import java.awt.Font;
+import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.io.IOException;
@@ -48,9 +49,9 @@ public class CEProductAnalysis {
 	private JLabel lblNewLabel;
 	private JLabel lblNewLabel_1;
 	private JLabel lblNewLabel_3;
-	private JButton btnNewButton;
 	private JScrollPane scrollPane;
 	private Member loginUser;
+	private JPanel panel_4;
 
 	/**
 	 * Create the application.
@@ -75,24 +76,14 @@ public class CEProductAnalysis {
 		lblNewLabel.setBounds(0, 0, 1184, 761);
 		frame.getContentPane().add(lblNewLabel);
 
-		btnNewButton = new JButton("");
-		btnNewButton.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				frame.dispose();
-			}
-		});
-		btnNewButton.setBounds(1138, 10, 34, 34);
-		frame.getContentPane().add(btnNewButton);
-
 		panel = new JPanel();
 		panel.setBackground(Color.DARK_GRAY);
-		panel.setBounds(12, 54, 1160, 95);
+		panel.setBounds(12, 10, 1160, 86);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 
 		lblNewLabel_1 = new JLabel("\uC0C1\uD488 \uAE30\uC900");
-		lblNewLabel_1.setBounds(12, 19, 1136, 57);
+		lblNewLabel_1.setBounds(12, 10, 1058, 66);
 		panel.add(lblNewLabel_1);
 		lblNewLabel_1.setForeground(Color.WHITE);
 		lblNewLabel_1.setFont(new Font("굴림", Font.BOLD, 26));
@@ -100,15 +91,36 @@ public class CEProductAnalysis {
 
 		panel_2 = new JPanel();
 		panel_2.setBackground(new Color(204, 153, 102));
-		panel_2.setBounds(12, 19, 1136, 57);
+		panel_2.setBounds(12, 10, 1058, 66);
 		panel.add(panel_2);
 		panel_2.setLayout(null);
+
+		String imgPath3 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//bback.png";
+		ImageIcon icon3 = new ImageIcon(imgPath3);
+
+		panel_4 = new JPanel() {
+			@Override
+			protected void paintComponent(Graphics g) {
+				g.drawImage(icon3.getImage(), 0, 0, panel_4.getWidth(), panel_4.getHeight(), null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
+		panel_4.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				CEAnalysis ceAnalysis = new CEAnalysis(loginUser);
+				frame.dispose();
+			}
+		});
+		panel_4.setBounds(1082, 10, 66, 66);
+		panel.add(panel_4);
 
 		Detail d = new Detail();
 
 		panel_1 = new JPanel();
 		panel_1.setBackground(Color.DARK_GRAY);
-		panel_1.setBounds(12, 159, 406, 592);
+		panel_1.setBounds(12, 106, 406, 645);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
 
@@ -134,14 +146,14 @@ public class CEProductAnalysis {
 		String[] columnNames = { "상품 이름", "판매 수량" };
 		Object[][] data = new Object[dataCnt.length][2];
 		int cnt = 0;
-		
+
 		for (int i = 0; i < dataCnt.length; i++) {
 			if (dataCnt[i] != 0) {
 				data[cnt++] = new Object[] { ProductCnt.get(i).getPRO_NAME(), dataCnt[i] };
 			}
 		}
 		Object[][] data2 = new Object[cnt][2];
-		for(int i=0; i<cnt;i++) {
+		for (int i = 0; i < cnt; i++) {
 			data2[i] = data[i];
 		}
 
@@ -158,12 +170,12 @@ public class CEProductAnalysis {
 
 		// 반복문을 이용하여 테이블을 가운데 정렬로 지정
 		for (int i = 0; i < tcmSchedule.getColumnCount(); i++) {
-		tcmSchedule.getColumn(i).setCellRenderer(tScheduleCellRenderer);
+			tcmSchedule.getColumn(i).setCellRenderer(tScheduleCellRenderer);
 		}
 
 		panel_3 = new JPanel();
 		panel_3.setBackground(Color.DARK_GRAY);
-		panel_3.setBounds(430, 159, 742, 592);
+		panel_3.setBounds(430, 106, 742, 645);
 		frame.getContentPane().add(panel_3);
 		panel_3.setLayout(null);
 

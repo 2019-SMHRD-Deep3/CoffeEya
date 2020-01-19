@@ -2,10 +2,12 @@ package view;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -45,11 +47,11 @@ public class CEAnalysis {
 	private JScrollPane scrollPane;
 	private Member loginUser;
 	private JButton btnNewButton;
-	private JButton btnNewButton_1;
 	private JButton button;
 	private JButton button_1;
 	private JPanel panel_4;
 	private JLabel lblNewLabel_3;
+	private JPanel panel_5;
 
 	/**
 	 * Create the application.
@@ -77,7 +79,7 @@ public class CEAnalysis {
 
 		panel = new JPanel();
 		panel.setBackground(Color.DARK_GRAY);
-		panel.setBounds(12, 54, 1160, 95);
+		panel.setBounds(12, 10, 1160, 95);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 
@@ -107,15 +109,37 @@ public class CEAnalysis {
 		lblNewLabel_2.setFont(new Font("굴림", Font.BOLD, 26));
 		lblNewLabel_2.setBounds(346, 10, 273, 75);
 		panel.add(lblNewLabel_2);
+		
+		String imgPath3 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//bback.png";
+		ImageIcon icon3 = new ImageIcon(imgPath3);
+		
+		panel_5 = new JPanel(){
+			@Override
+			protected void paintComponent(Graphics g) {
+				g.drawImage(icon3.getImage(), 0, 0, panel_5.getWidth(), panel_5.getHeight(), null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
+		panel_5.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				CEMain main = new CEMain(loginUser);
+				frame.dispose();
+			}
+		});
+		panel_5.setBounds(1082, 10, 66, 66);
+		panel.add(panel_5);
 
+		
 		panel_1 = new JPanel();
 		panel_1.setBackground(Color.DARK_GRAY);
-		panel_1.setBounds(12, 159, 771, 592);
+		panel_1.setBounds(12, 115, 771, 636);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
 
 		scrollPane = new JScrollPane();
-		scrollPane.setBounds(28, 23, 715, 542);
+		scrollPane.setBounds(28, 23, 715, 582);
 		panel_1.add(scrollPane);
 
 		// 컬럼이름 복사, 데이터 복사
@@ -128,7 +152,7 @@ public class CEAnalysis {
 			d = list.get(i);
 			pro = productdao.getInfoProduct(d);
 			ord = orderingdao.getInfoOrdering(d);
-			
+
 			String PRO_NAME = pro.getPRO_NAME();
 			int PRO_PRICE = pro.getPRO_PRICE();
 			String OR_PAY = ord.getOR_PAY();
@@ -149,12 +173,12 @@ public class CEAnalysis {
 
 		// 반복문을 이용하여 테이블을 가운데 정렬로 지정
 		for (int i = 0; i < tcmSchedule.getColumnCount(); i++) {
-		tcmSchedule.getColumn(i).setCellRenderer(tScheduleCellRenderer);
+			tcmSchedule.getColumn(i).setCellRenderer(tScheduleCellRenderer);
 		}
 
 		panel_3 = new JPanel();
 		panel_3.setBackground(Color.DARK_GRAY);
-		panel_3.setBounds(795, 159, 377, 592);
+		panel_3.setBounds(795, 115, 377, 636);
 		frame.getContentPane().add(panel_3);
 		panel_3.setLayout(null);
 
@@ -166,7 +190,7 @@ public class CEAnalysis {
 			}
 		});
 		btnNewButton.setFont(new Font("굴림", Font.BOLD, 26));
-		btnNewButton.setBounds(85, 168, 220, 77);
+		btnNewButton.setBounds(85, 143, 220, 77);
 		panel_3.add(btnNewButton);
 
 		button = new JButton("\uD310\uB9E4\uC790 \uAE30\uC900");
@@ -177,7 +201,7 @@ public class CEAnalysis {
 			}
 		});
 		button.setFont(new Font("굴림", Font.BOLD, 26));
-		button.setBounds(85, 301, 220, 77);
+		button.setBounds(85, 283, 220, 77);
 		panel_3.add(button);
 
 		button_1 = new JButton("\uB0A0\uC9DC \uAE30\uC900");
@@ -188,12 +212,12 @@ public class CEAnalysis {
 			}
 		});
 		button_1.setFont(new Font("굴림", Font.BOLD, 26));
-		button_1.setBounds(85, 440, 220, 77);
+		button_1.setBounds(85, 422, 220, 77);
 		panel_3.add(button_1);
 
 		panel_4 = new JPanel();
 		panel_4.setBackground(new Color(204, 153, 102));
-		panel_4.setBounds(12, 47, 353, 69);
+		panel_4.setBounds(12, 10, 353, 69);
 		panel_3.add(panel_4);
 		panel_4.setLayout(null);
 
@@ -203,16 +227,5 @@ public class CEAnalysis {
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3.setBounds(0, 10, 353, 49);
 		panel_4.add(lblNewLabel_3);
-
-		btnNewButton_1 = new JButton("");
-		btnNewButton_1.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				CEMain main = new CEMain(loginUser);
-				frame.dispose();
-			}
-		});
-		btnNewButton_1.setBounds(1139, 10, 33, 31);
-		frame.getContentPane().add(btnNewButton_1);
 	}
 }

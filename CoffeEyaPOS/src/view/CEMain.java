@@ -124,9 +124,9 @@ public class CEMain {
 		panel_4.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if (loginUser.getMEM_PERM().equals("EMPLOYEE")) {
+				if (loginUser.getMEM_PERM().equals("EMPLOYEE")||loginUser.getMEM_PERM().equals("employee")) {
 					JOptionPane.showMessageDialog(frame, "접근 할 수 없습니다.");
-				} else if (loginUser.getMEM_PERM().equals("MANAGER")) {
+				} else if (loginUser.getMEM_PERM().equals("MANAGER")||loginUser.getMEM_PERM().equals("manager")) {
 					CEMember member = new CEMember(loginUser);
 					frame.dispose();
 				}
@@ -170,9 +170,9 @@ public class CEMain {
 		panel_5.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if (loginUser.getMEM_PERM().equals("EMPLOYEE")) {
+				if (loginUser.getMEM_PERM().equals("EMPLOYEE")||loginUser.getMEM_PERM().equals("employee")) {
 					JOptionPane.showMessageDialog(frame, "접근 할 수 없습니다.");
-				} else if (loginUser.getMEM_PERM().equals("MANAGER")) {
+				} else if (loginUser.getMEM_PERM().equals("MANAGER")||loginUser.getMEM_PERM().equals("manager")) {
 					CEProduct setProduct = new CEProduct(loginUser);
 					frame.dispose();
 				}
@@ -195,9 +195,9 @@ public class CEMain {
 		panel_6.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if (loginUser.getMEM_PERM().equals("EMPLOYEE")) {
+				if (loginUser.getMEM_PERM().equals("EMPLOYEE")||loginUser.getMEM_PERM().equals("employee")) {
 					JOptionPane.showMessageDialog(frame, "접근 할 수 없습니다.");
-				} else if (loginUser.getMEM_PERM().equals("MANAGER")) {
+				} else if (loginUser.getMEM_PERM().equals("MANAGER")||loginUser.getMEM_PERM().equals("manager")) {
 					CECustomer customer = new CECustomer(loginUser);
 					frame.dispose();
 				}

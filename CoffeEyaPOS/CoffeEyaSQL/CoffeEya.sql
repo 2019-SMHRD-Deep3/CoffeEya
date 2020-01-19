@@ -22,11 +22,11 @@ CREATE TABLE "MEMBER"
    ) ;
 REM INSERTING into MEMBER
 SET DEFINE OFF;
-Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('°ûÃ¢Çõ','1111','°ûÃ¢Çõ','manager');
-Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('³ëµ¿°æ','1111','³ëµ¿°æ','manager');
-Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('±èÁØÇü','1111','±èÁØÇü','manager');
-Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('±èÈ¿Áø','1111','±èÁØÇü','manager');
-Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('1111','1111','¾Æ¸£¹ÙÀÌÆ®»ý1','employee');
+Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('°ûÃ¢Çõ','1111','°ûÃ¢Çõ','MANAGER');
+Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('³ëµ¿°æ','1111','³ëµ¿°æ','MANAGER');
+Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('±èÁØÇü','1111','±èÁØÇü','MANAGER');
+Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('±èÈ¿Áø','1111','±èÁØÇü','MANAGER');
+Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('1111','1111','¾Æ¸£¹ÙÀÌÆ®»ý1','EMPLOYEE');
 
 --------------------------------------------------------
 --  DDL for Index MEMBER_PK
