@@ -208,6 +208,6 @@ public class CESaleStart {
 		 
 		panel_1.add(datePicker);
 		
-//		selectedDate = (Date) datePicker.getModel().getValue();
+		selectedDate = (Date) datePicker.getModel().getValue();
 	}
 }
