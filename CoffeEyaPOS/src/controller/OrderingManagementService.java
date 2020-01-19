@@ -23,16 +23,16 @@ public class OrderingManagementService {
 		return dao.orderingCount();
 	}
 	
-	public int OrderingSum() {
-		return dao.selectOrderingSum();
+	public int OrderingSum(String deadLineTime2) {
+		return dao.selectOrderingSum(deadLineTime2);
 	}
 	
-	public int OrderingCashSum() {
-		return dao.selectOrderingCashSum();
+	public int OrderingCashSum(String deadLineTime2) {
+		return dao.selectOrderingCashSum(deadLineTime2);
 	}
 	
-	public int OrderingCardSum() {
-		return dao.selectOrderingCardSum();
+	public int OrderingCardSum(String deadLineTime2) {
+		return dao.selectOrderingCardSum(deadLineTime2);
 	}
 
 }
