@@ -55,6 +55,10 @@ public class CEProduct {
 	private JLabel lblNewLabel_1;
 	private JLabel lblNewLabel_2;
 	private JPanel panel_3;
+	private JPanel panel_2;
+	private JPanel panel_4;
+	private JPanel panel_5;
+	private JPanel panel_6;
 
 	/**
 	 * Create the application.
@@ -111,7 +115,7 @@ public class CEProduct {
 		productAll();
 
 		panel_1 = new JPanel();
-		panel_1.setBounds(12, 411, 512, 136);
+		panel_1.setBounds(56, 411, 424, 136);
 		panel_1.setBackground(new Color(255, 0, 0, 0));
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(new GridLayout(0, 2, 0, 0));
@@ -130,6 +134,7 @@ public class CEProduct {
 		panel_1.add(lblNewLabel);
 
 		textField = new JTextField();
+		textField.setBackground(SystemColor.inactiveCaptionBorder);
 		panel_1.add(textField);
 		textField.setColumns(10);
 
@@ -147,6 +152,7 @@ public class CEProduct {
 		panel_1.add(lblNewLabel_1);
 
 		textField_1 = new JTextField();
+		textField_1.setBackground(SystemColor.inactiveCaptionBorder);
 		panel_1.add(textField_1);
 		textField_1.setColumns(10);
 
@@ -164,18 +170,38 @@ public class CEProduct {
 		panel_1.add(lblNewLabel_2);
 
 		textField_2 = new JTextField();
+		textField_2.setBackground(SystemColor.inactiveCaptionBorder);
 		panel_1.add(textField_2);
 		textField_2.setColumns(10);
+		
+		
+		String imgPath4 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//reset.png";
+		ImageIcon icon4 = new ImageIcon(imgPath4);
 
-		JPanel panel_2 = new JPanel();
-		panel_2.setBounds(546, 131, 100, 417);
-		frame.getContentPane().add(panel_2);
-		panel_2.setLayout(new GridLayout(0, 1, 50, 0));
-
-		btnNewButton_1 = new JButton("\uCD94\uAC00");
-		btnNewButton_1.addMouseListener(new MouseAdapter() {
+		panel_2 = new JPanel(){
 			@Override
-			public void mouseClicked(MouseEvent arg0) {
+			protected void paintComponent(Graphics g) {
+				g.drawImage(icon4.getImage(), 0, 0, panel_2.getWidth(), panel_2.getHeight(), null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
+		panel_2.setBounds(558, 183, 60, 60);
+		frame.getContentPane().add(panel_2);
+		
+		String imgPath5 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//plus.png";
+		ImageIcon icon5 = new ImageIcon(imgPath5);
+		
+		panel_4 = new JPanel() {
+			protected void paintComponent(Graphics g) {
+				g.drawImage(icon5.getImage(), 0, 0, panel_4.getWidth(), panel_4.getHeight(), null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
+		panel_4.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
 				int infoPNum = Integer.parseInt(textField.getText());
 				String infoPName = textField_1.getText();
 				int infoPPrice = Integer.parseInt(textField_2.getText());
@@ -192,25 +218,22 @@ public class CEProduct {
 				} else {
 					JOptionPane.showMessageDialog(frame, "상품 추가 실패");
 				}
-
 			}
 		});
-
-		JButton btnNewButton_4 = new JButton("\uCD08\uAE30\uD654");
-		btnNewButton_4.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				productAll();
-				textField.setText("");
-				textField_1.setText("");
-				textField_2.setText("");
+		panel_4.setBounds(560, 265, 60, 60);
+		frame.getContentPane().add(panel_4);
+		
+		String imgPath6 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//repair.png";
+		ImageIcon icon6 = new ImageIcon(imgPath6);
+		
+		panel_5 = new JPanel() {
+			protected void paintComponent(Graphics g) {
+				g.drawImage(icon6.getImage(), 0, 0, panel_5.getWidth(), panel_5.getHeight(), null);
+				setOpaque(false);
+				super.paintComponent(g);
 			}
-		});
-		panel_2.add(btnNewButton_4);
-		panel_2.add(btnNewButton_1);
-
-		btnNewButton_2 = new JButton("\uC218\uC815");
-		btnNewButton_2.addMouseListener(new MouseAdapter() {
+		};
+		panel_5.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				int infoPNum = Integer.parseInt(textField.getText());
@@ -231,10 +254,20 @@ public class CEProduct {
 				}
 			}
 		});
-		panel_2.add(btnNewButton_2);
-
-		btnNewButton_3 = new JButton("\uC0AD\uC81C");
-		btnNewButton_3.addMouseListener(new MouseAdapter() {
+		panel_5.setBounds(560, 354, 60, 60);
+		frame.getContentPane().add(panel_5);
+		
+		String imgPath7 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//garbage.png";
+		ImageIcon icon7 = new ImageIcon(imgPath7);
+		
+		panel_6 = new JPanel() {
+			protected void paintComponent(Graphics g) {
+				g.drawImage(icon7.getImage(), 0, 0, panel_6.getWidth(), panel_6.getHeight(), null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
+		panel_6.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				int infoPNum = Integer.parseInt(textField.getText());
@@ -251,7 +284,8 @@ public class CEProduct {
 				}
 			}
 		});
-		panel_2.add(btnNewButton_3);
+		panel_6.setBounds(560, 438, 60, 60);
+		frame.getContentPane().add(panel_6);
 
 		JComboBox comboBox = new JComboBox();
 		comboBox.setBounds(12, 370, 160, 21);
