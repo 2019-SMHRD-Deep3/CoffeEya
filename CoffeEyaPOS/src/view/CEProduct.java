@@ -115,7 +115,7 @@ public class CEProduct {
 		productAll();
 
 		panel_1 = new JPanel();
-		panel_1.setBounds(56, 411, 424, 136);
+		panel_1.setBounds(56, 378, 424, 136);
 		panel_1.setBackground(new Color(255, 0, 0, 0));
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(new GridLayout(0, 2, 0, 0));
@@ -186,6 +186,15 @@ public class CEProduct {
 				super.paintComponent(g);
 			}
 		};
+		panel_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				productAll();
+				textField.setText("");
+				textField_1.setText("");
+				textField_2.setText("");
+			}
+		});
 		panel_2.setBounds(560, 146, 60, 60);
 		frame.getContentPane().add(panel_2);
 		
@@ -286,10 +295,6 @@ public class CEProduct {
 		});
 		panel_6.setBounds(560, 445, 60, 60);
 		frame.getContentPane().add(panel_6);
-
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(12, 370, 160, 21);
-		frame.getContentPane().add(comboBox);
 		
 		JLabel lblNewLabel_3 = new JLabel("\uCD08\uAE30\uD654");
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
