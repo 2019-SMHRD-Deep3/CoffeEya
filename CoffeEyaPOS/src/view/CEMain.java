@@ -211,7 +211,7 @@ public class CEMain {
 		lblNewLabel.setFont(new Font("±¼¸²", Font.BOLD, 25));
 		lblNewLabel.setForeground(Color.BLACK);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblNewLabel.setBounds(470, 16, 647, 37);
+		lblNewLabel.setBounds(429, 20, 647, 37);
 		panel.add(lblNewLabel);
 
 		String imgPath7 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//bback.png";

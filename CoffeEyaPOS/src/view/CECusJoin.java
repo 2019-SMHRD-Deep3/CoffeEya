@@ -83,19 +83,9 @@ public class CECusJoin {
       };
       frame.getContentPane().add(panel_4, "name_2532572478074700");
       panel_4.setLayout(null);
-      
-      String imgPath1 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//blur.png";
-      ImageIcon icon1 = new ImageIcon(imgPath1);
-      
-      panel_3 = new JPanel(){
-          @Override
-          protected void paintComponent(Graphics g) {
-             g.drawImage(icon1.getImage(), 0, 0, panel_3.getWidth(), panel_3.getHeight(), null);
-             setOpaque(false);
-             super.paintComponent(g);
-          }
-       };
-      panel_3.setBackground(Color.WHITE);
+        
+      panel_3 = new JPanel();
+      panel_3.setBackground(new Color(255,0,0,0));
       panel_3.setBounds(565, 0, 619, 750);
       panel_4.add(panel_3);
       panel_3.setLayout(null);
