@@ -92,29 +92,72 @@ public class CECustomer {
 		panel_1 = new JPanel();
 		panel_1.setBounds(80, 320, 541, 252);
 		frame.getContentPane().add(panel_1);
-		panel_1.setLayout(new GridLayout(0, 2, 0, 0));
+		panel_1.setLayout(new GridLayout(0, 2, 4, 4));
 
-		lblNewLabel = new JLabel("\uACE0\uAC1D \uBC88\uD638");
+		
+		String imgPath = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//cus2.png";
+		ImageIcon cus2 = new ImageIcon(imgPath);
+		
+		lblNewLabel = new JLabel(){
+			@Override
+			protected void paintComponent(Graphics g) {
+				g.drawImage(cus2.getImage(), 0, 0, lblNewLabel.getWidth(), lblNewLabel.getHeight(), null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
 		panel_1.add(lblNewLabel);
 
 		lblNewLabel_5 = new JLabel("\uACE0\uAC1D \uBC88\uD638 \uC120\uD0DD");
 		panel_1.add(lblNewLabel_5);
 
-		lblNewLabel_1 = new JLabel("\uACE0\uAC1D \uC774\uB984");
+		String imgPath2 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//cus3.png";
+		ImageIcon cus3 = new ImageIcon(imgPath2);
+		
+		lblNewLabel_1 = new JLabel("\uACE0\uAC1D \uC774\uB984"){
+			@Override
+			protected void paintComponent(Graphics g) {
+				g.drawImage(cus3.getImage(), 0, 0, lblNewLabel_1.getWidth(), lblNewLabel_1.getHeight(), null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
 		panel_1.add(lblNewLabel_1);
 
 		textField = new JTextField();
 		panel_1.add(textField);
 		textField.setColumns(10);
 
-		lblNewLabel_2 = new JLabel("\uACE0\uAC1D \uC804\uD654\uBC88\uD638");
+		
+		String imgPath4 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//cus2.png";
+		ImageIcon cus5 = new ImageIcon(imgPath4);
+		
+		lblNewLabel_2 = new JLabel(){
+			@Override
+			protected void paintComponent(Graphics g) {
+				g.drawImage(cus5.getImage(), 0, 0, lblNewLabel_2.getWidth(), lblNewLabel_2.getHeight(), null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
 		panel_1.add(lblNewLabel_2);
 
 		textField_1 = new JTextField();
 		panel_1.add(textField_1);
 		textField_1.setColumns(10);
 
-		lblNewLabel_3 = new JLabel("\uACE0\uAC1D \uC131\uBCC4");
+		
+		String imgPath11 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//cus5.png";
+		ImageIcon cus11 = new ImageIcon(imgPath11);
+		
+		lblNewLabel_3 = new JLabel("\uACE0\uAC1D \uC131\uBCC4"){
+			@Override
+			protected void paintComponent(Graphics g) {
+				g.drawImage(cus11.getImage(), 0, 0, lblNewLabel_3.getWidth(), lblNewLabel_3.getHeight(), null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
 		panel_1.add(lblNewLabel_3);
 
 		panel_2 = new JPanel();
@@ -131,7 +174,18 @@ public class CECustomer {
 		sex.add(rdbtnNewRadioButton);
 		sex.add(rdbtnNewRadioButton_1);
 
-		lblNewLabel_4 = new JLabel("\uACE0\uAC1D \uC0DD\uB144\uC6D4\uC77C");
+		
+		String imgPath12 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//cus6.png";
+		ImageIcon cus12 = new ImageIcon(imgPath12);
+		
+		lblNewLabel_4 = new JLabel("\uACE0\uAC1D \uC0DD\uB144\uC6D4\uC77C"){
+			@Override
+			protected void paintComponent(Graphics g) {
+				g.drawImage(cus12.getImage(), 0, 0, lblNewLabel_4.getWidth(), lblNewLabel_4.getHeight(), null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
 		panel_1.add(lblNewLabel_4);
 
 		textField_2 = new JTextField();
@@ -146,8 +200,8 @@ public class CECustomer {
 		textField_3.setColumns(10);
 
 		
-		String imgPath4 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//reset.png";
-		ImageIcon icon4 = new ImageIcon(imgPath4);
+		String imgPath5 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//reset.png";
+		ImageIcon icon4 = new ImageIcon(imgPath5);
 		
 		panel_reflash2 = new JPanel(){
 			@Override
@@ -173,8 +227,8 @@ public class CECustomer {
 		frame.getContentPane().add(panel_reflash2);
 
 		
-		String imgPath5 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//plus.png";
-		ImageIcon icon5 = new ImageIcon(imgPath5);
+		String imgPath10 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//plus.png";
+		ImageIcon icon5 = new ImageIcon(imgPath10);
 		
 		panel_add = new JPanel() {
 			protected void paintComponent(Graphics g) {
