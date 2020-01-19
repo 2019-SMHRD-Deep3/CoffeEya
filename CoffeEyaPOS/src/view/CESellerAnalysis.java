@@ -105,7 +105,6 @@ public class CESellerAnalysis {
 		panel_4.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				CEAnalysis ceAnalysis = new CEAnalysis(loginUser);
 				frame.dispose();
 			}
 		});

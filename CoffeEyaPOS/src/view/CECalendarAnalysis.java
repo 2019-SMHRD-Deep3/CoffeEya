@@ -107,7 +107,6 @@ public class CECalendarAnalysis {
 		panel_6.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				CEAnalysis ceAnalysis = new CEAnalysis(loginUser);
 				frame.dispose();
 			}
 		});
