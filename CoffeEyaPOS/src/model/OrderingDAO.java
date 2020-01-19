@@ -172,13 +172,14 @@ public class OrderingDAO {
 		return cnt;
 	}
 	
-	public int selectOrderingSum() {
+	public int selectOrderingSum(String deadLineTime2) {
 		int orderingSum = 0;
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn = DriverManager.getConnection(url, user, password);
-			String sql = "SELECT OR_SUM FROM ORDERING";
+			String sql = "SELECT OR_SUM FROM ORDERING WHERE OR_DATE = ? ";
 			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, deadLineTime2);
 			rs = psmt.executeQuery();
 
 			while (rs.next()) {
@@ -208,13 +209,14 @@ public class OrderingDAO {
 		return orderingSum;
 	}
 	
-	public int selectOrderingCashSum() {
+	public int selectOrderingCashSum(String deadLineTime2) {
 		int orderingCashSum = 0;
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn = DriverManager.getConnection(url, user, password);
-			String sql = "SELECT OR_SUM FROM ORDERING WHERE OR_PAY = '현금'";
+			String sql = "SELECT OR_SUM FROM ORDERING WHERE OR_DATE = ? AND OR_PAY = '현금'";
 			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, deadLineTime2);
 			rs = psmt.executeQuery();
 
 			while (rs.next()) {
@@ -244,13 +246,14 @@ public class OrderingDAO {
 		return orderingCashSum;
 	}
 	
-	public int selectOrderingCardSum() {
+	public int selectOrderingCardSum(String deadLineTime2) {
 		int orderingCardSum = 0;
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn = DriverManager.getConnection(url, user, password);
-			String sql = "SELECT OR_SUM FROM ORDERING WHERE OR_PAY = '카드'";
+			String sql = "SELECT OR_SUM FROM ORDERING WHERE OR_DATE = ? AND OR_PAY = '카드'";
 			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, deadLineTime2);
 			rs = psmt.executeQuery();
 
 			while (rs.next()) {

@@ -301,7 +301,7 @@ public class CESale {
 				delrow();
 			}
 		});
-		delrow.setBounds(47, 61, 97, 48);
+		delrow.setBounds(12, 81, 170, 59);
 		panel_7.add(delrow);
 
 		// 주문 정보 초기화
@@ -317,7 +317,7 @@ public class CESale {
 
 			}
 		});
-		btnNewButton_3.setBounds(47, 130, 97, 48);
+		btnNewButton_3.setBounds(12, 150, 170, 59);
 		panel_7.add(btnNewButton_3);
 
 		JPanel panel_9 = new JPanel();
@@ -327,10 +327,10 @@ public class CESale {
 
 		// 반복문으로 생성
 		ArrayList<Product> list = pservice.productLookup();
-		Object[][] data = new Object[list.size()][2];
+		Object[][] data = new Object[list.size()][1];
 		for (int i = 0; i < list.size(); i++) {
 			Product p = list.get(i);
-			data[i] = new Object[] { p.getPRO_NAME(), p.getPRO_PRICE() };
+			data[i] = new Object[] { p.getPRO_NAME()};
 		}
 
 		JButton[] JButton10 = new JButton[data.length];
