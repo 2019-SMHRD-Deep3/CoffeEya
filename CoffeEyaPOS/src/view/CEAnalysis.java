@@ -89,7 +89,7 @@ public class CEAnalysis {
 		lblNewLabel_1.setBounds(12, 19, 322, 57);
 		panel.add(lblNewLabel_1);
 		lblNewLabel_1.setForeground(Color.WHITE);
-		lblNewLabel_1.setFont(new Font("±¼¸²", Font.BOLD, 26));
+		lblNewLabel_1.setFont(new Font("êµ´ë¦¼", Font.BOLD, 26));
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 
 		panel_2 = new JPanel();
@@ -106,9 +106,9 @@ public class CEAnalysis {
 			int PRO_PRICE = productdao.getInfoProduct(d).getPRO_PRICE();
 			sum += PRO_PRICE * d.getDE_AMOUNT();
 		}
-		lblNewLabel_2 = new JLabel(Integer.toString(sum) + " ¿ø");
+		lblNewLabel_2 = new JLabel(Integer.toString(sum) + " ì›");
 		lblNewLabel_2.setForeground(Color.WHITE);
-		lblNewLabel_2.setFont(new Font("±¼¸²", Font.BOLD, 26));
+		lblNewLabel_2.setFont(new Font("êµ´ë¦¼", Font.BOLD, 26));
 		lblNewLabel_2.setBounds(346, 10, 273, 75);
 		panel.add(lblNewLabel_2);
 		
@@ -144,8 +144,8 @@ public class CEAnalysis {
 		scrollPane.setBounds(28, 23, 715, 582);
 		panel_1.add(scrollPane);
 
-		// ÄÃ·³ÀÌ¸§ º¹»ç, µ¥ÀÌÅÍ º¹»ç
-		String[] columnNames = { "ÁÖ¹® ¹øÈ£", "»óÇ° ÀÌ¸§", "´ÜÀÏ °¡°İ", "ÆÇ¸Å ¼ö·®", "°áÁ¦ ¼ö´Ü", "ÆÇ¸Å »ç¿ø", "ÆÇ¸Å ³¯Â¥" };
+		// ì»¬ëŸ¼ì´ë¦„ ë³µì‚¬, ë°ì´í„° ë³µì‚¬
+		String[] columnNames = { "ì£¼ë¬¸ ë²ˆí˜¸", "ìƒí’ˆ ì´ë¦„", "ë‹¨ì¼ ê°€ê²©", "íŒë§¤ ìˆ˜ëŸ‰", "ê²°ì œ ìˆ˜ë‹¨", "íŒë§¤ ì‚¬ì›", "íŒë§¤ ë‚ ì§œ" };
 		ArrayList<Detail> list = service.detailLookup();
 		Object[][] data = new Object[list.size()][7];
 //		ProductDAO daoP = new ProductDAO();
@@ -164,16 +164,16 @@ public class CEAnalysis {
 		}
 		table = new JTable(data, columnNames);
 		scrollPane.setViewportView(table);
-		// DefaultTableCellHeaderRenderer »ı¼º (°¡¿îµ¥ Á¤·ÄÀ» À§ÇÑ)
+		// DefaultTableCellHeaderRenderer ìƒì„± (ê°€ìš´ë° ì •ë ¬ì„ ìœ„í•œ)
 		DefaultTableCellRenderer tScheduleCellRenderer = new DefaultTableCellRenderer();
 
-		// DefaultTableCellHeaderRendererÀÇ Á¤·ÄÀ» °¡¿îµ¥ Á¤·Ä·Î ÁöÁ¤
+		// DefaultTableCellHeaderRendererì˜ ì •ë ¬ì„ ê°€ìš´ë° ì •ë ¬ë¡œ ì§€ì •
 		tScheduleCellRenderer.setHorizontalAlignment(SwingConstants.CENTER);
 
-		// Á¤·ÄÇÒ Å×ÀÌºíÀÇ ColumnModelÀ» °¡Á®¿È
+		// ì •ë ¬í•  í…Œì´ë¸”ì˜ ColumnModelì„ ê°€ì ¸ì˜´
 		TableColumnModel tcmSchedule = table.getColumnModel();
 
-		// ¹İº¹¹®À» ÀÌ¿ëÇÏ¿© Å×ÀÌºíÀ» °¡¿îµ¥ Á¤·Ä·Î ÁöÁ¤
+		// ë°˜ë³µë¬¸ì„ ì´ìš©í•˜ì—¬ í…Œì´ë¸”ì„ ê°€ìš´ë° ì •ë ¬ë¡œ ì§€ì •
 		for (int i = 0; i < tcmSchedule.getColumnCount(); i++) {
 			tcmSchedule.getColumn(i).setCellRenderer(tScheduleCellRenderer);
 		}
@@ -191,7 +191,7 @@ public class CEAnalysis {
 				CEProductAnalysis productAnalysis = new CEProductAnalysis(loginUser);
 			}
 		});
-		btnNewButton.setFont(new Font("±¼¸²", Font.BOLD, 26));
+		btnNewButton.setFont(new Font("êµ´ë¦¼", Font.BOLD, 26));
 		btnNewButton.setBounds(85, 143, 220, 77);
 		panel_3.add(btnNewButton);
 
@@ -202,7 +202,7 @@ public class CEAnalysis {
 				CESellerAnalysis sellerAnalysis = new CESellerAnalysis(loginUser);
 			}
 		});
-		button.setFont(new Font("±¼¸²", Font.BOLD, 26));
+		button.setFont(new Font("êµ´ë¦¼", Font.BOLD, 26));
 		button.setBounds(85, 283, 220, 77);
 		panel_3.add(button);
 
@@ -213,7 +213,7 @@ public class CEAnalysis {
 				CECalendarAnalysis calendarAnalysis = new CECalendarAnalysis(loginUser);
 			}
 		});
-		button_1.setFont(new Font("±¼¸²", Font.BOLD, 26));
+		button_1.setFont(new Font("êµ´ë¦¼", Font.BOLD, 26));
 		button_1.setBounds(85, 422, 220, 77);
 		panel_3.add(button_1);
 
@@ -225,7 +225,7 @@ public class CEAnalysis {
 
 		lblNewLabel_3 = new JLabel("\uC2DC\uAC01\uD654\uBA74 \uC120\uD0DD");
 		lblNewLabel_3.setForeground(Color.WHITE);
-		lblNewLabel_3.setFont(new Font("±¼¸²", Font.BOLD, 28));
+		lblNewLabel_3.setFont(new Font("êµ´ë¦¼", Font.BOLD, 28));
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3.setBounds(0, 10, 353, 49);
 		panel_4.add(lblNewLabel_3);
