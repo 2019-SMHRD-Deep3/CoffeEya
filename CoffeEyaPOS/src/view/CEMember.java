@@ -72,7 +72,7 @@ public class CEMember {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.getContentPane().setBackground(new Color(250, 235, 215));
+		frame.getContentPane().setBackground(Color.LIGHT_GRAY);
 		frame.setBounds(100, 100, 613, 712);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -110,13 +110,13 @@ public class CEMember {
 		panel_1.add(scrollPane);
 
 		JPanel panel_2 = new JPanel();
-		panel_2.setBackground(new Color(250, 235, 215));
-		panel_2.setBounds(12, 209, 438, 389);
+		panel_2.setBackground(Color.LIGHT_GRAY);
+		panel_2.setBounds(42, 207, 391, 389);
 		frame.getContentPane().add(panel_2);
-		panel_2.setLayout(new GridLayout(0, 2, 0, 0));
 
 		String imgPath = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//man.png";
 		ImageIcon icon = new ImageIcon(imgPath);
+		panel_2.setLayout(null);
 
 		lblNewLabel = new JLabel("") {
 			@Override
@@ -126,10 +126,14 @@ public class CEMember {
 				super.paintComponent(g);
 			}
 		};
+		lblNewLabel.setBounds(38, 2, 114, 77);
+		lblNewLabel.setBackground(Color.LIGHT_GRAY);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_2.add(lblNewLabel);
 
 		lblNewLabel_5 = new JLabel("\uC0AC\uC6A9\uC790 \uC120\uD0DD");
+		lblNewLabel_5.setBounds(170, 2, 207, 77);
+		lblNewLabel_5.setForeground(Color.BLACK);
 		lblNewLabel_5.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
 		lblNewLabel_5.setBackground(new Color(255, 218, 185));
 		lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
@@ -146,12 +150,16 @@ public class CEMember {
 				super.paintComponent(g);
 			}
 		};
+		lblNewLabel_1.setBounds(38, 79, 114, 77);
+		lblNewLabel_1.setBackground(Color.LIGHT_GRAY);
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_2.add(lblNewLabel_1);
 
 		textField = new JTextField();
+		textField.setBounds(170, 89, 207, 33);
+		textField.setForeground(Color.BLACK);
 		textField.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
-		textField.setBackground(new Color(255, 218, 185));
+		textField.setBackground(Color.WHITE);
 		panel_2.add(textField);
 		textField.setColumns(10);
 
@@ -166,12 +174,15 @@ public class CEMember {
 				super.paintComponent(g);
 			}
 		};
+		lblNewLabel_2.setBounds(38, 157, 114, 77);
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_2.add(lblNewLabel_2);
 
 		textField_1 = new JTextField();
+		textField_1.setBounds(170, 174, 207, 33);
+		textField_1.setForeground(Color.BLACK);
 		textField_1.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
-		textField_1.setBackground(new Color(255, 218, 185));
+		textField_1.setBackground(Color.WHITE);
 		panel_2.add(textField_1);
 		textField_1.setColumns(10);
 
@@ -186,12 +197,15 @@ public class CEMember {
 				super.paintComponent(g);
 			}
 		};
+		lblNewLabel_3.setBounds(38, 234, 114, 77);
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_2.add(lblNewLabel_3);
 
 		textField_2 = new JTextField();
+		textField_2.setBounds(170, 249, 207, 33);
+		textField_2.setForeground(Color.BLACK);
 		textField_2.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
-		textField_2.setBackground(new Color(255, 218, 185));
+		textField_2.setBackground(Color.WHITE);
 		panel_2.add(textField_2);
 		textField_2.setColumns(10);
 
@@ -206,23 +220,28 @@ public class CEMember {
 				super.paintComponent(g);
 			}
 		};
+		lblNewLabel_4.setBounds(38, 302, 114, 77);
 		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_2.add(lblNewLabel_4);
 
 		JPanel panel_3 = new JPanel();
-		panel_3.setBackground(new Color(250, 235, 215));
+		panel_3.setBounds(170, 325, 207, 33);
+		panel_3.setForeground(Color.BLACK);
+		panel_3.setBackground(Color.WHITE);
 		panel_2.add(panel_3);
 		panel_3.setLayout(new GridLayout(1, 0, 0, 0));
 
 		rdbtnNewRadioButton = new JRadioButton("\uAD00\uB9AC\uC790");
+		rdbtnNewRadioButton.setForeground(Color.WHITE);
 		rdbtnNewRadioButton.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
-		rdbtnNewRadioButton.setBackground(new Color(250, 235, 215));
+		rdbtnNewRadioButton.setBackground(Color.DARK_GRAY);
 		rdbtnNewRadioButton.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(rdbtnNewRadioButton);
 
 		rdbtnNewRadioButton_1 = new JRadioButton("\uC9C1\uC6D0");
+		rdbtnNewRadioButton_1.setForeground(Color.WHITE);
 		rdbtnNewRadioButton_1.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
-		rdbtnNewRadioButton_1.setBackground(new Color(250, 235, 215));
+		rdbtnNewRadioButton_1.setBackground(Color.DARK_GRAY);
 		rdbtnNewRadioButton_1.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(rdbtnNewRadioButton_1);
 

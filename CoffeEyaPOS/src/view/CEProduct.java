@@ -75,7 +75,7 @@ public class CEProduct {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.getContentPane().setBackground(new Color(250, 235, 215));
+		frame.getContentPane().setBackground(Color.LIGHT_GRAY);
 		frame.setResizable(false);
 		frame.setBounds(150, 150, 684, 589);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -119,10 +119,10 @@ public class CEProduct {
 		panel_1.setBounds(56, 378, 424, 136);
 		panel_1.setBackground(new Color(255, 0, 0, 0));
 		frame.getContentPane().add(panel_1);
-		panel_1.setLayout(new GridLayout(0, 2, 0, 0));
 
 		String imgPath = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//p_number.png";
 		ImageIcon icon = new ImageIcon(imgPath);
+		panel_1.setLayout(null);
 
 		lblNewLabel = new JLabel("") {
 			@Override
@@ -132,11 +132,13 @@ public class CEProduct {
 				super.paintComponent(g);
 			}
 		};
+		lblNewLabel.setBounds(0, 10, 212, 35);
 		panel_1.add(lblNewLabel);
 
 		textField = new JTextField();
+		textField.setBounds(238, 10, 186, 35);
 		textField.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
-		textField.setBackground(new Color(255, 218, 185));
+		textField.setBackground(Color.WHITE);
 		panel_1.add(textField);
 		textField.setColumns(10);
 
@@ -151,11 +153,13 @@ public class CEProduct {
 				super.paintComponent(g);
 			}
 		};
+		lblNewLabel_1.setBounds(0, 55, 212, 35);
 		panel_1.add(lblNewLabel_1);
 
 		textField_1 = new JTextField();
+		textField_1.setBounds(238, 55, 186, 35);
 		textField_1.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
-		textField_1.setBackground(new Color(255, 218, 185));
+		textField_1.setBackground(Color.WHITE);
 		panel_1.add(textField_1);
 		textField_1.setColumns(10);
 
@@ -170,11 +174,13 @@ public class CEProduct {
 				super.paintComponent(g);
 			}
 		};
+		lblNewLabel_2.setBounds(0, 100, 212, 35);
 		panel_1.add(lblNewLabel_2);
 
 		textField_2 = new JTextField();
+		textField_2.setBounds(238, 100, 186, 35);
 		textField_2.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
-		textField_2.setBackground(new Color(255, 218, 185));
+		textField_2.setBackground(Color.WHITE);
 		panel_1.add(textField_2);
 		textField_2.setColumns(10);
 		

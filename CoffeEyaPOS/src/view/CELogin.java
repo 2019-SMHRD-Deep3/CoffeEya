@@ -97,7 +97,7 @@ public class CELogin {
 		String imgPath1 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//man.png";
 		ImageIcon icon1 = new ImageIcon(imgPath1);
 		lblNewLabel.setIcon(icon1);
-		lblNewLabel.setBounds(150, 189, 190, 90);
+		lblNewLabel.setBounds(224, 166, 190, 90);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(lblNewLabel);
 
@@ -107,27 +107,27 @@ public class CELogin {
 		lblNewLabel_1.setIcon(icon2);
 		
 		lblNewLabel_1.setFont(new Font("±¼¸²", Font.BOLD, 21));
-		lblNewLabel_1.setBounds(150, 288, 190, 90);
+		lblNewLabel_1.setBounds(224, 266, 190, 90);
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(lblNewLabel_1);
 
 		textField = new JTextField();
 		textField.setFont(new Font("±¼¸²", Font.PLAIN, 20));
-		textField.setBackground(new Color(250, 235, 215));
-		textField.setBounds(322, 204, 380, 60);
+		textField.setBackground(Color.WHITE);
+		textField.setBounds(426, 187, 209, 44);
 		panel.add(textField);
 		textField.setColumns(10);
 
 		textField_1 = new JTextField();
 		textField_1.setFont(new Font("±¼¸²", Font.PLAIN, 20));
-		textField_1.setBackground(new Color(250, 235, 215));
-		textField_1.setBounds(321, 304, 380, 60);
+		textField_1.setBackground(Color.WHITE);
+		textField_1.setBounds(426, 292, 209, 44);
 		panel.add(textField_1);
 		textField_1.setColumns(10);
 
 		panel_1 = new JPanel();
 		panel_1.setBackground(new Color(255, 0, 0, 0));
-		panel_1.setBounds(252, 421, 380, 60);
+		panel_1.setBounds(255, 385, 380, 60);
 		panel.add(panel_1);
 		panel_1.setLayout(new GridLayout(1, 0, 20, 0));
 
@@ -179,7 +179,7 @@ public class CELogin {
 				super.paintComponent(g);
 			}
 		};
-		panel_2.setBounds(13, 9, 210, 210);
+		panel_2.setBounds(12, 441, 100, 100);
 		panel.add(panel_2);
 
 	}

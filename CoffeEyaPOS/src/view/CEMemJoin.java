@@ -54,6 +54,7 @@ public class CEMemJoin {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setResizable(false);
 
 		frame.setBounds(100, 100, 1200, 800);
 		frame.setBounds(150, 150, 1200, 800);
@@ -86,8 +87,8 @@ public class CEMemJoin {
 //				super.paintComponent(g);
 //			}
 //		};
-		panel_3.setBackground(new Color(255,0,0,0));
-		panel_3.setBounds(596, 8, 580, 740);
+		panel_3.setBackground(Color.DARK_GRAY);
+		panel_3.setBounds(596, 8, 580, 712);
 		panel_4.add(panel_3);
 		panel_3.setLayout(null);
 
@@ -111,7 +112,7 @@ public class CEMemJoin {
 
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(255,0,0,0));
-		panel.setBounds(0, 110, 580, 500);
+		panel.setBounds(0, 110, 580, 507);
 		panel_3.add(panel);
 
 		String imgPath3 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//user2.png";
@@ -133,8 +134,8 @@ public class CEMemJoin {
 		panel.add(lblNewLabel_1);
 
 		textField = new JTextField();
-		textField.setBounds(300, 0, 255, 84);
-		textField.setBackground(new Color(255, 228, 181));
+		textField.setBounds(300, 21, 255, 45);
+		textField.setBackground(Color.WHITE);
 		panel.add(textField);
 		textField.setColumns(10);
 
@@ -156,8 +157,8 @@ public class CEMemJoin {
 		panel.add(lblNewLabel_2);
 
 		textField_1 = new JTextField();
-		textField_1.setBounds(300, 104, 255, 84);
-		textField_1.setBackground(new Color(255, 228, 181));
+		textField_1.setBounds(300, 125, 255, 45);
+		textField_1.setBackground(Color.WHITE);
 		panel.add(textField_1);
 		textField_1.setColumns(10);
 
@@ -179,8 +180,8 @@ public class CEMemJoin {
 		panel.add(lblNewLabel_3);
 
 		textField_2 = new JTextField();
-		textField_2.setBounds(300, 208, 255, 84);
-		textField_2.setBackground(new Color(255, 228, 181));
+		textField_2.setBounds(300, 226, 255, 50);
+		textField_2.setBackground(Color.WHITE);
 		panel.add(textField_2);
 		textField_2.setColumns(10);
 
@@ -202,8 +203,8 @@ public class CEMemJoin {
 		panel.add(lblNewLabel_4);
 
 		textField_3 = new JTextField();
-		textField_3.setBounds(300, 312, 255, 84);
-		textField_3.setBackground(new Color(255, 228, 181));
+		textField_3.setBounds(300, 330, 255, 50);
+		textField_3.setBackground(Color.WHITE);
 		panel.add(textField_3);
 		textField_3.setColumns(10);
 
@@ -225,25 +226,25 @@ public class CEMemJoin {
 		panel.add(lblNewLabel_5);
 
 		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(300, 416, 280, 84);
+		panel_1.setBounds(300, 416, 255, 84);
 		panel_1.setBackground(new Color(255,0,0,0));
 		panel.add(panel_1);
 		panel_1.setLayout(null);
 
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("\uAD00\uB9AC\uC790");
 		rdbtnNewRadioButton.setBounds(8, 18, 110, 43);
-		rdbtnNewRadioButton.setBackground(new Color(250, 235, 215));
+		rdbtnNewRadioButton.setBackground(Color.DARK_GRAY);
 		rdbtnNewRadioButton.setFont(new Font("HY°ß°íµñ", Font.PLAIN, 20));
 		rdbtnNewRadioButton.setHorizontalAlignment(SwingConstants.CENTER);
-		rdbtnNewRadioButton.setForeground(new Color(153, 0, 51));
+		rdbtnNewRadioButton.setForeground(Color.WHITE);
 		panel_1.add(rdbtnNewRadioButton);
 
 		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("\uC9C1\uC6D0");
 		rdbtnNewRadioButton_1.setBounds(135, 18, 110, 43);
-		rdbtnNewRadioButton_1.setBackground(new Color(250, 235, 215));
+		rdbtnNewRadioButton_1.setBackground(Color.DARK_GRAY);
 		rdbtnNewRadioButton_1.setFont(new Font("HY°ß°íµñ", Font.PLAIN, 20));
 		rdbtnNewRadioButton_1.setHorizontalAlignment(SwingConstants.CENTER);
-		rdbtnNewRadioButton_1.setForeground(new Color(153, 0, 51));
+		rdbtnNewRadioButton_1.setForeground(Color.WHITE);
 		panel_1.add(rdbtnNewRadioButton_1);
 
 		ButtonGroup perm = new ButtonGroup();
@@ -251,15 +252,15 @@ public class CEMemJoin {
 		perm.add(rdbtnNewRadioButton_1);
 
 		JPanel panel_2 = new JPanel();
-		panel_2.setBackground(new Color(139, 69, 19));
+		panel_2.setBackground(Color.DARK_GRAY);
 		panel_2.setBackground(new Color(255,0,0,0));
-		panel_2.setBounds(0, 620, 580, 120);
+		panel_2.setBounds(0, 620, 580, 90);
 		panel_3.add(panel_2);
 
 		JButton btnNewButton = new JButton("\uB4F1\uB85D");
-		btnNewButton.setBackground(new Color(250, 235, 215));
-		btnNewButton.setBounds(208, 27, 115, 66);
-		btnNewButton.setForeground(new Color(153, 0, 51));
+		btnNewButton.setBackground(Color.LIGHT_GRAY);
+		btnNewButton.setBounds(208, 27, 115, 41);
+		btnNewButton.setForeground(Color.BLACK);
 		btnNewButton.setFont(new Font("HY°ß°íµñ", Font.PLAIN, 20));
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
@@ -295,9 +296,9 @@ public class CEMemJoin {
 		panel_2.add(btnNewButton);
 
 		JButton btnNewButton_1 = new JButton("\uCDE8\uC18C");
-		btnNewButton_1.setBackground(new Color(250, 235, 215));
-		btnNewButton_1.setBounds(382, 27, 122, 66);
-		btnNewButton_1.setForeground(new Color(153, 0, 51));
+		btnNewButton_1.setBackground(Color.LIGHT_GRAY);
+		btnNewButton_1.setBounds(382, 27, 122, 41);
+		btnNewButton_1.setForeground(Color.BLACK);
 		btnNewButton_1.setFont(new Font("HY°ß°íµñ", Font.PLAIN, 20));
 		btnNewButton_1.addMouseListener(new MouseAdapter() {
 			@Override

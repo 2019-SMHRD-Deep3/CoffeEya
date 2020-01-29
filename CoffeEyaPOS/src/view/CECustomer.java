@@ -73,7 +73,7 @@ public class CECustomer {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.getContentPane().setBackground(new Color(250, 235, 215));
+		frame.getContentPane().setBackground(Color.LIGHT_GRAY);
 		frame.setBounds(100, 100, 860, 624);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -91,7 +91,7 @@ public class CECustomer {
 		ImageIcon icon3 = new ImageIcon(imgPath3);
 
 		panel_1 = new JPanel();
-		panel_1.setBackground(new Color(250, 235, 215));
+		panel_1.setBackground(Color.LIGHT_GRAY);
 		panel_1.setBounds(80, 320, 541, 252);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(new GridLayout(0, 2, 70, 5));
@@ -128,7 +128,7 @@ public class CECustomer {
 
 		textField = new JTextField();
 		textField.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15));
-		textField.setBackground(new Color(255, 218, 185));
+		textField.setBackground(new Color(255, 255, 255));
 		panel_1.add(textField);
 		textField.setColumns(10);
 
@@ -147,7 +147,7 @@ public class CECustomer {
 
 		textField_1 = new JTextField();
 		textField_1.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15));
-		textField_1.setBackground(new Color(255, 218, 185));
+		textField_1.setBackground(new Color(255, 255, 255));
 		panel_1.add(textField_1);
 		textField_1.setColumns(10);
 
@@ -165,19 +165,19 @@ public class CECustomer {
 		panel_1.add(lblNewLabel_3);
 
 		panel_2 = new JPanel();
-		panel_2.setBackground(new Color(255, 0, 0, 0));
+		panel_2.setBackground(Color.LIGHT_GRAY);
 		panel_1.add(panel_2);
 		panel_2.setLayout(new GridLayout(1, 0, 0, 0));
 
 		rdbtnNewRadioButton = new JRadioButton("\uB0A8\uC790");
 		rdbtnNewRadioButton.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15));
-		rdbtnNewRadioButton.setBackground(new Color(250, 235, 215));
+		rdbtnNewRadioButton.setBackground(new Color(255, 255, 255));
 		rdbtnNewRadioButton.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_2.add(rdbtnNewRadioButton);
 
 		rdbtnNewRadioButton_1 = new JRadioButton("\uC5EC\uC790");
 		rdbtnNewRadioButton_1.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15));
-		rdbtnNewRadioButton_1.setBackground(new Color(250, 235, 215));
+		rdbtnNewRadioButton_1.setBackground(new Color(255, 255, 255));
 		rdbtnNewRadioButton_1.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_2.add(rdbtnNewRadioButton_1);
 
@@ -200,7 +200,7 @@ public class CECustomer {
 
 		textField_2 = new JTextField();
 		textField_2.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15));
-		textField_2.setBackground(new Color(255, 218, 185));
+		textField_2.setBackground(new Color(255, 255, 255));
 		panel_1.add(textField_2);
 		textField_2.setColumns(10);
 
@@ -218,7 +218,7 @@ public class CECustomer {
 
 		textField_3 = new JTextField();
 		textField_3.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 15));
-		textField_3.setBackground(new Color(255, 218, 185));
+		textField_3.setBackground(new Color(255, 255, 255));
 		panel_1.add(textField_3);
 		textField_3.setColumns(10);
 

@@ -42,7 +42,6 @@ public class CESale {
 	private Member loginUser;
 	private Product pro;
 	private JFrame frame;
-	private JTextField txtCoffeeya;
 	private JTable table;
 	private DefaultTableModel defaultTableModel;
 	private JLabel lblNewLabel10;
@@ -84,33 +83,10 @@ public class CESale {
 		frame.getContentPane().setLayout(null);
 
 		JPanel panel = new JPanel();
-		panel.setBackground(Color.DARK_GRAY);
+		panel.setBackground(new Color(204, 153, 102));
 		panel.setBounds(0, 0, 1194, 76);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
-
-		
-//		JButton btnNewButton = new JButton("");
-//		btnNewButton.addMouseListener(new MouseAdapter() {
-//			@Override
-//			// µÚ·Î°¡±â
-//			public void mouseClicked(MouseEvent e) {
-//				CEMain main = new CEMain(loginUser);
-//				frame.dispose();
-//			}
-//		});
-//		btnNewButton.setBounds(1122, 10, 60, 53);
-//		panel.add(btnNewButton);
-
-		txtCoffeeya = new JTextField();
-		txtCoffeeya.setForeground(Color.WHITE);
-		txtCoffeeya.setBackground(Color.DARK_GRAY);
-		txtCoffeeya.setFont(new Font("±¼¸²", Font.BOLD, 25));
-		txtCoffeeya.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCoffeeya.setText("CoffeEya");
-		txtCoffeeya.setBounds(102, 10, 270, 53);
-		panel.add(txtCoffeeya);
-		txtCoffeeya.setColumns(10);
 		
 		String imgPath = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//bback2.png";
 		ImageIcon icon = new ImageIcon(imgPath);
@@ -196,17 +172,19 @@ public class CESale {
 
 		JPanel panel_10 = new JPanel();
 		panel_10.setBackground(Color.WHITE);
-		panel_10.setBounds(12, 10, 393, 162);
+		panel_10.setBounds(12, 35, 393, 162);
 		panel_4.add(panel_10);
 		panel_10.setLayout(null);
 
 		lblNewLabel10 = new JLabel(totalMoney + " ¿ø");
+		lblNewLabel10.setForeground(Color.BLACK);
 		lblNewLabel10.setFont(new Font("±¼¸²", Font.BOLD, 30));
 		lblNewLabel10.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblNewLabel10.setBounds(200, 22, 167, 43);
 		panel_10.add(lblNewLabel10);
 
 		JLabel lblNewLabel = new JLabel("\uCD1D\uB9E4\uCD9C\uC561");
+		lblNewLabel.setForeground(Color.BLACK);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("±¼¸²", Font.BOLD, 24));
 		lblNewLabel.setBounds(12, 22, 148, 43);
@@ -220,17 +198,19 @@ public class CESale {
 		panel_10.add(lblNewLabel_1);
 
 		label_4 = new JLabel("0 \uC6D0");
+		label_4.setForeground(Color.BLACK);
 		label_4.setHorizontalAlignment(SwingConstants.RIGHT);
 		label_4.setFont(new Font("±¼¸²", Font.BOLD, 30));
 		label_4.setBounds(200, 86, 167, 43);
 		panel_10.add(label_4);
 
 		JPanel panel_11 = new JPanel();
-		panel_11.setBounds(12, 183, 391, 162);
+		panel_11.setBounds(14, 250, 391, 162);
 		panel_4.add(panel_11);
 		panel_11.setLayout(null);
 
 		JLabel lblNewLabel_2 = new JLabel("\uBC1B\uC744\uAE08\uC561");
+		lblNewLabel_2.setForeground(Color.BLACK);
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2.setFont(new Font("±¼¸²", Font.BOLD, 24));
 		lblNewLabel_2.setBounds(12, 15, 156, 42);
@@ -238,6 +218,7 @@ public class CESale {
 
 		// ¹ÞÀ»±Ý¾×
 		label_1 = new JLabel("0 \uC6D0");
+		label_1.setForeground(Color.BLACK);
 		label_1.setHorizontalAlignment(SwingConstants.RIGHT);
 		label_1.setFont(new Font("±¼¸²", Font.BOLD, 30));
 		label_1.setBounds(201, 14, 167, 43);
@@ -252,6 +233,7 @@ public class CESale {
 
 		// Àû¸³±Ý¾×
 		label = new JLabel("0 \uC6D0");
+		label.setForeground(Color.BLACK);
 		label.setHorizontalAlignment(SwingConstants.RIGHT);
 		label.setFont(new Font("±¼¸²", Font.BOLD, 30));
 		label.setBounds(201, 87, 167, 43);
@@ -301,7 +283,7 @@ public class CESale {
 				delrow();
 			}
 		});
-		delrow.setBounds(12, 81, 170, 59);
+		delrow.setBounds(12, 39, 170, 59);
 		panel_7.add(delrow);
 
 		// ÁÖ¹® Á¤º¸ ÃÊ±âÈ­
@@ -317,7 +299,7 @@ public class CESale {
 
 			}
 		});
-		btnNewButton_3.setBounds(12, 150, 170, 59);
+		btnNewButton_3.setBounds(12, 126, 170, 59);
 		panel_7.add(btnNewButton_3);
 
 		JPanel panel_9 = new JPanel();

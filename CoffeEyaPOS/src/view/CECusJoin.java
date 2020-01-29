@@ -101,25 +101,15 @@ public class CECusJoin {
              super.paintComponent(g);
           }
        };
-      lblNewLabel.setBackground(new Color(240, 240, 240));
+      lblNewLabel.setBackground(Color.DARK_GRAY);
       lblNewLabel.setFont(new Font("HY°ß°íµñ", Font.PLAIN, 20));
       lblNewLabel.setForeground(new Color(250, 235, 215));
       lblNewLabel.setBounds(185, 10, 265, 67);
       panel_3.add(lblNewLabel);
       lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
       
-      String imgPath9 = this.getClass().getResource(".").getPath() + "..//..//CoffeEyaIMG//bg_sky.png";
-      ImageIcon icon9 = new ImageIcon(imgPath9);
-      
-      panel = new JPanel(){
-          @Override
-          protected void paintComponent(Graphics g) {
-             g.drawImage(icon9.getImage(), 0, 0, panel.getWidth(), panel.getHeight(), null);
-             setOpaque(false);
-             super.paintComponent(g);
-          }
-       };
-      panel.setBackground(Color.WHITE);
+      panel = new JPanel();
+      panel.setBackground(Color.DARK_GRAY);
       panel.setBounds(0, 87, 619, 523);
       panel_3.add(panel);
       
@@ -238,7 +228,7 @@ public class CECusJoin {
       
       
       panel_1 = new JPanel();
-      panel_1.setBounds(321, 352, 247, 54);
+      panel_1.setBounds(300, 352, 280, 54);
       panel_1.setBackground(SystemColor.inactiveCaptionBorder);
       panel.add(panel_1);
       panel_1.setLayout(null);
@@ -247,14 +237,14 @@ public class CECusJoin {
       rdbtnNewRadioButton.setFont(new Font("HY°ß°íµñ", Font.PLAIN, 12));
       rdbtnNewRadioButton.setBackground(SystemColor.inactiveCaptionBorder);
       rdbtnNewRadioButton.setHorizontalAlignment(SwingConstants.CENTER);
-      rdbtnNewRadioButton.setBounds(35, 18, 75, 33);
+      rdbtnNewRadioButton.setBounds(41, 2, 95, 51);
       panel_1.add(rdbtnNewRadioButton);
       
       JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("\uC5EC\uC790");
       rdbtnNewRadioButton_1.setFont(new Font("HY°ß°íµñ", Font.PLAIN, 12));
       rdbtnNewRadioButton_1.setBackground(SystemColor.inactiveCaptionBorder);
       rdbtnNewRadioButton_1.setHorizontalAlignment(SwingConstants.CENTER);
-      rdbtnNewRadioButton_1.setBounds(139, 18, 75, 33);
+      rdbtnNewRadioButton_1.setBounds(140, 0, 88, 54);
       panel_1.add(rdbtnNewRadioButton_1);
       
       JButton btnNewButton_1 = new JButton("\uCDE8\uC18C");

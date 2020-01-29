@@ -80,19 +80,20 @@ public class CEDeadline {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.getContentPane().setBackground(new Color(255, 218, 185));
+		frame.getContentPane().setBackground(Color.DARK_GRAY);
 		frame.setBounds(100, 100, 1200, 800);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(255, 218, 185));
+		panel.setBackground(Color.LIGHT_GRAY);
 		panel.setBounds(12, 10, 400, 60);
 		frame.getContentPane().add(panel);
 		SpringLayout sl_panel = new SpringLayout();
 		panel.setLayout(sl_panel);
 
 		JLabel lblNewLabel = new JLabel("\uC601\uC5C5 \uC2DC\uAC04");
+		lblNewLabel.setBackground(new Color(204, 153, 102));
 		lblNewLabel.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		sl_panel.putConstraint(SpringLayout.NORTH, lblNewLabel, 0, SpringLayout.NORTH, panel);
@@ -102,6 +103,7 @@ public class CEDeadline {
 		panel.add(lblNewLabel);
 
 		JLabel lblNewLabel_1 = new JLabel("\uB0A0\uC9DC \uCD9C\uB825");
+		lblNewLabel_1.setBackground(Color.LIGHT_GRAY);
 		lblNewLabel_1.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
 
 		lblNewLabel_1.setText(deadLineTime);
@@ -116,7 +118,7 @@ public class CEDeadline {
 		panel.add(lblNewLabel_1);
 
 		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(new Color(255, 218, 185));
+		panel_1.setBackground(Color.LIGHT_GRAY);
 		panel_1.setBounds(12, 162, 400, 589);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(new GridLayout(0, 2, 5, 10));
@@ -128,7 +130,7 @@ public class CEDeadline {
 
 		JLabel lblNewLabel_3 = new JLabel(String.valueOf((int) (orderingSum / 1.1)));
 		lblNewLabel_3.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
-		lblNewLabel_3.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(lblNewLabel_3);
 
 		JLabel lblNewLabel_4 = new JLabel("\uBD80\uAC00\uC138\uC561");
@@ -138,7 +140,7 @@ public class CEDeadline {
 
 		JLabel lblNewLabel_5 = new JLabel(String.valueOf(orderingSum - (int) (orderingSum / 1.1)));
 		lblNewLabel_5.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
-		lblNewLabel_5.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(lblNewLabel_5);
 
 		JLabel lblNewLabel_6 = new JLabel("\uD569\uACC4 \uAE08\uC561");
@@ -149,7 +151,7 @@ public class CEDeadline {
 		JLabel lblNewLabel_7 = new JLabel(
 				String.valueOf(((int) (orderingSum / 1.1)) + (orderingSum - (int) (orderingSum / 1.1))));
 		lblNewLabel_7.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
-		lblNewLabel_7.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblNewLabel_7.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(lblNewLabel_7);
 
 		JLabel lblNewLabel_8 = new JLabel("\uD604\uAE08 \uACB0\uC81C\uC561");
@@ -160,7 +162,7 @@ public class CEDeadline {
 		orderingCashSum = oService.OrderingCashSum(deadLineTime2);
 		JLabel lblNewLabel_9 = new JLabel(String.valueOf(orderingCashSum));
 		lblNewLabel_9.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
-		lblNewLabel_9.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblNewLabel_9.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(lblNewLabel_9);
 
 		JLabel lblNewLabel_10 = new JLabel("\uC2E0\uC6A9\uCE74\uB4DC \uACB0\uC81C\uC561");
@@ -171,7 +173,7 @@ public class CEDeadline {
 		orderingCardSum = oService.OrderingCardSum(deadLineTime2);
 		JLabel lblNewLabel_11 = new JLabel(String.valueOf(orderingCardSum));
 		lblNewLabel_11.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
-		lblNewLabel_11.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblNewLabel_11.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(lblNewLabel_11);
 
 		JLabel lblNewLabel_14 = new JLabel("\uC2DC\uC7AC\uAE08");
@@ -181,11 +183,11 @@ public class CEDeadline {
 
 		JLabel lblNewLabel_15 = new JLabel(String.valueOf(vaultCashSum));
 		lblNewLabel_15.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
-		lblNewLabel_15.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblNewLabel_15.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(lblNewLabel_15);
 
 		JPanel panel_2 = new JPanel();
-		panel_2.setBackground(new Color(255, 218, 185));
+		panel_2.setBackground(new Color(204, 153, 102));
 		panel_2.setBounds(12, 80, 400, 60);
 		frame.getContentPane().add(panel_2);
 		SpringLayout sl_panel_2 = new SpringLayout();
@@ -204,7 +206,7 @@ public class CEDeadline {
 		lblNewLabel_13.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
 		sl_panel_2.putConstraint(SpringLayout.EAST, lblNewLabel_13, 0, SpringLayout.EAST, panel_2);
 		sl_panel_2.putConstraint(SpringLayout.EAST, lblNewLabel_13, 0, SpringLayout.EAST, panel_2);
-		lblNewLabel_13.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblNewLabel_13.setHorizontalAlignment(SwingConstants.CENTER);
 		sl_panel_2.putConstraint(SpringLayout.NORTH, lblNewLabel_13, 0, SpringLayout.NORTH, panel_2);
 		sl_panel_2.putConstraint(SpringLayout.WEST, lblNewLabel_13, 6, SpringLayout.EAST, lblNewLabel_12);
 		sl_panel_2.putConstraint(SpringLayout.SOUTH, lblNewLabel_13, 0, SpringLayout.SOUTH, lblNewLabel_12);
@@ -215,7 +217,7 @@ public class CEDeadline {
 		frame.getContentPane().add(separator);
 
 		JPanel panel_3 = new JPanel();
-		panel_3.setBackground(new Color(255, 218, 185));
+		panel_3.setBackground(Color.LIGHT_GRAY);
 		panel_3.setBounds(424, 162, 400, 400);
 		frame.getContentPane().add(panel_3);
 		panel_3.setLayout(new GridLayout(0, 3, 5, 10));
@@ -248,7 +250,7 @@ public class CEDeadline {
 
 		textField_1 = new JTextField(String.valueOf(Integer.parseInt(textField.getText()) * 50000));
 		textField_1.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15));
-		textField_1.setHorizontalAlignment(SwingConstants.RIGHT);
+		textField_1.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(textField_1);
 		textField_1.setColumns(10);
 
@@ -266,7 +268,7 @@ public class CEDeadline {
 
 		textField_3 = new JTextField(String.valueOf(Integer.parseInt(textField_2.getText()) * 10000));
 		textField_3.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15));
-		textField_3.setHorizontalAlignment(SwingConstants.RIGHT);
+		textField_3.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(textField_3);
 		textField_3.setColumns(10);
 
@@ -284,7 +286,7 @@ public class CEDeadline {
 
 		textField_5 = new JTextField(String.valueOf(Integer.parseInt(textField_4.getText()) * 5000));
 		textField_5.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15));
-		textField_5.setHorizontalAlignment(SwingConstants.RIGHT);
+		textField_5.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(textField_5);
 		textField_5.setColumns(10);
 
@@ -302,7 +304,7 @@ public class CEDeadline {
 
 		textField_7 = new JTextField(String.valueOf(Integer.parseInt(textField_6.getText()) * 1000));
 		textField_7.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15));
-		textField_7.setHorizontalAlignment(SwingConstants.RIGHT);
+		textField_7.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(textField_7);
 		textField_7.setColumns(10);
 
@@ -320,7 +322,7 @@ public class CEDeadline {
 
 		textField_9 = new JTextField(String.valueOf(Integer.parseInt(textField_8.getText()) * 500));
 		textField_9.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15));
-		textField_9.setHorizontalAlignment(SwingConstants.RIGHT);
+		textField_9.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(textField_9);
 		textField_9.setColumns(10);
 
@@ -338,7 +340,7 @@ public class CEDeadline {
 
 		textField_11 = new JTextField(String.valueOf(Integer.parseInt(textField_10.getText()) * 100));
 		textField_11.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15));
-		textField_11.setHorizontalAlignment(SwingConstants.RIGHT);
+		textField_11.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(textField_11);
 		textField_11.setColumns(10);
 
@@ -356,7 +358,7 @@ public class CEDeadline {
 
 		textField_13 = new JTextField(String.valueOf(Integer.parseInt(textField_12.getText()) * 50));
 		textField_13.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15));
-		textField_13.setHorizontalAlignment(SwingConstants.RIGHT);
+		textField_13.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(textField_13);
 		textField_13.setColumns(10);
 
@@ -374,12 +376,12 @@ public class CEDeadline {
 
 		textField_15 = new JTextField(String.valueOf(Integer.parseInt(textField_14.getText()) * 10));
 		textField_15.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15));
-		textField_15.setHorizontalAlignment(SwingConstants.RIGHT);
+		textField_15.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(textField_15);
 		textField_15.setColumns(10);
 
 		JPanel panel_4 = new JPanel();
-		panel_4.setBackground(new Color(255, 218, 185));
+		panel_4.setBackground(new Color(204, 153, 102));
 		panel_4.setBounds(424, 572, 400, 179);
 		frame.getContentPane().add(panel_4);
 		panel_4.setLayout(new GridLayout(0, 2, 0, 0));
@@ -395,7 +397,7 @@ public class CEDeadline {
 						+ Integer.parseInt(textField_9.getText()) + Integer.parseInt(textField_11.getText())
 						+ Integer.parseInt(textField_13.getText()) + Integer.parseInt(textField_15.getText())));
 		lblNewLabel_29.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
-		lblNewLabel_29.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblNewLabel_29.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_4.add(lblNewLabel_29);
 
 		JLabel lblNewLabel_28 = new JLabel("\uC2DC\uC7AC\uAE08");
@@ -405,7 +407,7 @@ public class CEDeadline {
 
 		JLabel lblNewLabel_30 = new JLabel(lblNewLabel_15.getText());
 		lblNewLabel_30.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
-		lblNewLabel_30.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblNewLabel_30.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_4.add(lblNewLabel_30);
 
 		JLabel lblNewLabel_31 = new JLabel("\uD604\uAE08 \uB9E4\uCD9C \uCD1D \uAE08\uC561");
@@ -416,11 +418,11 @@ public class CEDeadline {
 		JLabel lblNewLabel_32 = new JLabel(String
 				.valueOf(Integer.parseInt(lblNewLabel_29.getText()) - Integer.parseInt(lblNewLabel_30.getText())));
 		lblNewLabel_32.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
-		lblNewLabel_32.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblNewLabel_32.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_4.add(lblNewLabel_32);
 
 		JPanel panel_5 = new JPanel();
-		panel_5.setBackground(new Color(255, 218, 185));
+		panel_5.setBackground(Color.LIGHT_GRAY);
 		panel_5.setBounds(836, 162, 336, 400);
 		frame.getContentPane().add(panel_5);
 		panel_5.setLayout(new GridLayout(0, 3, 5, 5));
@@ -546,7 +548,7 @@ public class CEDeadline {
 		panel_5.add(btnEnter);
 
 		JPanel panel_6 = new JPanel();
-		panel_6.setBackground(new Color(255, 218, 185));
+		panel_6.setBackground(Color.GRAY);
 		panel_6.setBounds(836, 10, 336, 130);
 		frame.getContentPane().add(panel_6);
 		panel_6.setLayout(new GridLayout(0, 2, 10, 0));
