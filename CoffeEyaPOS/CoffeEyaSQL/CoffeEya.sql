@@ -6,7 +6,7 @@ drop table customer;
 
 
 --------------------------------------------------------
---  ∆ƒ¿œ¿Ã ª˝º∫µ  - ºˆø‰¿œ-1ø˘-15-2020   
+--  ÌååÏùºÏù¥ ÏÉùÏÑ±Îê® - ÏàòÏöîÏùº-1Ïõî-15-2020   
 --------------------------------------------------------
 --------------------------------------------------------
 --  DDL for Table MEMBER
@@ -22,18 +22,18 @@ CREATE TABLE "MEMBER"
    ) ;
 REM INSERTING into MEMBER
 SET DEFINE OFF;
-Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('∞˚√¢«ı','1111','∞˚√¢«ı','MANAGER');
-Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('≥Îµø∞Ê','1111','≥Îµø∞Ê','MANAGER');
-Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('±Ë¡ÿ«¸','1111','±Ë¡ÿ«¸','MANAGER');
-Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('±Ë»ø¡¯','1111','±Ë¡ÿ«¸','MANAGER');
-Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('1111','1111','æ∆∏£πŸ¿Ã∆Æª˝1','EMPLOYEE');
-Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('2222','2222','æ∆∏£πŸ¿Ã∆Æª˝2','EMPLOYEE');
-Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('3333','3333','æ∆∏£πŸ¿Ã∆Æª˝3','EMPLOYEE');
-Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('4444','4444','æ∆∏£πŸ¿Ã∆Æª˝4','EMPLOYEE');
-Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('5555','5555','æ∆∏£πŸ¿Ã∆Æª˝5','EMPLOYEE');
-Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('6666','6666','æ∆∏£πŸ¿Ã∆Æª˝6','EMPLOYEE');
-Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('7777','7777','æ∆∏£πŸ¿Ã∆Æª˝7','EMPLOYEE');
-Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('8888','8888','æ∆∏£πŸ¿Ã∆Æª˝8','EMPLOYEE');
+Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('Í≥ΩÏ∞ΩÌòÅ','1111','Í≥ΩÏ∞ΩÌòÅ','MANAGER');
+Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('ÎÖ∏ÎèôÍ≤Ω','1111','ÎÖ∏ÎèôÍ≤Ω','MANAGER');
+Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('ÍπÄÏ§ÄÌòï','1111','ÍπÄÏ§ÄÌòï','MANAGER');
+Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('ÍπÄÌö®ÏßÑ','1111','ÍπÄÏ§ÄÌòï','MANAGER');
+Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('1111','1111','ÏïÑÎ•¥Î∞îÏù¥Ìä∏ÏÉù1','EMPLOYEE');
+Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('2222','2222','ÏïÑÎ•¥Î∞îÏù¥Ìä∏ÏÉù2','EMPLOYEE');
+Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('3333','3333','ÏïÑÎ•¥Î∞îÏù¥Ìä∏ÏÉù3','EMPLOYEE');
+Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('4444','4444','ÏïÑÎ•¥Î∞îÏù¥Ìä∏ÏÉù4','EMPLOYEE');
+Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('5555','5555','ÏïÑÎ•¥Î∞îÏù¥Ìä∏ÏÉù5','EMPLOYEE');
+Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('6666','6666','ÏïÑÎ•¥Î∞îÏù¥Ìä∏ÏÉù6','EMPLOYEE');
+Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('7777','7777','ÏïÑÎ•¥Î∞îÏù¥Ìä∏ÏÉù7','EMPLOYEE');
+Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('8888','8888','ÏïÑÎ•¥Î∞îÏù¥Ìä∏ÏÉù8','EMPLOYEE');
 
 --------------------------------------------------------
 --  DDL for Index MEMBER_PK
@@ -53,7 +53,7 @@ Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('8888','8888','æ∆∏£
   
   
   --------------------------------------------------------
---  ∆ƒ¿œ¿Ã ª˝º∫µ  - ºˆø‰¿œ-1ø˘-15-2020   
+--  ÌååÏùºÏù¥ ÏÉùÏÑ±Îê® - ÏàòÏöîÏùº-1Ïõî-15-2020   
 --------------------------------------------------------
 --------------------------------------------------------
 --  DDL for Table PRODUCT
@@ -66,34 +66,34 @@ Insert into MEMBER (MEM_ID,MEM_PW,MEM_NAME,MEM_PERM) values ('8888','8888','æ∆∏£
    ) ;
 REM INSERTING into PRODUCT
 SET DEFINE OFF;
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (1,'ø°Ω∫«¡∑πº“',2000);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (2,'æ∆∏ﬁ∏Æƒ´≥Î',2000);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (3,'æ∆¿ÃΩ∫_æ∆∏ﬁ∏Æƒ´≥Î',2000);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (4,'ƒ´∆‰∂Û∂º',2500);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (5,'æ∆¿ÃΩ∫_ƒ´∆‰∂Û∂º',2500);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (6,'ƒ´«™ƒ°≥Î',3000);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (7,'æ∆¿ÃΩ∫_ƒ´«™ƒ°≥Î',3000);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (8,'ƒ´∂Û∏·∏∂≥¢æ∆∂«',3000);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (9,'æ∆¿ÃΩ∫_ƒ´∂Û∏·∏∂≥¢æ∆∂«',3000);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (10,'ƒ´∆‰∏ƒ´',3000);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (11,'æ∆¿ÃΩ∫_ƒ´∆‰∏ƒ´',3000);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (12,'√ ƒ⁄∂Û∂º',3500);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (13,'æ∆¿ÃΩ∫_√ ƒ⁄∂Û∂º',3500);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (14,'«Ï¿Ã¡Ò∑µ∂Û∂º',3500);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (15,'æ∆¿ÃΩ∫_«Ï¿Ã¡Ò∑µ∂Û∂º',3500);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (16,'πŸ¥“∂Û∂Û∂º',3500);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (17,'æ∆¿ÃΩ∫_πŸ¥“∂Û∂Û∂º',3500);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (18,'±◊∏∞∆º∂Û∂º',3700);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (19,'æ∆¿ÃΩ∫_±◊∏∞∆º∂Û∂º',3700);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (20,'∞Ì±∏∏∂∂Û∂º',3700);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (21,'æ∆¿ÃΩ∫_∞Ì±∏∏∂∂Û∂º',3700);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (22,'µ˛±‚∂Û∂º',3700);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (23,'æ∆¿ÃΩ∫_µ˛±‚∂Û∂º',3700);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (24,'ƒÌ≈∞',2500);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (25,'∏∂ƒ´∑’',2500);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (26,'∏”«…',2500);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (27,'∫£¿Ã±€',3000);
-Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (28,'¡∂∞¢ƒ…¿Õ',5000);
+Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (1,'ÏóêÏä§ÌîÑÎ†àÏÜå',2000);
+Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (2,'ÏïÑÎ©îÎ¶¨Ïπ¥ÎÖ∏',2000);
+Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (3,'ÏïÑÏù¥Ïä§_ÏïÑÎ©îÎ¶¨Ïπ¥ÎÖ∏',2000);
+Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (4,'Ïπ¥ÌéòÎùºÎñº',2500);
+Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (5,'ÏïÑÏù¥Ïä§_Ïπ¥ÌéòÎùºÎñº',2500);
+Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (6,'Ïπ¥Ìë∏ÏπòÎÖ∏',3000);
+Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (7,'ÏïÑÏù¥Ïä§_Ïπ¥Ìë∏ÏπòÎÖ∏',3000);
+Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (8,'Ïπ¥ÎùºÎ©úÎßàÎÅºÏïÑÎòê',3000);
+Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (9,'ÏïÑÏù¥Ïä§_Ïπ¥ÎùºÎ©úÎßàÎÅºÏïÑÎòê',3000);
+Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (10,'Ïπ¥ÌéòÎ™®Ïπ¥',3000);
+Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (11,'ÏïÑÏù¥Ïä§_Ïπ¥ÌéòÎ™®Ïπ¥',3000);
+Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (12,'Ï¥àÏΩîÎùºÎñº',3500);
+Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (13,'ÏïÑÏù¥Ïä§_Ï¥àÏΩîÎùºÎñº',3500);
+Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (14,'Ìó§Ïù¥Ï¶êÎüøÎùºÎñº',3500);
+Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (15,'ÏïÑÏù¥Ïä§_Ìó§Ïù¥Ï¶êÎüøÎùºÎñº',3500);
+Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (16,'Î∞îÎãêÎùºÎùºÎñº',3500);
+Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (17,'ÏïÑÏù¥Ïä§_Î∞îÎãêÎùºÎùºÎñº',3500);
+Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (18,'Í∑∏Î¶∞Ìã∞ÎùºÎñº',3700);
+Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (19,'ÏïÑÏù¥Ïä§_Í∑∏Î¶∞Ìã∞ÎùºÎñº',3700);
+Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (20,'Í≥†Íµ¨ÎßàÎùºÎñº',3700);
+Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (21,'ÏïÑÏù¥Ïä§_Í≥†Íµ¨ÎßàÎùºÎñº',3700);
+Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (22,'Îî∏Í∏∞ÎùºÎñº',3700);
+Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (23,'ÏïÑÏù¥Ïä§_Îî∏Í∏∞ÎùºÎñº',3700);
+Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (24,'Ïø†ÌÇ§',2500);
+Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (25,'ÎßàÏπ¥Î°±',2500);
+Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (26,'Î®∏ÌïÄ',2500);
+Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (27,'Î≤†Ïù¥Í∏Ä',3000);
+Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (28,'Ï°∞Í∞ÅÏºÄÏùµ',5000);
 
 --------------------------------------------------------
 --  DDL for Index MENU_PK
@@ -110,7 +110,7 @@ Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (28,'¡∂∞¢ƒ…¿Õ',5000);
 
 
 --------------------------------------------------------
---  ∆ƒ¿œ¿Ã ª˝º∫µ  - ºˆø‰¿œ-1ø˘-15-2020   
+--  ÌååÏùºÏù¥ ÏÉùÏÑ±Îê® - ÏàòÏöîÏùº-1Ïõî-15-2020   
 --------------------------------------------------------
 --------------------------------------------------------
 --  DDL for Table ORDERING
@@ -125,96 +125,96 @@ Insert into PRODUCT (PRO_NUM,PRO_NAME,PRO_PRICE) values (28,'¡∂∞¢ƒ…¿Õ',5000);
    ) ;
 REM INSERTING into ORDERING
 SET DEFINE OFF;
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (1,to_date('20/01/01','RR/MM/DD'),'ƒ´µÂ',6000,'1111');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (2,to_date('20/01/01','RR/MM/DD'),'ƒ´µÂ',10000,'1111');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (3,to_date('20/01/02','RR/MM/DD'),'«ˆ±›',9500,'2222');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (4,to_date('20/01/02','RR/MM/DD'),'ƒ´µÂ',18000,'4444');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (5,to_date('20/01/03','RR/MM/DD'),'«ˆ±›',22000,'1111');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (6,to_date('20/01/03','RR/MM/DD'),'«ˆ±›',22000,'1111');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (7,to_date('20/01/03','RR/MM/DD'),'ƒ´µÂ',18000,'2222');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (8,to_date('20/01/04','RR/MM/DD'),'«ˆ±›',4000,'1111');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (9,to_date('20/01/04','RR/MM/DD'),'ƒ´µÂ',6000,'2222');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (10,to_date('20/01/04','RR/MM/DD'),'ƒ´µÂ',10000,'4444');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (11,to_date('20/01/05','RR/MM/DD'),'ƒ´µÂ',6000,'3333');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (12,to_date('20/01/05','RR/MM/DD'),'ƒ´µÂ',10000,'3333');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (13,to_date('20/01/06','RR/MM/DD'),'«ˆ±›',9500,'3333');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (14,to_date('20/01/06','RR/MM/DD'),'ƒ´µÂ',18000,'2222');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (15,to_date('20/01/06','RR/MM/DD'),'«ˆ±›',22000,'2222');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (16,to_date('20/01/06','RR/MM/DD'),'«ˆ±›',22000,'1111');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (17,to_date('20/01/06','RR/MM/DD'),'ƒ´µÂ',18000,'4444');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (18,to_date('20/01/07','RR/MM/DD'),'«ˆ±›',4000,'1111');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (19,to_date('20/01/07','RR/MM/DD'),'ƒ´µÂ',6000,'1111');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (20,to_date('20/01/07','RR/MM/DD'),'ƒ´µÂ',10000,'4444');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (21,to_date('20/01/07','RR/MM/DD'),'ƒ´µÂ',6000,'2222');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (22,to_date('20/01/08','RR/MM/DD'),'ƒ´µÂ',10000,'3333');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (23,to_date('20/01/08','RR/MM/DD'),'«ˆ±›',9500,'4444');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (24,to_date('20/01/08','RR/MM/DD'),'ƒ´µÂ',18000,'1111');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (25,to_date('20/01/08','RR/MM/DD'),'«ˆ±›',22000,'1111');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (26,to_date('20/01/08','RR/MM/DD'),'«ˆ±›',22000,'4444');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (27,to_date('20/01/08','RR/MM/DD'),'ƒ´µÂ',18000,'2222');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (28,to_date('20/01/08','RR/MM/DD'),'«ˆ±›',4000,'2222');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (29,to_date('20/01/08','RR/MM/DD'),'ƒ´µÂ',6000,'2222');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (30,to_date('20/01/09','RR/MM/DD'),'ƒ´µÂ',10000,'4444');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (31,to_date('20/01/09','RR/MM/DD'),'ƒ´µÂ',6000,'3333');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (32,to_date('20/01/09','RR/MM/DD'),'ƒ´µÂ',10000,'3333');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (33,to_date('20/01/10','RR/MM/DD'),'«ˆ±›',9500,'3333');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (34,to_date('20/01/10','RR/MM/DD'),'ƒ´µÂ',18000,'3333');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (35,to_date('20/01/11','RR/MM/DD'),'«ˆ±›',22000,'4444');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (36,to_date('20/01/11','RR/MM/DD'),'«ˆ±›',22000,'1111');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (37,to_date('20/01/11','RR/MM/DD'),'ƒ´µÂ',18000,'2222');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (38,to_date('20/01/11','RR/MM/DD'),'«ˆ±›',4000,'3333');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (39,to_date('20/01/12','RR/MM/DD'),'ƒ´µÂ',6000,'3333');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (40,to_date('20/01/12','RR/MM/DD'),'ƒ´µÂ',10000,'∞˚√¢«ı');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (41,to_date('20/01/12','RR/MM/DD'),'ƒ´µÂ',6000,'∞˚√¢«ı');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (42,to_date('20/01/13','RR/MM/DD'),'ƒ´µÂ',10000,'±Ë»ø¡¯');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (43,to_date('20/01/13','RR/MM/DD'),'«ˆ±›',9500,'±Ë¡ÿ«¸');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (44,to_date('20/01/14','RR/MM/DD'),'ƒ´µÂ',18000,'±Ë¡ÿ«¸');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (45,to_date('20/01/15','RR/MM/DD'),'«ˆ±›',22000,'≥Îµø∞Ê');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (46,to_date('20/01/16','RR/MM/DD'),'«ˆ±›',22000,'∞˚√¢«ı');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (47,to_date('20/01/16','RR/MM/DD'),'ƒ´µÂ',18000,'≥Îµø∞Ê');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (48,to_date('20/01/17','RR/MM/DD'),'«ˆ±›',4000,'±Ë»ø¡¯');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (49,to_date('20/01/17','RR/MM/DD'),'ƒ´µÂ',6000,'±Ë»ø¡¯');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (50,to_date('20/01/17','RR/MM/DD'),'ƒ´µÂ',10000,'∞˚√¢«ı');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (51,to_date('20/01/18','RR/MM/DD'),'ƒ´µÂ',6000,'∞˚√¢«ı');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (52,to_date('20/01/18','RR/MM/DD'),'ƒ´µÂ',10000,'±Ë»ø¡¯');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (53,to_date('20/01/18','RR/MM/DD'),'«ˆ±›',9500,'±Ë¡ÿ«¸');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (54,to_date('20/01/18','RR/MM/DD'),'ƒ´µÂ',18000,'±Ë¡ÿ«¸');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (55,to_date('20/01/19','RR/MM/DD'),'«ˆ±›',22000,'≥Îµø∞Ê');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (56,to_date('20/01/19','RR/MM/DD'),'«ˆ±›',22000,'∞˚√¢«ı');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (57,to_date('20/01/19','RR/MM/DD'),'ƒ´µÂ',18000,'≥Îµø∞Ê');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (58,to_date('20/01/19','RR/MM/DD'),'«ˆ±›',4000,'±Ë»ø¡¯');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (59,to_date('20/01/20','RR/MM/DD'),'ƒ´µÂ',6000,'±Ë»ø¡¯');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (60,to_date('20/01/20','RR/MM/DD'),'ƒ´µÂ',10000,'∞˚√¢«ı');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (61,to_date('20/01/20','RR/MM/DD'),'ƒ´µÂ',6000,'∞˚√¢«ı');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (62,to_date('20/01/21','RR/MM/DD'),'ƒ´µÂ',10000,'±Ë»ø¡¯');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (63,to_date('20/01/21','RR/MM/DD'),'«ˆ±›',9500,'±Ë¡ÿ«¸');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (64,to_date('20/01/22','RR/MM/DD'),'ƒ´µÂ',18000,'±Ë¡ÿ«¸');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (65,to_date('20/01/22','RR/MM/DD'),'«ˆ±›',22000,'≥Îµø∞Ê');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (66,to_date('20/01/22','RR/MM/DD'),'«ˆ±›',22000,'∞˚√¢«ı');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (67,to_date('20/01/22','RR/MM/DD'),'ƒ´µÂ',18000,'≥Îµø∞Ê');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (68,to_date('20/01/22','RR/MM/DD'),'«ˆ±›',4000,'±Ë»ø¡¯');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (69,to_date('20/01/23','RR/MM/DD'),'ƒ´µÂ',6000,'±Ë»ø¡¯');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (70,to_date('20/01/23','RR/MM/DD'),'ƒ´µÂ',10000,'∞˚√¢«ı');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (71,to_date('20/01/24','RR/MM/DD'),'ƒ´µÂ',6000,'∞˚√¢«ı');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (72,to_date('20/01/24','RR/MM/DD'),'ƒ´µÂ',10000,'±Ë»ø¡¯');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (73,to_date('20/01/25','RR/MM/DD'),'«ˆ±›',9500,'±Ë¡ÿ«¸');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (74,to_date('20/01/25','RR/MM/DD'),'ƒ´µÂ',18000,'±Ë¡ÿ«¸');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (75,to_date('20/01/26','RR/MM/DD'),'«ˆ±›',22000,'≥Îµø∞Ê');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (76,to_date('20/01/26','RR/MM/DD'),'«ˆ±›',22000,'∞˚√¢«ı');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (77,to_date('20/01/26','RR/MM/DD'),'ƒ´µÂ',18000,'≥Îµø∞Ê');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (78,to_date('20/01/26','RR/MM/DD'),'«ˆ±›',4000,'±Ë»ø¡¯');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (79,to_date('20/01/26','RR/MM/DD'),'ƒ´µÂ',6000,'±Ë»ø¡¯');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (80,to_date('20/01/27','RR/MM/DD'),'ƒ´µÂ',10000,'∞˚√¢«ı');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (81,to_date('20/01/27','RR/MM/DD'),'ƒ´µÂ',6000,'∞˚√¢«ı');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (82,to_date('20/01/28','RR/MM/DD'),'ƒ´µÂ',10000,'±Ë»ø¡¯');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (83,to_date('20/01/28','RR/MM/DD'),'«ˆ±›',9500,'±Ë¡ÿ«¸');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (84,to_date('20/01/28','RR/MM/DD'),'ƒ´µÂ',18000,'±Ë¡ÿ«¸');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (85,to_date('20/01/28','RR/MM/DD'),'«ˆ±›',22000,'≥Îµø∞Ê');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (86,to_date('20/01/29','RR/MM/DD'),'«ˆ±›',22000,'∞˚√¢«ı');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (87,to_date('20/01/29','RR/MM/DD'),'ƒ´µÂ',18000,'≥Îµø∞Ê');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (88,to_date('20/01/30','RR/MM/DD'),'«ˆ±›',4000,'±Ë»ø¡¯');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (89,to_date('20/01/30','RR/MM/DD'),'ƒ´µÂ',6000,'±Ë»ø¡¯');
-Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (90,to_date('20/01/30','RR/MM/DD'),'ƒ´µÂ',10000,'∞˚√¢«ı');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (1,to_date('20/01/01','RR/MM/DD'),'Ïπ¥Îìú',6000,'1111');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (2,to_date('20/01/01','RR/MM/DD'),'Ïπ¥Îìú',10000,'1111');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (3,to_date('20/01/02','RR/MM/DD'),'ÌòÑÍ∏à',9500,'2222');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (4,to_date('20/01/02','RR/MM/DD'),'Ïπ¥Îìú',18000,'4444');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (5,to_date('20/01/03','RR/MM/DD'),'ÌòÑÍ∏à',22000,'1111');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (6,to_date('20/01/03','RR/MM/DD'),'ÌòÑÍ∏à',22000,'1111');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (7,to_date('20/01/03','RR/MM/DD'),'Ïπ¥Îìú',18000,'2222');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (8,to_date('20/01/04','RR/MM/DD'),'ÌòÑÍ∏à',4000,'1111');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (9,to_date('20/01/04','RR/MM/DD'),'Ïπ¥Îìú',6000,'2222');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (10,to_date('20/01/04','RR/MM/DD'),'Ïπ¥Îìú',10000,'4444');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (11,to_date('20/01/05','RR/MM/DD'),'Ïπ¥Îìú',6000,'3333');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (12,to_date('20/01/05','RR/MM/DD'),'Ïπ¥Îìú',10000,'3333');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (13,to_date('20/01/06','RR/MM/DD'),'ÌòÑÍ∏à',9500,'3333');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (14,to_date('20/01/06','RR/MM/DD'),'Ïπ¥Îìú',18000,'2222');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (15,to_date('20/01/06','RR/MM/DD'),'ÌòÑÍ∏à',22000,'2222');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (16,to_date('20/01/06','RR/MM/DD'),'ÌòÑÍ∏à',22000,'1111');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (17,to_date('20/01/06','RR/MM/DD'),'Ïπ¥Îìú',18000,'4444');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (18,to_date('20/01/07','RR/MM/DD'),'ÌòÑÍ∏à',4000,'1111');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (19,to_date('20/01/07','RR/MM/DD'),'Ïπ¥Îìú',6000,'1111');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (20,to_date('20/01/07','RR/MM/DD'),'Ïπ¥Îìú',10000,'4444');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (21,to_date('20/01/07','RR/MM/DD'),'Ïπ¥Îìú',6000,'2222');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (22,to_date('20/01/08','RR/MM/DD'),'Ïπ¥Îìú',10000,'3333');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (23,to_date('20/01/08','RR/MM/DD'),'ÌòÑÍ∏à',9500,'4444');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (24,to_date('20/01/08','RR/MM/DD'),'Ïπ¥Îìú',18000,'1111');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (25,to_date('20/01/08','RR/MM/DD'),'ÌòÑÍ∏à',22000,'1111');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (26,to_date('20/01/08','RR/MM/DD'),'ÌòÑÍ∏à',22000,'4444');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (27,to_date('20/01/08','RR/MM/DD'),'Ïπ¥Îìú',18000,'2222');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (28,to_date('20/01/08','RR/MM/DD'),'ÌòÑÍ∏à',4000,'2222');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (29,to_date('20/01/08','RR/MM/DD'),'Ïπ¥Îìú',6000,'2222');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (30,to_date('20/01/09','RR/MM/DD'),'Ïπ¥Îìú',10000,'4444');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (31,to_date('20/01/09','RR/MM/DD'),'Ïπ¥Îìú',6000,'3333');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (32,to_date('20/01/09','RR/MM/DD'),'Ïπ¥Îìú',10000,'3333');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (33,to_date('20/01/10','RR/MM/DD'),'ÌòÑÍ∏à',9500,'3333');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (34,to_date('20/01/10','RR/MM/DD'),'Ïπ¥Îìú',18000,'3333');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (35,to_date('20/01/11','RR/MM/DD'),'ÌòÑÍ∏à',22000,'4444');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (36,to_date('20/01/11','RR/MM/DD'),'ÌòÑÍ∏à',22000,'1111');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (37,to_date('20/01/11','RR/MM/DD'),'Ïπ¥Îìú',18000,'2222');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (38,to_date('20/01/11','RR/MM/DD'),'ÌòÑÍ∏à',4000,'3333');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (39,to_date('20/01/12','RR/MM/DD'),'Ïπ¥Îìú',6000,'3333');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (40,to_date('20/01/12','RR/MM/DD'),'Ïπ¥Îìú',10000,'Í≥ΩÏ∞ΩÌòÅ');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (41,to_date('20/01/12','RR/MM/DD'),'Ïπ¥Îìú',6000,'Í≥ΩÏ∞ΩÌòÅ');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (42,to_date('20/01/13','RR/MM/DD'),'Ïπ¥Îìú',10000,'ÍπÄÌö®ÏßÑ');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (43,to_date('20/01/13','RR/MM/DD'),'ÌòÑÍ∏à',9500,'ÍπÄÏ§ÄÌòï');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (44,to_date('20/01/14','RR/MM/DD'),'Ïπ¥Îìú',18000,'ÍπÄÏ§ÄÌòï');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (45,to_date('20/01/15','RR/MM/DD'),'ÌòÑÍ∏à',22000,'ÎÖ∏ÎèôÍ≤Ω');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (46,to_date('20/01/16','RR/MM/DD'),'ÌòÑÍ∏à',22000,'Í≥ΩÏ∞ΩÌòÅ');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (47,to_date('20/01/16','RR/MM/DD'),'Ïπ¥Îìú',18000,'ÎÖ∏ÎèôÍ≤Ω');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (48,to_date('20/01/17','RR/MM/DD'),'ÌòÑÍ∏à',4000,'ÍπÄÌö®ÏßÑ');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (49,to_date('20/01/17','RR/MM/DD'),'Ïπ¥Îìú',6000,'ÍπÄÌö®ÏßÑ');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (50,to_date('20/01/17','RR/MM/DD'),'Ïπ¥Îìú',10000,'Í≥ΩÏ∞ΩÌòÅ');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (51,to_date('20/01/18','RR/MM/DD'),'Ïπ¥Îìú',6000,'Í≥ΩÏ∞ΩÌòÅ');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (52,to_date('20/01/18','RR/MM/DD'),'Ïπ¥Îìú',10000,'ÍπÄÌö®ÏßÑ');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (53,to_date('20/01/18','RR/MM/DD'),'ÌòÑÍ∏à',9500,'ÍπÄÏ§ÄÌòï');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (54,to_date('20/01/18','RR/MM/DD'),'Ïπ¥Îìú',18000,'ÍπÄÏ§ÄÌòï');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (55,to_date('20/01/19','RR/MM/DD'),'ÌòÑÍ∏à',22000,'ÎÖ∏ÎèôÍ≤Ω');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (56,to_date('20/01/19','RR/MM/DD'),'ÌòÑÍ∏à',22000,'Í≥ΩÏ∞ΩÌòÅ');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (57,to_date('20/01/19','RR/MM/DD'),'Ïπ¥Îìú',18000,'ÎÖ∏ÎèôÍ≤Ω');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (58,to_date('20/01/19','RR/MM/DD'),'ÌòÑÍ∏à',4000,'ÍπÄÌö®ÏßÑ');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (59,to_date('20/01/20','RR/MM/DD'),'Ïπ¥Îìú',6000,'ÍπÄÌö®ÏßÑ');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (60,to_date('20/01/20','RR/MM/DD'),'Ïπ¥Îìú',10000,'Í≥ΩÏ∞ΩÌòÅ');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (61,to_date('20/01/20','RR/MM/DD'),'Ïπ¥Îìú',6000,'Í≥ΩÏ∞ΩÌòÅ');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (62,to_date('20/01/21','RR/MM/DD'),'Ïπ¥Îìú',10000,'ÍπÄÌö®ÏßÑ');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (63,to_date('20/01/21','RR/MM/DD'),'ÌòÑÍ∏à',9500,'ÍπÄÏ§ÄÌòï');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (64,to_date('20/01/22','RR/MM/DD'),'Ïπ¥Îìú',18000,'ÍπÄÏ§ÄÌòï');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (65,to_date('20/01/22','RR/MM/DD'),'ÌòÑÍ∏à',22000,'ÎÖ∏ÎèôÍ≤Ω');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (66,to_date('20/01/22','RR/MM/DD'),'ÌòÑÍ∏à',22000,'Í≥ΩÏ∞ΩÌòÅ');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (67,to_date('20/01/22','RR/MM/DD'),'Ïπ¥Îìú',18000,'ÎÖ∏ÎèôÍ≤Ω');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (68,to_date('20/01/22','RR/MM/DD'),'ÌòÑÍ∏à',4000,'ÍπÄÌö®ÏßÑ');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (69,to_date('20/01/23','RR/MM/DD'),'Ïπ¥Îìú',6000,'ÍπÄÌö®ÏßÑ');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (70,to_date('20/01/23','RR/MM/DD'),'Ïπ¥Îìú',10000,'Í≥ΩÏ∞ΩÌòÅ');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (71,to_date('20/01/24','RR/MM/DD'),'Ïπ¥Îìú',6000,'Í≥ΩÏ∞ΩÌòÅ');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (72,to_date('20/01/24','RR/MM/DD'),'Ïπ¥Îìú',10000,'ÍπÄÌö®ÏßÑ');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (73,to_date('20/01/25','RR/MM/DD'),'ÌòÑÍ∏à',9500,'ÍπÄÏ§ÄÌòï');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (74,to_date('20/01/25','RR/MM/DD'),'Ïπ¥Îìú',18000,'ÍπÄÏ§ÄÌòï');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (75,to_date('20/01/26','RR/MM/DD'),'ÌòÑÍ∏à',22000,'ÎÖ∏ÎèôÍ≤Ω');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (76,to_date('20/01/26','RR/MM/DD'),'ÌòÑÍ∏à',22000,'Í≥ΩÏ∞ΩÌòÅ');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (77,to_date('20/01/26','RR/MM/DD'),'Ïπ¥Îìú',18000,'ÎÖ∏ÎèôÍ≤Ω');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (78,to_date('20/01/26','RR/MM/DD'),'ÌòÑÍ∏à',4000,'ÍπÄÌö®ÏßÑ');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (79,to_date('20/01/26','RR/MM/DD'),'Ïπ¥Îìú',6000,'ÍπÄÌö®ÏßÑ');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (80,to_date('20/01/27','RR/MM/DD'),'Ïπ¥Îìú',10000,'Í≥ΩÏ∞ΩÌòÅ');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (81,to_date('20/01/27','RR/MM/DD'),'Ïπ¥Îìú',6000,'Í≥ΩÏ∞ΩÌòÅ');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (82,to_date('20/01/28','RR/MM/DD'),'Ïπ¥Îìú',10000,'ÍπÄÌö®ÏßÑ');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (83,to_date('20/01/28','RR/MM/DD'),'ÌòÑÍ∏à',9500,'ÍπÄÏ§ÄÌòï');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (84,to_date('20/01/28','RR/MM/DD'),'Ïπ¥Îìú',18000,'ÍπÄÏ§ÄÌòï');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (85,to_date('20/01/28','RR/MM/DD'),'ÌòÑÍ∏à',22000,'ÎÖ∏ÎèôÍ≤Ω');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (86,to_date('20/01/29','RR/MM/DD'),'ÌòÑÍ∏à',22000,'Í≥ΩÏ∞ΩÌòÅ');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (87,to_date('20/01/29','RR/MM/DD'),'Ïπ¥Îìú',18000,'ÎÖ∏ÎèôÍ≤Ω');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (88,to_date('20/01/30','RR/MM/DD'),'ÌòÑÍ∏à',4000,'ÍπÄÌö®ÏßÑ');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (89,to_date('20/01/30','RR/MM/DD'),'Ïπ¥Îìú',6000,'ÍπÄÌö®ÏßÑ');
+Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (90,to_date('20/01/30','RR/MM/DD'),'Ïπ¥Îìú',10000,'Í≥ΩÏ∞ΩÌòÅ');
 ------------------------------------------------------
 --  DDL for Index ORDERING_PK
 --------------------------------------------------------
@@ -238,7 +238,7 @@ Insert into ORDERING (OR_NUM,OR_DATE,OR_PAY,OR_SUM,MEM_ID) values (90,to_date('2
 
 
 --------------------------------------------------------
---  ∆ƒ¿œ¿Ã ª˝º∫µ  - ºˆø‰¿œ-1ø˘-15-2020   
+--  ÌååÏùºÏù¥ ÏÉùÏÑ±Îê® - ÏàòÏöîÏùº-1Ïõî-15-2020   
 --------------------------------------------------------
 --------------------------------------------------------
 --  DDL for Table DETAIL
@@ -342,7 +342,7 @@ Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (87,29,20,1);
 Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (88,29,22,1);
 Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (89,30,17,2);
 Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (90,30,13,1);
-Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (92,31,1,2);
+Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (91,31,1,2);
 Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (92,32,1,1);
 Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (93,32,2,1);
 Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (94,32,4,1);
@@ -544,7 +544,7 @@ Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (270,90,18,1);
      REFERENCES "PRODUCT" ("PRO_NUM") ENABLE;
      
 --------------------------------------------------------
---  ∆ƒ¿œ¿Ã ª˝º∫µ  - ∏Òø‰¿œ-1ø˘-16-2020   
+--  ÌååÏùºÏù¥ ÏÉùÏÑ±Îê® - Î™©ÏöîÏùº-1Ïõî-16-2020   
 --------------------------------------------------------
 --------------------------------------------------------
 --  DDL for Table CUSTOMER
@@ -560,14 +560,14 @@ Insert into DETAIL (DE_NUM,OR_NUM,PRO_NUM,DE_AMOUNT) values (270,90,18,1);
    ) ;
 REM INSERTING into CUSTOMER
 SET DEFINE OFF;
-Insert into CUSTOMER (CUS_NUMBER,CUS_NAME,CUS_PHONE,CUS_SEX,CUS_BIRTHDAY,CUS_POINT) values (7001,'±Ë«˝∏Æ','010-8447-4564','FEMALE',to_date('98/11/04','RR/MM/DD'),1320);
-Insert into CUSTOMER (CUS_NUMBER,CUS_NAME,CUS_PHONE,CUS_SEX,CUS_BIRTHDAY,CUS_POINT) values (7002,'∞Ìº∫ø¯','010-4644','MALE',to_date('96/03/02','RR/MM/DD'),260);
-Insert into CUSTOMER (CUS_NUMBER,CUS_NAME,CUS_PHONE,CUS_SEX,CUS_BIRTHDAY,CUS_POINT) values (7003,'¿Ã¿ÁøÌ','010-3628','MALE',to_date('94/08/12','RR/MM/DD'),873);
-Insert into CUSTOMER (CUS_NUMBER,CUS_NAME,CUS_PHONE,CUS_SEX,CUS_BIRTHDAY,CUS_POINT) values (7004,'¿±¡ˆ«˝','010-8487-4564','FEMALE',to_date('90/02/09','RR/MM/DD'),1358);
-Insert into CUSTOMER (CUS_NUMBER,CUS_NAME,CUS_PHONE,CUS_SEX,CUS_BIRTHDAY,CUS_POINT) values (7005,'∞≠«˝º∫','010-4644-4852','FEMALE',to_date('98/08/17','RR/MM/DD'),1351);
-Insert into CUSTOMER (CUS_NUMBER,CUS_NAME,CUS_PHONE,CUS_SEX,CUS_BIRTHDAY,CUS_POINT) values (7006,'¿Ã¿Áø¯','010-3628-4491','FEMALE',to_date('99/11/06','RR/MM/DD'),5142);
-Insert into CUSTOMER (CUS_NUMBER,CUS_NAME,CUS_PHONE,CUS_SEX,CUS_BIRTHDAY,CUS_POINT) values (7007,'±Ë¿ŒøÏ','010-5496-8125','MALE',to_date('00/07/08','RR/MM/DD'),3213);
-Insert into CUSTOMER (CUS_NUMBER,CUS_NAME,CUS_PHONE,CUS_SEX,CUS_BIRTHDAY,CUS_POINT) values (7008,'¿Ø¡ˆ¿±','010-8486-1138','MALE',to_date('00/02/12','RR/MM/DD'),153);
+Insert into CUSTOMER (CUS_NUMBER,CUS_NAME,CUS_PHONE,CUS_SEX,CUS_BIRTHDAY,CUS_POINT) values (7001,'ÍπÄÌòúÎ¶¨','010-8447-4564','FEMALE',to_date('98/11/04','RR/MM/DD'),1320);
+Insert into CUSTOMER (CUS_NUMBER,CUS_NAME,CUS_PHONE,CUS_SEX,CUS_BIRTHDAY,CUS_POINT) values (7002,'Í≥†ÏÑ±Ïõê','010-4644','MALE',to_date('96/03/02','RR/MM/DD'),260);
+Insert into CUSTOMER (CUS_NUMBER,CUS_NAME,CUS_PHONE,CUS_SEX,CUS_BIRTHDAY,CUS_POINT) values (7003,'Ïù¥Ïû¨Ïö±','010-3628','MALE',to_date('94/08/12','RR/MM/DD'),873);
+Insert into CUSTOMER (CUS_NUMBER,CUS_NAME,CUS_PHONE,CUS_SEX,CUS_BIRTHDAY,CUS_POINT) values (7004,'Ïú§ÏßÄÌòú','010-8487-4564','FEMALE',to_date('90/02/09','RR/MM/DD'),1358);
+Insert into CUSTOMER (CUS_NUMBER,CUS_NAME,CUS_PHONE,CUS_SEX,CUS_BIRTHDAY,CUS_POINT) values (7005,'Í∞ïÌòúÏÑ±','010-4644-4852','FEMALE',to_date('98/08/17','RR/MM/DD'),1351);
+Insert into CUSTOMER (CUS_NUMBER,CUS_NAME,CUS_PHONE,CUS_SEX,CUS_BIRTHDAY,CUS_POINT) values (7006,'Ïù¥Ïû¨Ïõê','010-3628-4491','FEMALE',to_date('99/11/06','RR/MM/DD'),5142);
+Insert into CUSTOMER (CUS_NUMBER,CUS_NAME,CUS_PHONE,CUS_SEX,CUS_BIRTHDAY,CUS_POINT) values (7007,'ÍπÄÏù∏Ïö∞','010-5496-8125','MALE',to_date('00/07/08','RR/MM/DD'),3213);
+Insert into CUSTOMER (CUS_NUMBER,CUS_NAME,CUS_PHONE,CUS_SEX,CUS_BIRTHDAY,CUS_POINT) values (7008,'Ïú†ÏßÄÏú§','010-8486-1138','MALE',to_date('00/02/12','RR/MM/DD'),153);
 --------------------------------------------------------
 --  DDL for Index CUSTOMER_PK
 --------------------------------------------------------
